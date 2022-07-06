@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Biến, kiểu dữ liệu và toán tử</title>
+</head>
+<body>
+    <script>
+        diemvatlynhapvao = prompt("Nhập điểm vật lý vào đây");
+        diemhoahocnhapvao = prompt("Nhập điểm hóa học vào đây");
+        diemsinhhocnhapvao = prompt("Nhập điểm hóa học vào đây");
+        let diemvatly = parseInt(diemvatlynhapvao);
+        let diemhoahoc = parseInt(diemhoahocnhapvao);
+        let diemsinhhoc = parseInt(diemsinhhocnhapvao);
+        let diemtrungbinh = (diemvatly+diemhoahoc+diemsinhhoc)/3;
+        let tongdiem = diemhoahoc+diemvatly+diemsinhhoc;
+        document.write("Tổng điểm = " + tongdiem);
+        document.write("<br>");
+        document.write("Điểm trung bình = " + diemtrungbinh);
+    </script>
+</body>
+</html>

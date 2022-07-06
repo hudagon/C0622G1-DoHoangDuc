@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng chuyển đổi tiền tệ</title>
+</head>
+<body>
+    <table border="0" style="width: 600px">
+        <tr style="font-weight: bold" align="center">
+            <td >Amount</td>
+            <td>From Currency</td>
+            <td>To Currency</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><input type="text" id="dauvao"></td>
+            <td align="center">
+                <select style="width: 100px" id="from">
+                    <option value="USD">USD</option>
+                    <option value="VND">VND</option>
+                </select>
+            </td>
+            <td align="center">
+                <select style="width: 100px" id="to">
+                    <option value="USD">USD</option>
+                    <option value="VND">VND</option>
+                </select>
+            </td>
+            <td><button style="background-color: blueviolet;color: white" onclick="changemoney()">Convert!</button></td>
+        </tr>
+        <P id="result"></P>
+    </table>
+<script src="Ung_dung_chuyen_doi_tien_te.js"></script>
+</body>
+</html>
