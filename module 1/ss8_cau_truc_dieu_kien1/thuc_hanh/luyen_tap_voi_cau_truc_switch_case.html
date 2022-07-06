@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập với cấu trúc switch case</title>
+</head>
+<body>
+<script>
+    let browser = prompt("Enter browser name!")
+    // if (browser == 'Edge') {
+    //     alert("You've got the Edge!");
+    // } else if (browser == 'Chrome' || browser == 'Firefox' || browser == 'Safari' || browser == 'Opera') {
+    //     alert('Okay we support these browsers too');
+    // } else {
+    //     alert('We hope that this page looks ok!');
+    // }
+    switch (browser) {
+        case "edge":
+            alert("You've got the edge!");
+            break;
+        case "Firefox":
+        case "Safari":
+        case "Opera":
+        case "Chrome":
+            alert("Okay we support these browser too");
+            break;
+        default:
+            alert("We hope that this page looks ok!")
+    }
+</script>
+</body>
+</html>

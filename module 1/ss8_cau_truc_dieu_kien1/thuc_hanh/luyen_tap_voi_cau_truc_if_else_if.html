@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập với cấu trúc if else if</title>
+</head>
+<body>
+<script>
+    let tendangnhap = prompt("Nhập tên bạn vào đây");
+    if (tendangnhap == "Admin") {
+        let matkhau = prompt("Nhập mật khẩu vào đây");
+        if (matkhau == "TheMaster") {
+            alert("Welcome");
+        } else if (matkhau == null) {
+            alert("Canceled");
+        } else {
+            alert("Wrong password!");
+        }
+    } else if (tendangnhap == null) {
+        alert(Canceled);
+    } else {
+        alert("I don't know you!")
+    }
+</script>
+</body>
+</html>
