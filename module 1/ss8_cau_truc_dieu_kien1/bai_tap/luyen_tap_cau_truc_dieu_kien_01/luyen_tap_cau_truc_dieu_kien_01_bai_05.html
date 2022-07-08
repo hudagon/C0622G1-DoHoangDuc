@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập cấu trúc điều kiện bài 01 bài 05</title>
+</head>
+<body>
+    <h1>Luyện tập cấu trúc điều kiện 01 bài 4</h1>
+    <p>Nhập Điểm bài kiểm tra 1: <input type="text" id="nhapBaiKiemTra1"></p>
+    <p>Nhập Điểm bài kiểm tra 2: <input type="text" id="nhapBaiKiemTra2"></p>
+    <p>Nhập Điểm bài kiểm tra 3: <input type="text" id="nhapBaiKiemTra3"></p>
+    <p>Nhập Điểm bài giữa kỳ: <input type="text" id="nhapBaiGiuaKy"></p>
+    <p>Nhập Điểm bài cuối kỳ: <input type="text" id="nhapBaiCuoiky"></p>
+    <button onclick="hienThi()">Kiểm tra</button>
+    <p id="ketQua"></p>
+</body>
+<script>
+    function hienThi() {
+        let kiemTra1 = parseFloat(document.getElementById("nhapBaiKiemTra1").value);
+        let kiemTra2 = parseFloat(document.getElementById("nhapBaiKiemTra2").value);
+        let kiemTra3 = parseFloat(document.getElementById("nhapBaiKiemTra3").value);
+        let giuaKy = parseFloat(document.getElementById("nhapBaiGiuaKy").value);
+        let cuoiKy = parseFloat(document.getElementById("nhapBaiCuoiky").value);
+        let ketQuaCot1;
+        let diemHocLuc;
+
+        ketQuaCot1 = (kiemTra1 + kiemTra2 +kiemTra3)/3;
+        diemHocLuc = (ketQuaCot1 + giuaKy + cuoiKy)/3;
+
+        if (diemHocLuc >= 0 && diemHocLuc <= 4) {
+            document.getElementById("ketQua").innerHTML = "Học Lực Kém";
+        } else if (diemHocLuc > 4 && diemHocLuc <= 5.5) {
+            document.getElementById("ketQua").innerHTML = "Học Lực Yếu";
+        } else if (diemHocLuc > 5.5 && diemHocLuc <= 7) {
+            document.getElementById("ketQua").innerHTML = "HỌc lực TB";
+        } else if (diemHocLuc > 7 && diemHocLuc <= 8.5) {
+            document.getElementById("ketQua").innerHTML = "Học lực khá";
+        } else {
+            document.getElementById("ketQua").innerHTML = "Học lực giỏi";
+        }
+    }
+</script>
+</html>

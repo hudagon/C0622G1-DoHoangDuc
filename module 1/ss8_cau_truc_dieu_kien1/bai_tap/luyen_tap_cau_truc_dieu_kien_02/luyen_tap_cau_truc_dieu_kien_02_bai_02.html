@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập cấu trúc điều kiện 02 bài 02</title>
+</head>
+<body>
+    <h1>Chuyển từ meter sang feet</h1>
+    <p>Nhập m vào đây: <input type="text" id="nhapM"></p><br>
+    <button onclick="chuyenDoi()">Chuyển đổi</button>
+    <p id="ketQua"></p>
+</body>
+<script>
+    function chuyenDoi() {
+        let m = parseFloat(document.getElementById("nhapM").value);
+        let ft;
+
+        ft = m*3.2808;
+
+        document.getElementById("ketQua").innerHTML = "Số Feet là: " + ft;
+    }
+</script>
+</html>

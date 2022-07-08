@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập cấu trúc điều kiện 02 bài 06</title>
+</head>
+<body>
+    <h1>Giải phương trình bậc 1</h1>
+    <p>Nhập tham số a: <input type="text" id="nhapA"></p>
+    <p>Nhập tham số b: <input type="text" id="nhapB"></p>
+    <button onclick="giai()">Giải</button>
+    <p id="ketQua"></p>
+</body>
+<script>
+    function giai() {
+        let a = parseFloat(document.getElementById("nhapA").value);
+        let b = parseFloat(document.getElementById("nhapB").value);
+        let ketQua = -b/a;
+
+        document.getElementById("ketQua").innerHTML = "Đáp án là: " + ketQua;
+    }
+</script>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập cấu trúc điều kiện 01 bài 04</title>
+</head>
+<body>
+    <h1>Luyện tập cấu trúc điều kiện 01 bài 4</h1>
+    <p>Nhập số a vào đây: <input type="text" id="nhapA"></p>
+    <p>Nhập số b vào đây: <input type="text" id="nhapB"></p>
+    <p>Nhập số c vào đây: <input type="text" id="nhapC"></p>
+    <button onclick="hienThi()">Kiểm tra</button>
+    <p id="ketQua"></p>
+</body>
+<script>
+    function hienThi() {
+        let a = parseFloat(document.getElementById("nhapA").value);
+        let b = parseFloat(document.getElementById("nhapB").value);
+        let c = parseFloat(document.getElementById("nhapC").value);
+
+        if (a>b) {
+            if (a>c) {
+                document.getElementById("ketQua").innerHTML = "a là số lớn nhất";
+            } else {
+                document.getElementById("ketQua").innerHTML = "c là số lớn nhất";
+            }
+        } else {
+            if (b>c) {
+                document.getElementById("ketQua").innerHTML = "b là số lớn nhất";
+            } else {
+                document.getElementById("ketQua").innerHTML = "c là số lớn nhất";
+            }
+        }
+    }
+</script>
+</html>

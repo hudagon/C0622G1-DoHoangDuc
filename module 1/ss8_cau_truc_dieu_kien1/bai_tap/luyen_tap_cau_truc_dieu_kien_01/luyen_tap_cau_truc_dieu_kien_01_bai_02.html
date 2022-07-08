@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập cấu trúc điều kiện 1 bài 02</title>
+</head>
+<body>
+    <h1>Kiểm tra xem có đủ tuổi học lớp 10 hay không</h1>
+    <p>Nhập tuổi: <input type="text" id="nhapTuoi"> <br><br>
+    <button onclick="kiemTra()">Kiểm tra</button><br>
+    <p id="noiHienThiKetQua"></p>
+</body>
+<script>
+    function kiemTra() {
+        let tuoi = parseInt(document.getElementById("nhapTuoi").value);
+
+        if (tuoi >= 16) {
+            document.getElementById("noiHienThiKetQua").innerHTML = "Bạn đủ tuổi học lớp 10";
+        } else {
+            document.getElementById("noiHienThiKetQua").innerHTML = "Bạn không đủ tuổi học lớp 10";
+        }
+    }
+</script>
+</html>

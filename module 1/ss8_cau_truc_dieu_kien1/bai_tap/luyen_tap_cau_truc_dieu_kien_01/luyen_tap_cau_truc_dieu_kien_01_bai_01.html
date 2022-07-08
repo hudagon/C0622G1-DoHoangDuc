@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập cấu trúc điều kiện 1 bài 01</title>
+</head>
+<body>
+    <h1>Kiểm tra xem a có chia hết cho b hay không</h1>
+    <div>Nhập a: <input type="text" id="soa"></div><br>
+    <div>Nhập b: <input type="text" id="sob"></div><br>
+    <button onclick="kiemtra()">Bấm vào đây để kiểm tra</button><br><br>
+    <P id="noiHienThiKetQua"></P>
+</body>
+<script>
+    function kiemtra() {
+        let a = parseInt(document.getElementById("soa").value);
+        let b = parseInt(document.getElementById("sob").value);
+
+
+        if (a % b == 0) {
+            document.getElementById("noiHienThiKetQua").innerHTML = "a chia hết cho b";
+        } else {
+            document.getElementById("noiHienThiKetQua").innerhtml = "a không chia hết cho b";
+        }
+    }
+</script>
+</html>

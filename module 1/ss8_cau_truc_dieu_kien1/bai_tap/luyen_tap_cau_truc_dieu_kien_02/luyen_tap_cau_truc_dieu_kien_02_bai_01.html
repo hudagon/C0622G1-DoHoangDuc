@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập cấu trúc điều kiện 02 bài 01</title>
+</head>
+<body>
+    <h1>Chuyển từ độ C sang độ F</h1>
+    <p>Nhập độ C: <input type="text" id="doC"></p>
+    <button onclick="chuyenDoi()">Chuyển đổi</button>
+    <p id="ketQua"></p>
+</body>
+<script>
+    function chuyenDoi() {
+        let doC = parseFloat(document.getElementById("doC").value);
+        let doF;
+
+        doF = (doC*9/5) + 32;
+
+        document.getElementById("ketQua").innerHTML = "Số độ F là: " + doF;
+    }
+</script>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập cấu trúc điều kiện 02 bài 11</title>
+</head>
+<body>
+    <h1>Chương trình tính thuế thu nhập cá nhân</h1>
+    <p>Nhập thu nhập trước thuế vào đây: <input type="text" id="thuNhapTruocThue"></p>
+    <button onclick="tinhToan1()">Tính toán</button>
+    <p id="ketQua"></p>
+</body>
+<script>
+    function tinhToan1() {
+        let truocThue = parseFloat(document.getElementById("thuNhapTruocThue").value);
+        let sauThue;
+
+        if (truocThue > 0 && truocThue < 5000000) {
+            sauThue = truocThue - (truocThue * 5 / 100);
+        } else if (truocThue > 5000000 && truocThue < 10000000) {
+            sauThue = truocThue - (truocThue * 10 / 100);
+        } else {
+            sauThue = truocThue - (truocThue * 15 / 100);
+        }
+        document.getElementById("ketQua").innerHTML = "Thu nhập sau thuế của bạn là: " + sauThue;
+    }
+</script>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập cấu trúc điều kiện 02 bài 08</title>
+</head>
+<body>
+    <h1>Kiểm tra xem một số nhập vào có phải là tuổi của một người không</h1>
+    <p>Nhập tuổi vào đây: <input type="text" id="nhapTuoi"></p>
+    <button onclick="kiemTra1()">Kiểm tra</button>
+    <p id="ketQua"></p>
+</body>
+<SCRIPT>
+    function kiemTra1() {
+        let tuoi = parseFloat(document.getElementById("nhapTuoi").value);
+        let tuoi1 = parseInt(document.getElementById("nhapTuoi").value);
+        let hieu = tuoi - tuoi1;
+
+        if (hieu == 0 && tuoi > 0 && tuoi < 120) {
+            document.getElementById("ketQua").innerHTML = "Đây là tuổi của 1 người";
+        } else {
+            document.getElementById("ketQua").innerHTML = "Đây không phải là tuổi của 1 người";
+        }
+
+    }
+</SCRIPT>
+</html>

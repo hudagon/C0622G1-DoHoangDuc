@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập cấu trúc điều kiện 01 Bài 07</title>
+</head>
+<body>
+    <h1>Cước điện thoại của 1 hộ gia đình</h1>
+    <P>Nhập tổng số giây gọi điện vào đây: <input type="text" id="nhapSoGiay"></P>
+    <button onclick="tinhTien()">Tính tiền</button>
+    <p id="ketQua"></p>
+</body>
+<script>
+    function tinhTien() {
+        let soGiay = parseInt(document.getElementById("nhapSoGiay").value);
+        let giaCuoc = 200
+        let thanhTien;
+
+        if (soGiay <= 60) {
+            thanhTien = giaCuoc*soGiay;
+            document.getElementById("ketQua").innerHTML = "Số tiền bạn phải trả là: " + thanhTien;
+        } else if (soGiay <= 120) {
+            giaCuoc = giaCuoc + 100;
+            thanhTien = giaCuoc*soGiay
+            document.getElementById("ketQua").innerHTML = "Số tiền bạn phải trả là: " + thanhTien;
+        } else if (soGiay <= 600) {
+            giaCuoc = giaCuoc + 500;
+            thanhTien = giaCuoc*soGiay
+            document.getElementById("ketQua").innerHTML = "Số tiền bạn phải trả là: " + thanhTien;
+        } else {
+            giaCuoc = 800;
+            thanhTien = giaCuoc*soGiay
+            document.getElementById("ketQua").innerHTML = "Số tiền bạn phải trả là: " + thanhTien;
+        }
+    }
+</script>
+</html>

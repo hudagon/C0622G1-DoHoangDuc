@@ -13,7 +13,7 @@
             <td></td>
         </tr>
         <tr>
-            <td><input type="text" id="dauvao"></td>
+            <td><input type="text" id="dauVao"></td>
             <td align="center">
                 <select style="width: 100px" id="from">
                     <option value="USD">USD</option>
@@ -26,10 +26,31 @@
                     <option value="VND">VND</option>
                 </select>
             </td>
-            <td><button style="background-color: blueviolet;color: white" onclick="changemoney()">Convert!</button></td>
+            <td><button style="background-color: blueviolet;color: white" onclick="changeMoney()">Convert!</button></td>
         </tr>
         <P id="result"></P>
     </table>
-<script src="Ung_dung_chuyen_doi_tien_te.js"></script>
+<script>
+    function changeMoney() {
+        let dauVao = document.getElementById("dauVao").value
+        let from = document.getElementById("from").value
+        let to = document.getElementById("to").value
+        let result;
+
+        if (from == "USD" && to == "VND") {
+            result = "Result: " + (dauVao*23000) + " Đ"
+        }
+        else if (from == "VND" && to == "USD") {
+            result = "Result: " + (dauVao/23000) + " $"
+        }
+        else if (from == "VND" && to == "VND") {
+            result = "Result: " + dauVao + " Đ"
+        }
+        else {
+            result = "Result: " + dauVao + " $"
+        }
+        document.getElementById("result").innerHTML = result;
+    }
+</script>
 </body>
 </html>

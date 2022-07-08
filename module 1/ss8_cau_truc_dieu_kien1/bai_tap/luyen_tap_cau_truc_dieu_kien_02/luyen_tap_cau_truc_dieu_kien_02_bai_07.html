@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập cấu trúc điều kiện 02 bài 07</title>
+</head>
+<body>
+    <h1>Tính phương trình bậc 2</h1>
+    <p>Nhập a vào đây: <input type="text" id="nhapA"></p><br>
+    <p>Nhập b vào đây: <input type="text" id="nhapB"></p><br>
+    <p>Nhập c vào đây: <input type="text" id="nhapC"></p><br>
+    <button onclick="giai()">Giải</button>
+    <p id="ketQua"></p>
+    <p id="ketQua1"></p>
+</body>
+<script>
+    function giai() {
+        let a = parseFloat(document.getElementById("nhapA").value);
+        let b = parseFloat(document.getElementById("nhapB").value);
+        let c = parseFloat(document.getElementById("nhapC").value);
+        let delta;
+        let dapAn;
+        let dapAn1;
+
+        if (a == 0) {
+            dapAn = -c/b;
+            document.getElementById("ketQua").innerHTML = "Phương trình có 1 nghiệm là x =" + dapAn;
+        } else {
+            delta = b*b - (4*a*c);
+            if (delta > 0) {
+                dapAn = (-b+(Math.sqrt(delta)))/2*a;
+                dapAn1 = (-b-(Math.sqrt(delta)))/2*a;
+                document.getElementById("ketQua").innerHTML = "Nghiệm x1 = " + dapAn;
+                document.getElementById("ketQua1").innerHTML = "Nghiệm x2 = " + dapAn1;
+            } else if (delta < 0) {
+                document.getElementById("ketQua").innerHTML = "Phương trình vô nghiệm";
+            } else {
+                dapAn = -b/a;
+                document.getElementById("ketQua").innerHTML = "Phương trình có nghiệm kép x = " + dapAn;
+            }
+        }
+    }
+</script>
+</html>

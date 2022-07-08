@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập cấu trúc điều kiện 02 bài 12</title>
+</head>
+<body>
+    <h1>Chương trình tính lãi ngân hàng</h1>
+    <p>Nhập vào số tiền ban đầu: <input type="text" id="soTienBanDau"></p>
+    <p>Nhập vào số tháng cho vay: <input type="text" id="soThangChoVay"></p>
+    <p>Nhập vào lãi suất hằng tháng: <input type="text" id="laiSuatHangThang"></p>
+    <button onclick="tinhToan()">Tính toán</button>
+    <p id="ketQua"></p>
+</body>
+<script>
+    function tinhToan() {
+        let tienBanDau = parseFloat(document.getElementById("soTienBanDau").value);
+        let soThang = parseFloat(document.getElementById("soThangChoVay").value);
+        let laiSuat = parseFloat(document.getElementById("laiSuatHangThang").value) / 100;
+        let tongTien;
+        let tongLai
+
+        tongTien = tienBanDau * Math.pow((1 + laiSuat), soThang);
+        tongLai = tongTien - tienBanDau
+
+        document.getElementById("ketQua").innerHTML = "Tổng tiền là: " + tongLai;
+    }
+</script>
+</html>

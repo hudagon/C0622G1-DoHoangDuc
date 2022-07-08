@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập cấu trúc điều kiện 02 bài 03</title>
+</head>
+<body>
+    <h1>Tính diện tích hình vuông khi biết cạnh a</h1>
+    <p>Nhập cạnh a vào đây: <input type="text" id="nhapA"></p>
+    <button onclick="tinh()">Tính</button>
+    <p id="ketQua"></p>
+</body>
+<script>
+    function tinh() {
+        let a = parseFloat(document.getElementById("nhapA").value);
+        let S = a*a;
+
+        document.getElementById("ketQua").innerHTML = "Diện tích hình vuông là: " + S;
+    }
+</script>
+</html>

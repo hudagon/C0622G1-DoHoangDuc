@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập cấu trúc điều kiện 02 bài 10</title>
+</head>
+<body>
+    <h1>Chương trình tính giá điện</h1>
+    <p>Nhập vào lượng điện tiêu thụ (KWh): <input type="text" id="luongDien"></p>
+    <button onclick="tinhToann()">Tính toán</button>
+    <p id="ketQua"></p>
+</body>
+<script>
+    function tinhToann() {
+        let soDien = parseFloat(document.getElementById("luongDien").value);
+        let soTien;
+
+        if (soDien > 0 && soDien < 50) {
+            soTien = soDien * 1.678;
+            document.getElementById("ketQua").innerHTML = "Số tiền bạn phải trả là: " + soTien;
+        } else if (soDien > 51 && soDien < 100) {
+            soTien = soDien * 1.734;
+            document.getElementById("ketQua").innerHTML = "Số tiền bạn phải trả là: " + soTien;
+        } else if (soDien > 101 && soDien < 200) {
+            soTien = soDien * 2.014;
+            document.getElementById("ketQua").innerHTML = "Số tiền bạn phải trả là: " + soTien;
+        } else if (soDien > 201 && soDien < 300) {
+            soTien = soDien * 2.536;
+            document.getElementById("ketQua").innerHTML = "Số tiền bạn phải trả là: " + soTien;
+        } else if (soDien > 301 && soDien < 400) {
+            soTien = soDien * 2.834;
+            document.getElementById("ketQua").innerHTML = "Số tiền bạn phải trả là: " + soTien;
+        } else {
+            soTien = soDien * 2.927;
+            document.getElementById("ketQua").innerHTML = "Số tiền bạn phải trả là: " + soTien;
+        }
+    }
+</script>
+</html>

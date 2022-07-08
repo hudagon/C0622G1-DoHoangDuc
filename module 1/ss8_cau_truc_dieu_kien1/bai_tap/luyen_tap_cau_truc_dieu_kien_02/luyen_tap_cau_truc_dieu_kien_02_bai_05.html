@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập cấu trúc điều kiện 02 bài 05</title>
+</head>
+<body>
+    <h1>Tính diện tích tam giác vuông khi biết 02 cạnh kề a, b.</h1>
+    <p>Nhập cạnh a vào đây: <input type="text" id="nhapA"></p>
+    <p>Nhập cạnh b vào đây: <input type="text" id="nhapB"></p>
+    <button onclick="tinh()">Tính</button>
+    <p id="ketQua"></p>
+</body>
+    <script>
+        function tinh() {
+            let a = parseFloat(document.getElementById("nhapA").value);
+            let b = parseFloat(document.getElementById("nhapB").value);
+            let S = a*b/2;
+
+            document.getElementById("ketQua").innerHTML = "Diện tích hình tam giác là: " + S;
+        }
+    </script>
+</html>

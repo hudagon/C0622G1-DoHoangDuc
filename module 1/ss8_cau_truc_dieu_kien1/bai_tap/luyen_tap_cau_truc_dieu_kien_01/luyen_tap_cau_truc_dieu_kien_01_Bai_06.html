@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập cấu trúc điều kiện 01 bài 06</title>
+</head>
+<body>
+    <h1>Luyện tập cấu trúc điều kiện 01 bài 6</h1>
+    <p>Nhập doanh thu: <input type="text" id="nhapDoanhThu"></p>
+    <button onclick="tinhToan()">Tính toán hoa hồng</button>
+    <P id="ketQua"></P>
+</body>
+<script>
+    function tinhToan() {
+        let doanhThu = parseInt(document.getElementById("nhapDoanhThu").value);
+        let hoaHong = doanhThu*5/100;
+
+        if (doanhThu >= 10000000) {
+            document.getElementById("ketQua").innerHTML = "Mức hoa hồng nhận được của bạn là: " + hoaHong + "VND"
+        } else {
+            document.getElementById("ketQua").innerHTML = "Doanh thu của bạn chưa đủ để nhận hoa hồng"
+        }
+    }
+</script>
+</html>

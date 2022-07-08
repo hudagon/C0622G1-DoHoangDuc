@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Máy tính đơn giản</title>
+    <style>
+        button{
+            width: 100%;
+            height: 80%;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <table border="1" style="width: 200px; height: 200px" align="center">
+        <tr style="height: 20px">
+            <td colspan="4" style="width: 100%;height: 25px;" align="center"><input type="text" id="view"></td>
+        </tr>
+        <tr>
+            <td><button value="1" onclick="hienthi(value)">1</button></td>
+            <td><button value="2" onclick="hienthi(value)">2</button></td>
+            <td><button value="3" onclick="hienthi(value)">3</button></td>
+            <td><button value="+" onclick="hienthi(value)">+</button></td>
+        </tr>
+        <tr>
+            <td><button value="4" onclick="hienthi(value)">4</button></td>
+            <td><button value="5" onclick="hienthi(value)">5</button></td>
+            <td><button value="6" onclick="hienthi(value)">6</button></td>
+            <td><button value="-" onclick="hienthi(value)">-</button></td>
+        </tr>
+        <tr>
+            <td><button value="7" onclick="hienthi(value)">7</button></td>
+            <td><button value="8" onclick="hienthi(value)">8</button></td>
+            <td><button value="9" onclick="hienthi(value)">9</button></td>
+            <td><button value="x" onclick="hienthi(value)">x</button></td>
+        </tr>
+        <tr>
+            <td><button value="AC" onclick="reset()">AC</button></td>
+            <td><button value="0" onclick="hienthi(value)">0</button></td>
+            <td><button value="=" onclick="caculate()">=</button></td>
+            <td><button value="/" onclick="hienthi(value)">/</button></td>
+        </tr>
+    </table>
+</body>
+<script>
+    let view = document.getElementById("view");
+    function hienthi(value) {
+        view.value += value;
+    }
+    function reset() {
+        view.value = "";
+    }
+    function caculate() {
+        let strStatemen = view.value
+        let result = eval(strStatemen);
+        view.value = result;
+    }
+</script>
+</html>

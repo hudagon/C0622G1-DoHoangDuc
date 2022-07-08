@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập cấu trúc điều kiện 01 bài 03</title>
+</head>
+<body>
+    <h1>Luyện tập cấu trúc điều kiện 01 bài 03</h1>
+    <p>Nhập số nguyên: <input type="text" id="nhapSoNguyen"> <br><br>
+    <button onclick="kiemTra()">Kiểm tra</button><br>
+    <p id="noiHienThiKetQua"></p>
+</body>
+<script>
+    function kiemTra() {
+        let soNguyen = parseInt(document.getElementById("nhapSoNguyen").value);
+
+        if (soNguyen > 0) {
+            document.getElementById("noiHienThiKetQua").innerHTML = "Số này lớn hơn 0";
+        } else if (soNguyen < 0) {
+            document.getElementById("noiHienThiKetQua").innerHTML = "Số này bé hơn 0";
+        } else {
+            document.getElementById("noiHienThiKetQua").innerHTML = "Đây là số 0";
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập cấu trúc điều kiện 02 bài 09</title>
+</head>
+<body>
+    <h1>Kiểm tra xem 3 số thực (a,b,c) nhập vào có phải là cạnh của một tam giác</h1>
+    <p>Nhập a: <input type="text" id="nhapA"></p>
+    <p>Nhập b: <input type="text" id="nhapB"></p>
+    <p>Nhập c: <input type="text" id="nhapC"></p>
+    <button onclick="kiemTra()">Kiểm tra</button><br>
+    <p id="ketQua"></p>
+</body>
+<script>
+    function kiemTra() {
+        let a = parseFloat(document.getElementById("nhapA").value);
+        let b = parseFloat(document.getElementById("nhapB").value);
+        let c = parseFloat(document.getElementById("nhapC").value);
+        let x = a + b;
+        let y = b + c;
+        let z = a + c;
+
+        if (a > 0 && b > 0 && c > 0) {
+            if (x > c && y > a && z > b) {
+                document.getElementById("ketQua").innerHTML = "Đây là cạnh của 1 tam giác";
+            } else {
+                document.getElementById("ketQua").innerHTML = "Đây không là cạnh của 1 tam giác";
+            }
+        } else {
+            document.getElementById("ketQua").innerHTML = "Đây không là cạnh của 1 tam giác"
+        }
+    }
+</script>
+</html>
