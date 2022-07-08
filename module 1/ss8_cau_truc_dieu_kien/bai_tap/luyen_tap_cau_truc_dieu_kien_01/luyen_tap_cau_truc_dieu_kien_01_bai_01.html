@@ -6,18 +6,17 @@
 </head>
 <body>
     <h1>Kiểm tra xem a có chia hết cho b hay không</h1>
-    <div>Nhập a: <input type="text" id="soa"></div><br>
-    <div>Nhập b: <input type="text" id="sob"></div><br>
-    <button onclick="kiemtra()">Bấm vào đây để kiểm tra</button><br><br>
+    <p>Nhập a: <input type="text" id="soA"><p>
+    <p>Nhập b: <input type="text" id="soB"></p>
+    <button onclick="kiemTra1()">Bấm vào đây để kiểm tra</button>
     <P id="noiHienThiKetQua"></P>
 </body>
 <script>
-    function kiemtra() {
-        let a = parseInt(document.getElementById("soa").value);
-        let b = parseInt(document.getElementById("sob").value);
+    function kiemTra1() {
+        let soA = parseInt(document.getElementById("soA").value);
+        let soB = parseInt(document.getElementById("soB").value);
 
-
-        if (a % b == 0) {
+        if (soA % soB == 0) {
             document.getElementById("noiHienThiKetQua").innerHTML = "a chia hết cho b";
         } else {
             document.getElementById("noiHienThiKetQua").innerhtml = "a không chia hết cho b";
