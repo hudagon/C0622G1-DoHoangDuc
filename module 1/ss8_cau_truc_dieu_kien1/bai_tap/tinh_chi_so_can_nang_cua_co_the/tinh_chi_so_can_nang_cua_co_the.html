@@ -8,11 +8,11 @@
     <h1>Tính chỉ số cân nặng của cơ thể</h1>
     <span>Nhập cân nặng: (kg)</span> <input type="text" id="weight"><br><br>
     <span>Nhập chiều cao: (m)</span> <input type="text" id="height"><br><br>
-    <button onclick="kiemtra()">Kiểm tra</button>
-    <p id="hienthi"></p>
+    <button onclick="kiemTra()">Kiểm tra</button>
+    <p id="hienThi"></p>
 </body>
 <script>
-    function kiemtra() {
+    function kiemTra() {
         let weight = parseInt(document.getElementById("weight").value);
         let height = parseFloat(document.getElementById("height").value);
         let bmi = weight / (height * height);
@@ -26,7 +26,7 @@
         } else {
             result = "Bạn Obese";
         }
-        document.getElementById("hienthi").innerHTML = result;
+        document.getElementById("hienThi").innerHTML = result;
     }
 </script>
 </html>
