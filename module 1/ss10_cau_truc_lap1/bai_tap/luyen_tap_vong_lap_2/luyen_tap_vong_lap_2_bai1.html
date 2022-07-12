@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hiển thị ra bất kỳ số lượng các trong dãy fibonacci</title>
+</head>
+<body></body>
+<script>
+    let soLuongCanInRa = +prompt("Nhập số lượng vào đây đi ba");
+    let a = 0;
+    let b = 1;
+    let c;
+    let demSo = 0;
+    while (true) {
+        c = a + b;
+        a = b;
+        b = c;
+        document.write(c + "<br>");
+        demSo += 1;
+        if (demSo == soLuongCanInRa) {
+            break;
+        }
+    }
+</script>
+</html>

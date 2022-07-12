@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính giai thừa của một số nguyên dương</title>
+</head>
+<body></body>
+<script>
+    let a = +prompt("Nhập số mà bạn cần tính giai thừa vào đây");
+    let ketQua = 1;
+    while (true) {
+        ketQua = ketQua * a;
+        a--;
+        if (a === 1) {
+            break;
+        }
+    }
+    document.write(ketQua);
+</script>
+</html>

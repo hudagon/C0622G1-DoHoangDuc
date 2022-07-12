@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sinh bảng cửu chương</title>
+</head>
+<body>
+<h1>Bảng Cửu Chương</h1>
+<p id="ok"></p>
+</body>
+<script>
+    let bang = "<table border='1'>";
+    let ketQua;
+    for (let i = 1; i < 10 ; i++) {
+        bang = bang + "<tr>";
+        for (let j = 1; j < 10; j++) {
+            ketQua = i*j;
+            bang = bang + "<td>" + j + "x" + i + "=" + ketQua + "</td>";
+        }
+        bang = bang + "</tr>";
+    }
+    document.getElementById("ok").innerHTML = bang;
+</script>
+</html>

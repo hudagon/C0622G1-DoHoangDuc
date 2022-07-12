@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game đoán số</title>
+</head>
+<body>
+<button onclick="batDau()">Bắt đầu</button>
+</body>
+<script>
+    function batDau() {
+        let i = 1;
+        soLonNhat = +prompt("Số lớn nhất trong khoảng bạn muốn đoán là gì?");
+        soNgauNhien = Math.floor(Math.random() * soLonNhat);
+        soNguoiDungDoan = +prompt("Nhập số mà anh bạn đoán vào đây, lần" + " " + i);
+        console.log(soNgauNhien);
+
+        while (true) {
+            if (soNguoiDungDoan === soNgauNhien) {
+                alert("Hura!!! Bạn đoán đỉnh thế!!!");
+                break;
+            } else if (soNguoiDungDoan > soNgauNhien) {
+                alert("Thôi ông đoán lại đi ông, số này nhỏ hơn á");
+                i = i + 1;
+                soNguoiDungDoan = +prompt("Nhập số mà anh bạn đoán vào đây, lần" + " " + i);
+                if (i === 3) {
+                    alert("thôi ba ơi, đoán 3 lần mà ko đúng nữa thì thôi");
+                    break;
+                }
+                continue;
+            } else if (soNguoiDungDoan < soNgauNhien) {
+                alert("Thôi ông đoán lại đi ông, số này lớn hơn á");
+                i = i + 1;
+                soNguoiDungDoan = +prompt("Nhập số mà anh bạn đoán vào đây, lần" + " " + i);
+                if (i === 3) {
+                    alert("thôi ba ơi, đoán 3 lần mà ko đúng nữa thì thôi");
+                    break;
+                }
+                continue;
+            }
+        }
+    }
+</script>
+</html>

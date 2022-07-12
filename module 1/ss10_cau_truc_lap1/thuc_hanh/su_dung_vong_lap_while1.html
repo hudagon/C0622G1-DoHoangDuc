@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết chương trình nhận vào một số từ hộp thoại, việc nhập kết thúc
+        khi người dùng nhập vào giá trị -1. Mỗi giá trị nhập được sẽ được hiển thị ra và thực hiện tính tổng các giá trị đó</title>
+</head>
+<body></body>
+<script>
+    let soNhapVao;
+    let i = 0;
+    let tong = 0;
+    while (soNhapVao != -1) {
+        soNhapVao = +prompt("Nhập vào đây");
+        tong = tong + soNhapVao;
+    }
+    document.write(tong);
+</script>
+</html>
