@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử.
+        Chương trình thực hiện tính và hiển thị xem có bao nhiêu số nguyên lớn hơn hoặc bằng 10.</title>
+</head>
+<body></body>
+<script>
+    let arr = [];
+    let count = null;
+    let sum = null;
+
+    for (let i = 0; i < 10; i++) {
+        let input = +prompt("Nhập vào đây");
+        arr.push(input);
+    }
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] >= 10) {
+            sum += arr[i]
+            count += 1;
+        }
+    }
+    alert("Có " + count + " " + "số nguyên lớn hơn hoặc bằng 10 " + "và " + "tổng của những số đó bằng = " + sum);
+</script>
+</html>

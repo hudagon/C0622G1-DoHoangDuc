@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết chương trình khởi tạo mảng số nguyên. Hiển thị giá trị lớn nhất trong mảng đó.
+        In ra giá trị trung bình của các phần tử trong mảng.</title>
+</head>
+<body></body>
+<script>
+    let arr = [];
+    let numberOfElements = +prompt("Input number of element you want: ");
+    // Khởi tạo mảng số nguyên -------------------------------
+    for (let i = 0; i < numberOfElements; i++) {
+        let input = +prompt("Input");
+        arr.push(input);
+    }
+    // Hiện thị ra giá trị lớn nhất của mảng -----------------
+    let max = arr[0];
+    let sum = arr[0];
+    for (let i = 1; i < arr.length; i++) {
+        if (max < arr[i]) {
+            max = arr[i];
+            sum += arr[i];
+        }
+    }
+    alert("The highest number has the value of: " + max);
+    // In ra giá trị trung bình của các phần tử trong mảng ----
+    let theAverage = sum/numberOfElements;
+    alert("The Average of all the numbers in the array is: " + theAverage);
+</script>
+</html>

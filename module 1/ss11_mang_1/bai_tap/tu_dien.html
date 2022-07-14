@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ điển</title>
+</head>
+<body>
+<p><input type="text" id="inputText"> <button onclick="ok()">Dịch</button></p>
+<p id="result"></p>
+</body>
+<script>
+    function ok() {
+        let input = document.getElementById("inputText").value;
+        let eng = ["banana", "orange", "apple", "mango", "red", "blue", "black", "white"];
+        let vie = ["chuối", "cam", "táo", "xoài", "đỏ", "xanh", "đen", "trắng"];
+        // let arr = [input];
+
+        if (eng.indexOf(input) !== -1) {
+            document.getElementById("result").innerHTML = (vie[eng.indexOf(input)]);
+        } else {
+            document.getElementById("result").innerHTML = "Không có từ này";
+        }
+    }
+</script>
+</html>

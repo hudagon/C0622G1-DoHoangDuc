@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết chương trình khởi tạo/nhập vào một mảng số nguyên và đảo ngược các phần tử trong mảng đó.</title>
+</head>
+<body></body>
+<script>
+    let arr = [];
+    let numberOfElements = +prompt("Input number of element you want: ");
+    // Khởi tạo mảng số nguyên -------------------------------
+    for (let i = 0; i < numberOfElements; i++) {
+        let input = +prompt("Input");
+        arr.push(input);
+    }
+    // // Đảo ngược các phần tử -------------------------------
+    arr.reverse();
+    alert(arr);
+</script>
+</html>

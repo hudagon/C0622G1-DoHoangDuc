@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết chương trình khởi tạo mảng 2 chiều, gồm một bộ các phần tử có sẵn, in ra các phần tử trong mảng.</title>
+</head>
+<body></body>
+<script>
+    let row = +prompt("Input row");
+    let col = +prompt("Input col");
+    let arrBig = [];
+    for (let i = 0; i < row; i++) {
+        arrBig[i] = [];
+        for (let j = 0; j < col; j++) {
+            arrBig[i][j] = prompt("Input cell");
+        }
+    }
+
+    for (let i = 0; i < arrBig.length; i++) {
+        for (let j = 0; j < arrBig[i].length; j++) {
+            document.write(arrBig[i][j] + " ");
+            document.write("<br>");
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết một chương trình nhập vào 2 chuỗi, sau đó kiểm tra xem hai chuỗi có giống nhau hay không.</title>
+</head>
+<body></body>
+<script>
+    let str1 = prompt("Nhập chuỗi 1 vào đây: ")
+    let str2 = prompt("Nhập chuỗi 2 vào đây: ")
+
+    if (str1.length === str2.length) {
+        for (let i = 0; i < str1.length; i++) {
+            if (str1[i] !== str2[2]) {
+                document.write("2 chuỗi khum giống nhau");
+            } else {
+                document.write("2 chuỗi giống nhau ák");
+            }
+        }
+    } else {
+        document.write("2 chuỗi khum giống nhau");
+    }
+</script>
+</html>
