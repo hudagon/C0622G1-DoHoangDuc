@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết hàm tính giai thừa của một số nguyên bất kỳ được đưa vào. Gọi hàm vừa xây dựng được.</title>
+</head>
+<body></body>
+<script>
+    let factorial = null;
+    let a = +prompt("Input the number you want to square here");
+
+    function findFactorial(a) {
+        factorial = a;
+        for (let i = 0; i < (a - 1); a--) {
+            factorial = factorial * (a - 1);
+        }
+        return factorial;
+    }
+
+    let result = findFactorial(a);
+    document.write("Your result is: " + result);
+</script>
+</html>

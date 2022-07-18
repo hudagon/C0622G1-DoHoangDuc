@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết hàm kiểm tra xem ký tự nhập vào có phải là ký tự số không.
+        Nếu là ký tự số hàm trả về true, ngược lại trả về false.</title>
+</head>
+<body></body>
+<script>
+    let number = ["0","1","2","3","4","5","6","7","8","9"];
+    let a = prompt("Input here");
+
+    function check(a) {
+        for (let i = 0; i < (a.length); i++) {
+            if (number.includes(a[i])) {
+                continue;
+            } else {
+                alert("False");
+                return;
+            }
+        }
+        document.write("True");
+    }
+
+    check(a);
+</script>
+</html>

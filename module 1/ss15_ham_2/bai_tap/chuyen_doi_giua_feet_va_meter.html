@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi giữa feet và meter</title>
+</head>
+<body></body>
+<script>
+    let outCome = prompt("what do you want transfer");
+
+    let result = transfer(outCome);
+    function transfer(outCome) {
+        if (outCome === "meter") {
+            let input = parseFloat(prompt("Input your figure here"));
+            input = input * 3.279;
+            return input + " ft";
+        } else {
+            let input = parseFloat(prompt("Input your figure here"));
+            input = 0.305 * input;
+            return input + " Cm";
+        }
+    }
+
+    document.write("your result is" + " " + result);
+</script>
+</html>

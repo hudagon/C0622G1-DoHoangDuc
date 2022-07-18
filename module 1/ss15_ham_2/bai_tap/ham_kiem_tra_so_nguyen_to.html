@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hàm kiểm tra số nguyên tố</title>
+</head>
+<body></body>
+<script>
+    function check(number) {
+        let dem = 0;
+        if (number <= 1) {
+            document.write("This is not a prime number");
+        } else {
+            for (let i = 1; i <= number  ; i++) {
+                if ((number % i) === 0) {
+                    dem++
+                }
+            }
+            if (dem === 2) {
+                document.write("This is a prime number");
+            } else {
+                document.write("This is not a prime number");
+            }
+        }
+
+    }
+    let number = +prompt("Input your number here");
+    check(number);
+</script>
+</html>

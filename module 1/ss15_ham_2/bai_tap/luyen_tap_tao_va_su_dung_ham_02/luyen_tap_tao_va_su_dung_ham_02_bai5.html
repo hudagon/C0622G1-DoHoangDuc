@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết hàm nhận vào 3 số nguyên bất kỳ, trả về số nguyên có giá trị nhỏ nhất.</title>
+</head>
+<body></body>
+<script>
+    function check(a,b,c) {
+        if (a < b) {
+            if (a < c) {
+                return a;
+            } else {
+                return c;
+            }
+        } else {
+            if (b > c) {
+                return c;
+            } else {
+                return b;
+            }
+        }
+
+    }
+    let a = +prompt("Input a here");
+    let b = +prompt("Input b here");
+    let c = +prompt("Input c here");
+    let result = check(a,b,c);
+    document.write("The lowest number is: " + result);
+</script>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết hàm truyền vào 2 số nguyên bất kì, thực hiện đổi chỗ hai số nguyên đó.</title>
+</head>
+<body></body>
+<script>
+    function change(a) {
+        let temp;
+        temp = a[0];
+        a[0] = a[1];
+        a[1] = temp;
+        return a;
+    }
+
+    let a = [];
+    for (let i = 0; i < 2; i++) {
+        let addInNumber = +prompt("Input number here");
+        a.push(addInNumber);
+    }
+    let result = change(a);
+    document.write(result);
+
+
+</script>
+</html>

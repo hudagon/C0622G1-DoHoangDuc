@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết hàm truyền vào mảng số nguyên bất kỳ, sau đó đảo ngược mảng số nguyên đó.</title>
+</head>
+<body></body>
+<script>
+    function change(arr) {
+        let temp;
+        if (arr.length % 2 === 0) {
+            for (let i = 0; i < (arr.length / 2); i++) {
+                temp = arr[i];
+                arr[i] = arr[arr.length - (i+1)];
+                arr[arr.length - (i+1)] = temp;
+            }
+        } else {
+            for (let i = 0; i < ((arr.length - 1) / 2); i++) {
+                temp = arr[i];
+                arr[i] = arr[arr.length - (i+1)];
+                arr[arr.length - (i+1)] = temp;
+            }
+        }
+        return arr;
+    }
+    let arr = [];
+    let howMany = +prompt("How many numbers you want in the array?");
+    for (let i = 0; i < howMany; i++) {
+        let addInNumber = +prompt("Input number " + (i + 1) + " here");
+        arr.push(addInNumber);
+    }
+    let result = change(arr);
+    document.write(result);
+</script>
+</html>

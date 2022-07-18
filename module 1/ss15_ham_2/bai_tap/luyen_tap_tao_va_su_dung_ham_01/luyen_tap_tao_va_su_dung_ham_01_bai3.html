@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo hàm nhận vào hai tham số. Nếu giá trị của tham số thứ nhất lớn hơn tham số thứ hai,
+        hiển thị hộp thoại thông báo cho người dùng.
+        Nếu giá trị của tham số thứ nhất nhỏ hơn hoặc bằng tham số thứ hai, trả về tổng của hai tham số.</title>
+</head>
+<body></body>
+<script>
+    let sum = null;
+    function check(a,b) {
+        if (a > b) {
+            alert("Number a is bigger than number b");
+        } else {
+            sum = a + b;
+            alert("Total of a and b is: " + sum)
+        }
+    }
+    let a = +prompt("Input your number a here:")
+    let b = +prompt("Input your number b here:")
+    check(a,b);
+</script>
+</html>

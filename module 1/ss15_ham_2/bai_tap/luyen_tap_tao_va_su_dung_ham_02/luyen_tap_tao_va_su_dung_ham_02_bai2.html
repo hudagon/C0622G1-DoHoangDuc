@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết hàm tính diện tích, hàm tính chu vi hình tròn. Gọi hàm vừa xây dựng được</title>
+</head>
+<body></body>
+<script>
+    let pi = 3.14;
+    let radius = parseFloat(prompt("input your radius here"));
+    let areaResult;
+    let perimeterResult;
+    
+    function findArea(radius) {
+        areaResult = pi * radius * radius;
+        return areaResult;
+    }
+    function findPerimeter(radius) {
+        perimeterResult = 2 * pi * radius;
+        return perimeterResult;
+    }
+
+    let realAreaResult = findArea(radius);
+    let realPerimeterResult = findPerimeter(radius);
+
+    document.write("The area of the circle you want to know is: " + realAreaResult + "<br>");
+    document.write("The perimeter of the circle you want to know is: " + realPerimeterResult + "<br>");
+</script>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo và gọi hàm</title>
+</head>
+<body></body>
+<script>
+    function processConfirm(answer) {
+        let result = "";
+        if (answer) {
+            result = "Excellent. We'll play a nice game of chess";
+        } else {
+            result = "Maybe later then";
+        }
+        return result;
+    }
+
+    let realResult = processConfirm(confirm("Do you want to play"));
+    document.write(realResult);
+</script>
+</html>
