@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết một ứng dụng nhỏ mô phỏng câu chuyện Adam và Eva. Adam và Eva là những con người đầu tiên,
+        trong vườn địa đàng có một cây táo ra những quả táo chín mọng. Adam và Eva lấy một quả táo và ăn,
+        mỗi người ăn một miếng táo cho đến khi hết!</title>
+</head>
+<body></body>
+<script>
+    class Apple {
+        constructor(weight) {
+            this.weight = weight;
+        }
+
+        decrease() {
+            this.weight--;
+        }
+        isEmpty() {
+            if (this.weight > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        getWeight() {
+            return "Quả táo còn: " + this.weight + "<br>";
+        }
+        getWeight2() {
+            return this.weight;
+        }
+    }
+
+    class Human {
+        constructor(name, gender, weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+        }
+
+        isMale() {
+            if (this.gender === "male") {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        setGender(boolean) {
+            if (boolean) {
+                this.gender = "male";
+            } else {
+                this.gender = "female";
+            }
+        }
+        checkApple(Apple) {
+            if (Apple > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        eat() {
+            this.weight++;
+        }
+        say() {
+            return (this.getName() + " nói: " + "tôi tăng lên 1 kg và hiện giờ tôi " + this.weight + " kg" + "<br>");
+        }
+        getName() {
+            return this.name;
+        }
+        setName(name) {
+            this.name = name;
+        }
+        getWeight() {
+            return this.weight;
+        }
+        setWeight(weight) {
+            this.weight = weight;
+        }
+    }
+
+    let adam = new Human("Adam","male",70);
+    let eva = new Human("Eva","female",60);
+    let qatar = new Apple(10);
+
+    for (let i = 0; i <= qatar.getWeight2(); i = i + 0.5) {
+        document.write(adam.getName() + " Ăn táo" + "<br>");
+        adam.eat();
+        qatar.decrease()
+        document.write(qatar.getWeight());
+        document.write(adam.say());
+
+        document.write(eva.getName() + " Ăn táo" + "<br>");
+        eva.eat();
+        qatar.decrease()
+        document.write(qatar.getWeight());
+        document.write(eva.say());
+    }
+
+
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

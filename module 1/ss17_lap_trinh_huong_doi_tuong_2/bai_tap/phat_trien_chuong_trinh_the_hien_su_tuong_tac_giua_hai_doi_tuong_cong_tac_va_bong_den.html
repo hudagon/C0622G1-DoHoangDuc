@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ok</title>
+</head>
+<body></body>
+<script>
+    class Lamp {
+        constructor() {
+            this.status = false;
+        }
+
+        turnOn() {
+            this.status = true;
+        }
+        turnOff() {
+            this.status = false;
+        }
+        check() {
+            if (this.status) {
+                return document.write("Bóng đèn đang bật lần " + "<br>");
+            } else {
+                return document.write("Bóng đèn đang tắt lần " + "<br>");
+            }
+        }
+    }
+
+    class SwitchButton {
+        constructor() {
+            this.lamp = null;
+        }
+
+        connectToLamp(bongDen) {
+            this.lamp = bongDen;
+        }
+        switchOff() {
+            this.lamp.turnOff();
+            this.lamp.check();
+        }
+        switchOn() {
+            this.lamp.turnOn();
+            this.lamp.check();
+        }
+    }
+
+    let bongDen1 = new Lamp();
+    let switchButton = new SwitchButton();
+    switchButton.connectToLamp(bongDen1);
+
+
+    for (let i = 1; i <= 10; i++) {
+        switchButton.switchOn();
+        switchButton.switchOff();
+    }
+</script>
+</html>
