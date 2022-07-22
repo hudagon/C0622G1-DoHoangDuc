@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết một chương trình nhập một số từ bàn phím và in ra màn hình bằng chữ.
+        Ví dụ 1234, kết quả in ra màn hình là một hai ba bốn.</title>
+</head>
+<body></body>
+<script>
+    let arr = ["Không","Một","Hai","Ba","Bốn","Năm","Sáu","Bảy","Tám","Chín"]
+    let arr2 = ["0","1","2","3","4","5","6","7","8","9"];
+    let str = prompt("Nhập số vào đây");
+    let display = [];
+
+    for (let i = 0; i < str.length; i++) {
+        display.push(arr[arr2.indexOf(str[i])]);
+    }
+
+    alert(display.join(" "));
+</script>
+</html>

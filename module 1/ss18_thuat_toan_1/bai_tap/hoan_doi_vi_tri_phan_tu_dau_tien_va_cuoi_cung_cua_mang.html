@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết một hàm có chức năng hoán đổi phần tử đầu tiên và cuối cùng của mảng.
+        Chiều dài tối thiểu mặc định của mảng là 2. (ví dụ: [1,5,10, -2] sẽ trở thành [-2,5,10,1]).</title>
+</head>
+<body></body>
+<script>
+    let arr = [1,5,10,-2];
+
+    function swap(arrnew) {
+        let temp = null;
+        temp = arrnew[0];
+        arrnew[0] = arrnew[arrnew.length - 1];
+        arrnew[arrnew.length - 1] = temp;
+        return arrnew;
+    }
+    alert(swap(arr));
+</script>
+</html>

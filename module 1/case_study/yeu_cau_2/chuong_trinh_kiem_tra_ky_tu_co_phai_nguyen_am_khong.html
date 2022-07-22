@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body></body>
+<script>
+    let arr = ["u","e","o","a","i","U","E","O","A","I"];
+    let character = prompt("Nhập ký tự muốn kiểm tra vào đây");
+    let arr2 = [];
+
+    for (let i = 0; i < arr.length; i++) {
+        if (character === arr[i]) {
+            document.write("Ký tự này là nguyên âm");
+            arr2.push(character);
+            break;
+        }
+    }
+    if (arr2.length === 0) {
+        document.write("Ký tự này là phụ âm");
+    }
+
+</script>
+</html>

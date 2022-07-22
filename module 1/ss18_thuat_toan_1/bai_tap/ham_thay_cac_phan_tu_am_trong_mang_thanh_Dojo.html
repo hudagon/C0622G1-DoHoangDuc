@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết một hàm có chức năng thay thế các phần tử có giá trị âm trong mảng với chuỗi 'Dojo'.
+        Ví dụ nếu mảng = [-1, -3,2], hàm của bạn sẽ trả lại [ 'Dojo', 'Dojo', 2].</title>
+</head>
+<body></body>
+<script>
+    let arr = [-1,-3,2];
+
+    function numToStr(arr) {
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] < 0) {
+                arr[i] = "Dojo";
+            }
+        }
+        return arr;
+    }
+
+    alert(numToStr(arr));
+</script>
+</html>
