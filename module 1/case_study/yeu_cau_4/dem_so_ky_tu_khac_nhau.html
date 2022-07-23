@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cho xâu kí tự. Hãy đếm số lượng kí tự khác nhau trong xâu đó
+        Ví dụ: s = "cabca", thì kết quả differentSymbolsNaive(s) = 3.
+        ⇨	Có 3 kí tự khác nhau là a, b và c.
+    </title>
+</head>
+<body></body>
+<script>
+    let nhapVao = prompt("Nhập xâu vào đây đi");
+
+    function demSoKyTuKhacNhau(nhapVao) {
+        let arr = [];
+        for (let i = 0; i < nhapVao.length; i++) {
+            if (!arr.includes(nhapVao[i])) {
+                arr.push(nhapVao[i]);
+            }
+        }
+        return arr.length;
+    }
+
+    document.write("Số ký tự khác nhau trong xâu là: " + demSoKyTuKhacNhau(nhapVao));
+</script>
+</html>

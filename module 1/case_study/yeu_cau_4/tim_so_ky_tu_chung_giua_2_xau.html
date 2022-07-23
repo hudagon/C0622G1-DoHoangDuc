@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cho hai xâu kí tự, tìm số lượng kí tự chung giữa chúng.
+        Ví dụ: s1 = "aabcc" và s2 = "adcaa", thì kết quả commonCharacterCount(s1, s2) = 3.
+        ⇨	2 xâu s1 và s2 có 3 kí tự chung: 2 kí tự 'a' và 1 kí tự 'c'.
+    </title>
+</head>
+<body></body>
+<script>
+    let s1 = "aabccey";
+    let s2 = "adcaabbaxyze";
+
+
+    function commonCharacterCount(s1,s2) {
+        let arr = [];
+        let arrBig = [];
+        let arrSmall = [];
+        let arr1 = turnStringIntoArray(s1);
+        let arr2 = turnStringIntoArray(s2);
+
+        function turnStringIntoArray(str) {
+            let arr = [];
+            for (let i = 0; i < str.length; i++) {
+                arr.push(str[i]);
+            }
+            return arr;
+        }
+
+        if (arr1.length > arr2.length) {
+            arrBig = arr1;
+            arrSmall = arr2;
+        } else {
+            arrBig = arr2;
+            arrSmall = arr1;
+        }
+
+        for (let i = 0; i < arrBig.length; i++) {
+            for (let j = 0; j < arrSmall.length; j++) {
+                if (arrBig[i] === arrSmall[j]) {
+                    arr.push(arrBig[i]);
+                    arrBig.splice(i,1);
+                    arrSmall.splice(j,1);
+                    j--;
+                }
+            }
+        }
+        return arr.length;
+    }
+
+    let result = commonCharacterCount(s1,s2);
+    document.write("Số ký tự giống nhau là: " + result);
+</script>
+</html>

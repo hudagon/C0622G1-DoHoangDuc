@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết một hàm chuẩn hóa xâu ký tự: biến đổi xâu ký tự thành xâu sao cho trong xâu không có 2 dấu cách
+        liền nhau và bắt đầu mỗi từ phải in hoa. Ví dụ tRuong    TaN   HAI => Truong Tan Hai.
+        Và một hàm tìm từ dài nhất trong 1 xâu ký tự. Hàm main sử dụng các hàm này để nhập xâu ký tự từ bàn
+        phím, in ra xâu trước và sau khi chuẩn hóa, 1 từ dài nhất trong xâu đó.
+    </title>
+</head>
+<body></body>
+<script>
+    let xauKyTu = prompt("Nhập xâu ký tự vô đây");
+
+    function chuanHoa(xauKyTu) {
+        let mangKyTuChuan = [];
+        let xauKyTuBinhTinh = xauKyTu.toLowerCase();
+        let mangKyTu = [];
+        for (let i = 0; i < xauKyTuBinhTinh.length; i++) {
+            mangKyTu.push(xauKyTuBinhTinh[i]);
+        }
+
+        for (let i = 0; i < mangKyTu.length; i++) {
+            if (mangKyTu[i] === " ") {
+                while (mangKyTu[i+1] === " ") {
+                    mangKyTu.splice(mangKyTu[i+1],1);
+                }
+                mangKyTuChuan.push(mangKyTu[i]);
+            } else {
+                mangKyTuChuan.push(mangKyTu[i]);
+            }
+        }
+        if (mangKyTuChuan[0] !== " ") {
+            mangKyTuChuan[0] = mangKyTuChuan[0].toUpperCase();
+        }
+        for (let i = 1; i <= mangKyTuChuan.length; i++) {
+            if (mangKyTuChuan[i - 1] === " ") {
+                mangKyTuChuan[i] = mangKyTuChuan[i].toUpperCase();
+            }
+        }
+        let ketQua1 = mangKyTuChuan.join("");
+        return ketQua1;
+    }
+    function timTuDaiNhat(ketQua1) {
+        let ketQua2 = ketQua1.split(" ");
+        let maxLength = 0;
+        let max = ketQua2[0];
+        for (let i = 0; i < ketQua2.length; i++) {
+            if (ketQua2[i].length > maxLength) {
+                maxLength = ketQua2[i].length;
+                max = ketQua2[i];
+            }
+        }
+        return max;
+    }
+    function hamTo(xauKyTu) {
+        document.write("Từ trước khi chuẩn hóa :" + xauKyTu + "<br>");
+        document.write("Từ sau khi chuẩn hóa :" + chuanHoa(xauKyTu) + "<br>");
+        document.write("Từ dài nhất là: " + timTuDaiNhat(chuanHoa(xauKyTu)));
+    }
+
+    hamTo(xauKyTu);
+
+</script>
+</html>
