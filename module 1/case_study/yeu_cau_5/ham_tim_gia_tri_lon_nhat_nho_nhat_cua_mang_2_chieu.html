@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết hàm tìm giá trị lớn nhất, nhỏ nhất trong mảng 2 chiều</title>
+</head>
+<body></body>
+<script>
+    let arr = [
+        [1,2,3],
+        [11,12,32,101],
+        [14,23]
+    ];
+
+
+    function timMinMax(arr) {
+        let arr2 = [];
+
+        for (let i = 0; i < arr.length; i++) {
+            let min = arr[i][0];
+            let max = arr[i][0];
+            for (let j = 0; j < arr[i].length; j++) {
+                if (min > arr[i][j]) {
+                    min = arr[i][j];
+                }
+                if (max < arr[i][j]) {
+                    max = arr[i][j];
+                }
+            }
+            arr2.push(min);
+            arr2.push(max);
+        }
+
+        let miN = arr2[0];
+        let maX = arr2[0];
+
+        for (let i = 0; i < 6; i++) {
+            if (miN > arr2[i]) {
+                miN = arr2[i];
+            }
+        }
+        for (let i = 0; i < 6; i++) {
+            if (maX < arr2[i]) {
+                maX = arr2[i];
+            }
+        }
+
+        return "Giá trị lớn nhất của mảng là: " + maX + "<br>" + "Giá trị nhỏ nhất của mảng là: " + miN;
+    }
+
+    document.write(timMinMax(arr));
+
+</script>
+</html>

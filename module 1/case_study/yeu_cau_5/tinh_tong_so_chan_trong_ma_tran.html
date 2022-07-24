@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết hàm tính tổng các số chẵn trong ma trận có kích thước m*n. Với m, n là các số nhập từ bàn phím.</title>
+</head>
+<body></body>
+<script>
+    let row = +prompt("Insert row...");
+    let column = +prompt("Insert column...");
+
+    function tinhTongCacSoChan(row,column) {
+        let arr = [];
+        let sum = 0;
+
+        for (let i = 0; i < row; i++) {
+            arr.push([]);
+            for (let j = 0; j < column; j++) {
+                arr[i][j] = +prompt("Insert the " + (i + j) + " number");
+                if (arr[i][j] % 2 === 0) {
+                    sum = sum + arr[i][j];
+                }
+            }
+        }
+        return sum;
+    }
+
+    alert("Tổng các số chẵn là: " + tinhTongCacSoChan(row,column));
+
+</script>
+</html>
