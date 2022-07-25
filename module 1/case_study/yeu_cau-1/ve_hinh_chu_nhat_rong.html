@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vẽ hình chữ nhật rỗng chiều dài n và chiều rộng m </title>
+</head>
+<body></body>
+<script>
+    function veHinhChuNhatRong() {
+        let chieuDai = +prompt("Nhập chiều dài vào đây: ");
+        let chieuRong = +prompt("Nhập chiều rộng vào đây: ");
+
+        for (let i = 1; i <= chieuRong; i++) {
+            if (i === 1 || i === chieuRong) {
+                for (let j = 0; j < chieuDai; j++) {
+                    document.write("*");
+                }
+                document.write("<br>");
+            } else {
+                document.write("*");
+                for (let j = 2; j < chieuDai; j++) {
+                    document.write("&nbsp&nbsp");
+                }
+                document.write("*");
+                document.write("<br>");
+            }
+        }
+    }
+
+    veHinhChuNhatRong()
+</script>
+</html>

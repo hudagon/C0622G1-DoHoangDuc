@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vẽ tam giác cân đặc</title>
+</head>
+<body></body>
+<script>
+
+    function veTamGiacCan() {
+        let chieuCao = +prompt("Nhập chiều cao vào đây ");
+        let sum = 1;
+
+        for (let i = 1; i <= chieuCao; i++) {
+            for (let j = chieuCao; j > i; j--) {
+                document.write("&nbsp&nbsp");
+            }
+            for (let j = 0; j < sum; j++) {
+                document.write("*");
+            }
+            sum = sum + 2;
+            document.write("<br>");
+        }
+    }
+
+    veTamGiacCan();
+</script>
+</html>

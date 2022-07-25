@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vẽ tam giác cân rỗng</title>
+</head>
+<body></body>
+<script>
+    function veTamGiacCanRong() {
+        let chieuCao = +prompt("Nhập chiều cao vào đây ") - 1;
+        let sum = 1;
+
+        for (let i = 1; i <= chieuCao; i++) {
+            document.write("&nbsp&nbsp");
+            for (let j = chieuCao; j > i; j--) {
+                document.write("&nbsp&nbsp");
+            }
+            for (let j = 1; j <= sum; j++) {
+                if (j === 1 || j === sum) {
+                    document.write("*");
+                } else {
+                    document.write("&nbsp&nbsp");
+                }
+            }
+            sum = sum + 2;
+            document.write("<br>");
+        }
+        for (let i = 0; i < sum; i++) {
+            document.write("*");
+        }
+    }
+
+    veTamGiacCanRong();
+</script>
+</html>
