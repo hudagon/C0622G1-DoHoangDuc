@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý sản phẩm</title>
+</head>
+<body>
+<input type="text" placeholder="Nhập tên sản phẩm" id="nhapVao">
+<button onclick="themSanPham()">Add Product</button>
+<span id="hienThi"></span>
+<p id="display"></p>
+</body>
+<script>
+    let arr = [];
+
+    hienThi(arr);
+
+    function hienThi(arr) {
+        let tableString ='<table border="1">'+
+            "<tr>\n" +
+            "        <th>STT</th>\n" +
+            "        <th>NAME</th>\n" +
+            "        <th>EDIT</th>\n" +
+            "        <th>DELETE</th>\n" +
+            "    </tr>";
+
+        for (let i = 0; i < arr.length; i++) {
+            tableString += "<tr>\n" +
+                "<td>" + (i+1) + "</td>\n" +
+                "<td>" + arr[i] + "</td>\n" +
+                "<td>" + "<button onclick='chinhSua("+ i +")'>" + "Edit" + "</button>" + "</td>\n" +
+                "<td>" + "<button onclick='xoa("+ i +")'>" + "Delete" + "</button>" + "</td>\n" +
+                "\n" + "</tr>";
+        }
+        tableString += '</table>';
+        document.getElementById("display").innerHTML = tableString;
+        document.getElementById("hienThi").innerHTML = "Số lượng là: " + arr.length;
+    }
+    function themSanPham() {
+        arr.push(document.getElementById("nhapVao").value);
+        hienThi(arr);
+    }
+    function chinhSua(index) {
+        let suaDoi = prompt("Bạn muốn sửa tên nó thành gì?");
+        if (suaDoi !== null) {
+            arr[index] = suaDoi;
+        } else {
+            alert("Phải nhập dữ liệu chứ bro?")
+        }
+        hienThi(arr);
+    }
+    function xoa(index) {
+        arr.splice(index,1);
+        hienThi(arr);
+    }
+</script>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng ứng dụng cho phép khách hàng thực hiện mua vé số tương tự VIETLOT,
+        mỗi vé sẽ bao gồm 6 số nguyên dương, có thể mua tối đa 4 vé.
+        Viết chương trình cho phép người dùng mua vé số. Sẽ có hai tuỳ chọn cho khách hàng thực hiện chọn số trên mỗi
+        vé.
+        - Nếu khách hàng chọn tự nhập thì cứ mỗi ô tròn KH click vào sẽ hiển thị 1 bảng chọn số từ 0-99
+        - Nếu khách hàng chọn tuỳ chọn random thì hệ thống sẽ tự động tạo ra 6 số tương ứng 6 ô tròn
+        Sau khi khách hàng hoàn tất việc chọn số trên vé thì nhấn hoàn tất để thực hiện quay số
+        Hệ thống sẽ so khớp dãy số trên vé với dãy số của hệ thống xem KH có trúng thưởng không
+        Sẽ có 3 giải bao gồm:
+        Giải nhất: 6 số trên vé của KH trùng khớp hoàn toàn với 6 số của hệ thống
+        Giải nhì: 5 số cuối của vé KH trùng khớp với 5 số cuối của hệ thống
+        Giải khuyến khích: 3 số cuối của vé KH trùng khớp với 3 số cuối của hệ thống
+        Khi KH may mắn trúng giải nào thì hệ thống sẽ hiển thị kết quả là số tiền sẽ nhận được tương ứng (HV tự defined)
+        Khi KH không trúng giải nào thì hệ thống hiển thị thông báo “Chúc bạn may mắn lần sau”
+    </title>
+</head>
+<body>
+<h1>Xổ Số CodeGym</h1>
+<span id="hienThi"></span>
+<p>
+    <button onclick="muaVe()">Mua vé</button>
+    <button onclick="xemKetQua()">Xem kết quả</button>
+</p>
+</body>
+<script>
+    let giaiThuong = [11, 22, 33, 44, 55, 66];
+    let veSo = [
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0]];
+
+    function hienThi() {
+        let giaTriVeSo = "<table border='1'>";
+
+        for (let i = 0; i < 4; i++) {
+            giaTriVeSo += "<tr>" + "<td>" + "Vé số " + (i + 1) + ":" + "</td>";
+            for (let j = 0; j < 6; j++) {
+                giaTriVeSo += "<td onclick='chonSobangCom(" + i + "," + j + ")'>" + veSo[i][j] + "</td>";
+            }
+        }
+        giaTriVeSo += "</table>";
+        document.getElementById("hienThi").innerHTML = giaTriVeSo;
+    }
+
+    hienThi();
+
+    function muaVe() {
+        let luaChon = +prompt("Bạn có 2 lựa chọn:" + "\n" + "1. Bạn muốn tự chọn số.\n" + "2. Hệ thống random.");
+
+        if (luaChon === 1) {
+            alert("Xin mời bạn điền vô từng ô tương ứng số bạn chọn");
+        } else {
+            alert("Hệ thống sẽ chọn số ngẫu nhiên cho bạn");
+            chonSoNgauNhien();
+        }
+    }
+
+    function chonSoNgauNhien() {
+        for (let i = 0; i < 4; i++) {
+            for (let j = 0; j < 6; j++) {
+                veSo[i][j] = Math.floor(Math.random() * 100);
+            }
+        }
+        hienThi();
+    }
+
+    function chonSobangCom(i, j) {
+        let soKhachHangChon = +prompt("Nhập số vào đây từ 0 đến 99");
+        veSo[i][j] = soKhachHangChon;
+        hienThi();
+    }
+
+    function xemKetQua() {
+        let giaiNhat = 0;
+        let giaiNhi = 0;
+        let giaiKhuyenKhich = 0;
+        let tongGiaiThuong = 0;
+        for (let i = 0; i < 4; i++) {
+            if (veSo[i][0] === giaiThuong[0] && veSo[i][1] === giaiThuong[1]
+                && veSo[i][2] === giaiThuong[2] && veSo[i][3] === giaiThuong[3]
+                && veSo[i][4] === giaiThuong[4] && veSo[i][5] === giaiThuong[5]) {
+                giaiNhat++;
+            } else if (veSo[i][1] === giaiThuong[1] && veSo[i][2] === giaiThuong[2]
+                && veSo[i][3] === giaiThuong[3] && veSo[i][4] === giaiThuong[4]
+                && veSo[i][5] === giaiThuong[5]) {
+                giaiNhi++;
+            } else if (veSo[i][3] === giaiThuong[3] && veSo[i][4] === giaiThuong[4]
+                && veSo[i][5] === giaiThuong[5]) {
+                giaiKhuyenKhich++;
+            }
+        }
+        tongGiaiThuong = giaiNhat*10000 + giaiNhi*5000 + giaiKhuyenKhich*2500;
+        if (tongGiaiThuong === 0) {
+            alert("Chúc bạn may mắn lần sau");
+        }
+        alert("Xin chúc mừng bạn đạt tổng giải thưởng bằng: " + tongGiaiThuong + " VNĐ");
+    }
+
+</script>
+</html>
