@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nhập từ bàn phím mảng số nguyên gồm n phần tử (n<=50). Hiển thị ra màn hình danh sách các phần tử
+    của mảng, hiển thị giá trị trung bình của các phần tử chia hết cho 5 ở vị trí chia hết cho 3(phần tử có index
+    chia hết cho 3</title>
+</head>
+<body></body>
+<script>
+    let soLuongPhanTu = +prompt("Nhập vào đây số lượng phần tử mà bạn muốn");
+    let arr = []
+    let arr2 = [];
+
+
+    if (soLuongPhanTu > 0 && soLuongPhanTu <= 50) {
+        for (let i = 0; i < soLuongPhanTu; i++) {
+            arr.push(+prompt("Xin mời nhập phần tử thứ " + i));
+        }
+    } else {
+        alert("Không được phép nhập quá 50 phần tử vào mảng");
+    }
+    document.write(arr);
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr.indexOf(arr[i]) % 3 === 0 && arr[i] % 5 === 0) {
+            arr2.push(arr[i]);
+        }
+    }
+    let sum = 0;
+    for (let i = 0; i < arr2.length; i++) {
+        sum = sum + arr2[i];
+    }
+    let ketQua = sum / arr2.length;
+
+    document.write("<br>" + "Kết quả của bài toán là: " + ketQua);
+</script>
+</html>

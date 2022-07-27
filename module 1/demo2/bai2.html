@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết hàm có tham số truyền vào là một chuỗi các ký tự.Hàm thực hiện đếm số
+        lượng ký tự in Hoa và số ký tự in thường
+        Ví dụ: HellOCodeym =>; kết quả trả về : [3,8]=>; 3: ký tự in hoa, 8 ký tự
+        thường
+        Nếu là chuỗi rỗng “” =>; thì trả về một mảng [0,0]</title>
+</head>
+<body></body>
+<script>
+    let xau = prompt("Xin mời nhập xâu ký tự");
+
+    function demSoKyTu(xau) {
+        let inHoa = ["A", "B", "C", "D", "E", "F", "G", "H", "I" ,"J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+        let mang = [];
+        let mang1 = [];
+        let dem1 = 0;
+        let dem2 = 0;
+
+        for (let i = 0; i < xau.length; i++) {
+            mang.push(xau[i]);
+        }
+
+        for (let i = 0; i < mang.length; i++) {
+            if (inHoa.includes(mang[i])) {
+                dem1++;
+            } else if (mang[i] !== " ") {
+                dem2++;
+            }
+        }
+
+        mang1.push(dem1);
+        mang1.push(dem2);
+
+        return mang1;
+    }
+    let mangMoi = demSoKyTu(xau);
+    document.write("Số ký tự in hoa là: " + mangMoi[0] + "<br>" + "Số ký tự in thường là: " + mangMoi[1]);
+
+</script>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>danh sach xe moi</title>
+</head>
+<body>
+<h1>Danh Sách Quản Lý Xe Cộ</h1>
+<span id="hienThi"></span>
+<p><button onclick="themMoi()">Thêm Mới</button>
+   <button onclick="xoa()">Xóa</button></p>
+</body>
+<script>
+    class Xe {
+        constructor(bienKiemSoat, chuSoHuu, hangXe) {
+            this.bienKiemSoat = bienKiemSoat;
+            this.chuSoHuu = chuSoHuu;
+            this.hangXe = hangXe;
+        }
+
+        setBienKiemSoat(bienSoMoi) {
+            this.bienKiemSoat =  bienSoMoi;
+        }
+        setChuSoHuu(chuSoHuuMoi) {
+            this.chuSoHuu = chuSoHuuMoi;
+        }
+        setHangXe(hangXeMoi) {
+            this.hangXe = hangXeMoi;
+        }
+
+        getBienKiemSoat() {
+            return this.bienKiemSoat;
+        }
+        getChuSoHuu() {
+            return this.chuSoHuu;
+        }
+        getHangXe() {
+            return this.hangXe;
+        }
+    }
+
+    let xe1 = new Xe(5336,"Đức","Suzuki");
+    let xe2 = new Xe(7789,"Ok","Honda");
+    let xe3 = new Xe(1189,"Chưa","Yamaha");
+    let arr = [xe1,xe2,xe3];
+
+    hienThi();
+    function hienThi() {
+        let tableString = "<table border=\"1\">\n" +
+            "        <tr>\n" +
+            "            <th>STT</th>\n" +
+            "            <th>Biển kiếm soát</th>\n" +
+            "            <th>Chủ sở hữu</th>\n" +
+            "            <th>Hãng xe</th>\n" +
+            "        </tr>\n";
+
+        for (let i = 0; i < arr.length ; i++) {
+            tableString += "<tr>\n" +
+                "            <td>"+(i+1)+"</td>\n" +
+                "            <td onclick='editBienKiemSoat("+i+")'>"+arr[i].getBienKiemSoat()+"</td>\n" +
+                "            <td onclick='editChuSoHuu("+i+")'>"+arr[i].getChuSoHuu()+"</td>\n" +
+                "            <td onclick='editHangXe("+i+")'>"+arr[i].getHangXe()+"</td>\n" +
+                "        </tr>"
+        }
+        tableString += "</table>";
+        document.getElementById("hienThi").innerHTML = tableString;
+    }
+
+    function editBienKiemSoat(i) {
+        arr[i].setBienKiemSoat(prompt("Bạn muốn sửa lại ra sao"));
+        hienThi();
+    }
+    function editChuSoHuu(i) {
+        arr[i].setChuSoHuu(prompt("Bạn muốn sửa lại ra sao"));
+        hienThi()
+    }
+    function editHangXe(i) {
+        arr[i].setHangXe(prompt("BaBạn muốn sửa lại ra sao"));
+        hienThi();
+    }
+
+    function themMoi() {
+        let bienSoXe1 = prompt("Nhập biển số xe mới bạn muốn thêm");
+        let chuSoHuu1 = prompt("Nhập chủ sở hữu mới bạn muốn thêm");
+        let hangXe1 = prompt("Nhập hãng xe mới mà bạn muốn thêm");
+        arr.push(new Xe(bienSoXe1,chuSoHuu1,hangXe1));
+        hienThi();
+    }
+    function xoa() {
+        let chacChanChua = confirm("Bạn thật hay giỡn?");
+
+        if (chacChanChua) {
+            let viTri = +prompt("Bạn muốn xóa vị trí thứ mấy");
+            arr.splice((viTri - 1),1);
+        }
+        hienThi();
+    }
+
+</script>
+</html>

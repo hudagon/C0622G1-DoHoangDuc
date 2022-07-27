@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết 1 hàm nhận vào 1 số nguyên bất kì. Hiển thị
+        các số KHÔNG phải số nguyên tố từ 0 đến số đấy</title>
+</head>
+<body></body>
+<script>
+    let soNguyen = +prompt("Nhập số nguyên bất kỳ vào đây đi:");
+    
+    function hienThiKhongPhaiSoNguyenTo(soNguyen) {
+        let arr = [];
+
+        for (let i = 2; i <= soNguyen ; i++) {
+            let dem = 0;
+            for (let j = 2; j < i; j++) {
+                if (i % j === 0) {
+                    dem++;
+                }
+            }
+            if (dem !== 0) {
+                arr.push(i);
+            }
+        }
+        return arr;
+    }
+    
+    alert(hienThiKhongPhaiSoNguyenTo(soNguyen));
+</script>
+</html>

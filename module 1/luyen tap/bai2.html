@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết 1 hàm nhận vào 1 mảng các số nguyên.
+        Đếm số lần xuất hiện của các phần tử trong mảng
+        đó. Ví dụ:
+        [ 1,2,3,3,2,4] => 1 : 1 lần , 2 : 2 lần, 3: 2 lần, 4: 1
+        lần.</title>
+</head>
+<body></body>
+<script>
+    let arr = [1,1,2,2,3,4,2,4,5,6,7];
+
+    function demSoLan(arr) {
+        let arr2 = [];
+        for (let i = 0; i < arr.length; i++) {
+            let dem = 0;
+            for (let j = i + 1 ; j < arr.length; j++) {
+                if (arr[j] === arr[i]) {
+                    arr.splice(j,1);
+                    dem++;
+                    j--;
+                }
+            }
+            arr2.push("Sô ́" + arr[i] + " xuất hiện " + (dem + 1) + " lần" + "\n");
+        }
+        return arr2;
+    }
+
+    document.write(demSoLan(arr));
+</script>
+</html>

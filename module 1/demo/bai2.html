@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ok</title>
+</head>
+<body></body>
+<script>
+
+    function chuyenHoaVietTat() {
+        let arr = '';
+        let arr2 = [];
+        let dem = 0;
+        arr2.push(arr[0]);
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === " ") {
+                arr2.push(arr[i+1]);
+                dem++;
+            }
+        }
+        if (dem === 0) {
+            alert("Chuỗi chỉ có 1 từ nên không cần viết hoa");
+        }
+        let a = arr2.join("");
+        b = a.toUpperCase();
+        return b;
+    }
+    alert(chuyenHoaVietTat());
+</script>
+</html>

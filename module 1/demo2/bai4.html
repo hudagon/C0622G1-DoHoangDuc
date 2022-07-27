@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo một lớp Máy tính có:
+        - Thuộc tính:
+        + Mã máy (string)
+        + Tên máy(string)
+        + Tên Hãng sản xuất (string)
+        + Giá bán (number).
+        - Các phương thức getter và setter cho các thuộc tính
+        - Phương thức toString() : phương thức lấy các thông tin của đối tượng.
+        -Yêu cầu: Viết chương trình quản lý Máy tính với các chức năng sau;
+        + Thêm mới 1 máy tính
+        + Hiển thị được danh sách máy tính</title>
+</head>
+<body>
+<h1>Quản Lý Máy Tính</h1>
+<p id="hienThi"></p>
+<p><button onclick="themMoi()">Thêm Mới</button></p>
+</body>
+<script>
+    class MayTinh {
+        constructor(maMay,tenMay,tenHangSanXuat,giaBan) {
+            this.maMay = maMay;
+            this.tenMay = tenMay;
+            this.tenHangSanXuat = tenHangSanXuat;
+            this.giaBan = giaBan;
+        }
+
+        setMaMay(maMay) {
+            this.maMay = maMay;
+        }
+        getMaMay() {
+            return this.maMay;
+        }
+        setTenMay(tenMay) {
+            this.tenMay = tenMay;
+        }
+        getTenMay() {
+            return this.tenMay;
+        }
+        setTenHangSanXuat(tenHangSanXuat) {
+            this.tenHangSanXuat = tenHangSanXuat;
+        }
+        getTenHangSanXuat() {
+            return this.tenHangSanXuat;
+        }
+        setGiaBan(giaBan) {
+            this.giaBan = giaBan;
+        }
+        getGiaBan(giaBan) {
+            return this.giaBan;
+        }
+
+        toString() {
+            document.write("Thông tin của đối tượng là: " + this.maMay + "," + this.tenMay + "," + this.tenHangSanXuat + "," + this.giaBan);
+        }
+    }
+
+    let maytinh1 = new MayTinh("abc","delta1","dell",10000);
+    let maytinh2 = new MayTinh("xyz","delta2","apple",15000);
+    let maytinh3 = new MayTinh("ijk","delta3","hp",20000);
+    let mangQuanLy = [maytinh1,maytinh2,maytinh3];
+
+    function hienThi() {
+        let bangHienThi = "<table border=\"1\">\n" +
+            "    <tr>\n" +
+            "        <th>Số thứ tự</th>\n" +
+            "        <th>Mã máy</th>\n" +
+            "        <th>Tên máy</th>\n" +
+            "        <th>Tên hãng sản xuất</th>\n" +
+            "        <th>Giá bán</th>\n" +
+            "    </tr>";
+
+        for (let i = 0; i < mangQuanLy.length; i++) {
+            bangHienThi += "<tr>\n" +
+                "        <td>"+(i+1)+"</td>\n" +
+                "        <td>"+mangQuanLy[i].getMaMay()+"</td>\n" +
+                "        <td>"+mangQuanLy[i].getTenMay()+"</td>\n" +
+                "        <td>"+mangQuanLy[i].getTenHangSanXuat()+"</td>\n" +
+                "        <td>"+mangQuanLy[i].getGiaBan()+"</td>\n" +
+                "    </tr>";
+        }
+        bangHienThi += "</table>";
+        document.getElementById("hienThi").innerHTML = bangHienThi;
+    }
+    function themMoi() {
+        let tenMayMoi = prompt("Nhập tên máy mới bạn muốn thêm");
+        let maMayMoi = prompt("Nhập mã máy mới bạn muốn thêm");
+        let tenHangSanXuatMoi = prompt("Nhập hãng sản xuất mới");
+        let giaBanMoi = prompt("Nhập giá bán mới bạn muốn thêm");
+        mangQuanLy.push(new MayTinh(maMayMoi,tenMayMoi,tenHangSanXuatMoi,giaBanMoi));
+        hienThi();
+    }
+    hienThi()
+</script>
+</html>
