@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 2</title>
+</head>
+<body></body>
+<script>
+    let xau = prompt("Xin mời nhập vào ngày tháng năm theo định dạng dd/MM/yyyy");
+
+    function kiemTra(xau) {
+        let mang1 = xau.split("");
+        if (mang1[2] !== "/" && mang1[5] !== "/") {
+             return false;
+        } else {
+            return true;
+        }
+    }
+    if(!kiemTra(xau)) {
+        alert("Yêu cầu nhập đúng định dạng");
+    } else {
+        kiemTraNamNhuan(xau);
+    }
+
+    function kiemTraNamNhuan(xau) {
+        let mang2 = xau.split("");
+        let mang3 = [];
+        for (let i = mang2.length; i >= (mang2.length - 4); i--) {
+            mang3.push(mang2[i]);
+        }
+        mang3 = mang3.reverse();
+        mang3 = mang3.join("");
+
+        if (mang3 % 4 == 0) {
+            if (mang3 % 100 == 0) {
+                if (mang3 % 400 == 0) {
+                    alert(mang3 + " là năm nhuận");
+                } else {
+                    alert(mang3 + " không là năm nhuận");
+                }
+            } else {
+                alert(mang3 + " là năm nhuân");
+            }
+        } else {
+            alert(mang3 + " không là năm nhuận");
+        }
+    }
+</script>
+</html>

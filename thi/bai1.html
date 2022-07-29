@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body></body>
+<script>
+    let a = [];
+    let b = [];
+
+    do {
+        n = +prompt("Xin mời nhập số lượng phần tử có trong mảng mà bạn muốn");
+        if (n <= 50 && n > 0) {
+            for (let i = 0; i < n; i++) {
+                a.push(+prompt("Nhập phần tử thứ: " + i + " vào đây"));
+            }
+            document.write("Mảng a là: " + a);
+            kiemTra();
+        } else {
+            alert("Số lượng phần tử không thỏa mãn, xin mời nhập lại")
+        }
+    } while (n > 50 && n < 1)
+
+
+    function kiemTra() {
+        for (let i = 1; i < (a.length - 1) ; i++) {
+            if (a[i-1] < a[i] && a[i+1] < a[i]) {
+                b.push("true");
+            } else if (a[i-1] > a[i] && a[i+1] > a[i]) {
+                b.push("true");
+            } else {
+                b.push("false");
+            }
+        }
+
+        if (b.includes("false")) {
+            document.write("<br>" + "false");
+        } else {
+            document.write("<br>" + "true");
+        }
+    }
+
+</script>
+</html>

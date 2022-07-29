@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 3</title>
+</head>
+<body>
+<h1>Quản lý xe máy bãi đỗ xe Codegym</h1>
+<span id="hienThi"></span>
+<p><button onclick="themMoi()">Thêm Mới</button>
+    <button onclick="xoa()">Xóa</button></p>
+</body>
+<script>
+    class Xe {
+        constructor(bienSoXe, hoVaTen, chungMinhNhanDan, hangXeMay, phiGuiXeDaDong) {
+            this.bienSoXe = bienSoXe;
+            this.hoVaTen = hoVaTen;
+            this.chungMinhNhanDan = chungMinhNhanDan;
+            this.hangXeMay = hangXeMay;
+            this.phiGuiXeDaDong  = phiGuiXeDaDong;
+        }
+
+        getBienSoXe() {
+            return this.bienSoXe;
+        }
+        getHoVaTen() {
+            return this.hoVaTen;
+        }
+        getChungMinhNhanDan() {
+            return this.chungMinhNhanDan;
+        }
+        getHangXeMay() {
+            return this.hangXeMay;
+        }
+        getPhiGuiXeDaDong() {
+            return this.phiGuiXeDaDong;
+        }
+    }
+
+    let xe1 = new Xe(5336,"Đức",123123123123,"Suzuki",50000);
+    let xe2 = new Xe(5336,"Đức",123123123123,"Suzuki",50000);
+    let xe3 = new Xe(5336,"Đức",123123123123,"Suzuki",50000);
+    let danhSach = [xe1,xe2,xe3];
+
+    hienThi();
+    function hienThi() {
+        let bangHienThi = "<table border=\"1\">\n" +
+            "        <tr>\n" +
+            "            <th>STT</th>\n" +
+            "            <th>Biển số xe</th>\n" +
+            "            <th>Họ và tên</th>\n" +
+            "            <th>Chứng minh nhân dân</th>\n" +
+            "            <th>Hãng xe</th>\n" +
+            "            <th>Phí gửi xe đã đóng</th>\n" +
+            "        </tr>\n";
+
+        for (let i = 0; i < danhSach.length ; i++) {
+            bangHienThi += "<tr>\n" +
+                "            <td>"+(i+1)+"</td>\n" +
+                "            <td>"+danhSach[i].getBienSoXe()+"</td>\n" +
+                "            <td>"+danhSach[i].getHoVaTen()+"</td>\n" +
+                "            <td>"+danhSach[i].getChungMinhNhanDan()+"</td>\n" +
+                "            <td>"+danhSach[i].getHangXeMay()+"</td>\n" +
+                "            <td>"+danhSach[i].getPhiGuiXeDaDong()+"</td>\n" +
+                "        </tr>"
+        }
+        bangHienThi += "</table>";
+        document.getElementById("hienThi").innerHTML = bangHienThi;
+    }
+
+    function themMoi() {
+        let bienSoMoi = prompt("Nhập biển số xe mới bạn muốn thêm");
+        if (bienSoMoi.length > 20) {
+            alert("Vượt quá độ dài, xin mời nhập lại");
+            bienSoMoi = prompt("Nhập biển số xe mới bạn muốn thêm");
+        }
+        let hoVaTenMoi = prompt("Nhập chủ sở hữu mới bạn muốn thêm");
+        if (hoVaTenMoi.length > 40) {
+            alert("Vượt quá độ dài, xin mời nhập lại");
+            hoVaTenMoi = prompt("Nhập biển số xe mới bạn muốn thêm");
+        }
+        let chungMinhNhanDanMoi = prompt("Nhập chứng minh nhân dân của chủ sở hữu");
+        for (let i = 0; i < chungMinhNhanDanMoi.length; i++) {
+            if (isNaN(chungMinhNhanDanMoi[i])) {
+                alert("Nhập sai chứng minh, xin mời nhập lại");
+                chungMinhNhanDanMoi = prompt("Nhập chứng minh nhân dân của chủ sở hữu");
+            }
+        }
+        let hangXeMoi = prompt("Lưu ý: Nhập đúng chữ hiển thị trên màn hình\n" + "1. Honda\n" + "2. Yamaha\n" + "3. Sym\n" + "4. Piaggio\n" + "5. Suzuki\n" + "6. Ducati\n" + "7. Khác\n")
+        if (hangXeMoi === "Khác") {
+            hangXeMoi = prompt("Nhập hãng xe khác vào đây");
+        }
+        let phiGuiXeDaDong = prompt("Nhập phí gửi xe đã đóng vào đây");
+        for (let i = 0; i < phiGuiXeDaDong.length; i++) {
+            if (isNaN(phiGuiXeDaDong[i])) {
+                alert("Nhập sai phí, xin mời nhập lại");
+                phiGuiXeDaDong = prompt("Nhập phí gửi xe đã đóng vào đây");
+            }
+        }
+        danhSach.push(new Xe(bienSoMoi,hoVaTenMoi,chungMinhNhanDanMoi,hangXeMoi,phiGuiXeDaDong));
+        hienThi();
+    }
+    function xoa() {
+        let xacNhan = confirm("Bạn có chắc chắn muốn xóa");
+
+        if (xacNhan) {
+            let viTri = +prompt("Bạn muốn xóa vị trí thứ mấy");
+            danhSach.splice((viTri - 1),1);
+        }
+        hienThi();
+    }
+
+</script>
+</html>

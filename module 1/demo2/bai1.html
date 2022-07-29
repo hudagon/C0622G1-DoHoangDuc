@@ -9,8 +9,8 @@
 </head>
 <body></body>
 <script>
-    let arr = []
-    let soLuong;
+    let mang = []
+    let soLuong = 0;
     let tongChan = 0;
     let tongLe = 0;
     let ketQua = 0;
@@ -18,7 +18,7 @@
         soLuong = +prompt("Xin mời nhập số lượng phần tử có trong mảng mà bạn muốn");
         if (soLuong <= 50 && soLuong > 0) {
             for (let i = 0; i < soLuong; i++) {
-                arr.push(+prompt("Nhập phần tử thứ: " + i + " vào đây"));
+                mang.push(+prompt("Nhập phần tử thứ: " + i + " vào đây"));
             }
         } else {
             alert("Số lượng phần tử không thỏa mãn, xin mời nhập lại")
