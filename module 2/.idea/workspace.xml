@@ -20,19 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c5e45f5-bef7-4a08-84f2-c26b980f091f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../module 1/.idea/module 1.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module 1/demo/do_you_love_me.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss1_introduction_to_java/bai_tap/currency_transfer/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss1_introduction_to_java/bai_tap/display_greetings/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss1_introduction_to_java/bai_tap/transfer_number_into_words/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss1_introduction_to_java/thuc_hanh/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss1_introduction_to_java/thuc_hanh/bmi_calculator/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss1_introduction_to_java/thuc_hanh/operaterExpression.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss1_introduction_to_java/thuc_hanh/systemTime.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../module 1/ss4_Git&amp;Html/bai_tap/Su_dung_Git/GitProject" beforeDir="false" afterPath="$PROJECT_DIR$/../module 1/ss4_Git&amp;Html/bai_tap/Su_dung_Git/GitProject" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module 2/ss1_introduction_to_java/bai_tap/transfer_number_into_words/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module 2/ss1_introduction_to_java/bai_tap/transfer_number_into_words/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss1_introduction_to_java/bai_tap/transfer_number_into_words/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss1_introduction_to_java/bai_tap/transfer_number_into_words/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +59,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
-  <component name="RunManager" selected="Application.Main (2)">
+  <component name="RunManager" selected="Application.demo">
     <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ss1_introduction_to_java.thuc_hanh.bmi_calculator.Main" />
       <module name="module 2" />
@@ -121,20 +112,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="dayOfMonth" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="dayOfMonth" />
+    <configuration name="demo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss1_introduction_to_java.thuc_hanh.demo" />
       <module name="module 2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ss1_introduction_to_java.thuc_hanh.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.demo" />
         <item itemvalue="Application.Main (2)" />
         <item itemvalue="Application.Main (3)" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main (1)" />
-        <item itemvalue="Application.dayOfMonth" />
       </list>
     </recent_temporary>
   </component>
@@ -148,7 +145,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1659327737033</updated>
-      <workItem from="1659327740108" duration="12085000" />
+      <workItem from="1659327740108" duration="14969000" />
     </task>
     <servers />
   </component>
@@ -167,21 +164,21 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1659345904126">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1659348870642">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1659345904126" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1659345904126">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1659348870642" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1659348870642">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1659345904126" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1659345904126">
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1659348870642" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1659348870642">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1659345904126" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1659345904126">
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1659348870642" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1659348870642">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1659345904126" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1659348870642" />
   </component>
 </project>

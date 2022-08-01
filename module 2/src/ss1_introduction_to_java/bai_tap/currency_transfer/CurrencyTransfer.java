@@ -2,7 +2,7 @@ package ss1_introduction_to_java.bai_tap.currency_transfer;
 
 import java.util.Scanner;
 
-public class Main {
+public class CurrencyTransfer {
     public static void main(String[] args) {
         double rate = 23000, USD, VND;
 

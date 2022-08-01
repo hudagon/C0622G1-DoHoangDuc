@@ -2,7 +2,7 @@ package ss1_introduction_to_java.bai_tap.transfer_number_into_words;
 
 import java.util.Scanner;
 
-public class Main {
+public class TransferNumberIntoWords {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -80,8 +80,10 @@ public class Main {
                     toWord = "Eighteen";
                     break;
                 case 9:
-                    toWord = "Ninety";
+                    toWord = "Nineteen";
                     break;
+                case 0:
+                    toWord = "Ten";
             }
         } else if (a == 0 && b >= 2) {
             switch (b) {
@@ -230,7 +232,7 @@ public class Main {
                         toWord += " And Eighteen";
                         break;
                     case 9:
-                        toWord += " And Ninety";
+                        toWord += " And Nineteen";
                         break;
                 }
             }
@@ -243,7 +245,7 @@ public class Main {
                         toWord += " And Thirty";
                         break;
                     case 4:
-                        toWord += " And Fourty";
+                        toWord += " And Forty";
                         break;
                     case 5:
                         toWord += " And Fifty";
@@ -288,9 +290,6 @@ public class Main {
                         break;
                     case 9:
                         toWord += "Nine";
-                        break;
-                    case 0:
-                        toWord += "";
                         break;
                 }
             }
