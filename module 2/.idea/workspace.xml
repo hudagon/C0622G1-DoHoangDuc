@@ -20,10 +20,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c5e45f5-bef7-4a08-84f2-c26b980f091f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/ss2_loop_in_java/exercise/add_elements_into_array/AddElementsIntoArray.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss2_loop_in_java/exercise/display_Prime_number_less_than_100/DisplayPrimeLess100.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss2_loop_in_java/exercise/display_first_20_Prime_number/DisplayFirst20Prime.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss2_loop_in_java/exercise/display_type_of_drawing/DisplayDrawing.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss2_loop_in_java/exercise/erase_elements_from_array/EraseElementsFromArray.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss2_loop_in_java/exercise/merge_array/MergeArray.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss2_loop_in_java/practice/caculate_interest/CaculateInterest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss2_loop_in_java/practice/check_prime_number/CheckPrimeNumber.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss2_loop_in_java/practice/design_menu/DesignMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss2_loop_in_java/practice/find_the_highest_common_divisor/FindTheHighestCommonDivisor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../module 1/ss4_Git&amp;Html/bai_tap/Su_dung_Git/GitProject" beforeDir="false" afterPath="$PROJECT_DIR$/../module 1/ss4_Git&amp;Html/bai_tap/Su_dung_Git/GitProject" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/module 2/ss1_introduction_to_java/bai_tap/transfer_number_into_words/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module 2/ss1_introduction_to_java/bai_tap/transfer_number_into_words/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss1_introduction_to_java/bai_tap/transfer_number_into_words/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss1_introduction_to_java/bai_tap/transfer_number_into_words/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module 2/ss1_introduction_to_java/bai_tap/currency_transfer/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module 2/ss1_introduction_to_java/bai_tap/display_greetings/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module 2/ss1_introduction_to_java/bai_tap/transfer_number_into_words/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module 2/ss1_introduction_to_java/thuc_hanh/demo.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,13 +71,13 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
-  <component name="RunManager" selected="Application.demo">
-    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss1_introduction_to_java.thuc_hanh.bmi_calculator.Main" />
+  <component name="RunManager" selected="Application.MergeArray">
+    <configuration name="AddElementsIntoArray" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss2_loop_in_java.exercise.add_elements_into_array.AddElementsIntoArray" />
       <module name="module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss1_introduction_to_java.thuc_hanh.bmi_calculator.*" />
+          <option name="PATTERN" value="ss2_loop_in_java.exercise.add_elements_into_array.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -73,12 +85,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss1_introduction_to_java.bai_tap.transfer_number_into_words.Main" />
+    <configuration name="DisplayFirst20Prime" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss2_loop_in_java.exercise.display_first_20_Prime_number.DisplayFirst20Prime" />
       <module name="module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss1_introduction_to_java.bai_tap.transfer_number_into_words.*" />
+          <option name="PATTERN" value="ss2_loop_in_java.exercise.display_first_20_Prime_number.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -86,12 +98,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss1_introduction_to_java.bai_tap.currency_transfer.Main" />
+    <configuration name="DisplayPrimeLess100" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss2_loop_in_java.exercise.display_Prime_number_less_than_100.DisplayPrimeLess100" />
       <module name="module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss1_introduction_to_java.bai_tap.currency_transfer.*" />
+          <option name="PATTERN" value="ss2_loop_in_java.exercise.display_Prime_number_less_than_100.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -99,12 +111,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss1_introduction_to_java.bai_tap.display_greetings.Main" />
+    <configuration name="EraseElementsFromArray" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss2_loop_in_java.exercise.erase_elements_from_array.EraseElementsFromArray" />
       <module name="module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss1_introduction_to_java.bai_tap.display_greetings.*" />
+          <option name="PATTERN" value="ss2_loop_in_java.exercise.erase_elements_from_array.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -112,12 +124,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="demo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss1_introduction_to_java.thuc_hanh.demo" />
+    <configuration name="MergeArray" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss2_loop_in_java.exercise.merge_array.MergeArray" />
       <module name="module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss1_introduction_to_java.thuc_hanh.*" />
+          <option name="PATTERN" value="ss2_loop_in_java.exercise.merge_array.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -127,11 +139,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.demo" />
-        <item itemvalue="Application.Main (2)" />
-        <item itemvalue="Application.Main (3)" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Main (1)" />
+        <item itemvalue="Application.MergeArray" />
+        <item itemvalue="Application.AddElementsIntoArray" />
+        <item itemvalue="Application.EraseElementsFromArray" />
+        <item itemvalue="Application.DisplayFirst20Prime" />
+        <item itemvalue="Application.DisplayPrimeLess100" />
       </list>
     </recent_temporary>
   </component>
@@ -146,6 +158,9 @@
       <option name="presentableId" value="Default" />
       <updated>1659327737033</updated>
       <workItem from="1659327740108" duration="14969000" />
+      <workItem from="1659359903849" duration="676000" />
+      <workItem from="1659411203959" duration="11535000" />
+      <workItem from="1659443677137" duration="3468000" />
     </task>
     <servers />
   </component>
@@ -162,23 +177,24 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1659348870642">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1659447167930">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1659348870642" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1659348870642">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1659447167930" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1659447167930">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1659348870642" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1659348870642">
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1659447167930" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1659447167930">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1659348870642" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1659348870642">
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1659447167930" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1659447167930">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1659348870642" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1659447167930" />
   </component>
 </project>
