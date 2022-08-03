@@ -1,21 +1,21 @@
-package ss3_array_and_method_in_java.exercise.find_max_in_2d_array;
+package ss3_array_and_method_in_java.exercise.find_max_in_two_d_array;
 
 import java.util.Scanner;
 
-public class FindMaxIn2dArray {
+public class FindMaxInTwoDArray {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int n1,n2, x = 0, y = 0;
 
 
         System.out.print("Input the number of elements you want in arr1: ");
-        n1 = scanner.nextInt();
+        n1 = Integer.parseInt(scanner.nextLine());
 
         double[][] arr1 = new double[n1][];
 
         for (int i = 0; i < arr1.length; i++) {
             System.out.print("Input the number of elements you want in arr[" + i + "]: ");
-            n2 = scanner.nextInt();
+            n2 = Integer.parseInt(scanner.nextLine());
             arr1[i] = new double[n2];
             for (int j = 0; j < arr1[i].length; j++) {
                 System.out.print("Input the " + j + "th elements in array: ");
@@ -27,7 +27,7 @@ public class FindMaxIn2dArray {
 
         for (int i = 0; i < arr1.length ; i++) {
             for (int j = 0; j < arr1[i].length; j++) {
-                if (max > arr1[i][j]) {
+                if (max < arr1[i][j]) {
                     max = arr1[i][j];
                     x = i;
                     y = j;
