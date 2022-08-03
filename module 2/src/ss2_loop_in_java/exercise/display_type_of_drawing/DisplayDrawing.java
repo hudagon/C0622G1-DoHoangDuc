@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class DisplayDrawing {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int choice;
+        int choice, sum;
 
         System.out.println("Which one do you want to print (insert the number): ");
         System.out.println("1. Print the rectangle");
@@ -14,7 +14,7 @@ public class DisplayDrawing {
         System.out.println("4. Exit");
 
         System.out.print("Input here: ");
-        choice = scanner.nextInt();
+        choice = Integer.parseInt(scanner.nextLine());
 
         while (choice != 4) {
             switch (choice) {
@@ -31,7 +31,7 @@ public class DisplayDrawing {
                     System.out.println("4. Top right");
                     System.out.println("5. Nah, I changed my mind");
                     System.out.print("Input here: ");
-                    choice = scanner.nextInt();
+                    choice = Integer.parseInt(scanner.nextLine());
 
                     switch (choice) {
                         case 1:
@@ -80,8 +80,9 @@ public class DisplayDrawing {
                             System.out.println("4. Exit");
                             break;
                     }
+                    break;
                 case 3:
-                    int sum = 1;
+                    sum = 1;
                     for (int i = 1; i <= 4; i++) {
                         for (int j = 4; j > i; j--) {
                             System.out.print(" ");
@@ -100,7 +101,7 @@ public class DisplayDrawing {
             System.out.println("3. Print isosceles triangle");
             System.out.println("4. Exit");
             System.out.print("Input here: ");
-            choice = scanner.nextInt();
+            choice = Integer.parseInt(scanner.nextLine());
         }
     }
 }

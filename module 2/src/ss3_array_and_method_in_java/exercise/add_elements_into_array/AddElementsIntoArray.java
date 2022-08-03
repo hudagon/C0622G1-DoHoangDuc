@@ -9,14 +9,14 @@ public class AddElementsIntoArray {
         int x, index;
 
         System.out.print("Input the number you want to add here:");
-        x = scanner.nextInt();
+        x = Integer.parseInt(scanner.nextLine());
 
         System.out.print("Input the index you want to add here:");
-        index = scanner.nextInt();
+        index = Integer.parseInt(scanner.nextLine());
 
         while (index <= -1 || index > (arr.length - 1)) {
             System.out.print("Error, please input again here:");
-            index = scanner.nextInt();
+            index = Integer.parseInt(scanner.nextLine());
         }
 
         for (int i = (arr.length - 1) ; i >= (index + 1); i--) {

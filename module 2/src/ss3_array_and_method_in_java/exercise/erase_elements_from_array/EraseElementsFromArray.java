@@ -10,7 +10,7 @@ public class EraseElementsFromArray {
         int x;
 
         System.out.println("Input the number you want to erase");
-        x = scanner.nextInt();
+        x = Integer.parseInt(scanner.nextLine());
 
         for (int i = 0; i < arr.length; i++) {
             if(x == arr[i]) {
