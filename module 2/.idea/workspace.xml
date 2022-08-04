@@ -20,19 +20,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c5e45f5-bef7-4a08-84f2-c26b980f091f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ss3_array_and_method_in_java/exercise/count_characters/CountTimesCharacterAppear.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss3_array_and_method_in_java/exercise/find_sum_of_a_determined_column/FindSumOfAColumn.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss3_array_and_method_in_java/exercise/find_sum_of_a_main_diagonal/FindSumOfAMainDiagonal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss3_array_and_method_in_java/practice/convert_temperature/ConvertTemperature.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss3_array_and_method_in_java/practice/find_elements_in_array/FindElementsInArray.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss3_array_and_method_in_java/practice/find_max/FindMax.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss3_array_and_method_in_java/practice/find_min/FindMin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss3_array_and_method_in_java/practice/passed_students/PassedStudents.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss3_array_and_method_in_java/practice/reverse_array/ReverseArray.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss3_array_and_method_in_java/practice/demo/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss3_array_and_method_in_java/practice/demo/Students.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss3_array_and_method_in_java/practice/demo/Teachers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss3_array_and_method_in_java/practice/giai_thuat/giai_thuat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss4_oop/exercise/build_fan_class/Fan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss4_oop/exercise/build_fan_class/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss4_oop/exercise/build_quadratic_equation_class/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss4_oop/exercise/build_quadratic_equation_class/QuadraticEquation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss4_oop/exercise/build_stop_watch_class/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss4_oop/exercise/build_stop_watch_class/StopWatch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss4_oop/practice/rectangle_class/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss4_oop/practice/rectangle_class/Rectangle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../module 1/ss4_Git&amp;Html/bai_tap/Su_dung_Git/GitProject" beforeDir="false" afterPath="$PROJECT_DIR$/../module 1/ss4_Git&amp;Html/bai_tap/Su_dung_Git/GitProject" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/module 2/ss3_array_and_method_in_java/exercise/find_max_in_2d_array/FindMaxIn2dArray.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss3_array_and_method_in_java/exercise/find_max_in_2d_array/FindMaxIn2dArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss3_array_and_method_in_java/exercise/find_max_in_two_d_array/FindMaxInTwoDArray.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +43,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -68,13 +70,13 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
-  <component name="RunManager" selected="Application.PassedStudents">
-    <configuration name="ConvertTemperature" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss3_array_and_method_in_java.practice.convert_temperature.ConvertTemperature" />
+  <component name="RunManager" selected="Application.Main (4)">
+    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss4_oop.practice.rectangle_class.Main" />
       <module name="module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss3_array_and_method_in_java.practice.convert_temperature.*" />
+          <option name="PATTERN" value="ss4_oop.practice.rectangle_class.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -82,12 +84,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FindElementsInArray" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss3_array_and_method_in_java.practice.find_elements_in_array.FindElementsInArray" />
+    <configuration name="Main (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss4_oop.exercise.build_quadratic_equation_class.Main" />
       <module name="module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss3_array_and_method_in_java.practice.find_elements_in_array.*" />
+          <option name="PATTERN" value="ss4_oop.exercise.build_quadratic_equation_class.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -95,12 +97,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FindMin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss3_array_and_method_in_java.practice.find_min.FindMin" />
+    <configuration name="Main (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss4_oop.exercise.build_stop_watch_class.Main" />
       <module name="module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss3_array_and_method_in_java.practice.find_min.*" />
+          <option name="PATTERN" value="ss4_oop.exercise.build_stop_watch_class.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -108,12 +110,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PassedStudents" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss3_array_and_method_in_java.practice.passed_students.PassedStudents" />
+    <configuration name="Main (4)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss4_oop.exercise.build_fan_class.Main" />
       <module name="module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss3_array_and_method_in_java.practice.passed_students.*" />
+          <option name="PATTERN" value="ss4_oop.exercise.build_fan_class.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -121,12 +123,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReverseArray" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss3_array_and_method_in_java.practice.reverse_array.ReverseArray" />
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss3_array_and_method_in_java.practice.demo.Main" />
       <module name="module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss3_array_and_method_in_java.practice.reverse_array.*" />
+          <option name="PATTERN" value="ss3_array_and_method_in_java.practice.demo.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -136,11 +138,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.PassedStudents" />
-        <item itemvalue="Application.FindMin" />
-        <item itemvalue="Application.ConvertTemperature" />
-        <item itemvalue="Application.FindElementsInArray" />
-        <item itemvalue="Application.ReverseArray" />
+        <item itemvalue="Application.Main (4)" />
+        <item itemvalue="Application.Main (3)" />
+        <item itemvalue="Application.Main (2)" />
+        <item itemvalue="Application.Main (1)" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -159,7 +161,9 @@
       <workItem from="1659411203959" duration="11535000" />
       <workItem from="1659443677137" duration="8711000" />
       <workItem from="1659480919994" duration="1432000" />
-      <workItem from="1659497314428" duration="10250000" />
+      <workItem from="1659497314428" duration="14828000" />
+      <workItem from="1659572306068" duration="19441000" />
+      <workItem from="1659615543339" duration="2300000" />
     </task>
     <servers />
   </component>
@@ -179,26 +183,38 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1659514156946">
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1659615644253">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1659514156946" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1659514156946">
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1659615644253" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1659518093602">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1659514156946" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1659514156946">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1659518093602" />
+    <state width="1493" height="208" key="GridCell.Tab.0.bottom" timestamp="1659617706253">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1659514156946" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1659514156946">
+    <state width="1493" height="208" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1659617706253" />
+    <state width="1493" height="208" key="GridCell.Tab.0.center" timestamp="1659617706253">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1659514156946" />
+    <state width="1493" height="208" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1659617706253" />
+    <state width="1493" height="208" key="GridCell.Tab.0.left" timestamp="1659617706252">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="208" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1659617706252" />
+    <state width="1493" height="208" key="GridCell.Tab.0.right" timestamp="1659617706253">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="208" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1659617706253" />
     <state x="499" y="173" key="extract.method.dialog" timestamp="1659501531811">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="173" key="extract.method.dialog/0.0.1536.824@0.0.1536.824" timestamp="1659501531811" />
+    <state x="475" y="170" key="refactoring.ChangeSignatureDialog" timestamp="1659617332754">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="475" y="170" key="refactoring.ChangeSignatureDialog/0.0.1536.824@0.0.1536.824" timestamp="1659617332754" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1659508282910">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
