@@ -20,20 +20,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c5e45f5-bef7-4a08-84f2-c26b980f091f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ss3_array_and_method_in_java/practice/demo/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss3_array_and_method_in_java/practice/demo/Students.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss3_array_and_method_in_java/practice/demo/Teachers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss3_array_and_method_in_java/practice/giai_thuat/giai_thuat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss4_oop/exercise/build_fan_class/Fan.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss4_oop/exercise/build_fan_class/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss4_oop/exercise/build_quadratic_equation_class/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss4_oop/exercise/build_quadratic_equation_class/QuadraticEquation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss4_oop/exercise/build_stop_watch_class/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss4_oop/exercise/build_stop_watch_class/StopWatch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss4_oop/practice/rectangle_class/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss4_oop/practice/rectangle_class/Rectangle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss4_oop/practice/demo/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss4_oop/practice/demo2/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss4_oop/practice/demo2/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss4_oop/practice/demo2/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss5_access_modifier_static/exercise/access_modifier/Circle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss5_access_modifier_static/exercise/access_modifier/TestCircle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss5_access_modifier_static/exercise/build_only_written_by_java_class/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss5_access_modifier_static/exercise/build_only_written_by_java_class/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss5_access_modifier_static/practice/static_method/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss5_access_modifier_static/practice/static_method/Student.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../module 1/ss4_Git&amp;Html/bai_tap/Su_dung_Git/GitProject" beforeDir="false" afterPath="$PROJECT_DIR$/../module 1/ss4_Git&amp;Html/bai_tap/Su_dung_Git/GitProject" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module 2/ss4_oop/exercise/build_fan_class/Fan.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module 2/ss4_oop/exercise/build_fan_class/Fan.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,46 +69,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
-  <component name="RunManager" selected="Application.Main (4)">
-    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss4_oop.practice.rectangle_class.Main" />
-      <module name="module 2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ss4_oop.practice.rectangle_class.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Main (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss4_oop.exercise.build_quadratic_equation_class.Main" />
-      <module name="module 2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ss4_oop.exercise.build_quadratic_equation_class.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Main (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss4_oop.exercise.build_stop_watch_class.Main" />
-      <module name="module 2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ss4_oop.exercise.build_stop_watch_class.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.Test">
     <configuration name="Main (4)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ss4_oop.exercise.build_fan_class.Main" />
       <module name="module 2" />
@@ -123,12 +83,51 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss3_array_and_method_in_java.practice.demo.Main" />
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss5_access_modifier_static.exercise.build_only_written_by_java_class.Test" />
       <module name="module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss3_array_and_method_in_java.practice.demo.*" />
+          <option name="PATTERN" value="ss5_access_modifier_static.exercise.build_only_written_by_java_class.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestCircle" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss5_access_modifier_static.exercise.access_modifier.TestCircle" />
+      <module name="module 2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ss5_access_modifier_static.exercise.access_modifier.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestStaticMethod" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss5_access_modifier_static.practice.static_method.TestStaticMethod" />
+      <module name="module 2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ss5_access_modifier_static.practice.static_method.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestStaticProperty" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss5_access_modifier_static.exercise.static_property.TestStaticProperty" />
+      <module name="module 2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ss5_access_modifier_static.exercise.static_property.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -138,11 +137,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Test" />
+        <item itemvalue="Application.TestCircle" />
+        <item itemvalue="Application.TestStaticProperty" />
+        <item itemvalue="Application.TestStaticMethod" />
         <item itemvalue="Application.Main (4)" />
-        <item itemvalue="Application.Main (3)" />
-        <item itemvalue="Application.Main (2)" />
-        <item itemvalue="Application.Main (1)" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -163,7 +162,8 @@
       <workItem from="1659480919994" duration="1432000" />
       <workItem from="1659497314428" duration="14828000" />
       <workItem from="1659572306068" duration="19441000" />
-      <workItem from="1659615543339" duration="2300000" />
+      <workItem from="1659615543339" duration="5638000" />
+      <workItem from="1659681310374" duration="1952000" />
     </task>
     <servers />
   </component>
@@ -183,30 +183,30 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1659615644253">
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1659683074680">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1659615644253" />
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1659683074680" />
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1659518093602">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1659518093602" />
-    <state width="1493" height="208" key="GridCell.Tab.0.bottom" timestamp="1659617706253">
+    <state width="1493" height="208" key="GridCell.Tab.0.bottom" timestamp="1659682831462">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="208" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1659617706253" />
-    <state width="1493" height="208" key="GridCell.Tab.0.center" timestamp="1659617706253">
+    <state width="1493" height="208" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1659682831462" />
+    <state width="1493" height="208" key="GridCell.Tab.0.center" timestamp="1659682831462">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="208" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1659617706253" />
-    <state width="1493" height="208" key="GridCell.Tab.0.left" timestamp="1659617706252">
+    <state width="1493" height="208" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1659682831462" />
+    <state width="1493" height="208" key="GridCell.Tab.0.left" timestamp="1659682831462">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="208" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1659617706252" />
-    <state width="1493" height="208" key="GridCell.Tab.0.right" timestamp="1659617706253">
+    <state width="1493" height="208" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1659682831462" />
+    <state width="1493" height="208" key="GridCell.Tab.0.right" timestamp="1659682831462">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="208" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1659617706253" />
+    <state width="1493" height="208" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1659682831462" />
     <state x="499" y="173" key="extract.method.dialog" timestamp="1659501531811">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
