@@ -50,6 +50,7 @@ public class MoveablePoint extends Point {
 
     @Override
     public String toString() {
-        return "(" + super.getX() + "," + super.getY() + ")" + "," + " speed" + " = " + "(" + getXSpeed() + ", " + getYSpeed() + ")";
+        return "(" + super.getX() + "," + super.getY() + ")" + "," + " speed" + " = " +
+                "(" + getXSpeed() + ", " + getYSpeed() + ")";
     }
 }
