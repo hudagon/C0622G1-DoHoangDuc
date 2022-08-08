@@ -20,7 +20,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c5e45f5-bef7-4a08-84f2-c26b980f091f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/ss5_access_modifier_static/practice/bai_tap_a_Hai_cho_1/Candidate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss5_access_modifier_static/practice/bai_tap_a_Hai_cho_1/TestCandidate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss5_access_modifier_static/practice/demo/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss5_access_modifier_static/practice/demo/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss6_inheritance/exercise/class_2d_and_class_3d/controller/mainController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss6_inheritance/exercise/class_2d_and_class_3d/models/Point2D.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss6_inheritance/exercise/class_2d_and_class_3d/models/Point3D.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss6_inheritance/exercise/class_circle_and_class_cylinder/controller/mainController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss6_inheritance/exercise/class_circle_and_class_cylinder/models/Circle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss6_inheritance/exercise/class_circle_and_class_cylinder/models/Cylinder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss6_inheritance/exercise/class_point_and_class_moveablepoint/controller/mainController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss6_inheritance/exercise/class_point_and_class_moveablepoint/models/MoveablePoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss6_inheritance/exercise/class_point_and_class_moveablepoint/models/Point.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss6_inheritance/exercise/design_and_deploy_class_triangle/controller/mainController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss6_inheritance/exercise/design_and_deploy_class_triangle/models/Shape.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss6_inheritance/exercise/design_and_deploy_class_triangle/models/Triangle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss6_inheritance/practice/demo/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss6_inheritance/practice/demo/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss6_inheritance/practice/demo/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss6_inheritance/practice/demo/Teacher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss6_inheritance/practice/demo/system_of_geometric_objects/Circle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss6_inheritance/practice/demo/system_of_geometric_objects/Rectangle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss6_inheritance/practice/demo/system_of_geometric_objects/Shape.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss6_inheritance/practice/demo/system_of_geometric_objects/Square.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss6_inheritance/practice/demo/system_of_geometric_objects/Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../module 1/ss4_Git&amp;Html/bai_tap/Su_dung_Git/GitProject" beforeDir="false" afterPath="$PROJECT_DIR$/../module 1/ss4_Git&amp;Html/bai_tap/Su_dung_Git/GitProject" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module 2/ss5_access_modifier_static/exercise/access_modifier/Circle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module 2/ss5_access_modifier_static/exercise/access_modifier/Circle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module 2/ss5_access_modifier_static/exercise/build_only_written_by_java_class/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module 2/ss5_access_modifier_static/exercise/build_only_written_by_java_class/Student.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,14 +84,15 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager" selected="Application.Test">
-    <configuration name="Main (4)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss4_oop.exercise.build_fan_class.Main" />
+  <component name="RunManager" selected="Application.mainController (2)">
+    <configuration name="Test (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss6_inheritance.practice.demo.system_of_geometric_objects.Test" />
       <module name="module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss4_oop.exercise.build_fan_class.*" />
+          <option name="PATTERN" value="ss6_inheritance.practice.demo.system_of_geometric_objects.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -71,12 +100,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss5_access_modifier_static.exercise.build_only_written_by_java_class.Test" />
+    <configuration name="Test (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss6_inheritance.exercise.class_circle_and_class_cylinder.Test" />
       <module name="module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss5_access_modifier_static.exercise.build_only_written_by_java_class.*" />
+          <option name="PATTERN" value="ss6_inheritance.exercise.class_circle_and_class_cylinder.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -84,12 +113,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestCircle" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss5_access_modifier_static.exercise.access_modifier.TestCircle" />
+    <configuration name="TestCandidate" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss5_access_modifier_static.practice.bai_tap_a_Hai_cho_1.TestCandidate" />
       <module name="module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss5_access_modifier_static.exercise.access_modifier.*" />
+          <option name="PATTERN" value="ss5_access_modifier_static.practice.bai_tap_a_Hai_cho_1.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -97,12 +126,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestStaticMethod" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss5_access_modifier_static.practice.static_method.TestStaticMethod" />
+    <configuration name="mainController (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss6_inheritance.exercise.class_point_and_class_moveablepoint.controller.mainController" />
       <module name="module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss5_access_modifier_static.practice.static_method.*" />
+          <option name="PATTERN" value="ss6_inheritance.exercise.class_point_and_class_moveablepoint.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -110,12 +139,38 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestStaticProperty" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss5_access_modifier_static.exercise.static_property.TestStaticProperty" />
+    <configuration name="mainController (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss6_inheritance.exercise.design_and_deploy_class_triangle.controller.mainController" />
       <module name="module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss5_access_modifier_static.exercise.static_property.*" />
+          <option name="PATTERN" value="ss6_inheritance.exercise.design_and_deploy_class_triangle.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="mainController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss6_inheritance.exercise.class_circle_and_class_cylinder.controller.mainController" />
+      <module name="module 2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ss6_inheritance.exercise.class_circle_and_class_cylinder.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="mainController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss6_inheritance.exercise.class_2d_and_class_3d.controller.mainController" />
+      <module name="module 2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ss6_inheritance.exercise.class_2d_and_class_3d.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -125,11 +180,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Test" />
-        <item itemvalue="Application.TestCircle" />
-        <item itemvalue="Application.TestStaticProperty" />
-        <item itemvalue="Application.TestStaticMethod" />
-        <item itemvalue="Application.Main (4)" />
+        <item itemvalue="Application.mainController (2)" />
+        <item itemvalue="Application.mainController (1)" />
+        <item itemvalue="Application.mainController" />
+        <item itemvalue="Application.mainController" />
+        <item itemvalue="Application.Test (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -151,7 +206,11 @@
       <workItem from="1659497314428" duration="14828000" />
       <workItem from="1659572306068" duration="19441000" />
       <workItem from="1659615543339" duration="5638000" />
-      <workItem from="1659681310374" duration="2657000" />
+      <workItem from="1659681310374" duration="4621000" />
+      <workItem from="1659856808804" duration="2884000" />
+      <workItem from="1659874344003" duration="93000" />
+      <workItem from="1659874471239" duration="4372000" />
+      <workItem from="1659919548429" duration="11693000" />
     </task>
     <servers />
   </component>
@@ -171,30 +230,38 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1659683074680">
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1659943756179">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1659683074680" />
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1659943756179" />
+    <state x="410" y="146" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1659943666259">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="410" y="146" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1659943666259" />
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1659518093602">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1659518093602" />
-    <state width="1493" height="208" key="GridCell.Tab.0.bottom" timestamp="1659683357393">
+    <state width="1493" height="208" key="GridCell.Tab.0.bottom" timestamp="1659944690422">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="208" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1659683357393" />
-    <state width="1493" height="208" key="GridCell.Tab.0.center" timestamp="1659683357393">
+    <state width="1493" height="208" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1659944690422" />
+    <state width="1493" height="208" key="GridCell.Tab.0.center" timestamp="1659944690422">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="208" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1659683357393" />
-    <state width="1493" height="208" key="GridCell.Tab.0.left" timestamp="1659683357393">
+    <state width="1493" height="208" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1659944690422" />
+    <state width="1493" height="208" key="GridCell.Tab.0.left" timestamp="1659944690422">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="208" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1659683357393" />
-    <state width="1493" height="208" key="GridCell.Tab.0.right" timestamp="1659683357393">
+    <state width="1493" height="208" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1659944690422" />
+    <state width="1493" height="208" key="GridCell.Tab.0.right" timestamp="1659944690422">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="208" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1659683357393" />
+    <state width="1493" height="208" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1659944690422" />
+    <state x="277" y="57" key="SettingsEditor" timestamp="1659943048776">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1659943048776" />
     <state x="499" y="173" key="extract.method.dialog" timestamp="1659501531811">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -203,9 +270,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="475" y="170" key="refactoring.ChangeSignatureDialog/0.0.1536.824@0.0.1536.824" timestamp="1659617332754" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1659508282910">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1659943189497">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1659508282910" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1659943189497" />
   </component>
 </project>
