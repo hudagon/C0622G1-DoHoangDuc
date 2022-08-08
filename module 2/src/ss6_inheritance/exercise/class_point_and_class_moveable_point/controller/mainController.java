@@ -1,7 +1,7 @@
-package ss6_inheritance.exercise.class_point_and_class_moveablepoint.controller;
+package ss6_inheritance.exercise.class_point_and_class_moveable_point.controller;
 
-import ss6_inheritance.exercise.class_point_and_class_moveablepoint.models.MoveablePoint;
-import ss6_inheritance.exercise.class_point_and_class_moveablepoint.models.Point;
+import ss6_inheritance.exercise.class_point_and_class_moveable_point.models.MoveablePoint;
+import ss6_inheritance.exercise.class_point_and_class_moveable_point.models.Point;
 
 public class mainController {
     public static void main(String[] args) {

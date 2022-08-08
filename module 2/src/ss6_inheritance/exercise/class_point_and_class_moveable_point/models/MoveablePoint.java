@@ -1,4 +1,4 @@
-package ss6_inheritance.exercise.class_point_and_class_moveablepoint.models;
+package ss6_inheritance.exercise.class_point_and_class_moveable_point.models;
 
 public class MoveablePoint extends Point {
     private float xSpeed = 0.0f;
