@@ -20,33 +20,46 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c5e45f5-bef7-4a08-84f2-c26b980f091f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/ss7_abstract_class_and_interface/exercise/deploy_interface_colorable_for_geometric_class/controller/MainController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss7_abstract_class_and_interface/exercise/deploy_interface_colorable_for_geometric_class/models/Circle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss7_abstract_class_and_interface/exercise/deploy_interface_colorable_for_geometric_class/models/Rectangle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss7_abstract_class_and_interface/exercise/deploy_interface_colorable_for_geometric_class/models/Shape.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss7_abstract_class_and_interface/exercise/deploy_interface_colorable_for_geometric_class/models/Square.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss7_abstract_class_and_interface/exercise/deploy_interface_colorable_for_geometric_class/models/_interface/Colorable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss7_abstract_class_and_interface/exercise/deploy_interface_resizeable_for_geometric_class/controller/MainController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss7_abstract_class_and_interface/exercise/deploy_interface_resizeable_for_geometric_class/models/Circle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss7_abstract_class_and_interface/exercise/deploy_interface_resizeable_for_geometric_class/models/Interface/Resizeable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss7_abstract_class_and_interface/exercise/deploy_interface_resizeable_for_geometric_class/models/Rectangle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss7_abstract_class_and_interface/exercise/deploy_interface_resizeable_for_geometric_class/models/Shape.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss7_abstract_class_and_interface/exercise/deploy_interface_resizeable_for_geometric_class/models/Square.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss7_abstract_class_and_interface/practice/class_animal_and_interface_edible/controller/MainController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss7_abstract_class_and_interface/practice/class_animal_and_interface_edible/controller/PrimaryContronller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss7_abstract_class_and_interface/practice/class_animal_and_interface_edible/models/animal/Animal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss7_abstract_class_and_interface/practice/class_animal_and_interface_edible/models/animal/Chicken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss7_abstract_class_and_interface/practice/class_animal_and_interface_edible/models/animal/Tiger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss7_abstract_class_and_interface/practice/class_animal_and_interface_edible/models/edible/Edible.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss7_abstract_class_and_interface/practice/class_animal_and_interface_edible/models/fly/Fly.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss7_abstract_class_and_interface/practice/class_animal_and_interface_edible/models/fruit/Apple.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss7_abstract_class_and_interface/practice/class_animal_and_interface_edible/models/fruit/Fruit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss7_abstract_class_and_interface/practice/class_animal_and_interface_edible/models/fruit/Orange.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss7_abstract_class_and_interface/practice/deploy_interface_comparable_for_geometric_class/controller/MainController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss7_abstract_class_and_interface/practice/deploy_interface_comparable_for_geometric_class/models/ComparableCircle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss7_abstract_class_and_interface/practice/deploy_interface_comparator_to_compare_geometric_class/controller/MainController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss7_abstract_class_and_interface/practice/deploy_interface_comparator_to_compare_geometric_class/models/CircleComparator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../module 1/ss4_Git&amp;Html/bai_tap/Su_dung_Git/GitProject" beforeDir="false" afterPath="$PROJECT_DIR$/../module 1/ss4_Git&amp;Html/bai_tap/Su_dung_Git/GitProject" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/module 2/ss6_inheritance/exercise/class_2d_and_class_3d/controller/mainController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/module 2/ss6_inheritance/exercise/class_2d_and_class_3d/models/Point2D.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/module 2/ss6_inheritance/exercise/class_2d_and_class_3d/models/Point3D.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/module 2/ss6_inheritance/exercise/class_circle_and_class_cylinder/controller/mainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module 2/ss6_inheritance/exercise/class_circle_and_class_cylinder/controller/mainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/module 2/ss6_inheritance/exercise/class_point_and_class_moveablepoint/controller/mainController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/module 2/ss6_inheritance/exercise/class_point_and_class_moveablepoint/models/MoveablePoint.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/module 2/ss6_inheritance/exercise/class_point_and_class_moveablepoint/models/Point.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/module 2/ss6_inheritance/exercise/design_and_deploy_class_triangle/controller/mainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module 2/ss6_inheritance/exercise/design_and_deploy_class_triangle/controller/mainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/module 2/ss6_inheritance/practice/demo/system_of_geometric_objects/Circle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/module 2/ss6_inheritance/practice/demo/system_of_geometric_objects/Rectangle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/module 2/ss6_inheritance/practice/demo/system_of_geometric_objects/Shape.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/module 2/ss6_inheritance/practice/demo/system_of_geometric_objects/Square.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/module 2/ss6_inheritance/practice/demo/system_of_geometric_objects/Test.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss6_inheritance/exercise/class_2d_and_class_3d/controller/mainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss6_inheritance/exercise/class_2d_pointer_and_class_3d_pointer/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss6_inheritance/exercise/class_2d_and_class_3d/models/Point2D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss6_inheritance/exercise/class_2d_pointer_and_class_3d_pointer/models/Point2D.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss6_inheritance/exercise/class_2d_and_class_3d/models/Point3D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss6_inheritance/exercise/class_2d_pointer_and_class_3d_pointer/models/Point3D.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss6_inheritance/exercise/class_circle_and_class_cylinder/controller/mainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss6_inheritance/exercise/class_circle_and_class_cylinder/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss6_inheritance/exercise/class_point_and_class_moveable_point/controller/mainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss6_inheritance/exercise/class_point_and_class_moveable_point/controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module 2/ss6_inheritance/exercise/class_circle_and_class_cylinder/models/Circle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module 2/ss6_inheritance/exercise/class_circle_and_class_cylinder/models/Circle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module 2/ss6_inheritance/exercise/class_circle_and_class_cylinder/models/Cylinder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module 2/ss6_inheritance/exercise/class_circle_and_class_cylinder/models/Cylinder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module 2/ss6_inheritance/exercise/class_point_and_class_moveable_point/models/MoveablePoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module 2/ss6_inheritance/exercise/class_point_and_class_moveable_point/models/MoveablePoint.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module 2/ss6_inheritance/practice/demo/system_of_geometric_objects/models/Circle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module 2/ss6_inheritance/practice/demo/system_of_geometric_objects/models/Circle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module 2/ss6_inheritance/practice/demo/system_of_geometric_objects/models/Shape.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module 2/ss6_inheritance/practice/demo/system_of_geometric_objects/models/Shape.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss6_inheritance/exercise/class_circle_and_class_cylinder/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss6_inheritance/exercise/class_circle_and_class_cylinder/controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss6_inheritance/exercise/class_circle_and_class_cylinder/models/Circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss6_inheritance/exercise/class_circle_and_class_cylinder/models/Circle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss6_inheritance/exercise/class_circle_and_class_cylinder/models/Cylinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss6_inheritance/exercise/class_circle_and_class_cylinder/models/Cylinder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ss6_inheritance/exercise/class_point_and_class_moveable_point/models/MoveablePoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss6_inheritance/exercise/class_point_and_class_moveable_point/models/MoveablePoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss6_inheritance/exercise/design_and_deploy_class_triangle/controller/mainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss6_inheritance/exercise/design_and_deploy_class_triangle/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss6_inheritance/practice/demo/system_of_geometric_objects/Circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss6_inheritance/practice/demo/system_of_geometric_objects/models/Circle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss6_inheritance/practice/demo/system_of_geometric_objects/Rectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss6_inheritance/practice/demo/system_of_geometric_objects/models/Rectangle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss6_inheritance/practice/demo/system_of_geometric_objects/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss6_inheritance/practice/demo/system_of_geometric_objects/models/Shape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss6_inheritance/practice/demo/system_of_geometric_objects/Square.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss6_inheritance/practice/demo/system_of_geometric_objects/models/Square.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss6_inheritance/practice/demo/system_of_geometric_objects/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss6_inheritance/practice/demo/system_of_geometric_objects/controller/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss6_inheritance/practice/demo/system_of_geometric_objects/models/Circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss6_inheritance/practice/demo/system_of_geometric_objects/models/Circle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss6_inheritance/practice/demo/system_of_geometric_objects/models/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss6_inheritance/practice/demo/system_of_geometric_objects/models/Shape.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +71,7 @@
       <list>
         <option value="FxmlFile" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -76,6 +90,8 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="create.test.in.the.same.root" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/ss7_abstract_class_and_interface/exercise/deploy_interface_colorable_for_geometric_class/models/_interface" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -84,104 +100,86 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager" selected="Application.MainController (1)">
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ss7_abstract_class_and_interface.exercise.deploy_interface_colorable_for_geometric_class.models._interface" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Xuan Vinh\Desktop\code\CodeGym\module 2\src\ss7_abstract_class_and_interface\exercise\deploy_interface_colorable_for_geometric_class\models\_interface" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.MainController (3)">
     <configuration name="MainController (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss7_abstract_class_and_interface.practice.deploy_interface_comparable_for_geometric_class.controller.MainController" />
+      <module name="module 2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ss7_abstract_class_and_interface.practice.deploy_interface_comparable_for_geometric_class.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainController (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss7_abstract_class_and_interface.practice.deploy_interface_comparator_to_compare_geometric_class.controller.MainController" />
+      <module name="module 2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ss7_abstract_class_and_interface.practice.deploy_interface_comparator_to_compare_geometric_class.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainController (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss7_abstract_class_and_interface.exercise.deploy_interface_resizeable_for_geometric_class.controller.MainController" />
+      <module name="module 2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ss7_abstract_class_and_interface.exercise.deploy_interface_resizeable_for_geometric_class.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainController (4)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss7_abstract_class_and_interface.exercise.deploy_interface_colorable_for_geometric_class.controller.MainController" />
+      <module name="module 2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ss7_abstract_class_and_interface.exercise.deploy_interface_colorable_for_geometric_class.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss7_abstract_class_and_interface.practice.class_animal_and_interface_edible.controller.MainController" />
+      <module name="module 2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ss7_abstract_class_and_interface.practice.class_animal_and_interface_edible.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ss6_inheritance.exercise.class_point_and_class_moveable_point.controller.MainController" />
       <module name="module 2" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="ss6_inheritance.exercise.class_point_and_class_moveable_point.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MainController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss6_inheritance.exercise.class_2d_and_class_3d.controller.MainController" />
-      <module name="module 2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ss6_inheritance.exercise.class_2d_and_class_3d.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MainController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss6_inheritance.exercise.class_point_and_class_moveable_point.controller.MainController" />
-      <module name="module 2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ss6_inheritance.exercise.class_point_and_class_moveable_point.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MainController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss6_inheritance.exercise.design_and_deploy_class_triangle.controller.MainController" />
-      <module name="module 2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ss6_inheritance.exercise.design_and_deploy_class_triangle.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Test (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss6_inheritance.exercise.class_circle_and_class_cylinder.Test" />
-      <module name="module 2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ss6_inheritance.exercise.class_circle_and_class_cylinder.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss6_inheritance.practice.demo.system_of_geometric_objects.controller.Test" />
-      <module name="module 2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ss6_inheritance.practice.demo.system_of_geometric_objects.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestCandidate" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss5_access_modifier_static.practice.bai_tap_a_Hai_cho_1.TestCandidate" />
-      <module name="module 2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ss5_access_modifier_static.practice.bai_tap_a_Hai_cho_1.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="mainController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss6_inheritance.exercise.class_circle_and_class_cylinder.controller.mainController" />
-      <module name="module 2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ss6_inheritance.exercise.class_circle_and_class_cylinder.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -217,11 +215,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MainController (3)" />
+        <item itemvalue="Application.MainController (4)" />
+        <item itemvalue="Application.MainController" />
+        <item itemvalue="Application.MainController (2)" />
         <item itemvalue="Application.MainController (1)" />
-        <item itemvalue="Application.Test (1)" />
-        <item itemvalue="Application.MainController" />
-        <item itemvalue="Application.MainController" />
-        <item itemvalue="Application.MainController" />
       </list>
     </recent_temporary>
   </component>
@@ -247,7 +245,8 @@
       <workItem from="1659856808804" duration="2884000" />
       <workItem from="1659874344003" duration="93000" />
       <workItem from="1659874471239" duration="4372000" />
-      <workItem from="1659919548429" duration="14908000" />
+      <workItem from="1659919548429" duration="17752000" />
+      <workItem from="1660007937191" duration="13124000" />
     </task>
     <servers />
   </component>
@@ -267,49 +266,65 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1659943756179">
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1660032403485">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1659943756179" />
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1660032403485" />
+    <state x="363" y="307" width="812" height="216" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1660031926344">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="363" y="307" width="812" height="216" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824@0.0.1536.824" timestamp="1660031926344" />
     <state x="410" y="146" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1659943666259">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="410" y="146" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1659943666259" />
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1660027573496">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1660027573496" />
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1659518093602">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1659518093602" />
-    <state width="1493" height="208" key="GridCell.Tab.0.bottom" timestamp="1659947108524">
+    <state width="1493" height="208" key="GridCell.Tab.0.bottom" timestamp="1660035171921">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="208" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1659947108524" />
-    <state width="1493" height="208" key="GridCell.Tab.0.center" timestamp="1659947108524">
+    <state width="1493" height="208" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1660035171921" />
+    <state width="1493" height="208" key="GridCell.Tab.0.center" timestamp="1660035171920">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="208" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1659947108524" />
-    <state width="1493" height="208" key="GridCell.Tab.0.left" timestamp="1659947108524">
+    <state width="1493" height="208" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1660035171920" />
+    <state width="1493" height="208" key="GridCell.Tab.0.left" timestamp="1660035171920">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="208" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1659947108524" />
-    <state width="1493" height="208" key="GridCell.Tab.0.right" timestamp="1659947108524">
+    <state width="1493" height="208" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1660035171920" />
+    <state width="1493" height="208" key="GridCell.Tab.0.right" timestamp="1660035171921">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="208" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1659947108524" />
+    <state width="1493" height="208" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1660035171921" />
     <state x="277" y="57" key="SettingsEditor" timestamp="1659943048776">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1659943048776" />
+    <state x="405" y="207" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1660009763734">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="405" y="207" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1536.824@0.0.1536.824" timestamp="1660009763734" />
     <state x="499" y="173" key="extract.method.dialog" timestamp="1659501531811">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="173" key="extract.method.dialog/0.0.1536.824@0.0.1536.824" timestamp="1659501531811" />
-    <state x="475" y="170" key="refactoring.ChangeSignatureDialog" timestamp="1659617332754">
+    <state x="475" y="170" key="refactoring.ChangeSignatureDialog" timestamp="1660011527171">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="475" y="170" key="refactoring.ChangeSignatureDialog/0.0.1536.824@0.0.1536.824" timestamp="1659617332754" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1659943189497">
+    <state x="475" y="170" key="refactoring.ChangeSignatureDialog/0.0.1536.824@0.0.1536.824" timestamp="1660011527171" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1660034663697">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1659943189497" />
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1660034663697" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1660031457633">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1660031457633" />
   </component>
 </project>
