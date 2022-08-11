@@ -3,7 +3,7 @@ package ss6_inheritance.practice.demo;
 public class Main {
     public static void main(String[] args) {
         Person person1 = new Person();
-//        System.out.println(person1.info());
+        System.out.println(person1.info());
 
         Student student1 = new Student();
         student1.setName("Đức");

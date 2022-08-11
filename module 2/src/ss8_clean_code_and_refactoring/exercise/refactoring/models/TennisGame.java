@@ -2,7 +2,7 @@ package ss8_clean_code_and_refactoring.exercise.refactoring.models;
 
 public class TennisGame {
 
-    public static String getScore(String player1Name, String player2Name, int player1Score, int player2Score) {
+    public static String getScore(int player1Score, int player2Score) {
         boolean isDraw = player1Score == player2Score;
         boolean isEnd = player1Score >= 4 || player2Score >= 4;
         if (isDraw) return getDrawGame(player1Score);
@@ -56,3 +56,4 @@ public class TennisGame {
         }
     }
 }
+

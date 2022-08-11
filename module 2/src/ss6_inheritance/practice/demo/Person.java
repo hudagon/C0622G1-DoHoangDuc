@@ -8,11 +8,19 @@ public class Person {
     private int birthday;
     Calendar now = Calendar.getInstance();
 
-//    Person(String name, String code, int birthday) {
-//        this.name = name;
-//        this.birthday = birthday;
-//        this.code = code;
-//    }
+    Person(String name, String code, int birthday) {
+        this.name = name;
+        this.birthday = birthday;
+        this.code = code;
+    }
+
+    public Person(String name) {
+        this.name = name;
+    }
+
+    public Person() {
+
+    }
 
     public String getName() {
         return name;
