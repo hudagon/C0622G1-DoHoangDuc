@@ -13,13 +13,12 @@ public class MyListTest {
         MyList<Student> studentArrayList = new MyList<>();
 
         studentArrayList.add(student1);
-        studentArrayList.add(student2,2);
+        studentArrayList.add(student2);
         studentArrayList.add(student3);
 
         for (int i = 0; i < studentArrayList.size(); i++) {
-            System.out.println(studentArrayList.get(i));
+            System.out.println(studentArrayList.get(i).toString());
         }
 
-        System.out.println(studentArrayList.toString());
     }
 }
