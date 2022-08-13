@@ -17,7 +17,7 @@ public class MyListTest {
         studentArrayList.add(student3);
 
         for (int i = 0; i < studentArrayList.size(); i++) {
-            System.out.println(studentArrayList.get(i).toString());
+            System.out.println(studentArrayList.get(i));
         }
 
     }
