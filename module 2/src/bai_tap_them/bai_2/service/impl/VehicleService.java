@@ -60,6 +60,13 @@ public class VehicleService implements IVehicleService {
 
     @Override
     public void findVehicleLicensePlate() {
+        System.out.print("Xin mời nhập biển số xe phương tiện bạn muốn tìm kiếm: ");
+        String licensePlateFind = scanner.nextLine();
 
+        for (Vehicle vehicle : vehicleList) {
+            if (vehicle.getLicensePlate().contains(licensePlateFind)) {
+                System.out.println(vehicle.toString());
+            }
+        }
     }
 }

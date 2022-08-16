@@ -121,7 +121,10 @@ public class MainController {
                         }
                     }
                     break;
-
+                case 5:
+                    System.out.println("--------------------------------------------");
+                    System.out.println("         Hẹn gặp lại quý khách!");
+                    return;
             }
         }
     }
