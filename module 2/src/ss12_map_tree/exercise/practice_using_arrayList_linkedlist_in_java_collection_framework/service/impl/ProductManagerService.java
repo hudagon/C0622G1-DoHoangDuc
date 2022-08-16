@@ -11,9 +11,9 @@ public class ProductManagerService implements IProductManagerService {
     static List<Product> productList = new ArrayList<>();
 
     static {
-        Product product1 = new Product("A", 1,53.2);
-        Product product2 = new Product("B", 2,73.2);
-        Product product3 = new Product("C", 3,33.2);
+        Product product1 = new Product("A", 1, 53.2);
+        Product product2 = new Product("B", 2, 73.2);
+        Product product3 = new Product("C", 3, 33.2);
 
         productList.add(product1);
         productList.add(product2);
@@ -39,7 +39,7 @@ public class ProductManagerService implements IProductManagerService {
 
     @Override
     public void edit() {
-        System.out.print("Input the id of the product you want to delete: ");
+        System.out.print("Input the id of the product you want to process: ");
         int idDelete = Integer.parseInt(scanner.nextLine());
         Product productEdit = null;
 
@@ -50,7 +50,7 @@ public class ProductManagerService implements IProductManagerService {
         }
 
         if (productEdit == null) {
-            System.out.println("Không tìm thấy sản phẩm muốn sửa thông tin");
+            System.out.println("404 not found!");
         } else {
             while (true) {
                 int positionEdit = productList.indexOf(productEdit);
@@ -59,7 +59,7 @@ public class ProductManagerService implements IProductManagerService {
                         "2. Id\n" +
                         "3. Price\n" +
                         "4. Exit\n" +
-                        "--> Xin mời nhập ở đây: ");
+                        "--> Input here: ");
                 int choiceEdit = Integer.parseInt(scanner.nextLine());
 
                 switch (choiceEdit) {
@@ -93,11 +93,11 @@ public class ProductManagerService implements IProductManagerService {
     @Override
     public void delete() {
         System.out.print("Input the id of the product you want to delete: ");
-        String idDelete = scanner.nextLine();
+        int idDelete = Integer.parseInt(scanner.nextLine());
         Product productDeleted = null;
 
         for (Product product : productList) {
-            if (product.getName().equals(idDelete)) {
+            if (product.getId() == (idDelete)) {
                 productDeleted = product;
             }
         }
@@ -109,7 +109,7 @@ public class ProductManagerService implements IProductManagerService {
             int choice = Integer.parseInt(scanner.nextLine());
 
             if (choice == 1) {
-               productList.add(productDeleted);
+                productList.remove(productDeleted);
                 System.out.println("Product deleted successfully");
             }
         }
@@ -128,8 +128,8 @@ public class ProductManagerService implements IProductManagerService {
 
     @Override
     public void sort() {
-        System.out.println("Do you want to sort in descending order or in ascending order based on price" +
-                "? 1. descending 2. ascending:");
+        System.out.print("Do you want to sort in descending order or in ascending order based on price" +
+                "? 1. descending 2. ascending: ");
         int choice = Integer.parseInt(scanner.nextLine());
 
         switch (choice) {

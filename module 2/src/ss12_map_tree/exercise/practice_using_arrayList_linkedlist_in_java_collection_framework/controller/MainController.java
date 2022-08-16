@@ -41,8 +41,10 @@ public class MainController {
                 case 6:
                     productManagerService.sort();
                     break;
+                case 7:
+                    return;
                 default:
-                    System.out.println("Quý khách nhập không hợp lệ");
+                    System.out.println("Incorrect input");
             }
         }
     }
