@@ -20,10 +20,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c5e45f5-bef7-4a08-84f2-c26b980f091f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/ss12_map_tree/exercise/count_times_a_word_appears_using_map/controller/MainController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss12_map_tree/exercise/practice_using_arrayList_linkedlist_in_java_collection_framework/controller/MainController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss12_map_tree/exercise/practice_using_arrayList_linkedlist_in_java_collection_framework/model/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss12_map_tree/exercise/practice_using_arrayList_linkedlist_in_java_collection_framework/service/IProductManagerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss12_map_tree/exercise/practice_using_arrayList_linkedlist_in_java_collection_framework/service/impl/ProductComparator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss12_map_tree/exercise/practice_using_arrayList_linkedlist_in_java_collection_framework/service/impl/ProductManagerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss12_map_tree/exercise/practice_using_arrayList_linkedlist_in_java_collection_framework/view/MainView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss12_map_tree/practice/distinguish_between_hashmap_and_hashset/controller/MainController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss12_map_tree/practice/distinguish_between_hashmap_and_hashset/model/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss12_map_tree/practice/sort_using_comparable_comparator/controller/MainController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss12_map_tree/practice/sort_using_comparable_comparator/model/AgeComparator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss12_map_tree/practice/sort_using_comparable_comparator/model/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss12_map_tree/practice/use_hashmap_linkedhashmap_treemap_to_storage_students_list_base_on_age/controller/TestMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../module 1/ss4_Git&amp;Html/bai_tap/Su_dung_Git/GitProject" beforeDir="false" afterPath="$PROJECT_DIR$/../module 1/ss4_Git&amp;Html/bai_tap/Su_dung_Git/GitProject" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bai_tap_them/bai_2/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bai_tap_them/bai_2/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bai_tap_them/bai_2/service/impl/VehicleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bai_tap_them/bai_2/service/impl/VehicleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module 2/bai_tap_them/bai_1/service/impl/TeacherService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module 2/bai_tap_them/bai_1/service/impl/TeacherService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bai_tap_them/bai_1/service/impl/TeacherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bai_tap_them/bai_1/service/impl/TeacherService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,13 +92,13 @@
       <recent name="C:\Users\Xuan Vinh\Desktop\code\CodeGym\module 2\src\ss7_abstract_class_and_interface\exercise\deploy_interface_colorable_for_geometric_class\models\_interface" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MainView (1)">
+  <component name="RunManager" selected="Application.MainView (2)">
     <configuration name="MainController (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss11_dsa_stack_queue.exercise.convert_from_base10_to_base2.controller.MainController" />
+      <option name="MAIN_CLASS_NAME" value="ss12_map_tree.exercise.count_times_a_word_appears_using_map.controller.MainController" />
       <module name="module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss11_dsa_stack_queue.exercise.convert_from_base10_to_base2.controller.*" />
+          <option name="PATTERN" value="ss12_map_tree.exercise.count_times_a_word_appears_using_map.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -93,25 +106,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainController (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss11_dsa_stack_queue.exercise.check_palindrome_string_using_queue.controller.MainController" />
+    <configuration name="MainController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss12_map_tree.practice.distinguish_between_hashmap_and_hashset.controller.MainController" />
       <module name="module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss11_dsa_stack_queue.exercise.check_palindrome_string_using_queue.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MainController (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss11_dsa_stack_queue.exercise.check_the_brackets_in_the_expression_using_stack.controller.MainController" />
-      <module name="module 2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ss11_dsa_stack_queue.exercise.check_the_brackets_in_the_expression_using_stack.controller.*" />
+          <option name="PATTERN" value="ss12_map_tree.practice.distinguish_between_hashmap_and_hashset.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -132,12 +132,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainView" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="bai_tap_them.bai_1.view.MainView" />
+    <configuration name="MainView (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss12_map_tree.exercise.practice_using_arrayList_linkedlist_in_java_collection_framework.view.MainView" />
       <module name="module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="bai_tap_them.bai_1.view.*" />
+          <option name="PATTERN" value="ss12_map_tree.exercise.practice_using_arrayList_linkedlist_in_java_collection_framework.view.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestMap" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss12_map_tree.practice.use_hashmap_linkedhashmap_treemap_to_storage_students_list_base_on_age.controller.TestMap" />
+      <module name="module 2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ss12_map_tree.practice.use_hashmap_linkedhashmap_treemap_to_storage_students_list_base_on_age.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -147,11 +160,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MainView (1)" />
-        <item itemvalue="Application.MainView" />
-        <item itemvalue="Application.MainController (3)" />
-        <item itemvalue="Application.MainController (2)" />
+        <item itemvalue="Application.MainView (2)" />
         <item itemvalue="Application.MainController (1)" />
+        <item itemvalue="Application.MainController" />
+        <item itemvalue="Application.TestMap" />
+        <item itemvalue="Application.MainView (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -194,7 +207,7 @@
       <workItem from="1660363687584" duration="17671000" />
       <workItem from="1660522926840" duration="2187000" />
       <workItem from="1660525320856" duration="20636000" />
-      <workItem from="1660612682162" duration="1588000" />
+      <workItem from="1660612682162" duration="17557000" />
     </task>
     <servers />
   </component>
@@ -214,10 +227,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1660549092488">
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1660642563877">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1660549092488" />
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1660642563877" />
     <state x="363" y="307" width="812" height="216" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1660031926344">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -234,22 +247,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1660286632847" />
-    <state width="1493" height="204" key="GridCell.Tab.0.bottom" timestamp="1660620501805">
+    <state width="1493" height="204" key="GridCell.Tab.0.bottom" timestamp="1660643849999">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="204" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1660620501805" />
-    <state width="1493" height="204" key="GridCell.Tab.0.center" timestamp="1660620501805">
+    <state width="1493" height="204" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1660643849999" />
+    <state width="1493" height="204" key="GridCell.Tab.0.center" timestamp="1660643849999">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="204" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1660620501805" />
-    <state width="1493" height="204" key="GridCell.Tab.0.left" timestamp="1660620501805">
+    <state width="1493" height="204" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1660643849999" />
+    <state width="1493" height="204" key="GridCell.Tab.0.left" timestamp="1660643849998">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="204" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1660620501805" />
-    <state width="1493" height="204" key="GridCell.Tab.0.right" timestamp="1660620501805">
+    <state width="1493" height="204" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1660643849998" />
+    <state width="1493" height="204" key="GridCell.Tab.0.right" timestamp="1660643849999">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="204" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1660620501805" />
+    <state width="1493" height="204" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1660643849999" />
     <state x="277" y="57" key="SettingsEditor" timestamp="1660201903872">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -270,10 +283,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="475" y="170" key="refactoring.ChangeSignatureDialog/0.0.1536.824@0.0.1536.824" timestamp="1660200059815" />
-    <state x="425" y="187" key="run.anything.popup" timestamp="1660377090095">
+    <state x="425" y="187" key="run.anything.popup" timestamp="1660643346897">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1660377090095" />
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1660643346897" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1660203343296">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

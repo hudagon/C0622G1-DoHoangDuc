@@ -77,7 +77,7 @@ public class TeacherService implements ITeacherService {
     public void editTeacherInfo() {
         Teacher teacherEdit = this.findTeacher();
         if (teacherEdit == null) {
-            System.out.println("Không tìm thấy học sinh muốn sửa thông tin");
+            System.out.println("Không tìm thấy giáo viên muốn sửa thông tin");
         } else {
             while (true) {
                 int positionEdit = teachers.indexOf(teacherEdit);
