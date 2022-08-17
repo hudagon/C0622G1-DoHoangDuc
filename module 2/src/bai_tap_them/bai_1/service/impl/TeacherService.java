@@ -38,7 +38,7 @@ public class TeacherService implements ITeacherService {
         return new Teacher(id, name, birthday, gender, expertiseAt);
     }
 
-    public Teacher findTeacher() {
+    public Teacher findTeacher1() {
         System.out.print("nhập id học sinh muốn tìm: ");
         int idDelete = Integer.parseInt(scanner.nextLine());
 
@@ -50,8 +50,34 @@ public class TeacherService implements ITeacherService {
         return null;
     }
 
+    public void findTeacher() {
+        System.out.println("Bạn muốn tìm kiếm dựa theo tên hay id? 1. tên 2. Id");
+        System.out.print("Nhập ở đây: ");
+        int findChoice = Integer.parseInt(scanner.nextLine());
+
+        if (findChoice == 1) {
+            System.out.print("Nhập tên giáo viên: ");
+            String nameFind = scanner.nextLine();
+            for (Teacher teacher : teachers) {
+                if (teacher.getName().contains(nameFind)) {
+                    System.out.println(teacher.toString());
+                }
+            }
+        } else if (findChoice == 2) {
+            System.out.print("Nhập id giáo viên bạn muốn thao tác: ");
+            int idFind = Integer.parseInt(scanner.nextLine());
+            for (Teacher teacher : teachers) {
+                if (teacher.getId() == (idFind)) {
+                    System.out.println(teacher.toString());
+                }
+            }
+        } else {
+            System.out.println("Nhập sai!");
+        }
+    }
+
     public void deleteTeacher() {
-        Teacher teacherDelete = this.findTeacher();
+        Teacher teacherDelete = this.findTeacher1();
         if (teacherDelete == null) {
             System.out.println("Không tìm thấy id giáo viên cần xóa");
         } else {
@@ -75,7 +101,7 @@ public class TeacherService implements ITeacherService {
     }
 
     public void editTeacherInfo() {
-        Teacher teacherEdit = this.findTeacher();
+        Teacher teacherEdit = this.findTeacher1();
         if (teacherEdit == null) {
             System.out.println("Không tìm thấy giáo viên muốn sửa thông tin");
         } else {

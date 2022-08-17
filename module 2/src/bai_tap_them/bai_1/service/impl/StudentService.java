@@ -14,8 +14,8 @@ public class StudentService implements IStudentService {
     static List<Student> students = new ArrayList<>();
 
     static {
-        students.add(new Student(123, "A", "1/1/2000","Nam", 8, "C06"));
-        students.add(new Student(456, "B", "2/2/2000","Nữ", 8, "C06"));
+        students.add(new Student(123, "A", "1/1/2000", "Nam", 8, "C06"));
+        students.add(new Student(456, "B", "2/2/2000", "Nữ", 8, "C06"));
     }
 
 
@@ -41,21 +41,47 @@ public class StudentService implements IStudentService {
         return new Student(id, name, birthday, gender, point, className);
     }
 
-    public Student findStudent() {
-        System.out.print("nhập id học sinh muốn tìm: ");
-        int idDelete = Integer.parseInt(scanner.nextLine());
+    public Student findStudent1() {
+        System.out.print("Nhập id học sinh bạn muốn thao tác: ");
+        int findChoice = Integer.parseInt(scanner.nextLine());
 
         for (Student student : students) {
-            if (student.getId() == idDelete) {
+            if (student.getId() == findChoice) {
                 return student;
             }
         }
         return null;
     }
 
+    public void findStudent() {
+        System.out.println("Bạn muốn tìm kiếm dựa theo tên hay id? 1. tên 2. Id");
+        System.out.print("Nhập ở đây: ");
+        int findChoice = Integer.parseInt(scanner.nextLine());
+
+        if (findChoice == 1) {
+            System.out.print("Nhập tên học sinh: ");
+            String nameFind = scanner.nextLine();
+            for (Student student : students) {
+                if (student.getName().contains(nameFind)) {
+                    System.out.println(student.toString());
+                }
+            }
+        } else if (findChoice == 2) {
+            System.out.print("Nhập id học sinh bạn muốn thao tác: ");
+            int idFind = Integer.parseInt(scanner.nextLine());
+            for (Student student : students) {
+                if (student.getId() == (idFind)) {
+                    System.out.println(student.toString());
+                }
+            }
+        } else {
+            System.out.println("Nhập sai!");
+        }
+    }
+
     @Override
     public void deleteStudent() {
-        Student studentDelete = this.findStudent();
+        Student studentDelete = this.findStudent1();
         if (studentDelete == null) {
             System.out.println("Không tìm thấy id học sinh cần xóa");
         } else {
@@ -81,7 +107,7 @@ public class StudentService implements IStudentService {
 
     @Override
     public void editStudentInfo() {
-        Student studentEdit = this.findStudent();
+        Student studentEdit = this.findStudent1();
         if (studentEdit == null) {
             System.out.println("Không tìm thấy học sinh muốn sửa thông tin");
         } else {

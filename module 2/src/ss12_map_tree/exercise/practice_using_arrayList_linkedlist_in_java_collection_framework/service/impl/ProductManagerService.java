@@ -147,10 +147,10 @@ public class ProductManagerService implements IProductManagerService {
     @Override
     public void search() {
         System.out.print("Input product's name: ");
-        String nameDelete = scanner.nextLine();
+        String nameSearch = scanner.nextLine();
 
         for (Product product : productList) {
-            if (product.getName().equals(nameDelete)) {
+            if (product.getName().equals(nameSearch)) {
                 System.out.println(product.toString());
             }
         }

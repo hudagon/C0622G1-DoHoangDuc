@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body></body>
+<script>
+    let str = "CodegymDaNang";
+    let arr = str.split("");
+    let arr2 = [];
+    for (let i = 0; i < arr.length-1; i++) {
+        arr2.push(arr[i]);
+        if (arr[i + 1] !== arr[i + 1].toLowerCase()) {
+            arr2.push(" ");
+        }
+    }
+    arr2.push(arr[arr.length - 1 ]);
+    let a = arr2.join("").toLowerCase();
+
+    document.write(a);
+</script>
+</html>

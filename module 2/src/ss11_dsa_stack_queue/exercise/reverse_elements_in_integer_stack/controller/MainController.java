@@ -19,7 +19,7 @@ public class MainController {
         }
 
 //      Đảo ngược chuỗi sử dụng Stack
-        String str = "Hello World";
+        String str = "Hello World I love you";
         StringBuilder str2 = new StringBuilder();
         String[] arrStr = str.split(" ");
 
