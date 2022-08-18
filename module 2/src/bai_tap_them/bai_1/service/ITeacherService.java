@@ -12,4 +12,6 @@ public interface ITeacherService {
     void deleteTeacher();
 
     void findTeacher();
+
+    void sortTeacher();
 }

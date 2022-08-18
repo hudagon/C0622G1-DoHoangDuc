@@ -16,12 +16,7 @@ public class TeacherService implements ITeacherService {
     static {
         teachers.add(new Teacher(123, "A Hải", "12/12/1212", "Nam", "Đủ thứ"));
         teachers.add(new Teacher(456, "A Quang", "13/13/1313", "Nam", "Đủ thứ"));
-    }
-
-    public void addTeacher() {
-        teachers.add(this.getInfo());
-        System.out.println("Thêm mới giáo viên thành công");
-        size++;
+        teachers.add(new Teacher(789, "A Công", "13/13/1313", "Nam", "Đủ thứ"));
     }
 
     public Teacher getInfo() {
@@ -50,6 +45,14 @@ public class TeacherService implements ITeacherService {
         return null;
     }
 
+    @Override
+    public void addTeacher() {
+        teachers.add(this.getInfo());
+        System.out.println("Thêm mới giáo viên thành công");
+        size++;
+    }
+
+    @Override
     public void findTeacher() {
         System.out.println("Bạn muốn tìm kiếm dựa theo tên hay id? 1. tên 2. Id");
         System.out.print("Nhập ở đây: ");
@@ -76,6 +79,7 @@ public class TeacherService implements ITeacherService {
         }
     }
 
+    @Override
     public void deleteTeacher() {
         Teacher teacherDelete = this.findTeacher1();
         if (teacherDelete == null) {
@@ -90,16 +94,14 @@ public class TeacherService implements ITeacherService {
         }
     }
 
+    @Override
     public void display() {
-        if (size == 0) {
-            System.out.println("Không có học sinh nào để hiển thị");
-        }
-
         for (Teacher teacher : teachers) {
             System.out.println(teacher.toString());
         }
     }
 
+    @Override
     public void editTeacherInfo() {
         Teacher teacherEdit = this.findTeacher1();
         if (teacherEdit == null) {
@@ -155,5 +157,18 @@ public class TeacherService implements ITeacherService {
                 }
             }
         }
+    }
+
+    @Override
+    public void sortTeacher() {
+        for (int i = 1; i < teachers.size(); i++) {
+            Teacher temp1 = teachers.get(i);
+            int j;
+            for (j = i - 1; j >= 0 && teachers.get(j).getName().compareTo(temp1.getName()) > 0; j--) {
+                teachers.set(j + 1, teachers.get(j));
+            }
+            teachers.set(j + 1, temp1);
+        }
+        System.out.println("Đã sắp xếp!");
     }
 }

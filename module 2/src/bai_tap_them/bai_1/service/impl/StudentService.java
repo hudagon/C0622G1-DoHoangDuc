@@ -14,15 +14,10 @@ public class StudentService implements IStudentService {
     static List<Student> students = new ArrayList<>();
 
     static {
-        students.add(new Student(123, "A", "1/1/2000", "Nam", 8, "C06"));
-        students.add(new Student(456, "B", "2/2/2000", "Nữ", 8, "C06"));
-    }
-
-
-    public void addStudent() {
-        students.add(this.getInfo());
-        System.out.println("Thêm mới học sinh thành công");
-        size++;
+        students.add(new Student(123, "Nguyễn Văn D", "1/1/2000", "Nam", 8, "C06"));
+        students.add(new Student(456, "Nguyễn Văn C", "2/2/2000", "Nữ", 8, "C06"));
+        students.add(new Student(789, "Nguyễn Văn B", "2/2/2000", "Nữ", 8, "C06"));
+        students.add(new Student(101112, "Nguyễn Văn A", "2/2/2000", "Nữ", 8, "C06"));
     }
 
     public Student getInfo() {
@@ -53,6 +48,14 @@ public class StudentService implements IStudentService {
         return null;
     }
 
+    @Override
+    public void addStudent() {
+        students.add(this.getInfo());
+        System.out.println("Thêm mới học sinh thành công");
+        size++;
+    }
+
+    @Override
     public void findStudent() {
         System.out.println("Bạn muốn tìm kiếm dựa theo tên hay id? 1. tên 2. Id");
         System.out.print("Nhập ở đây: ");
@@ -80,6 +83,21 @@ public class StudentService implements IStudentService {
     }
 
     @Override
+    public void sortStudent() {
+
+        for (int i = 1; i < students.size(); i++) {
+            Student temp1 = students.get(i);
+            int j;
+            for (j = i - 1; j >= 0 && students.get(j).getName().compareTo(temp1.getName()) > 0; j--) {
+                students.set(j + 1, students.get(j));
+            }
+            students.set(j + 1, temp1);
+        }
+
+        System.out.println("Đã sắp xếp!");
+    }
+
+    @Override
     public void deleteStudent() {
         Student studentDelete = this.findStudent1();
         if (studentDelete == null) {
@@ -96,10 +114,6 @@ public class StudentService implements IStudentService {
 
     @Override
     public void display() {
-        if (size == 0) {
-            System.out.println("Không có học sinh nào để hiển thị");
-        }
-
         for (Student student : students) {
             System.out.println(student.toString());
         }
