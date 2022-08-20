@@ -1,14 +1,17 @@
 package bai_tap_them.bai_1.service.impl;
 
 import bai_tap_them.bai_1.model.Student;
+import bai_tap_them.bai_1.model.Teacher;
 import bai_tap_them.bai_1.service.IStudentService;
+import bai_tap_them.bai_1.service.utils.exception.IdException;
+import bai_tap_them.bai_1.service.utils.exception.PointException;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
 public class StudentService implements IStudentService {
-    static int size = 0;
 
     Scanner scanner = new Scanner(System.in);
     static List<Student> students = new ArrayList<>();
@@ -21,18 +24,96 @@ public class StudentService implements IStudentService {
     }
 
     public Student getInfo() {
-        System.out.print("xin mời nhập id: ");
-        int id = Integer.parseInt(scanner.nextLine());
-        System.out.print("xin mời nhập tên: ");
-        String name = scanner.nextLine();
-        System.out.print("xin mời nhập ngày sinh: ");
-        String birthday = scanner.nextLine();
-        System.out.print("xin mời nhập điểm: ");
-        double point = Double.parseDouble(scanner.nextLine());
-        System.out.print("xin mời nhập lớp: ");
-        String className = scanner.nextLine();
-        System.out.print("Xin mời nhập giới tính: ");
-        String gender = scanner.nextLine();
+        int id;
+        while (true) {
+            try {
+                System.out.print("Xin mời nhập id: ");
+                id = Integer.parseInt(scanner.nextLine());
+
+                for (Student student : students) {
+                    if (student.getId() == id) {
+                        throw new IdException("Id này đã tồn tại. Vui lòng nhập id khác.");
+                    }
+                }
+                break;
+            } catch (NumberFormatException e) {
+                System.out.println("Bạn nhập không phải là số. Vui lòng nhập lại.");
+            } catch (IdException e) {
+                System.out.println(e.getMessage());
+            } catch (Exception e) {
+                System.out.println("Bạn nhập không hợp lệ");
+            }
+        }
+
+        String name;
+        while (true) {
+            try {
+                System.out.print("Mời bạn nhập tên: ");
+                name = scanner.nextLine();
+                break;
+            } catch (InputMismatchException e) {
+                System.out.println("Bạn nhập không phải là chữ. Vui lòng nhập lại.");
+            } catch (Exception e) {
+                System.out.println("Bạn nhập không hợp lệ");
+            }
+        }
+
+        String birthday;
+        while (true) {
+            try {
+                System.out.print("Mời bạn nhập ngày sinh theo định dạng ngày/tháng/năm:  ");
+                birthday = scanner.nextLine();
+                break;
+            } catch (InputMismatchException e) {
+                System.out.println("Bạn nhập không đúng định dạng. Vui lòng nhập lại.");
+            } catch (Exception e) {
+                System.out.println("Bạn nhập không hợp lệ");
+            }
+        }
+
+        String gender;
+        while (true) {
+            try {
+                System.out.print("Mời bạn nhập giới tính: ");
+                gender = scanner.nextLine();
+                break;
+            } catch (InputMismatchException e) {
+                System.out.println("Bạn nhập không phải là chữ. Vui lòng nhập lại.");
+            } catch (Exception e) {
+                System.out.println("Bạn nhập không hợp lệ");
+            }
+        }
+
+        double point;
+        while (true) {
+            try {
+                System.out.print("Mời bạn nhập điểm: ");
+                point = Integer.parseInt(scanner.nextLine());
+                if (point < 0 || point > 100) {
+                    throw new PointException("Bạn không thể nhập điểm nhỏ hơn 0 và lớn hơn 100");
+                }
+                break;
+            } catch (NumberFormatException e) {
+                System.out.println("Bạn nhập không phải là số. Yêu cầu nhập lại.");
+            } catch (PointException e) {
+                System.out.println(e.getMessage());
+            } catch (Exception e) {
+                System.out.println("Bạn nhập không hợp lệ");
+            }
+        }
+
+        String className;
+        while (true) {
+            try {
+                System.out.print("Mời bạn nhập tên lớp: ");
+                className = scanner.nextLine();
+                break;
+            } catch (InputMismatchException e) {
+                System.out.println("Bạn nhập không phải là chữ. Vui lòng nhập lại.");
+            } catch (Exception e) {
+                System.out.println("Bạn nhập không hợp lệ");
+            }
+        }
         return new Student(id, name, birthday, gender, point, className);
     }
 
@@ -52,7 +133,6 @@ public class StudentService implements IStudentService {
     public void addStudent() {
         students.add(this.getInfo());
         System.out.println("Thêm mới học sinh thành công");
-        size++;
     }
 
     @Override

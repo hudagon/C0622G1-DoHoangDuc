@@ -7,9 +7,7 @@ import java.util.Comparator;
 public class ProductComparator implements Comparator<Product> {
 
     public int compare(Product o1, Product o2) {
-        double price1 = o1.getPrice();
-        double price2 = o2.getPrice();
-        return Double.compare(price1, price2);
+        return Double.compare(o1.getPrice(), o2.getPrice());
     }
 
 

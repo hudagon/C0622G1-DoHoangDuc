@@ -134,11 +134,11 @@ public class ProductManagerService implements IProductManagerService {
 
         switch (choice) {
             case 1:
-                Collections.sort(productList, new ProductComparator());
+                productList.sort(new ProductComparator());
                 System.out.println("Sort successfully!");
                 break;
             case 2:
-                Collections.sort(productList, new ProductComparator().reversed());
+                productList.sort(new ProductComparator().reversed());
                 System.out.println("Sort successfully!");
                 break;
         }

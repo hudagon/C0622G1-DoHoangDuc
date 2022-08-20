@@ -2,13 +2,14 @@ package bai_tap_them.bai_1.service.impl;
 
 import bai_tap_them.bai_1.model.Teacher;
 import bai_tap_them.bai_1.service.ITeacherService;
+import bai_tap_them.bai_1.service.utils.exception.IdException;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
 public class TeacherService implements ITeacherService {
-    static int size = 0;
 
     Scanner scanner = new Scanner(System.in);
     static List<Teacher> teachers = new ArrayList<>();
@@ -20,16 +21,78 @@ public class TeacherService implements ITeacherService {
     }
 
     public Teacher getInfo() {
-        System.out.print("xin mời nhập id: ");
-        int id = Integer.parseInt(scanner.nextLine());
-        System.out.print("xin mời nhập tên: ");
-        String name = scanner.nextLine();
-        System.out.print("xin mời nhập ngày sinh: ");
-        String birthday = scanner.nextLine();
-        System.out.print("Xin mời nhập giới tính: ");
-        String gender = scanner.nextLine();
-        System.out.print("Xin mời nhập chuyên môn: ");
-        String expertiseAt = scanner.nextLine();
+        int id;
+        while (true) {
+            try {
+                System.out.print("Xin mời nhập id: ");
+                id = Integer.parseInt(scanner.nextLine());
+
+                for (Teacher teacher : teachers) {
+                    if (teacher.getId() == id) {
+                        throw new IdException("Id này đã tồn tại. Vui lòng nhập id khác.");
+                    }
+                }
+                break;
+            } catch (NumberFormatException e) {
+                System.out.println("Bạn nhập không phải là số. Vui lòng nhập lại.");
+            } catch (IdException e) {
+                System.out.println(e.getMessage());
+            } catch (Exception e) {
+                System.out.println("Bạn nhập không hợp lệ");
+            }
+        }
+
+        String name;
+        while (true) {
+            try {
+                System.out.print("Mời bạn nhập tên: ");
+                name = scanner.nextLine();
+                break;
+            } catch (InputMismatchException e) {
+                System.out.println("Bạn nhập không phải là chữ. Vui lòng nhập lại.");
+            } catch (Exception e) {
+                System.out.println("Bạn nhập không hợp lệ");
+            }
+        }
+
+        String birthday;
+        while (true) {
+            try {
+                System.out.print("Mời bạn nhập ngày sinh theo định dạng ngày/tháng/năm:  ");
+                birthday = scanner.nextLine();
+                break;
+            } catch (InputMismatchException e) {
+                System.out.println("Bạn nhập không đúng định dạng. Vui lòng nhập lại.");
+            } catch (Exception e) {
+                System.out.println("Bạn nhập không hợp lệ");
+            }
+        }
+
+        String gender;
+        while (true) {
+            try {
+                System.out.print("Mời bạn nhập giới tính: ");
+                gender = scanner.nextLine();
+                break;
+            } catch (InputMismatchException e) {
+                System.out.println("Bạn nhập không phải là chữ. Vui lòng nhập lại.");
+            } catch (Exception e) {
+                System.out.println("Bạn nhập không hợp lệ");
+            }
+        }
+
+        String expertiseAt;
+        while (true) {
+            try {
+                System.out.print("Mời bạn nhập chuyên môn: ");
+                expertiseAt = scanner.nextLine();
+                break;
+            } catch (InputMismatchException e) {
+                System.out.println("Bạn nhập không phải là chữ. Vui lòng nhập lại.");
+            } catch (Exception e) {
+                System.out.println("Bạn nhập không hợp lệ");
+            }
+        }
         return new Teacher(id, name, birthday, gender, expertiseAt);
     }
 
@@ -49,7 +112,6 @@ public class TeacherService implements ITeacherService {
     public void addTeacher() {
         teachers.add(this.getInfo());
         System.out.println("Thêm mới giáo viên thành công");
-        size++;
     }
 
     @Override
