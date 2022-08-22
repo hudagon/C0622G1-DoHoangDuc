@@ -187,6 +187,9 @@ public class StudentService implements IStudentService {
 
     @Override
     public void display() {
+        if (students.size() == 0) {
+            System.out.println("Không có thông tin để hiển thị");
+        }
         for (Student student : students) {
             System.out.println(student.toString());
         }
@@ -260,7 +263,7 @@ public class StudentService implements IStudentService {
     @Override
     public void readFile() {
         try {
-            System.out.print("Xin mời nhập đường dẫn file: ");
+            System.out.print("Xin mời nhập đdẫn file: ");
             String studentPath = scanner.nextLine();
 
             File fileStudent = new File(studentPath);

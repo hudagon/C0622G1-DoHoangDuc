@@ -1,6 +1,5 @@
 package bai_tap_them.bai_1.service.impl;
 
-import bai_tap_them.bai_1.model.Student;
 import bai_tap_them.bai_1.model.Teacher;
 import bai_tap_them.bai_1.service.ITeacherService;
 import bai_tap_them.bai_1.service.utils.exception.IdException;
@@ -15,12 +14,6 @@ public class TeacherService implements ITeacherService {
 
     Scanner scanner = new Scanner(System.in);
     static List<Teacher> teachers = new ArrayList<>();
-
-//    static {
-//        teachers.add(new Teacher(123, "A Hải", "12/12/1212", "Nam", "Đủ thứ"));
-//        teachers.add(new Teacher(456, "A Quang", "13/13/1313", "Nam", "Đủ thứ"));
-//        teachers.add(new Teacher(789, "A Công", "13/13/1313", "Nam", "Đủ thứ"));
-//    }
 
     public Teacher getInfo() {
         int id;
@@ -160,6 +153,9 @@ public class TeacherService implements ITeacherService {
 
     @Override
     public void display() {
+        if (teachers.size() == 0) {
+            System.out.println("Không có thông tin để hiện thị");
+        }
         for (Teacher teacher : teachers) {
             System.out.println(teacher.toString());
         }

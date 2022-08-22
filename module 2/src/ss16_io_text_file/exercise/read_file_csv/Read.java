@@ -2,7 +2,6 @@ package ss16_io_text_file.exercise.read_file_csv;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
