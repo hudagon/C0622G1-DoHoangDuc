@@ -14,4 +14,8 @@ public interface IStudentService {
     void findStudent();
 
     void sortStudent();
+
+    void readFile();
+
+    void writeFile();
 }

@@ -1,9 +1,11 @@
 package bai_tap_them.bai_1.service.impl;
 
+import bai_tap_them.bai_1.model.Student;
 import bai_tap_them.bai_1.model.Teacher;
 import bai_tap_them.bai_1.service.ITeacherService;
 import bai_tap_them.bai_1.service.utils.exception.IdException;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
@@ -14,11 +16,11 @@ public class TeacherService implements ITeacherService {
     Scanner scanner = new Scanner(System.in);
     static List<Teacher> teachers = new ArrayList<>();
 
-    static {
-        teachers.add(new Teacher(123, "A Hải", "12/12/1212", "Nam", "Đủ thứ"));
-        teachers.add(new Teacher(456, "A Quang", "13/13/1313", "Nam", "Đủ thứ"));
-        teachers.add(new Teacher(789, "A Công", "13/13/1313", "Nam", "Đủ thứ"));
-    }
+//    static {
+//        teachers.add(new Teacher(123, "A Hải", "12/12/1212", "Nam", "Đủ thứ"));
+//        teachers.add(new Teacher(456, "A Quang", "13/13/1313", "Nam", "Đủ thứ"));
+//        teachers.add(new Teacher(789, "A Công", "13/13/1313", "Nam", "Đủ thứ"));
+//    }
 
     public Teacher getInfo() {
         int id;
@@ -232,5 +234,58 @@ public class TeacherService implements ITeacherService {
             teachers.set(j + 1, temp1);
         }
         System.out.println("Đã sắp xếp!");
+    }
+
+    @Override
+    public void readFile() {
+        try {
+            System.out.print("Xin mời nhập đường dẫn file: ");
+            String teacherPath = scanner.nextLine();
+
+            File fileTeacher = new File(teacherPath);
+
+            if (!fileTeacher.exists()) {
+                throw new FileNotFoundException();
+            }
+
+            BufferedReader bufferedReader = new BufferedReader(new FileReader(fileTeacher));
+
+            String line;
+            while ((line = bufferedReader.readLine()) != null) {
+                String[] student = line.split(",");
+                teachers.add(new Teacher(Integer.parseInt(student[0]), student[1],
+                        student[2], student[3], student[4]));
+            }
+            System.out.println("Đọc file thành công!");
+            bufferedReader.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("Không tìm thấy file!");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void writeFile() {
+        try {
+            System.out.print("Xin mời nhập đường dẫn file: ");
+            String teacherPath = scanner.nextLine();
+
+            File fileTeacher = new File(teacherPath);
+
+            if (fileTeacher.exists()) {
+                throw new Exception();
+            }
+
+            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(teacherPath));
+            for (Teacher teacher : teachers) {
+                bufferedWriter.write(teacher.toString());
+                bufferedWriter.newLine();
+            }
+            System.out.println("Ghi thành công!");
+            bufferedWriter.close();
+        } catch (Exception e) {
+            System.out.println("File đã tồn tại!");
+        }
     }
 }
