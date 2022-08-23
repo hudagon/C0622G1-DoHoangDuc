@@ -54,7 +54,7 @@ public class StudentService implements IStudentService {
         String birthday;
         while (true) {
             try {
-                System.out.print("Mời bạn nhập ngày sinh theo định dạng ngày/tháng/năm:  ");
+                System.out.print("Mời bạn nhập ngày sinh theo định dạng ngày/tháng/năm: ");
                 birthday = scanner.nextLine();
                 break;
             } catch (InputMismatchException e) {
@@ -81,7 +81,7 @@ public class StudentService implements IStudentService {
         while (true) {
             try {
                 System.out.print("Mời bạn nhập điểm: ");
-                point = Integer.parseInt(scanner.nextLine());
+                point = Double.parseDouble(scanner.nextLine());
                 if (point < 0 || point > 100) {
                     throw new PointException("Bạn không thể nhập điểm nhỏ hơn 0 và lớn hơn 100");
                 }
@@ -122,10 +122,66 @@ public class StudentService implements IStudentService {
         return null;
     }
 
+    public List<Student> readFile(String path) {
+        List<Student> students = new ArrayList<>();
+        try {
+            File fileStudent = new File(path);
+
+            if (!fileStudent.exists()) {
+                throw new FileNotFoundException();
+            }
+
+            BufferedReader bufferedReader = new BufferedReader(new FileReader(fileStudent));
+
+            String line;
+            while ((line = bufferedReader.readLine()) != null) {
+                String[] student = line.split(",");
+                students.add(new Student(Integer.parseInt(student[0]), student[1],
+                        student[2], student[3], Double.parseDouble(student[4]), student[5]));
+            }
+            bufferedReader.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("Không tìm thấy file!");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return students;
+    }
+
+    public void writeFile(String path, boolean append,List<String> str) {
+        try {
+            File fileStudent = new File(path);
+
+            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(fileStudent));
+            for (String students : str) {
+                bufferedWriter.write(students);
+                bufferedWriter.newLine();
+            }
+            bufferedWriter.close();
+        } catch (Exception e) {
+            System.out.println("File đã tồn tại!");
+        }
+    }
+
+    public String ConvertStudentFormat(Student student) {
+        return student.getId() + "," + student.getName() + "," + student.getBirthday() + "," + student.getGender() + ","
+               + student.getPoint() + "," + student.getClassName();
+    }
+
+    public List<String> listStudentConvertedToString() {
+        List<String> result = new ArrayList<>();
+        for (Student student : students) {
+            result.add(ConvertStudentFormat(student));
+        }
+        return result;
+    }
+
     @Override
     public void addStudent() {
+        readFile("src\\bai_tap_them\\bai_1\\data\\students.txt");
         students.add(this.getInfo());
         System.out.println("Thêm mới học sinh thành công");
+        writeFile("src\\bai_tap_them\\bai_1\\data\\students.txt",true,listStudentConvertedToString());
     }
 
     @Override
@@ -157,7 +213,6 @@ public class StudentService implements IStudentService {
 
     @Override
     public void sortStudent() {
-
         for (int i = 1; i < students.size(); i++) {
             Student temp1 = students.get(i);
             int j;
@@ -166,12 +221,13 @@ public class StudentService implements IStudentService {
             }
             students.set(j + 1, temp1);
         }
-
         System.out.println("Đã sắp xếp!");
+        writeFile("src\\bai_tap_them\\bai_1\\data\\students.txt",false,listStudentConvertedToString());
     }
 
     @Override
     public void deleteStudent() {
+        readFile("src\\bai_tap_them\\bai_1\\data\\students.txt");
         Student studentDelete = this.findStudent1();
         if (studentDelete == null) {
             System.out.println("Không tìm thấy id học sinh cần xóa");
@@ -183,10 +239,12 @@ public class StudentService implements IStudentService {
                 System.out.println("Xóa thành công");
             }
         }
+        writeFile("src\\bai_tap_them\\bai_1\\data\\students.txt",false,listStudentConvertedToString());
     }
 
     @Override
     public void display() {
+        students = readFile("src\\bai_tap_them\\bai_1\\data\\students.txt");
         if (students.size() == 0) {
             System.out.println("Không có thông tin để hiển thị");
         }
@@ -197,6 +255,7 @@ public class StudentService implements IStudentService {
 
     @Override
     public void editStudentInfo() {
+        readFile("src\\bai_tap_them\\bai_1\\data\\students.txt");
         Student studentEdit = this.findStudent1();
         if (studentEdit == null) {
             System.out.println("Không tìm thấy học sinh muốn sửa thông tin");
@@ -219,97 +278,52 @@ public class StudentService implements IStudentService {
                         System.out.println("Bạn muốn sửa tên học sinh lại như thế nào");
                         String newName = scanner.nextLine();
                         students.get(positionEdit).setName(newName);
+                        writeFile("src\\bai_tap_them\\bai_1\\data\\students.txt",false,listStudentConvertedToString());
                         System.out.println("Đã sửa tên thành công");
                         break;
                     case 2:
                         System.out.println("Bạn muốn sửa id học sinh lại như thế nào");
                         int newId = Integer.parseInt(scanner.nextLine());
                         students.get(positionEdit).setId(newId);
+                        writeFile("src\\bai_tap_them\\bai_1\\data\\students.txt",false,listStudentConvertedToString());
                         System.out.println("Đã sửa id thành công");
                         break;
                     case 3:
                         System.out.println("Bạn muốn sửa ngày sinh học sinh lại như thế nào");
                         String newBirthday = scanner.nextLine();
                         students.get(positionEdit).setBirthday(newBirthday);
+                        writeFile("src\\bai_tap_them\\bai_1\\data\\students.txt",false,listStudentConvertedToString());
                         System.out.println("Đã sửa ngày sinh thành công");
                         break;
                     case 4:
                         System.out.println("Bạn muốn sửa điểm học sinh lại như thế nào");
                         double newPoint = Double.parseDouble(scanner.nextLine());
                         students.get(positionEdit).setPoint(newPoint);
+                        writeFile("src\\bai_tap_them\\bai_1\\data\\students.txt",false,listStudentConvertedToString());
                         System.out.println("Đã sửa điểm thành công");
                         break;
                     case 5:
                         System.out.println("Bạn muốn sửa tên lớp lại như thế nào");
                         String newClassname = scanner.nextLine();
                         students.get(positionEdit).setClassName(newClassname);
+                        writeFile("src\\bai_tap_them\\bai_1\\data\\students.txt",false,listStudentConvertedToString());
                         System.out.println("Đã sửa tên lớp thành công");
                         break;
                     case 6:
                         System.out.println("Bạn muốn sửa giới tính lại như thế nào");
                         String newGender = scanner.nextLine();
                         students.get(positionEdit).setGender(newGender);
+                        writeFile("src\\bai_tap_them\\bai_1\\data\\students.txt",false,listStudentConvertedToString());
                         System.out.println("Đã sửa giới tính thành công");
                         break;
                     case 7:
+                        writeFile("src\\bai_tap_them\\bai_1\\data\\students.txt",false,listStudentConvertedToString());
                         return;
                     default:
                         System.out.println("Số nhập vào không hợp lệ");
                 }
             }
         }
-    }
 
-    @Override
-    public void readFile() {
-        try {
-            System.out.print("Xin mời nhập đdẫn file: ");
-            String studentPath = scanner.nextLine();
-
-            File fileStudent = new File(studentPath);
-
-            if (!fileStudent.exists()) {
-                throw new FileNotFoundException();
-            }
-
-            BufferedReader bufferedReader = new BufferedReader(new FileReader(fileStudent));
-
-            String line;
-            while ((line = bufferedReader.readLine()) != null) {
-                String[] student = line.split(",");
-                students.add(new Student(Integer.parseInt(student[0]), student[1],
-                        student[2], student[3], Double.parseDouble(student[4]), student[5]));
-            }
-            System.out.println("Đọc file thành công!");
-            bufferedReader.close();
-        } catch (FileNotFoundException e) {
-            System.out.println("Không tìm thấy file!");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Override
-    public void writeFile() {
-        try {
-            System.out.print("Xin mời nhập đường dẫn file: ");
-            String studentPath = scanner.nextLine();
-
-            File fileStudent = new File(studentPath);
-
-            if (fileStudent.exists()) {
-                throw new Exception();
-            }
-
-            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(studentPath));
-            for (Student student : students) {
-                bufferedWriter.write(student.toString());
-                bufferedWriter.newLine();
-            }
-            System.out.println("Ghi thành công!");
-            bufferedWriter.close();
-        } catch (Exception e) {
-            System.out.println("File đã tồn tại!");
-        }
     }
 }

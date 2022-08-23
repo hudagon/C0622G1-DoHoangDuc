@@ -1,5 +1,6 @@
 package bai_tap_them.bai_1.service.impl;
 
+import bai_tap_them.bai_1.model.Student;
 import bai_tap_them.bai_1.model.Teacher;
 import bai_tap_them.bai_1.service.ITeacherService;
 import bai_tap_them.bai_1.service.utils.exception.IdException;
@@ -53,7 +54,7 @@ public class TeacherService implements ITeacherService {
         String birthday;
         while (true) {
             try {
-                System.out.print("Mời bạn nhập ngày sinh theo định dạng ngày/tháng/năm:  ");
+                System.out.print("Mời bạn nhập ngày sinh theo định dạng ngày/tháng/năm: ");
                 birthday = scanner.nextLine();
                 break;
             } catch (InputMismatchException e) {
@@ -103,10 +104,66 @@ public class TeacherService implements ITeacherService {
         return null;
     }
 
+    public List<Teacher> readFile(String path) {
+        List<Teacher> teachers = new ArrayList<>();
+        try {
+            File fileTeacher = new File(path);
+
+            if (!fileTeacher.exists()) {
+                throw new FileNotFoundException();
+            }
+
+            BufferedReader bufferedReader = new BufferedReader(new FileReader(fileTeacher));
+
+            String line;
+            while ((line = bufferedReader.readLine()) != null) {
+                String[] teacher = line.split(",");
+                teachers.add(new Teacher(Integer.parseInt(teacher[0]), teacher[1],
+                        teacher[2], teacher[3], teacher[4]));
+            }
+            bufferedReader.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("Không tìm thấy file!");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return teachers;
+    }
+
+    public void writeFile(String path, boolean append,List<String> str) {
+        try {
+            File fileTeacher = new File(path);
+
+            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(fileTeacher));
+            for (String teachers : str) {
+                bufferedWriter.write(teachers);
+                bufferedWriter.newLine();
+            }
+            bufferedWriter.close();
+        } catch (Exception e) {
+            System.out.println("File đã tồn tại!");
+        }
+    }
+
+    public String ConvertStudentFormat(Teacher teacher) {
+        return teacher.getId() + "," + teacher.getName() + "," + teacher.getBirthday() + "," + teacher.getGender() + ","
+                + teacher.getExpertiseAt();
+    }
+
+    public List<String> listTeacherConvertedToString() {
+        List<String> result = new ArrayList<>();
+        for (Teacher teacher : teachers) {
+            result.add(ConvertStudentFormat(teacher));
+        }
+        return result;
+    }
+
     @Override
     public void addTeacher() {
+        readFile("src\\bai_tap_them\\bai_1\\data\\teachers.txt");
         teachers.add(this.getInfo());
         System.out.println("Thêm mới giáo viên thành công");
+        writeFile("src\\bai_tap_them\\bai_1\\data\\teachers.txt",true,listTeacherConvertedToString());
     }
 
     @Override
@@ -138,6 +195,7 @@ public class TeacherService implements ITeacherService {
 
     @Override
     public void deleteTeacher() {
+        readFile("src\\bai_tap_them\\bai_1\\data\\teachers.txt");
         Teacher teacherDelete = this.findTeacher1();
         if (teacherDelete == null) {
             System.out.println("Không tìm thấy id giáo viên cần xóa");
@@ -146,6 +204,7 @@ public class TeacherService implements ITeacherService {
             int choiceDelete = Integer.parseInt(scanner.nextLine());
             if (choiceDelete == 1) {
                 teachers.remove(teacherDelete);
+                writeFile("src\\bai_tap_them\\bai_1\\data\\teachers.txt",true,listTeacherConvertedToString());
                 System.out.println("Xóa thành công");
             }
         }
@@ -153,6 +212,7 @@ public class TeacherService implements ITeacherService {
 
     @Override
     public void display() {
+        teachers = readFile("src\\bai_tap_them\\bai_1\\data\\teachers.txt");
         if (teachers.size() == 0) {
             System.out.println("Không có thông tin để hiện thị");
         }
@@ -163,6 +223,7 @@ public class TeacherService implements ITeacherService {
 
     @Override
     public void editTeacherInfo() {
+        readFile("src\\bai_tap_them\\bai_1\\data\\teachers.txt");
         Teacher teacherEdit = this.findTeacher1();
         if (teacherEdit == null) {
             System.out.println("Không tìm thấy giáo viên muốn sửa thông tin");
@@ -184,33 +245,39 @@ public class TeacherService implements ITeacherService {
                         System.out.println("Bạn muốn sửa tên giáo viên lại như thế nào");
                         String newName = scanner.nextLine();
                         teachers.get(positionEdit).setName(newName);
+                        writeFile("src\\bai_tap_them\\bai_1\\data\\teachers.txt",true,listTeacherConvertedToString());
                         System.out.println("Đã sửa tên thành công");
                         break;
                     case 2:
                         System.out.println("Bạn muốn sửa id giáo viên lại như thế nào");
                         int newId = Integer.parseInt(scanner.nextLine());
                         teachers.get(positionEdit).setId(newId);
+                        writeFile("src\\bai_tap_them\\bai_1\\data\\teachers.txt",true,listTeacherConvertedToString());
                         System.out.println("Đã sửa id thành công");
                         break;
                     case 3:
                         System.out.println("Bạn muốn sửa ngày sinh giáo viên lại như thế nào");
                         String newBirthday = scanner.nextLine();
                         teachers.get(positionEdit).setBirthday(newBirthday);
+                        writeFile("src\\bai_tap_them\\bai_1\\data\\teachers.txt",true,listTeacherConvertedToString());
                         System.out.println("Đã sửa ngày sinh thành công");
                         break;
                     case 4:
                         System.out.println("Bạn muốn sửa chuyên môn lại như thế nào");
                         String newExpertise = scanner.nextLine();
                         teachers.get(positionEdit).setExpertiseAt(newExpertise);
+                        writeFile("src\\bai_tap_them\\bai_1\\data\\teachers.txt",true,listTeacherConvertedToString());
                         System.out.println("Đã sửa chuyên môn thành công");
                         break;
                     case 5:
                         System.out.println("Bạn muốn sửa giới tính lại như thế nào");
                         String newGender = scanner.nextLine();
                         teachers.get(positionEdit).setGender(newGender);
+                        writeFile("src\\bai_tap_them\\bai_1\\data\\teachers.txt",true,listTeacherConvertedToString());
                         System.out.println("Đã sửa giới tính thành công");
                         break;
                     case 6:
+                        writeFile("src\\bai_tap_them\\bai_1\\data\\teachers.txt",true,listTeacherConvertedToString());
                         return;
                     default:
                         System.out.println("Số nhập vào không hợp lệ");
@@ -221,6 +288,7 @@ public class TeacherService implements ITeacherService {
 
     @Override
     public void sortTeacher() {
+        readFile("src\\bai_tap_them\\bai_1\\data\\teachers.txt");
         for (int i = 1; i < teachers.size(); i++) {
             Teacher temp1 = teachers.get(i);
             int j;
@@ -230,58 +298,5 @@ public class TeacherService implements ITeacherService {
             teachers.set(j + 1, temp1);
         }
         System.out.println("Đã sắp xếp!");
-    }
-
-    @Override
-    public void readFile() {
-        try {
-            System.out.print("Xin mời nhập đường dẫn file: ");
-            String teacherPath = scanner.nextLine();
-
-            File fileTeacher = new File(teacherPath);
-
-            if (!fileTeacher.exists()) {
-                throw new FileNotFoundException();
-            }
-
-            BufferedReader bufferedReader = new BufferedReader(new FileReader(fileTeacher));
-
-            String line;
-            while ((line = bufferedReader.readLine()) != null) {
-                String[] student = line.split(",");
-                teachers.add(new Teacher(Integer.parseInt(student[0]), student[1],
-                        student[2], student[3], student[4]));
-            }
-            System.out.println("Đọc file thành công!");
-            bufferedReader.close();
-        } catch (FileNotFoundException e) {
-            System.out.println("Không tìm thấy file!");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Override
-    public void writeFile() {
-        try {
-            System.out.print("Xin mời nhập đường dẫn file: ");
-            String teacherPath = scanner.nextLine();
-
-            File fileTeacher = new File(teacherPath);
-
-            if (fileTeacher.exists()) {
-                throw new Exception();
-            }
-
-            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(teacherPath));
-            for (Teacher teacher : teachers) {
-                bufferedWriter.write(teacher.toString());
-                bufferedWriter.newLine();
-            }
-            System.out.println("Ghi thành công!");
-            bufferedWriter.close();
-        } catch (Exception e) {
-            System.out.println("File đã tồn tại!");
-        }
     }
 }

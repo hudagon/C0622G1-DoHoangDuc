@@ -20,23 +20,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c5e45f5-bef7-4a08-84f2-c26b980f091f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/bai_tap_them/bai_1/data/students.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bai_tap_them/bai_1/data/teachers.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/demo/Read.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../module 1/ss4_Git&amp;Html/bai_tap/Su_dung_Git/GitProject" beforeDir="false" afterPath="$PROJECT_DIR$/../module 1/ss4_Git&amp;Html/bai_tap/Su_dung_Git/GitProject" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/module 2/bai_tap_them/bai_1/service/data/students.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/module 2/bai_tap_them/bai_1/service/data/teachers.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module 2/bai_tap_them/bai_1/model/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module 2/bai_tap_them/bai_1/model/Person.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module 2/bai_tap_them/bai_1/model/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module 2/bai_tap_them/bai_1/model/Student.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/module 2/bai_tap_them/bai_1/service/impl/StudentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module 2/bai_tap_them/bai_1/service/impl/StudentService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/module 2/bai_tap_them/bai_1/service/impl/TeacherService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module 2/bai_tap_them/bai_1/service/impl/TeacherService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/module 2/ss16_io_text_file/exercise/read_file_csv/Read.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module 2/ss16_io_text_file/exercise/read_file_csv/Read.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bai_tap_them/bai_1/service/data/students.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bai_tap_them/bai_1/service/data/teachers.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module 2/demo/controller/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bai_tap_them/bai_1/controller/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bai_tap_them/bai_1/controller/StudentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bai_tap_them/bai_1/controller/TeacherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bai_tap_them/bai_1/controller/TeacherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bai_tap_them/bai_1/data/students.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/bai_tap_them/bai_1/data/students.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bai_tap_them/bai_1/data/teachers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/bai_tap_them/bai_1/data/teachers.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bai_tap_them/bai_1/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bai_tap_them/bai_1/model/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bai_tap_them/bai_1/model/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bai_tap_them/bai_1/model/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bai_tap_them/bai_1/model/Teacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bai_tap_them/bai_1/model/Teacher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bai_tap_them/bai_1/service/IStudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bai_tap_them/bai_1/service/IStudentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bai_tap_them/bai_1/service/ITeacherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bai_tap_them/bai_1/service/ITeacherService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/bai_tap_them/bai_1/service/impl/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bai_tap_them/bai_1/service/impl/StudentService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/bai_tap_them/bai_1/service/impl/TeacherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bai_tap_them/bai_1/service/impl/TeacherService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bai_tap_them/bai_1/service/utils/exception/IdException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bai_tap_them/bai_1/utils/exception/IdException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bai_tap_them/bai_1/service/utils/exception/PointException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bai_tap_them/bai_1/utils/exception/PointException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/demo/controller/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss16_io_text_file/exercise/read_file_csv/Read.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss16_io_text_file/exercise/read_file_csv/Read.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bai_tap_them/bai_1/view/MainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bai_tap_them/bai_1/view/MainView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +72,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/ss11_dsa_stack_queue/practice/deploy_stack_using_linkedList_class_in_library" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/c0622g1_mvc (1)" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -100,6 +103,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="bai_tap_them.bai_1.view.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Read (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="demo.Read" />
+      <module name="module 2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="demo.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -146,26 +162,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReadFileExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss16_io_text_file.practice.calculating_the_sum_of_all_numbers_in_text.ReadFileExample" />
-      <module name="module 2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ss16_io_text_file.practice.calculating_the_sum_of_all_numbers_in_text.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.MainView" />
+        <item itemvalue="Application.Read (1)" />
         <item itemvalue="Application.ReadAndWrite" />
         <item itemvalue="Application.Read" />
         <item itemvalue="Application.ReadAndWriteFile" />
-        <item itemvalue="Application.ReadFileExample" />
       </list>
     </recent_temporary>
   </component>
@@ -215,7 +218,8 @@
       <workItem from="1660983904468" duration="35000" />
       <workItem from="1660993419736" duration="2405000" />
       <workItem from="1661139226466" duration="26000" />
-      <workItem from="1661139296125" duration="13233000" />
+      <workItem from="1661139296125" duration="14876000" />
+      <workItem from="1661216117502" duration="5844000" />
     </task>
     <servers />
   </component>
@@ -263,42 +267,42 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1536.824@0.0.1536.824" timestamp="1661150976820" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1660286632847">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1661225135754">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1660286632847" />
-    <state width="1493" height="190" key="GridCell.Tab.0.bottom" timestamp="1661161602587">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1661225135754" />
+    <state width="1493" height="273" key="GridCell.Tab.0.bottom" timestamp="1661226901465">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="190" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1661161602587" />
-    <state width="1493" height="190" key="GridCell.Tab.0.center" timestamp="1661161602587">
+    <state width="1493" height="273" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1661226901465" />
+    <state width="1493" height="273" key="GridCell.Tab.0.center" timestamp="1661226901464">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="190" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1661161602587" />
-    <state width="1493" height="190" key="GridCell.Tab.0.left" timestamp="1661161602587">
+    <state width="1493" height="273" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1661226901464" />
+    <state width="1493" height="273" key="GridCell.Tab.0.left" timestamp="1661226901464">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="190" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1661161602587" />
-    <state width="1493" height="190" key="GridCell.Tab.0.right" timestamp="1661161602587">
+    <state width="1493" height="273" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1661226901464" />
+    <state width="1493" height="273" key="GridCell.Tab.0.right" timestamp="1661226901464">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="190" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1661161602587" />
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1661152533856">
+    <state width="1493" height="273" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1661226901464" />
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1661163667152">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1661152533856" />
-    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1661152533856">
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1661163667152" />
+    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1661163667152">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1661152533856" />
-    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1661152533856">
+    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1661163667152" />
+    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1661163667152">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1661152533856" />
-    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1661152533856">
+    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1661163667152" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1661163667152">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1661152533856" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1661163667152" />
     <state x="277" y="57" key="SettingsEditor" timestamp="1660201903872">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

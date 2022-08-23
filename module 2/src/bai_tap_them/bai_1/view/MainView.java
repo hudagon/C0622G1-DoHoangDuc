@@ -25,15 +25,14 @@ public class MainView {
                     studentController.menuManagement();
                     break;
                 case 2:
-                    TeacherController teahcerController = new TeacherController();
-                    teahcerController.menuManagement();
+                    TeacherController teacherController = new TeacherController();
+                    teacherController.menuManagement();
                     break;
                 case 3:
                     return;
                 default:
                     System.out.println("Số bạn nhập không hợp lệ, vui lòng nhập lại");
             }
-
         }
     }
 }

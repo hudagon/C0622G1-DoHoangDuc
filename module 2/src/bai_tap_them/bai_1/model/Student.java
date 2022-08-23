@@ -36,12 +36,6 @@ public class Student extends Person {
 
     @Override
     public String toString() {
-        return  "Student{" +
-                "point=" + point +
-                ", className='" + className + '\'' +
-                "id='" + super.getId() + '\'' +
-                ", name='" + super.getName() + '\'' +
-                ", birthday='" + super.getBirthday() + '\'' +
-                '}';
+        return  super.toString() + "'," + point + ", " + className;
     }
 }

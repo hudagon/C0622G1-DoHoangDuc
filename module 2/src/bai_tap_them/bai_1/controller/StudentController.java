@@ -18,9 +18,7 @@ public class StudentController {
             System.out.println("4. Xóa học sinh");
             System.out.println("5. Tìm kiếm học sinh");
             System.out.println("6. Sắp xếp theo tên học sinh");
-            System.out.println("7. Đọc file");
-            System.out.println("8. Ghi file");
-            System.out.println("9. Kết thúc chương trình");
+            System.out.println("7. Kết thúc chương trình");
             System.out.print("Xin mời quý khách nhập số để chọn chức năng (1->5): ");
             int input = Integer.parseInt(scanner.nextLine());
 
@@ -44,12 +42,6 @@ public class StudentController {
                     studentService.sortStudent();
                     break;
                 case 7:
-                    studentService.readFile();
-                    break;
-                case 8:
-                    studentService.writeFile();
-                    break;
-                case 9:
                     return;
                 default:
                     System.out.println("Quý khách nhập không hợp lệ");

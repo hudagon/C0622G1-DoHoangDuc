@@ -25,6 +25,7 @@ public class Teacher extends Person {
                 ", name='" + super.getName() + '\'' +
                 ", birthday='" + super.getBirthday() + '\'' +
                 ", expertiseAt='" + this.getExpertiseAt() + '\'' +
+                ", gender='" + this.getGender() + '\'' +
                 '}';
     }
 }

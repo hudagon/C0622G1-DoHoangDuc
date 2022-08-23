@@ -14,8 +14,4 @@ public interface ITeacherService {
     void findTeacher();
 
     void sortTeacher();
-
-    void readFile();
-
-    void writeFile();
 }
