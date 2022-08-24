@@ -24,7 +24,7 @@ public class ProductService implements IProductService {
     }
 
     public static List<Product> readFile(String path) throws IOException, ClassNotFoundException {
-        List<Product> productList;
+        List<Product> productList = new ArrayList<>(0);
         FileInputStream fileInputStream = new FileInputStream(path);
 
         if (fileInputStream.available() != 0) {
@@ -37,12 +37,12 @@ public class ProductService implements IProductService {
             return productList;
         }
 
-        return null;
+        return productList;
     }
 
     @Override
     public void add() throws IOException, ClassNotFoundException {
-        readFile(path);
+        productList = readFile(path);
         boolean temp = true;
         while (temp) {
             System.out.println("1. Add new\n" +
@@ -78,14 +78,19 @@ public class ProductService implements IProductService {
     @Override
     public void display() throws IOException, ClassNotFoundException {
         productList = readFile(path);
-        for (Product product : productList) {
-            System.out.println(product.toString());
+        if (productList.size() == 0) {
+            System.out.println("No information to display!");
+        } else {
+            for (Product product : productList) {
+                System.out.println(product.toString());
+            }
         }
+
     }
 
     @Override
     public void search() throws IOException, ClassNotFoundException {
-        readFile(path);
+        productList = readFile(path);
         System.out.print("Input product's code here: ");
         String productCodeSearch = scanner.nextLine();
 
