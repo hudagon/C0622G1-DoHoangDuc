@@ -10,17 +10,12 @@ public class MainController {
         copy();
     }
 
-    public static void writeFile(String path, String readPath) {
-        List<String> fileData = readFile(readPath);
+    public static void writeFile(String path, List<String> files) {
         try {
-            FileInputStream fileInputStream = new FileInputStream(readPath);
             FileOutputStream fileOutputStream = new FileOutputStream(path);
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
 
-            long size = fileInputStream.getChannel().size();
-            System.out.println("the file size is " + size);
-
-            objectOutputStream.writeObject(fileData);
+            objectOutputStream.writeObject(files);
 
         } catch (FileNotFoundException e) {
             System.out.println("404 File Not Found");
@@ -34,6 +29,7 @@ public class MainController {
         try {
             FileInputStream fileInputStream = new FileInputStream(path);
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
+
 
             files = (List<String>) objectInputStream.readObject();
 
@@ -51,8 +47,11 @@ public class MainController {
         String source = scanner.nextLine();
         System.out.print("Input target file: ");
         String target = scanner.nextLine();
-        readFile(source);
-        writeFile(target, source);
+
+        File inputStream = new File(source);
+        List<String> files = readFile(source);
+        writeFile(target, files);
+        System.out.println("The file's size is " + inputStream.length());
         System.out.println("file copied successfully");
     }
 }
