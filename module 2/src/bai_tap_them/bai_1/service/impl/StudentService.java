@@ -165,7 +165,7 @@ public class StudentService implements IStudentService {
 
     public String ConvertStudentFormat(Student student) {
         return student.getId() + "," + student.getName() + "," + student.getBirthday() + "," + student.getGender() + ","
-               + student.getPoint() + "," + student.getClassName();
+                + student.getPoint() + "," + student.getClassName();
     }
 
     public List<String> listStudentConvertedToString() {

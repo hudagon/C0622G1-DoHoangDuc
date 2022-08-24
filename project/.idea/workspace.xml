@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3dc753f9-12b8-4e6a-8938-e9d2c9e337d6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../module 1/ss4_Git&amp;Html/bai_tap/Su_dung_Git/GitProject" beforeDir="false" afterPath="$PROJECT_DIR$/../module 1/ss4_Git&amp;Html/bai_tap/Su_dung_Git/GitProject" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module 2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../module 2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module 2/out/production/module 2/bai_tap_them/bai_1/data/teachers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../module 2/out/production/module 2/bai_tap_them/bai_1/data/teachers.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module 2/out/production/module 2/bai_tap_them/bai_1/model/Teacher.class" beforeDir="false" afterPath="$PROJECT_DIR$/../module 2/out/production/module 2/bai_tap_them/bai_1/model/Teacher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module 2/out/production/module 2/bai_tap_them/bai_1/service/impl/TeacherService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../module 2/out/production/module 2/bai_tap_them/bai_1/service/impl/TeacherService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module 2/out/production/module 2/bai_tap_them/bai_1/view/MainView.class" beforeDir="false" afterPath="$PROJECT_DIR$/../module 2/out/production/module 2/bai_tap_them/bai_1/view/MainView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module 2/src/bai_tap_them/bai_1/data/students.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../module 2/src/bai_tap_them/bai_1/data/students.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module 2/src/bai_tap_them/bai_1/service/impl/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module 2/src/bai_tap_them/bai_1/service/impl/StudentService.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2DkUOBCtbZfDjGZWvX4XRDGHj8n" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3dc753f9-12b8-4e6a-8938-e9d2c9e337d6" name="Default Changelist" comment="" />
+      <created>1661242541451</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1661242541451</updated>
+      <workItem from="1661242545614" duration="108000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="549" y="154" key="FileChooserDialogImpl" timestamp="1661242650702">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="154" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1661242650702" />
+    <state x="209" y="33" key="new project wizard" timestamp="1661242652527">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="209" y="33" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1661242652527" />
+  </component>
+</project>

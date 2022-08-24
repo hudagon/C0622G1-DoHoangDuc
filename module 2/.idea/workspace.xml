@@ -20,26 +20,51 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c5e45f5-bef7-4a08-84f2-c26b980f091f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/demo/Read.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss17_binary_file/exercise/copy_file/MainController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss17_binary_file/exercise/copy_file/data.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss17_binary_file/exercise/product_management_export_binary_file/controller/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss17_binary_file/exercise/product_management_export_binary_file/data/data.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss17_binary_file/exercise/product_management_export_binary_file/model/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss17_binary_file/exercise/product_management_export_binary_file/service/IProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss17_binary_file/exercise/product_management_export_binary_file/service/impl/ProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss17_binary_file/exercise/product_management_export_binary_file/view/MainView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss17_binary_file/practice/copy_large_files/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss17_binary_file/practice/copy_large_files/copydemo.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss17_binary_file/practice/copy_large_files/demo.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss17_binary_file/practice/read_and_write_binary_file/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss17_binary_file/practice/read_and_write_binary_file/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss17_binary_file/practice/read_and_write_binary_file/data.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../project/FuramaResort/FuramaResort.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../project/FuramaResort/src/controllers/BookingController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../project/FuramaResort/src/controllers/CustomerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../project/FuramaResort/src/controllers/EmployeeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../project/FuramaResort/src/controllers/FacilityController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../project/FuramaResort/src/controllers/FuramaController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../project/FuramaResort/src/controllers/PromotionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../project/FuramaResort/src/models/creatures/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../project/FuramaResort/src/models/creatures/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../project/FuramaResort/src/models/creatures/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../project/FuramaResort/src/models/things/Booking.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../project/FuramaResort/src/models/things/Contract.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../project/FuramaResort/src/models/things/Facility.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../project/FuramaResort/src/models/things/House.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../project/FuramaResort/src/models/things/Room.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../project/FuramaResort/src/models/things/Villa.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../project/FuramaResort/src/services/ICustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../project/FuramaResort/src/services/IEmployeeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../project/FuramaResort/src/services/IFacilityService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../project/FuramaResort/src/services/IService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../project/FuramaResort/src/views/MainView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../module 1/ss4_Git&amp;Html/bai_tap/Su_dung_Git/GitProject" beforeDir="false" afterPath="$PROJECT_DIR$/../module 1/ss4_Git&amp;Html/bai_tap/Su_dung_Git/GitProject" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/module 2/bai_tap_them/bai_1/model/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module 2/bai_tap_them/bai_1/model/Person.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/module 2/bai_tap_them/bai_1/model/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module 2/bai_tap_them/bai_1/model/Student.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/module 2/bai_tap_them/bai_1/service/impl/StudentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module 2/bai_tap_them/bai_1/service/impl/StudentService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module 2/bai_tap_them/bai_1/data/students.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module 2/bai_tap_them/bai_1/data/students.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module 2/bai_tap_them/bai_1/data/teachers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module 2/bai_tap_them/bai_1/data/teachers.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module 2/bai_tap_them/bai_1/model/Teacher.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module 2/bai_tap_them/bai_1/model/Teacher.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/module 2/bai_tap_them/bai_1/service/impl/TeacherService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module 2/bai_tap_them/bai_1/service/impl/TeacherService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/module 2/demo/controller/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bai_tap_them/bai_1/controller/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bai_tap_them/bai_1/controller/StudentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bai_tap_them/bai_1/controller/TeacherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bai_tap_them/bai_1/controller/TeacherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module 2/bai_tap_them/bai_1/view/MainView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module 2/bai_tap_them/bai_1/view/MainView.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/bai_tap_them/bai_1/data/students.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/bai_tap_them/bai_1/data/students.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bai_tap_them/bai_1/data/teachers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/bai_tap_them/bai_1/data/teachers.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bai_tap_them/bai_1/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bai_tap_them/bai_1/model/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bai_tap_them/bai_1/model/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bai_tap_them/bai_1/model/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bai_tap_them/bai_1/model/Teacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bai_tap_them/bai_1/model/Teacher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bai_tap_them/bai_1/service/IStudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bai_tap_them/bai_1/service/IStudentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bai_tap_them/bai_1/service/ITeacherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bai_tap_them/bai_1/service/ITeacherService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/bai_tap_them/bai_1/service/impl/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bai_tap_them/bai_1/service/impl/StudentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bai_tap_them/bai_1/service/impl/TeacherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bai_tap_them/bai_1/service/impl/TeacherService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bai_tap_them/bai_1/view/MainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bai_tap_them/bai_1/view/MainView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +97,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/c0622g1_mvc (1)" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -86,6 +111,9 @@
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="bai_tap_them.bai_1.service.impl" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Xuan Vinh\Desktop\code\CodeGym\module 2\src\ss17_binary_file\exercise\product_management_export_binary_file\data" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="ss7_abstract_class_and_interface.exercise.deploy_interface_colorable_for_geometric_class.models._interface" />
     </key>
@@ -96,13 +124,13 @@
       <recent name="C:\Users\Xuan Vinh\Desktop\code\CodeGym\module 2\src\ss7_abstract_class_and_interface\exercise\deploy_interface_colorable_for_geometric_class\models\_interface" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MainView">
-    <configuration name="MainView" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="bai_tap_them.bai_1.view.MainView" />
+  <component name="RunManager" selected="Application.MainController">
+    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss17_binary_file.practice.read_and_write_binary_file.Main" />
       <module name="module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="bai_tap_them.bai_1.view.*" />
+          <option name="PATTERN" value="ss17_binary_file.practice.read_and_write_binary_file.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -110,12 +138,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Read (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="demo.Read" />
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss17_binary_file.practice.copy_large_files.Main" />
       <module name="module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="demo.*" />
+          <option name="PATTERN" value="ss17_binary_file.practice.copy_large_files.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -123,12 +151,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Read" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss16_io_text_file.exercise.read_file_csv.Read" />
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss17_binary_file.exercise.product_management_export_binary_file.controller.Main" />
       <module name="module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss16_io_text_file.exercise.read_file_csv.*" />
+          <option name="PATTERN" value="ss17_binary_file.exercise.product_management_export_binary_file.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -136,12 +164,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReadAndWrite" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss16_io_text_file.exercise.copy_file_text.ReadAndWrite" />
+    <configuration name="MainController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss17_binary_file.exercise.copy_file.MainController" />
       <module name="module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss16_io_text_file.exercise.copy_file_text.*" />
+          <option name="PATTERN" value="ss17_binary_file.exercise.copy_file.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -149,12 +177,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReadAndWriteFile" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss16_io_text_file.practice.find_max_and_write_to_file.ReadAndWriteFile" />
+    <configuration name="MainView (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss17_binary_file.exercise.product_management_export_binary_file.view.MainView" />
       <module name="module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss16_io_text_file.practice.find_max_and_write_to_file.*" />
+          <option name="PATTERN" value="ss17_binary_file.exercise.product_management_export_binary_file.view.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -164,11 +192,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MainView" />
-        <item itemvalue="Application.Read (1)" />
-        <item itemvalue="Application.ReadAndWrite" />
-        <item itemvalue="Application.Read" />
-        <item itemvalue="Application.ReadAndWriteFile" />
+        <item itemvalue="Application.MainController" />
+        <item itemvalue="Application.MainView (1)" />
+        <item itemvalue="Application.Main (2)" />
+        <item itemvalue="Application.Main (1)" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -219,7 +247,8 @@
       <workItem from="1660993419736" duration="2405000" />
       <workItem from="1661139226466" duration="26000" />
       <workItem from="1661139296125" duration="14876000" />
-      <workItem from="1661216117502" duration="5844000" />
+      <workItem from="1661216117502" duration="9643000" />
+      <workItem from="1661310712928" duration="7415000" />
     </task>
     <servers />
   </component>
@@ -243,14 +272,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="535" y="0" key="#Auto_Import/0.0.1536.824@0.0.1536.824" timestamp="1660709691465" />
-    <state x="546" y="214" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1660882276769">
+    <state x="546" y="214" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1661311954238">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="546" y="214" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1660882276769" />
-    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1661154725485">
+    <state x="546" y="214" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1661311954238" />
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1661315036123">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1661154725485" />
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1661315036123" />
     <state x="363" y="307" width="812" height="216" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1660031926344">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -267,26 +296,26 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1536.824@0.0.1536.824" timestamp="1661150976820" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1661225135754">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1661242527776">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1661225135754" />
-    <state width="1493" height="273" key="GridCell.Tab.0.bottom" timestamp="1661226901465">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1661242527776" />
+    <state width="1493" height="142" key="GridCell.Tab.0.bottom" timestamp="1661323209101">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="273" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1661226901465" />
-    <state width="1493" height="273" key="GridCell.Tab.0.center" timestamp="1661226901464">
+    <state width="1493" height="142" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1661323209101" />
+    <state width="1493" height="142" key="GridCell.Tab.0.center" timestamp="1661323209101">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="273" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1661226901464" />
-    <state width="1493" height="273" key="GridCell.Tab.0.left" timestamp="1661226901464">
+    <state width="1493" height="142" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1661323209101" />
+    <state width="1493" height="142" key="GridCell.Tab.0.left" timestamp="1661323209100">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="273" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1661226901464" />
-    <state width="1493" height="273" key="GridCell.Tab.0.right" timestamp="1661226901464">
+    <state width="1493" height="142" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1661323209100" />
+    <state width="1493" height="142" key="GridCell.Tab.0.right" timestamp="1661323209101">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="273" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1661226901464" />
+    <state width="1493" height="142" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1661323209101" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1661163667152">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -319,6 +348,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="23" y="59" key="extract.method.dialog/0.0.1536.824@0.0.1536.824" timestamp="1660298144594" />
+    <state x="209" y="33" key="new project wizard" timestamp="1661242541392">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="209" y="33" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1661242541392" />
     <state x="475" y="170" key="refactoring.ChangeSignatureDialog" timestamp="1660200059815">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -327,9 +360,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1660870771894" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1660727059228">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1661317241516">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1660727059228" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1661317241516" />
   </component>
 </project>
