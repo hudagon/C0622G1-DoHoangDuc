@@ -15,7 +15,6 @@ public class ProductService implements IProductService {
     List<Product> productList = new ArrayList<>();
 
     public static void writeFile(String path, List<Product> productList) throws IOException {
-
         FileOutputStream fileOutputStream = new FileOutputStream(path);
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
         objectOutputStream.writeObject(productList);
@@ -36,7 +35,6 @@ public class ProductService implements IProductService {
 
             return productList;
         }
-
         return productList;
     }
 
@@ -70,7 +68,6 @@ public class ProductService implements IProductService {
                     temp = false;
                     break;
             }
-
         }
         writeFile(path, productList);
     }
@@ -85,7 +82,6 @@ public class ProductService implements IProductService {
                 System.out.println(product.toString());
             }
         }
-
     }
 
     @Override

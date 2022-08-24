@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class MainController {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         copy();
     }
 
@@ -17,6 +17,7 @@ public class MainController {
 
             objectOutputStream.writeObject(files);
 
+            objectOutputStream.close();
         } catch (FileNotFoundException e) {
             System.out.println("404 File Not Found");
         } catch (IOException e) {
@@ -33,6 +34,7 @@ public class MainController {
 
             files = (List<String>) objectInputStream.readObject();
 
+            objectInputStream.close();
         } catch (FileNotFoundException e) {
             System.out.println("404: File not found");
         } catch (IOException | ClassNotFoundException e) {
@@ -41,17 +43,17 @@ public class MainController {
         return files;
     }
 
-    public static void copy() {
+    public static void copy() throws IOException {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Input source file: ");
         String source = scanner.nextLine();
         System.out.print("Input target file: ");
         String target = scanner.nextLine();
 
-        File inputStream = new File(source);
+        FileInputStream inputStream = new FileInputStream(source);
         List<String> files = readFile(source);
         writeFile(target, files);
-        System.out.println("The file's size is " + inputStream.length());
+        System.out.println("The file's size is " + inputStream.available());
         System.out.println("file copied successfully");
     }
 }
