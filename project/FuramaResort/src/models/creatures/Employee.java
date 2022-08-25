@@ -4,13 +4,13 @@ public class Employee extends Person {
     private String employeeId;
     private String employeeQualifications;
     private String employeePosition;
-    private String employeeSalary;
+    private double employeeSalary;
 
     public Employee() {}
 
-    public Employee(String name, String birthday, String gender, int idNumber, int phoneNumber, String emailAddress,
-                    String employeeId, String employeeQualifications, String employeePosition, String employeeSalary) {
-        super(name, birthday, gender, idNumber, phoneNumber, emailAddress);
+    public Employee(String name, String birthday, String gender, int citizenIdentityNumber, int phoneNumber, String emailAddress,
+                    String employeeId, String employeeQualifications, String employeePosition, double employeeSalary) {
+        super(name, birthday, gender, citizenIdentityNumber, phoneNumber, emailAddress);
         this.employeeId = employeeId;
         this.employeeQualifications = employeeQualifications;
         this.employeePosition = employeePosition;
@@ -41,11 +41,11 @@ public class Employee extends Person {
         this.employeePosition = employeePosition;
     }
 
-    public String getEmployeeSalary() {
+    public double getEmployeeSalary() {
         return employeeSalary;
     }
 
-    public void setEmployeeSalary(String employeeSalary) {
+    public void setEmployeeSalary(double employeeSalary) {
         this.employeeSalary = employeeSalary;
     }
 

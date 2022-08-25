@@ -45,7 +45,7 @@ public class StudentService implements IStudentService {
             try {
                 System.out.print("Mời bạn nhập tên: ");
                 name = scanner.nextLine();
-                if (NameValidate.validate(name)) {
+                if (NameValidate.validate(name) && name.length() < 50 && name.length() > 5) {
                     break;
                 } else {
                     System.out.println("Tên không đúng định dạng, vui lòng nhập lại!");
@@ -191,7 +191,7 @@ public class StudentService implements IStudentService {
         readFile("src\\bai_tap_them\\bai_1\\data\\students.txt");
         students.add(this.getInfo());
         System.out.println("Thêm mới học sinh thành công");
-        writeFile("src\\bai_tap_them\\bai_1\\data\\students.txt", true, listStudentConvertedToString());
+        writeFile("src\\bai_tap_them\\bai_1\\data\\students.txt", false, listStudentConvertedToString());
     }
 
     @Override

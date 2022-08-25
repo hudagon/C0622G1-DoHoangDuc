@@ -3,17 +3,17 @@ public class Person {
     private String name;
     private String birthday;
     private String gender;
-    private int IdNumber;
+    private int citizenIdentityNumber;
     private int phoneNumber;
     private String emailAddress;
 
     public Person() {}
 
-    public Person(String name, String birthday, String gender, int idNumber, int phoneNumber, String emailAddress) {
+    public Person(String name, String birthday, String gender, int citizenIdentityNumber, int phoneNumber, String emailAddress) {
         this.name = name;
         this.birthday = birthday;
         this.gender = gender;
-        IdNumber = idNumber;
+        this.citizenIdentityNumber = citizenIdentityNumber;
         this.phoneNumber = phoneNumber;
         this.emailAddress = emailAddress;
     }
@@ -42,12 +42,12 @@ public class Person {
         this.gender = gender;
     }
 
-    public int getIdNumber() {
-        return IdNumber;
+    public int getCitizenIdentityNumber() {
+        return citizenIdentityNumber;
     }
 
-    public void setIdNumber(int idNumber) {
-        IdNumber = idNumber;
+    public void setCitizenIdentityNumber(int citizenIdentityNumber) {
+        this.citizenIdentityNumber = citizenIdentityNumber;
     }
 
     public int getPhoneNumber() {
@@ -72,7 +72,7 @@ public class Person {
                 "name='" + name + '\'' +
                 ", birthday='" + birthday + '\'' +
                 ", gender='" + gender + '\'' +
-                ", IdNumber=" + IdNumber +
+                ", IdNumber=" + citizenIdentityNumber +
                 ", phoneNumber=" + phoneNumber +
                 ", emailAddress='" + emailAddress + '\'' +
                 '}';

@@ -32,8 +32,6 @@ public class ProductService implements IProductService {
             productList = (List<Product>) objectInputStream.readObject();
 
             objectInputStream.close();
-
-            return productList;
         }
         return productList;
     }
@@ -41,35 +39,24 @@ public class ProductService implements IProductService {
     @Override
     public void add() throws IOException, ClassNotFoundException {
         productList = readFile(path);
-        boolean temp = true;
-        while (temp) {
-            System.out.println("1. Add new\n" +
-                    "2. Exit");
-            System.out.print("Input here: ");
-            int choice = Integer.parseInt(scanner.nextLine());
-
-            switch (choice) {
-                case 1:
-                    System.out.print("Input product's code: ");
-                    String code = scanner.nextLine();
-                    System.out.print("Input product's name: ");
-                    String name = scanner.nextLine();
-                    System.out.print("Input product's manufacturer: ");
-                    String manufacturer = scanner.nextLine();
-                    System.out.print("Input product's price: ");
-                    double price = Double.parseDouble(scanner.nextLine());
-                    System.out.print("Input description: ");
-                    String description = scanner.nextLine();
-
-                    productList.add(new Product(code, name, manufacturer, price, description));
-                    System.out.println("Add successfully!");
-                    break;
-                case 2:
-                    temp = false;
-                    break;
-            }
-        }
+        productList.add(this.getInfo());
+        System.out.println("Add successfully!");
         writeFile(path, productList);
+    }
+
+    private Product getInfo() {
+        System.out.print("Input product's code: ");
+        String code = scanner.nextLine();
+        System.out.print("Input product's name: ");
+        String name = scanner.nextLine();
+        System.out.print("Input product's manufacturer: ");
+        String manufacturer = scanner.nextLine();
+        System.out.print("Input product's price: ");
+        double price = Double.parseDouble(scanner.nextLine());
+        System.out.print("Input description: ");
+        String description = scanner.nextLine();
+
+        return new Product(code, name, manufacturer, price, description);
     }
 
     @Override

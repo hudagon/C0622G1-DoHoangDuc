@@ -1,4 +1,7 @@
 package services;
 
-public interface IEmployeeService {
+import models.creatures.Employee;
+
+public interface IEmployeeService extends IService {
+    Employee getEmployeeInfo();
 }

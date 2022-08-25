@@ -20,7 +20,6 @@ public class FuramaController {
                     "6. Exit\n");
             System.out.print("Input your choice here: ");
             int mainChoice = Integer.parseInt(scanner.nextLine());
-            boolean temp = true;
 
             switch (mainChoice) {
                 case 1:

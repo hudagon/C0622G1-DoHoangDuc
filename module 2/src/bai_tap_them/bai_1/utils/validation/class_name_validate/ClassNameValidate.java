@@ -4,7 +4,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class ClassNameValidate {
-    private static final String CLASS_NAME_REGEX = "[AC][0-9]{4}[GI]1";
+    private static final String CLASS_NAME_REGEX = "^[AC][0-9]{4}[GI]1$";
 
     public ClassNameValidate() {};
 

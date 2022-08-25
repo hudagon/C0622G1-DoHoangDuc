@@ -4,7 +4,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class NameValidate {
-    private static final String NAME_REGEX = "[A-Za-z ]{5,50}";
+    private static final String NAME_REGEX = "^([A-Z][a-z]* )+([A-Z][a-z]*)$";
 
     public NameValidate() {};
 

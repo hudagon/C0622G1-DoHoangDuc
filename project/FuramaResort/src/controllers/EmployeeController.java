@@ -1,8 +1,11 @@
 package controllers;
 
+import services.impl.EmployeeService;
+
 import java.util.Scanner;
 
 public class EmployeeController {
+    EmployeeService employeeService = new EmployeeService();
     public void employeeMenu() {
         Scanner scanner = new Scanner(System.in);
         while (true) {
@@ -16,7 +19,10 @@ public class EmployeeController {
 
             switch (functionOneChoice) {
                 case 1:
+                    employeeService.display();
+                    break;
                 case 2:
+                    employeeService.add();
                     break;
                 case 3:
                     break;
