@@ -4,6 +4,7 @@ import bai_tap_them.bai_1.model.Student;
 import bai_tap_them.bai_1.model.Teacher;
 import bai_tap_them.bai_1.service.ITeacherService;
 import bai_tap_them.bai_1.service.utils.exception.IdException;
+import bai_tap_them.bai_1.utils.validation.name_validate.NameValidate;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -43,7 +44,11 @@ public class TeacherService implements ITeacherService {
             try {
                 System.out.print("Mời bạn nhập tên: ");
                 name = scanner.nextLine();
-                break;
+                if (NameValidate.validate(name)) {
+                    break;
+                } else {
+                    System.out.println("Tên không đúng định dạng, vui lòng nhập lại!");
+                }
             } catch (InputMismatchException e) {
                 System.out.println("Bạn nhập không phải là chữ. Vui lòng nhập lại.");
             } catch (Exception e) {

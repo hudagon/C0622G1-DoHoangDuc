@@ -4,6 +4,8 @@ import bai_tap_them.bai_1.model.Student;
 import bai_tap_them.bai_1.service.IStudentService;
 import bai_tap_them.bai_1.service.utils.exception.IdException;
 import bai_tap_them.bai_1.service.utils.exception.PointException;
+import bai_tap_them.bai_1.utils.validation.class_name_validate.ClassNameValidate;
+import bai_tap_them.bai_1.utils.validation.name_validate.NameValidate;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -43,7 +45,11 @@ public class StudentService implements IStudentService {
             try {
                 System.out.print("Mời bạn nhập tên: ");
                 name = scanner.nextLine();
-                break;
+                if (NameValidate.validate(name)) {
+                    break;
+                } else {
+                    System.out.println("Tên không đúng định dạng, vui lòng nhập lại!");
+                }
             } catch (InputMismatchException e) {
                 System.out.println("Bạn nhập không phải là chữ. Vui lòng nhập lại.");
             } catch (Exception e) {
@@ -100,7 +106,11 @@ public class StudentService implements IStudentService {
             try {
                 System.out.print("Mời bạn nhập tên lớp: ");
                 className = scanner.nextLine();
-                break;
+                if (!ClassNameValidate.validate(className)) {
+                    System.out.println("Tên lớp nhập không đúng định dạng, vui lòng nhập lại (A|C)XXXX(G|I)");
+                } else {
+                    break;
+                }
             } catch (InputMismatchException e) {
                 System.out.println("Bạn nhập không phải là chữ. Vui lòng nhập lại.");
             } catch (Exception e) {
@@ -148,7 +158,7 @@ public class StudentService implements IStudentService {
         return students;
     }
 
-    public void writeFile(String path, boolean append,List<String> str) {
+    public void writeFile(String path, boolean append, List<String> str) {
         try {
             File fileStudent = new File(path);
 
@@ -181,7 +191,7 @@ public class StudentService implements IStudentService {
         readFile("src\\bai_tap_them\\bai_1\\data\\students.txt");
         students.add(this.getInfo());
         System.out.println("Thêm mới học sinh thành công");
-        writeFile("src\\bai_tap_them\\bai_1\\data\\students.txt",true,listStudentConvertedToString());
+        writeFile("src\\bai_tap_them\\bai_1\\data\\students.txt", true, listStudentConvertedToString());
     }
 
     @Override
@@ -222,7 +232,7 @@ public class StudentService implements IStudentService {
             students.set(j + 1, temp1);
         }
         System.out.println("Đã sắp xếp!");
-        writeFile("src\\bai_tap_them\\bai_1\\data\\students.txt",false,listStudentConvertedToString());
+        writeFile("src\\bai_tap_them\\bai_1\\data\\students.txt", false, listStudentConvertedToString());
     }
 
     @Override
@@ -239,7 +249,7 @@ public class StudentService implements IStudentService {
                 System.out.println("Xóa thành công");
             }
         }
-        writeFile("src\\bai_tap_them\\bai_1\\data\\students.txt",false,listStudentConvertedToString());
+        writeFile("src\\bai_tap_them\\bai_1\\data\\students.txt", false, listStudentConvertedToString());
     }
 
     @Override
@@ -278,46 +288,46 @@ public class StudentService implements IStudentService {
                         System.out.println("Bạn muốn sửa tên học sinh lại như thế nào");
                         String newName = scanner.nextLine();
                         students.get(positionEdit).setName(newName);
-                        writeFile("src\\bai_tap_them\\bai_1\\data\\students.txt",false,listStudentConvertedToString());
+                        writeFile("src\\bai_tap_them\\bai_1\\data\\students.txt", false, listStudentConvertedToString());
                         System.out.println("Đã sửa tên thành công");
                         break;
                     case 2:
                         System.out.println("Bạn muốn sửa id học sinh lại như thế nào");
                         int newId = Integer.parseInt(scanner.nextLine());
                         students.get(positionEdit).setId(newId);
-                        writeFile("src\\bai_tap_them\\bai_1\\data\\students.txt",false,listStudentConvertedToString());
+                        writeFile("src\\bai_tap_them\\bai_1\\data\\students.txt", false, listStudentConvertedToString());
                         System.out.println("Đã sửa id thành công");
                         break;
                     case 3:
                         System.out.println("Bạn muốn sửa ngày sinh học sinh lại như thế nào");
                         String newBirthday = scanner.nextLine();
                         students.get(positionEdit).setBirthday(newBirthday);
-                        writeFile("src\\bai_tap_them\\bai_1\\data\\students.txt",false,listStudentConvertedToString());
+                        writeFile("src\\bai_tap_them\\bai_1\\data\\students.txt", false, listStudentConvertedToString());
                         System.out.println("Đã sửa ngày sinh thành công");
                         break;
                     case 4:
                         System.out.println("Bạn muốn sửa điểm học sinh lại như thế nào");
                         double newPoint = Double.parseDouble(scanner.nextLine());
                         students.get(positionEdit).setPoint(newPoint);
-                        writeFile("src\\bai_tap_them\\bai_1\\data\\students.txt",false,listStudentConvertedToString());
+                        writeFile("src\\bai_tap_them\\bai_1\\data\\students.txt", false, listStudentConvertedToString());
                         System.out.println("Đã sửa điểm thành công");
                         break;
                     case 5:
                         System.out.println("Bạn muốn sửa tên lớp lại như thế nào");
                         String newClassname = scanner.nextLine();
                         students.get(positionEdit).setClassName(newClassname);
-                        writeFile("src\\bai_tap_them\\bai_1\\data\\students.txt",false,listStudentConvertedToString());
+                        writeFile("src\\bai_tap_them\\bai_1\\data\\students.txt", false, listStudentConvertedToString());
                         System.out.println("Đã sửa tên lớp thành công");
                         break;
                     case 6:
                         System.out.println("Bạn muốn sửa giới tính lại như thế nào");
                         String newGender = scanner.nextLine();
                         students.get(positionEdit).setGender(newGender);
-                        writeFile("src\\bai_tap_them\\bai_1\\data\\students.txt",false,listStudentConvertedToString());
+                        writeFile("src\\bai_tap_them\\bai_1\\data\\students.txt", false, listStudentConvertedToString());
                         System.out.println("Đã sửa giới tính thành công");
                         break;
                     case 7:
-                        writeFile("src\\bai_tap_them\\bai_1\\data\\students.txt",false,listStudentConvertedToString());
+                        writeFile("src\\bai_tap_them\\bai_1\\data\\students.txt", false, listStudentConvertedToString());
                         return;
                     default:
                         System.out.println("Số nhập vào không hợp lệ");
