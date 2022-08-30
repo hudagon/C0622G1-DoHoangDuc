@@ -6,16 +6,18 @@ public class Person {
     private int citizenIdentityNumber;
     private int phoneNumber;
     private String emailAddress;
+    private String id;
 
     public Person() {}
 
-    public Person(String name, String birthday, String gender, int citizenIdentityNumber, int phoneNumber, String emailAddress) {
+    public Person(String name, String birthday, String gender, int citizenIdentityNumber, int phoneNumber, String emailAddress, String id) {
         this.name = name;
         this.birthday = birthday;
         this.gender = gender;
         this.citizenIdentityNumber = citizenIdentityNumber;
         this.phoneNumber = phoneNumber;
         this.emailAddress = emailAddress;
+        this.id = id;
     }
 
     public String getName() {
@@ -64,6 +66,14 @@ public class Person {
 
     public void setEmailAddress(String emailAddress) {
         this.emailAddress = emailAddress;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     @Override

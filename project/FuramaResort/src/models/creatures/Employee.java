@@ -1,7 +1,6 @@
 package models.creatures;
 
 public class Employee extends Person {
-    private String employeeId;
     private String employeeQualifications;
     private String employeePosition;
     private double employeeSalary;
@@ -10,19 +9,10 @@ public class Employee extends Person {
 
     public Employee(String name, String birthday, String gender, int citizenIdentityNumber, int phoneNumber, String emailAddress,
                     String employeeId, String employeeQualifications, String employeePosition, double employeeSalary) {
-        super(name, birthday, gender, citizenIdentityNumber, phoneNumber, emailAddress);
-        this.employeeId = employeeId;
+        super(name, birthday, gender, citizenIdentityNumber, phoneNumber, emailAddress, employeeId);
         this.employeeQualifications = employeeQualifications;
         this.employeePosition = employeePosition;
         this.employeeSalary = employeeSalary;
-    }
-
-    public String getEmployeeId() {
-        return employeeId;
-    }
-
-    public void setEmployeeId(String employeeId) {
-        this.employeeId = employeeId;
     }
 
     public String getEmployeeQualifications() {
@@ -53,7 +43,7 @@ public class Employee extends Person {
     public String toString() {
         return super.toString() +
                 "Employee{" +
-                "employeeId=" + employeeId +
+                "employeeId=" + super.getId() +
                 ", employeeQualifications='" + employeeQualifications + '\'' +
                 ", employeePosition='" + employeePosition + '\'' +
                 ", employeeSalary='" + employeeSalary + '\'' +

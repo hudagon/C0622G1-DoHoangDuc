@@ -1,7 +1,6 @@
 package models.creatures;
 
 public class Customer extends Person {
-    private String customerId;
     private String customerClassification;
     private String address;
 
@@ -9,18 +8,9 @@ public class Customer extends Person {
 
     public Customer(String name, String birthday, String gender, int citizenIdentityNumber, int phoneNumber, String emailAddress,
                     String customerId, String customerClassification, String address) {
-        super(name, birthday, gender, citizenIdentityNumber, phoneNumber, emailAddress);
-        this.customerId = customerId;
+        super(name, birthday, gender, citizenIdentityNumber, phoneNumber, emailAddress, customerId);
         this.customerClassification = customerClassification;
         this.address = address;
-    }
-
-    public String getCustomerId() {
-        return customerId;
-    }
-
-    public void setCustomerId(String customerId) {
-        this.customerId = customerId;
     }
 
     public String getCustomerClassification() {
@@ -43,7 +33,7 @@ public class Customer extends Person {
     public String toString() {
         return super.toString() +
                 "Customer{" +
-                "customerId=" + customerId +
+                "customerId=" + super.getId() +
                 ", customerClassification='" + customerClassification + '\'' +
                 ", address='" + address + '\'' +
                 '}';

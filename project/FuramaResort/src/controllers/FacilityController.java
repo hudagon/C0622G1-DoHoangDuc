@@ -1,8 +1,11 @@
 package controllers;
 
+import services.impl.FacilityService;
+
 import java.util.Scanner;
 
 public class FacilityController {
+    FacilityService facilityService = new FacilityService();
     public void facilityMenu() {
         Scanner scanner = new Scanner(System.in);
         while (true) {
@@ -16,10 +19,13 @@ public class FacilityController {
 
             switch (functionThreeChoice) {
                 case 1:
+                    facilityService.display();
                     break;
                 case 2:
+                    facilityService.add();
                     break;
                 case 3:
+                    facilityService.displayMaintenanceList();
                     break;
                 case 4:
                     return;

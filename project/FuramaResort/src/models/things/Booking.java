@@ -1,16 +1,23 @@
 package models.things;
-//mã booking, ngày bắt đầu, ngày kết thúc, mã khách hàng, tên dịch vụ, loại dịch vụ.
+
+import java.text.SimpleDateFormat;
+import java.util.Comparator;
+import java.util.Date;
+import java.util.Objects;
+
 public class Booking {
+    static SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
     private String bookingCode;
-    private String startDate;
-    private String endDate;
+    private Date startDate;
+    private Date endDate;
     private String customerId;
     private String serviceName;
     private String serviceType;
 
-    public Booking() {}
+    public Booking() {
+    }
 
-    public Booking(String bookingCode, String startDate, String endDate,
+    public Booking(String bookingCode, Date startDate, Date endDate,
                    String customerId, String serviceName, String serviceType) {
         this.bookingCode = bookingCode;
         this.startDate = startDate;
@@ -28,19 +35,19 @@ public class Booking {
         this.bookingCode = bookingCode;
     }
 
-    public String getStartDate() {
+    public Date getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(String startDate) {
+    public void setStartDate(Date startDate) {
         this.startDate = startDate;
     }
 
-    public String getEndDate() {
+    public Date getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(String endDate) {
+    public void setEndDate(Date endDate) {
         this.endDate = endDate;
     }
 
@@ -72,11 +79,24 @@ public class Booking {
     public String toString() {
         return "Booking{" +
                 "bookingCode='" + bookingCode + '\'' +
-                ", startDate='" + startDate + '\'' +
-                ", endDate='" + endDate + '\'' +
+                ", startDate='" + dateFormat.format(startDate) + '\'' +
+                ", endDate='" + dateFormat.format(endDate) + '\'' +
                 ", customerId='" + customerId + '\'' +
                 ", serviceName='" + serviceName + '\'' +
                 ", serviceType='" + serviceType + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Booking booking = (Booking) o;
+        return Objects.equals(bookingCode, booking.bookingCode);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(bookingCode);
     }
 }

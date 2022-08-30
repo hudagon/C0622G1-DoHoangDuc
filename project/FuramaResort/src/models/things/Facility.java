@@ -6,15 +6,17 @@ public abstract class Facility {
     private Double rentalCosts;
     private int maxCapacity;
     private String leaseOptions;
+    private String serviceId;
 
     public Facility() {}
 
-    public Facility(String serviceName, Double usingArea, Double rentalCosts, int maxCapacity, String leaseOptions) {
+    public Facility(String serviceId, String serviceName, Double usingArea, Double rentalCosts, int maxCapacity, String leaseOptions) {
         this.serviceName = serviceName;
         this.usingArea = usingArea;
         this.rentalCosts = rentalCosts;
         this.maxCapacity = maxCapacity;
         this.leaseOptions = leaseOptions;
+        this.serviceId = serviceId;
     }
 
     public String getServiceName() {
@@ -57,14 +59,23 @@ public abstract class Facility {
         this.leaseOptions = leaseOptions;
     }
 
+    public String getServiceId() {
+        return serviceId;
+    }
+
+    public void setServiceId(String serviceId) {
+        this.serviceId = serviceId;
+    }
+
     @Override
     public String toString() {
         return "Facility{" +
-                "serviceName='" + serviceName + '\'' +
+                "serviceName=" + serviceName + '\'' +
                 ", usingArea=" + usingArea +
                 ", rentalCosts=" + rentalCosts +
                 ", maxCapacity=" + maxCapacity +
-                ", leaseOptions='" + leaseOptions + '\'' +
+                ", leaseOptions=" + leaseOptions + '\'' +
+                ", serviceId=" + serviceId + '\'' +
                 '}';
     }
 }
