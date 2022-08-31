@@ -2,24 +2,21 @@ package services.impl;
 
 import models.creatures.Employee;
 import services.IEmployeeService;
+import utils.read_write_file.read_write_employee.ReadFileEmployee;
+import utils.read_write_file.read_write_employee.WriteFileEmployee;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class EmployeeService implements IEmployeeService {
+    public static final String PATH = "src\\data\\employee.csv";
     Scanner scanner = new Scanner(System.in);
-    private static List<Employee> employees = new ArrayList<>();
+    private List<Employee> employees = ReadFileEmployee.readEmployeeFile(PATH);
     boolean temp = true;
-
-    static {
-        employees.add(new Employee("Nguyễn văn A", "1/1/2000", "Nam", 001, 0111222333, "a@gmail.com", "NV001", "University", "Manager", 5500000));
-        employees.add(new Employee("Nguyễn văn B", "2/2/2000", "Nam", 002, 0222333444, "b@gmail.com", "NV002", "University", "Hotel manager", 5800000));
-        employees.add(new Employee("Nguyễn thị C", "3/3/2000", "Nữ", 003, 0555666777, "c@gmail.com", "NV003", "University", "Housekeeper", 100000000));
-    }
 
     @Override
     public void display() {
+        employees = ReadFileEmployee.readEmployeeFile(PATH);
         for (Employee employee : employees) {
             System.out.println(employee.toString());
         }
@@ -27,8 +24,11 @@ public class EmployeeService implements IEmployeeService {
 
     @Override
     public void add() {
-        employees.add(this.getEmployeeInfo());
+        employees = ReadFileEmployee.readEmployeeFile(PATH);
+        Employee newEmployee = this.getEmployeeInfo();
+        employees.add(newEmployee);
         System.out.println("New employee added successfully!");
+        WriteFileEmployee.writeEmployeeFile(PATH, false,employees);
     }
 
     @Override
@@ -84,7 +84,7 @@ public class EmployeeService implements IEmployeeService {
                         break;
                     case 5:
                         System.out.print("How do you want to change?: ");
-                        int newPhoneNumber = Integer.parseInt(scanner.nextLine());
+                        String newPhoneNumber = scanner.nextLine();
                         employees.get(positionEdit).setPhoneNumber(newPhoneNumber);
                         System.out.println("Edit phone number successfully!");
                         System.out.println("---------------------------");
@@ -136,7 +136,7 @@ public class EmployeeService implements IEmployeeService {
         System.out.print("Input employee's citizen identity number: ");
         int employeeCitizenIdentityNumber = Integer.parseInt(scanner.nextLine());
         System.out.print("Input employee's phone number: ");
-        int employeePhoneNumber = Integer.parseInt(scanner.nextLine());
+        String employeePhoneNumber = scanner.nextLine();
         System.out.print("Input employee's email address: ");
         String employeeEmail = scanner.nextLine();
         System.out.print("Input employee's id: ");

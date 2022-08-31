@@ -4,13 +4,13 @@ public class Person {
     private String birthday;
     private String gender;
     private int citizenIdentityNumber;
-    private int phoneNumber;
+    private String phoneNumber;
     private String emailAddress;
     private String id;
 
     public Person() {}
 
-    public Person(String name, String birthday, String gender, int citizenIdentityNumber, int phoneNumber, String emailAddress, String id) {
+    public Person(String name, String birthday, String gender, int citizenIdentityNumber, String phoneNumber, String emailAddress, String id) {
         this.name = name;
         this.birthday = birthday;
         this.gender = gender;
@@ -52,11 +52,11 @@ public class Person {
         this.citizenIdentityNumber = citizenIdentityNumber;
     }
 
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 

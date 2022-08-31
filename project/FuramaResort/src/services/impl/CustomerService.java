@@ -1,8 +1,9 @@
 package services.impl;
 
 import models.creatures.Customer;
-import models.creatures.Employee;
 import services.ICustomerService;
+import utils.exception.*;
+import utils.validation.*;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -13,9 +14,9 @@ public class CustomerService implements ICustomerService {
     private static List<Customer> customers = new LinkedList<>();
 
     static {
-        customers.add(new Customer("Nguyễn Văn A", "1/1/2000", "Nam", 111222333, 123123123, "a@gmail.com", "KH001", "Diamond", "abc"));
-        customers.add(new Customer("Nguyễn Văn B", "1/1/2000", "Nam", 456456456, 444555666, "b@gmail.com", "KH002", "Silver", "bcd"));
-        customers.add(new Customer("Nguyễn Thị C", "1/1/2000", "Nữ", 789789789, 777888999, "c@gmail.com", "KH003", "Gold", "efk"));
+        customers.add(new Customer("Nguyễn Văn A", "1/1/2000", "Nam", 111222333, "123123123", "a@gmail.com", "KH001", "Diamond", "abc"));
+        customers.add(new Customer("Nguyễn Văn B", "1/1/2000", "Nam", 456456456, "444555666", "b@gmail.com", "KH002", "Silver", "bcd"));
+        customers.add(new Customer("Nguyễn Thị C", "1/1/2000", "Nữ", 789789789, "777888999", "c@gmail.com", "KH003", "Gold", "efk"));
     }
 
     @Override
@@ -83,7 +84,7 @@ public class CustomerService implements ICustomerService {
                         break;
                     case 5:
                         System.out.print("How do you want to change?: ");
-                        int newPhoneNumber = Integer.parseInt(scanner.nextLine());
+                        String newPhoneNumber = scanner.nextLine();
                         customers.get(positionEdit).setPhoneNumber(newPhoneNumber);
                         System.out.println("Edit phone number successfully!");
                         System.out.println("---------------------------");
@@ -119,23 +120,124 @@ public class CustomerService implements ICustomerService {
 
     @Override
     public Customer getCustomerInfo() {
-        System.out.print("Input customer's name: ");
-        String customerName = scanner.nextLine();
-        System.out.print("Input customer's birthday': ");
-        String customerBirthday = scanner.nextLine();
-        System.out.print("Input customer's gender: ");
-        String customerGender = scanner.nextLine();
-        System.out.print("Input customer's citizen identity number: ");
-        int customerCitizenIdentityNumber = Integer.parseInt(scanner.nextLine());
-        System.out.print("Input customer's phone number: ");
-        int customerPhoneNumber = Integer.parseInt(scanner.nextLine());
-        System.out.print("Input customer's email address: ");
-        String customerEmail = scanner.nextLine();
-        System.out.print("Input customer's id: ");
-        String customerId = scanner.nextLine();
+        String customerName = "";
+        while (true) {
+            try {
+                System.out.print("Input customer's name: ");
+                customerName = scanner.nextLine();
+                customerName = customerName.trim();
+                if (!customerName.matches(NameRegex.NAME_REGEX) && !customerName.matches("\\D{5,50}")) {
+                    throw new InvaildNameInputException("Invalid customer name, please try again");
+                }
+                break;
+            } catch (InvaildNameInputException e) {
+                System.out.println(e.getMessage());
+            } catch (Exception e) {
+                System.out.println("Something went wrong!");
+            }
+        }
+
+        String customerBirthday = "";
+        while (true) {
+            System.out.println("Input customer's birthday: ");
+            try {
+                customerBirthday = scanner.nextLine();
+                if (!customerBirthday.matches(BirthdayRegex.BIRTHDAY_REGEX)) {
+                    throw new InvaildBirthdayException("Invaild birthday format, please input dd/MM/yyyy");
+                }
+                break;
+            } catch (InvaildBirthdayException e) {
+                System.out.println(e.getMessage());
+            } catch (Exception e) {
+                System.out.println("Something went wrong!");
+            }
+        }
+
+        String customerGender = "";
+        while (true) {
+            System.out.println("Input customer's gender: ");
+            try {
+                customerGender = scanner.nextLine();
+                if (!customerGender.matches(GenderRegex.GENDER_REGEX)) {
+                    throw new InvaildGenderException("Please input Male or Female or neither");
+                }
+                break;
+            } catch (InvaildGenderException e) {
+                System.out.println(e.getMessage());
+            } catch (Exception e) {
+                System.out.println("Something went wrong!");
+            }
+        }
+
+        String customerCitizenIdentityNumber1 = "";
+        while (true) {
+            System.out.print("Input customer's citizen identity number: ");
+            try {
+                customerCitizenIdentityNumber1 = scanner.nextLine();
+                if (!customerCitizenIdentityNumber1.matches(CitizenIdentityNumberRegex.CITIZEN_IDENTITY_NUMBER_REGEX)) {
+                    throw new InvaildGenderException("Please input Male or Female or neither");
+                }
+                break;
+            } catch (InvaildGenderException e) {
+                System.out.println(e.getMessage());
+            } catch (Exception e) {
+                System.out.println("Something went wrong!");
+            }
+        }
+        int customerCitizenIdentityNumber = Integer.parseInt(customerCitizenIdentityNumber1);
+
+        String customerPhoneNumber1 = "";
+        while (true) {
+            System.out.print("Input customer's phone number: ");
+            try {
+                customerPhoneNumber1 = scanner.nextLine();
+                if (!customerPhoneNumber1.matches(PhoneNumberRegex.PHONE_NUMBER_REGEX)) {
+                    throw new InvaildPhoneNumberException("Please enter a valid phone number!");
+                }
+                break;
+            } catch (InvaildPhoneNumberException e) {
+                System.out.println(e.getMessage());
+            } catch (Exception e) {
+                System.out.println("Something went wrong!");
+            }
+        }
+        String customerPhoneNumber = customerPhoneNumber1;
+
+        String customerEmail = "";
+        while (true) {
+            System.out.print("Input customer's email address: ");
+            try {
+                customerEmail = scanner.nextLine();
+                if (!customerEmail.matches(EmailRegex.EMAIL_REGEX)) {
+                    throw new InvaildEmailException("Please enter a valid email address");
+                }
+                break;
+            } catch (InvaildEmailException e) {
+                System.out.println(e.getMessage());
+            } catch (Exception e) {
+                System.out.println("Something went wrong!");
+            }
+        }
+
+        String customerId;
+        while (true) {
+            try {
+                System.out.print("Input customer's id: ");
+                customerId = scanner.nextLine();
+                if (!customerId.matches(IdRegex.ID_REGEX)) {
+                    throw new InvaildIdInputException("The customer id must be 'KHXXX' format");
+                }
+                break;
+            } catch (InvaildIdInputException e) {
+                System.out.println(e.getMessage());
+            } catch (Exception e) {
+                System.out.println("Something went wrong!");
+            }
+        }
 
         String customerClassification = "";
         boolean temp = true;
+        int choice;
         while (temp) {
             System.out.print("Input customer's classification:\n" +
                     "1. Diamond\n" +
@@ -144,7 +246,17 @@ public class CustomerService implements ICustomerService {
                     "4. Silver\n" +
                     "5. Member\n");
             System.out.print("Input your choice here: ");
-            int choice = Integer.parseInt(scanner.nextLine());
+            while (true) {
+                try {
+                    choice = Integer.parseInt(scanner.nextLine());
+                    break;
+                } catch (NumberFormatException e) {
+                    System.out.println("You input String type not number try again!");
+                } catch (Exception e) {
+                    System.out.println("Something went wrong!");
+                }
+            }
+
             switch (choice) {
                 case 1:
                     customerClassification = "Diamond";
@@ -170,8 +282,21 @@ public class CustomerService implements ICustomerService {
             }
         }
 
-        System.out.print("Input custom's address: ");
-        String customerAddress = scanner.nextLine();
+        String customerAddress;
+        while (true) {
+            try {
+                System.out.print("Input customer's address: ");
+                customerAddress = scanner.nextLine();
+                if (customerAddress.equals("")) {
+                    throw new InvaildAddressException("Address can't be empty");
+                }
+                break;
+            } catch (InvaildAddressException e) {
+                System.out.println(e.getMessage());
+            } catch (Exception e) {
+                System.out.println("Something went wrong!");
+            }
+        }
 
         return new Customer(customerName, customerBirthday, customerGender, customerCitizenIdentityNumber,
                 customerPhoneNumber, customerEmail, customerId, customerClassification, customerAddress);

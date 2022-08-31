@@ -1,6 +1,7 @@
 package services.impl;
 
 import models.things.Booking;
+import models.things.Facility;
 import services.IBookingService;
 import utils.comparator.SortByStartDateThenEndDate;
 
@@ -12,7 +13,7 @@ import java.util.Set;
 import java.util.TreeSet;
 
 public class BookingService implements IBookingService {
-    private Scanner scanner = new Scanner(System.in);
+    Scanner scanner = new Scanner(System.in);
     CustomerService customerService = new CustomerService();
     FacilityService facilityService = new FacilityService();
     private static SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
@@ -20,16 +21,30 @@ public class BookingService implements IBookingService {
 
     static {
         try {
-            bookings.add(new Booking("NO.001", dateFormat.parse("01/11/2000"), dateFormat.parse("14/12/2000"), "KH001", "HOUSE001", "None"));
-            bookings.add(new Booking("NO.002", dateFormat.parse("01/01/2000"), dateFormat.parse("05/5/2000"), "KH002", "ROOM001", "None"));
-            bookings.add(new Booking("NO.003", dateFormat.parse("01/01/2000"), dateFormat.parse("14/07/2000"), "KH003", "VILLA001", "None"));
+            bookings.add(new Booking("NO.001", dateFormat.parse("05/08/2022"), dateFormat.parse("22/08/2022"), "KH001", "HOUSE001", "None"));
+            bookings.add(new Booking("NO.002", dateFormat.parse("07/08/2022"), dateFormat.parse("15/08/2022"), "KH002", "ROOM001", "None"));
+            bookings.add(new Booking("NO.003", dateFormat.parse("07/08/2022"), dateFormat.parse("13/08/2022"), "KH003", "VILLA001", "None"));
+            bookings.add(new Booking("NO.004", dateFormat.parse("07/07/2022"), dateFormat.parse("13/07/2022"), "KH003", "VILLA001", "None"));
         } catch (ParseException e) {
             e.printStackTrace();
         }
     }
 
+    public static Set<Booking> getBookings() {
+        return bookings;
+    }
+
     @Override
     public void addNewBooking() {
+        Booking newBooking = getBookingInfo();
+        if (newBooking == null) return;
+        bookings.add(newBooking);
+        System.out.println("Booking successfully!");
+        facilityService.addingValueToFacilityService(newBooking.getServiceName());
+    }
+
+    @Override
+    public Booking getBookingInfo() {
         System.out.println("------Adding new booking------");
         System.out.println("Here is the customer list");
         customerService.display();
@@ -51,21 +66,33 @@ public class BookingService implements IBookingService {
             e.printStackTrace();
         }
 
-        System.out.print("Input service name: ");
-        String serviceName = scanner.nextLine();
-        System.out.print("Input service type");
+        String serviceName = "";
+        boolean temp = true;
+        while (temp) {
+            temp = false;
+            System.out.print("Input service name: ");
+             serviceName = scanner.nextLine();
+
+            for (Facility x : facilityService.getFacilityMaintenanceList().keySet()) {
+                if (serviceName.equals(x.getServiceName())) {
+                    System.out.println("The service has been used over 5 times, it will be maintained, try again!");
+                    temp = true;
+                }
+            }
+        }
+
+
+        System.out.print("Input service type: ");
         String serviceType = scanner.nextLine();
 
         Booking newBooking = new Booking(bookingCode, startDate, endDate, customerId, serviceName, serviceType);
         for (Booking x : bookings) {
             if (x.equals(newBooking)) {
                 System.out.println("There is already a booking with the same booking code!");
-                return;
+                return null;
             }
         }
-        bookings.add(newBooking);
-        facilityService.addingValueToFacilityService(newBooking.getServiceName());
-
+        return newBooking;
     }
 
     @Override
@@ -73,25 +100,5 @@ public class BookingService implements IBookingService {
         for (Booking x : bookings) {
             System.out.println(x.toString());
         }
-    }
-
-    @Override
-    public Set<Booking> getBookings() {
-        return bookings;
-    }
-
-    @Override
-    public void createNewContract() {
-
-    }
-
-    @Override
-    public void displayListContract() {
-
-    }
-
-    @Override
-    public void editContract() {
-
     }
 }

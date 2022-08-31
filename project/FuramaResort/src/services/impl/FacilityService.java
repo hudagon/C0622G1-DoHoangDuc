@@ -1,22 +1,28 @@
 package services.impl;
 
-import models.things.*;
+import models.things.Facility;
+import models.things.House;
+import models.things.Room;
+import models.things.Villa;
 import services.IFacilityService;
 
-import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.Scanner;
 
 public class FacilityService implements IFacilityService {
-    BookingService bookingService = new BookingService();
     private static LinkedHashMap<Facility, Integer> facilities = new LinkedHashMap<>();
-    private LinkedHashMap<Facility, Integer> facilityMaintenanceList = new LinkedHashMap<>();
+    private static LinkedHashMap<Facility, Integer> facilityMaintenanceList = new LinkedHashMap<>();
 
     static {
-        facilities.put(new Villa("VILLA001", "Villa1", 500.0, 100.0, 8, "year", "4 stars", 100, 2), 1);
-        facilities.put(new House("HOUSE001", "House1", 750.0, 700.0, 10, "months", "4 stars", 2), 2);
-        facilities.put(new Room("ROOM001", "Room1", 250.0, 150.0, 2, "days", "None"), 3);
-        facilities.put(new Room("ROOM002", "Room2", 250.0, 150.0, 2, "days", "None"), 5);
+        facilities.put(new Villa("VILLA001", "Villa màu xanh", 500.0, 100.0, 8, "year", "4 stars", 100, 2), 0);
+        facilities.put(new House("HOUSE001", "Nhà vườn", 750.0, 700.0, 10, "months", "4 stars", 2), 0);
+        facilities.put(new Room("ROOM001", "Phòng tình yêu", 250.0, 150.0, 2, "days", "None"), 0);
+        facilities.put(new Room("ROOM002", "Phòng gia đình", 250.0, 150.0, 2, "days", "None"), 0);
+        for (Facility facility : facilities.keySet()) {
+            if (facilities.get(facility) >= 5) {
+                facilityMaintenanceList.put(facility, facilities.get(facility));
+            }
+        }
     }
 
     @Override
@@ -250,13 +256,6 @@ public class FacilityService implements IFacilityService {
 
     @Override
     public void displayMaintenanceList() {
-        for (Booking x : bookingService.getBookings()) {
-            Date localDate = null;
-            assert false;
-            if (x.getStartDate().getMonth() == localDate.getMonth() && x.getStartDate().getYear() == localDate.getYear()) {
-
-            }
-        }
         for (Facility facility : facilities.keySet()) {
             if (facilities.get(facility) >= 5) {
                 facilityMaintenanceList.put(facility, facilities.get(facility));
@@ -270,9 +269,19 @@ public class FacilityService implements IFacilityService {
     @Override
     public void addingValueToFacilityService(String serviceName) {
         for (Facility x : facilities.keySet()) {
-            if (x.getServiceId().equals(serviceName)) {
+            if (x.getServiceName().equals(serviceName)) {
                 facilities.put(x, facilities.get(x) + 1);
             }
         }
+    }
+
+    @Override
+    public LinkedHashMap<Facility, Integer> getFacilities() {
+        return facilities;
+    }
+
+    @Override
+    public LinkedHashMap<Facility, Integer> getFacilityMaintenanceList() {
+        return facilityMaintenanceList;
     }
 }

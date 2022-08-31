@@ -6,16 +6,27 @@ import java.util.Scanner;
 
 public class EmployeeController {
     EmployeeService employeeService = new EmployeeService();
+
     public void employeeMenu() {
         Scanner scanner = new Scanner(System.in);
+        int functionOneChoice;
         while (true) {
-            System.out.println("-------Employee Management-------");
-            System.out.println("1. Display list employees\n" +
-                    "2. Add new employee\n" +
-                    "3. Edit employee\n" +
-                    "4. Return to main menu\n");
-            System.out.print("Input your choice here: ");
-            int functionOneChoice = Integer.parseInt(scanner.nextLine());
+            while (true) {
+                try {
+                    System.out.println("-------Employee Management-------");
+                    System.out.println("1. Display list employees\n" +
+                            "2. Add new employee\n" +
+                            "3. Edit employee\n" +
+                            "4. Return to main menu\n");
+                    System.out.print("Input your choice here: ");
+                    functionOneChoice = Integer.parseInt(scanner.nextLine());
+                    break;
+                } catch (NumberFormatException e) {
+                    System.out.println("You input String type not number try again!");
+                } catch (Exception e) {
+                    System.out.println("Something went wrong!");
+                }
+            }
 
             switch (functionOneChoice) {
                 case 1:

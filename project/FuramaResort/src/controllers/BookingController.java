@@ -1,24 +1,36 @@
 package controllers;
 
 import services.impl.BookingService;
+import services.impl.ContractService;
 
-import java.text.ParseException;
 import java.util.Scanner;
 
 public class BookingController {
     BookingService bookingService = new BookingService();
+    ContractService contractService = new ContractService();
+
     public void bookingMenu() {
         Scanner scanner = new Scanner(System.in);
+        int functionFourChoice;
         while (true) {
-            System.out.println("-------Booking Management-------");
-            System.out.println("1. Add new booking\n" +
-                    "2. Display list booking\n" +
-                    "3. Create new contracts\n" +
-                    "4. Display list contracts\n" +
-                    "5. Edit contracts\n" +
-                    "6. Return to main menu\n");
-            System.out.print("Input your choice here: ");
-            int functionFourChoice = Integer.parseInt(scanner.nextLine());
+            while (true) {
+                try {
+                    System.out.println("-------Booking Management-------");
+                    System.out.println("1. Add new booking\n" +
+                            "2. Display list booking\n" +
+                            "3. Create new contracts\n" +
+                            "4. Display list contracts\n" +
+                            "5. Edit contracts\n" +
+                            "6. Return to main menu\n");
+                    System.out.print("Input your choice here: ");
+                    functionFourChoice = Integer.parseInt(scanner.nextLine());
+                    break;
+                } catch (NumberFormatException e) {
+                    System.out.println("You input String type not number try again!");
+                } catch (Exception e) {
+                    System.out.println("Something went wrong!");
+                }
+            }
 
             switch (functionFourChoice) {
                 case 1:
@@ -28,13 +40,13 @@ public class BookingController {
                     bookingService.displayListBooking();
                     break;
                 case 3:
-                    bookingService.createNewContract();
+                    contractService.add();
                     break;
                 case 4:
-                    bookingService.displayListContract();
+                    contractService.display();
                     break;
                 case 5:
-                    bookingService.editContract();
+                    contractService.editContract();
                     break;
                 case 6:
                     return;
@@ -43,5 +55,5 @@ public class BookingController {
             }
         }
     }
-
 }
+

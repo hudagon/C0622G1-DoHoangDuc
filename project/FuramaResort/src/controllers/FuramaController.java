@@ -10,6 +10,7 @@ public class FuramaController {
         BookingController bookingController = new BookingController();
         PromotionController promotionController = new PromotionController();
         Scanner scanner = new Scanner(System.in);
+        int mainChoice;
         while (true) {
             System.out.println("----------Welcome----------");
             System.out.println("1. Employee Management\n" +
@@ -19,7 +20,16 @@ public class FuramaController {
                     "5. Promotion Management\n" +
                     "6. Exit\n");
             System.out.print("Input your choice here: ");
-            int mainChoice = Integer.parseInt(scanner.nextLine());
+            while (true) {
+                try {
+                    mainChoice = Integer.parseInt(scanner.nextLine());
+                    break;
+                } catch (NumberFormatException e) {
+                    System.out.println("You input String type not number try again!");
+                } catch (Exception e) {
+                    System.out.println("Something went wrong");
+                }
+            }
 
             switch (mainChoice) {
                 case 1:
@@ -40,6 +50,8 @@ public class FuramaController {
                 case 6:
                     System.out.println("----------See you again!----------");
                     return;
+                default:
+                    System.out.println("Invalid input!");
             }
         }
     }
