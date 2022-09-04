@@ -3,48 +3,46 @@ package services.impl;
 import models.things.Booking;
 import models.things.Facility;
 import services.IBookingService;
-import utils.comparator.SortByStartDateThenEndDate;
+import utils.read_write_file.read_write_booking.ReadFileBooking;
+import utils.read_write_file.read_write_booking.WriteFileBooking;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 import java.util.Set;
-import java.util.TreeSet;
 
 public class BookingService implements IBookingService {
+    WriteFileBooking writeFileBooking = new WriteFileBooking();
     Scanner scanner = new Scanner(System.in);
     CustomerService customerService = new CustomerService();
     FacilityService facilityService = new FacilityService();
-    private static SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-    private static Set<Booking> bookings = new TreeSet<>(new SortByStartDateThenEndDate());
+    private  final SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+    private static Set<Booking> bookings;
+    static String PATH = "src\\data\\booking.csv";
 
     static {
-        try {
-            bookings.add(new Booking("NO.001", dateFormat.parse("05/08/2022"), dateFormat.parse("22/08/2022"), "KH001", "HOUSE001", "None"));
-            bookings.add(new Booking("NO.002", dateFormat.parse("07/08/2022"), dateFormat.parse("15/08/2022"), "KH002", "ROOM001", "None"));
-            bookings.add(new Booking("NO.003", dateFormat.parse("07/08/2022"), dateFormat.parse("13/08/2022"), "KH003", "VILLA001", "None"));
-            bookings.add(new Booking("NO.004", dateFormat.parse("07/07/2022"), dateFormat.parse("13/07/2022"), "KH003", "VILLA001", "None"));
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+        bookings = ReadFileBooking.readFileBooking(PATH);
     }
 
-    public static Set<Booking> getBookings() {
+    public Set<Booking> getBookings() {
         return bookings;
     }
 
     @Override
     public void addNewBooking() {
+        bookings = ReadFileBooking.readFileBooking(PATH);
         Booking newBooking = getBookingInfo();
         if (newBooking == null) return;
         bookings.add(newBooking);
         System.out.println("Booking successfully!");
         facilityService.addingValueToFacilityService(newBooking.getServiceName());
+        writeFileBooking.writeFileBooking(PATH, bookings);
     }
 
     @Override
     public Booking getBookingInfo() {
+        bookings = ReadFileBooking.readFileBooking(PATH);
         System.out.println("------Adding new booking------");
         System.out.println("Here is the customer list");
         customerService.display();
@@ -97,6 +95,7 @@ public class BookingService implements IBookingService {
 
     @Override
     public void displayListBooking() {
+        bookings = ReadFileBooking.readFileBooking(PATH);
         for (Booking x : bookings) {
             System.out.println(x.toString());
         }

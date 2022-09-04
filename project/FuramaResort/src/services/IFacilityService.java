@@ -14,4 +14,6 @@ public interface IFacilityService extends IService {
     LinkedHashMap<Facility, Integer> getFacilities();
 
     LinkedHashMap<Facility, Integer> getFacilityMaintenanceList();
+
+    void setFacilityMaintenanceList(LinkedHashMap<Facility, Integer> facilityMaintenanceList);
 }

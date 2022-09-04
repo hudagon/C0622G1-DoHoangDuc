@@ -3,16 +3,21 @@ package services.impl;
 import models.things.Booking;
 import models.things.Contract;
 import services.IContractService;
+import utils.read_write_file.read_write_contract.ReadFileContract;
+import utils.read_write_file.read_write_contract.WriteFileContract;
 
 import java.util.*;
 
 public class ContractService implements IContractService {
+    static BookingService bookingService = new BookingService();
     Scanner scanner = new Scanner(System.in);
-    static List<Contract> contracts = new ArrayList<>();
-    static List<Booking> bookingsUseToMakeContracts = new LinkedList<>(BookingService.getBookings());
+    List<Contract> contracts = new ArrayList<>();
+    List<Booking> bookingsUseToMakeContracts = new LinkedList<>(bookingService.getBookings());
+    String PATH = "src\\data\\contract.csv";
 
     @Override
     public void display() {
+        contracts = ReadFileContract.readFileContract(PATH);
         if (contracts.isEmpty()) {
             System.out.println("Nothing to display!");
         } else {
@@ -24,6 +29,7 @@ public class ContractService implements IContractService {
 
     @Override
     public void editContract() {
+        contracts = ReadFileContract.readFileContract(PATH);
         Contract contractEdit = this.findContractToEdit();
         if (contractEdit == null) {
             System.out.println("Can't found contract to edit");
@@ -45,6 +51,7 @@ public class ContractService implements IContractService {
                         contracts.get(positionEdit).setContractNumber(newContractNumber);
                         System.out.println("Edit contract number successfully!");
                         System.out.println("---------------------------");
+                        WriteFileContract.writeFileBooking(PATH, contracts);
                         break;
                     case 2:
                         System.out.print("How do you want to change?: ");
@@ -52,6 +59,7 @@ public class ContractService implements IContractService {
                         contracts.get(positionEdit).setDeposit(newDeposit);
                         System.out.println("Edit deposit successfully!");
                         System.out.println("---------------------------");
+                        WriteFileContract.writeFileBooking(PATH, contracts);
                         break;
                     case 3:
                         System.out.print("How do you want to change?: ");
@@ -59,6 +67,7 @@ public class ContractService implements IContractService {
                         contracts.get(positionEdit).setTotalPayment(totalPaymentEdit);
                         System.out.println("Edit total payment successfully!");
                         System.out.println("---------------------------");
+                        WriteFileContract.writeFileBooking(PATH, contracts);
                         break;
                     case 4:
                         return;
@@ -71,6 +80,7 @@ public class ContractService implements IContractService {
 
     @Override
     public void add() {
+        contracts = ReadFileContract.readFileContract(PATH);
         System.out.println("Only the earliest booking can be created into contract, do you want to continue?\n" +
                 "1. Yes\n" +
                 "2. No");
@@ -79,8 +89,10 @@ public class ContractService implements IContractService {
 
         switch (choice) {
             case 1:
-                contracts.add(getContractInfo());
+                Contract newContract = this.getContractInfo();
+                contracts.add(newContract);
                 System.out.println("New contract added successfully!");
+                WriteFileContract.writeFileBooking(PATH, contracts);
             case 2:
                 break;
             default:
@@ -90,6 +102,7 @@ public class ContractService implements IContractService {
 
     @Override
     public Contract getContractInfo() {
+        contracts = ReadFileContract.readFileContract(PATH);
         System.out.print("Input contract number: ");
         int contractNumber = Integer.parseInt(scanner.nextLine());
         System.out.print("Input deposit: ");
@@ -101,11 +114,13 @@ public class ContractService implements IContractService {
         String bookingCode = bookingToCreateContract.getBookingCode();
         String customerId = bookingToCreateContract.getCustomerId();
 
+
         return new Contract(contractNumber, bookingCode, deposit, customerTotalPayment, customerId);
     }
 
     @Override
     public Contract findContractToEdit() {
+        contracts = ReadFileContract.readFileContract(PATH);
         System.out.print("Do you want to edit by customer ID or contract number?\n" +
                 "1. Customer ID\n" +
                 "2. Contract Number\n" +

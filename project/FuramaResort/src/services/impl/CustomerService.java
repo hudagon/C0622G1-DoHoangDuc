@@ -3,24 +3,25 @@ package services.impl;
 import models.creatures.Customer;
 import services.ICustomerService;
 import utils.exception.*;
+import utils.read_write_file.read_write_customer.ReadFileCustomer;
+import utils.read_write_file.read_write_customer.WriteFileCustomer;
 import utils.validation.*;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
 public class CustomerService implements ICustomerService {
+    private final SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+    public static final String PATH = "src\\data\\customer.csv";
     Scanner scanner = new Scanner(System.in);
-    private static List<Customer> customers = new LinkedList<>();
-
-    static {
-        customers.add(new Customer("Nguyễn Văn A", "1/1/2000", "Nam", 111222333, "123123123", "a@gmail.com", "KH001", "Diamond", "abc"));
-        customers.add(new Customer("Nguyễn Văn B", "1/1/2000", "Nam", 456456456, "444555666", "b@gmail.com", "KH002", "Silver", "bcd"));
-        customers.add(new Customer("Nguyễn Thị C", "1/1/2000", "Nữ", 789789789, "777888999", "c@gmail.com", "KH003", "Gold", "efk"));
-    }
+    private List<Customer> customers = new LinkedList<>();
 
     @Override
     public void display() {
+        customers = ReadFileCustomer.readFileCustomer(PATH);
         for (Customer customer : customers) {
             System.out.println(customer.toString());
         }
@@ -28,17 +29,21 @@ public class CustomerService implements ICustomerService {
 
     @Override
     public void add() {
+        customers = ReadFileCustomer.readFileCustomer(PATH);
         customers.add(this.getCustomerInfo());
         System.out.println("New customer added successfully!");
+        WriteFileCustomer.writeFileCustomer(PATH, customers);
     }
 
     @Override
     public void edit() {
+        customers = ReadFileCustomer.readFileCustomer(PATH);
         Customer customerEdit = this.findCustomerToEdit();
         if (customerEdit == null) {
             System.out.println("Can't found customer to edit");
         } else {
             while (true) {
+                customers = ReadFileCustomer.readFileCustomer(PATH);
                 int positionEdit = customers.indexOf(customerEdit);
                 System.out.print("What information do you want to edit?\n" +
                         "1. Name\n" +
@@ -116,10 +121,12 @@ public class CustomerService implements ICustomerService {
                 }
             }
         }
+        WriteFileCustomer.writeFileCustomer(PATH, customers);
     }
 
     @Override
     public Customer getCustomerInfo() {
+        customers = ReadFileCustomer.readFileCustomer(PATH);
         String customerName = "";
         while (true) {
             try {
@@ -138,15 +145,28 @@ public class CustomerService implements ICustomerService {
         }
 
         String customerBirthday = "";
+        Date currentTime = new Date();
+        Date customerBirthday1;
         while (true) {
-            System.out.println("Input customer's birthday: ");
+            System.out.print("Input customer's birthday: ");
             try {
                 customerBirthday = scanner.nextLine();
                 if (!customerBirthday.matches(BirthdayRegex.BIRTHDAY_REGEX)) {
-                    throw new InvaildBirthdayException("Invaild birthday format, please input dd/MM/yyyy");
+                    throw new InvaildBirthdayException("Invalid birthday format, please input dd/MM/yyyy");
                 }
+
+                customerBirthday1 = dateFormat.parse(customerBirthday);
+                if (currentTime.getYear() - customerBirthday1.getYear() > 100) {
+                    throw new IllegalAgeException("Employee must be between 18 and 100 years old");
+                }
+
+                customerBirthday1.setYear(customerBirthday1.getYear() + 18);
+                if (customerBirthday1.compareTo(currentTime) > 0) {
+                    throw new IllegalAgeException("Employee must be between 18 and 100 years old");
+                }
+
                 break;
-            } catch (InvaildBirthdayException e) {
+            } catch (InvaildBirthdayException | IllegalAgeException e) {
                 System.out.println(e.getMessage());
             } catch (Exception e) {
                 System.out.println("Something went wrong!");
@@ -224,7 +244,7 @@ public class CustomerService implements ICustomerService {
             try {
                 System.out.print("Input customer's id: ");
                 customerId = scanner.nextLine();
-                if (!customerId.matches(IdRegex.ID_REGEX)) {
+                if (!customerId.matches(CustomerIdRegex.CUSTOMER_ID_REGEX)) {
                     throw new InvaildIdInputException("The customer id must be 'KHXXX' format");
                 }
                 break;
@@ -304,6 +324,7 @@ public class CustomerService implements ICustomerService {
 
     @Override
     public Customer findCustomerToEdit() {
+        customers = ReadFileCustomer.readFileCustomer(PATH);
         System.out.print("Input Customer ID: ");
         String idFind = scanner.nextLine();
 

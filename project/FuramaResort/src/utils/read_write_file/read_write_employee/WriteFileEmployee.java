@@ -13,12 +13,10 @@ public class WriteFileEmployee {
     public static void writeEmployeeFile(String path, boolean append, List<Employee> employees) {
         try {
             File file = new File(path);
-
             FileWriter writer = new FileWriter(file, append);
-
             BufferedWriter bufferedWriter = new BufferedWriter(writer);
 
-            List<String> result = listStudentConvertedToListString(employees);
+            List<String> result = listEmployeeConvertedToListString(employees);
 
             for (String employee : result) {
                 bufferedWriter.write(employee);
@@ -30,7 +28,7 @@ public class WriteFileEmployee {
         }
     }
 
-    public static List<String> listStudentConvertedToListString(List<Employee> employees) {
+    public static List<String> listEmployeeConvertedToListString(List<Employee> employees) {
         List<String> result = new ArrayList<>();
         for (Employee x : employees) {
             result.add(convertEmployeeToStringInRightFormat(x));

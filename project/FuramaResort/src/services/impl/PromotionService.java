@@ -8,10 +8,11 @@ import java.time.LocalDate;
 import java.util.*;
 
 public class PromotionService implements IPromotionSerivce {
+    BookingService bookingService = new BookingService();
     Scanner scanner = new Scanner(System.in);
     int currentMonth = LocalDate.now().getMonthValue();
-    static Set<Booking> customersUsedService = BookingService.getBookings();
-    static Stack<Voucher> vouchers = new Stack();
+    Set<Booking> customersUsedService = bookingService.getBookings();
+    Stack<Voucher> vouchers = new Stack();
 
 
     @Override

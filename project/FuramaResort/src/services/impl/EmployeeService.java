@@ -2,17 +2,23 @@ package services.impl;
 
 import models.creatures.Employee;
 import services.IEmployeeService;
+import utils.exception.*;
 import utils.read_write_file.read_write_employee.ReadFileEmployee;
 import utils.read_write_file.read_write_employee.WriteFileEmployee;
+import utils.validation.*;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
 public class EmployeeService implements IEmployeeService {
+    private final SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
     public static final String PATH = "src\\data\\employee.csv";
     Scanner scanner = new Scanner(System.in);
     private List<Employee> employees = ReadFileEmployee.readEmployeeFile(PATH);
     boolean temp = true;
+    int choice;
 
     @Override
     public void display() {
@@ -34,11 +40,13 @@ public class EmployeeService implements IEmployeeService {
     @Override
     public void edit() {
         Employee employeeEdit = this.findEmployeeToEdit();
+        int positionEdit = employees.indexOf(employeeEdit);
+        int choiceEdit;
         if (employeeEdit == null) {
             System.out.println("Can't found employee to edit");
         } else {
             while (true) {
-                int positionEdit = employees.indexOf(employeeEdit);
+
                 System.out.print("What information do you want to edit?\n" +
                         "1. Name\n" +
                         "2. Birthday\n" +
@@ -51,8 +59,7 @@ public class EmployeeService implements IEmployeeService {
                         "9. Employee salary\n" +
                         "10. Exit\n" +
                         "--> Input here: ");
-                int choiceEdit = Integer.parseInt(scanner.nextLine());
-
+                choiceEdit = Integer.parseInt(scanner.nextLine());
                 switch (choiceEdit) {
                     case 1:
                         System.out.print("How do you want to change?: ");
@@ -127,22 +134,131 @@ public class EmployeeService implements IEmployeeService {
 
     @Override
     public Employee getEmployeeInfo() {
-        System.out.print("Input employee's name: ");
-        String employeeName = scanner.nextLine();
-        System.out.print("Input employee's birthday': ");
-        String employeeBirthday = scanner.nextLine();
-        System.out.print("Input employee's gender: ");
-        String employeeGender = scanner.nextLine();
-        System.out.print("Input employee's citizen identity number: ");
-        int employeeCitizenIdentityNumber = Integer.parseInt(scanner.nextLine());
-        System.out.print("Input employee's phone number: ");
-        String employeePhoneNumber = scanner.nextLine();
-        System.out.print("Input employee's email address: ");
-        String employeeEmail = scanner.nextLine();
-        System.out.print("Input employee's id: ");
-        String employeeId = scanner.nextLine();
+        String employeeName = "";
+        while (true) {
+            try {
+                System.out.print("Input employee's name: ");
+                employeeName = scanner.nextLine();
+                employeeName = employeeName.trim();
+                if (!employeeName.matches(NameRegex.NAME_REGEX) && !employeeName.matches("\\D{5,50}")) {
+                    throw new InvaildNameInputException("Invalid employee name, please try again");
+                }
+                break;
+            } catch (InvaildNameInputException e) {
+                System.out.println(e.getMessage());
+            } catch (Exception e) {
+                System.out.println("Something went wrong!");
+            }
+        }
+
+        String employeeBirthday = "";
+        Date currentTime = new Date();
+        Date employeeBirthday1;
+        while (true) {
+            System.out.print("Input employee's birthday: ");
+            try {
+                employeeBirthday = scanner.nextLine();
+                if (!employeeBirthday.matches(BirthdayRegex.BIRTHDAY_REGEX)) {
+                    throw new InvaildBirthdayException("Invalid birthday format, please input dd/MM/yyyy");
+                }
+
+                employeeBirthday1 = dateFormat.parse(employeeBirthday);
+                if (currentTime.getYear() - employeeBirthday1.getYear() > 100) {
+                    throw new IllegalAgeException("Employee must be between 18 and 100 years old");
+                }
+
+                employeeBirthday1.setYear(employeeBirthday1.getYear() + 18);
+                if (employeeBirthday1.compareTo(currentTime) > 0) {
+                    throw new IllegalAgeException("Employee must be between 18 and 100 years old");
+                }
+
+                break;
+            } catch (InvaildBirthdayException | IllegalAgeException e) {
+                System.out.println(e.getMessage());
+            } catch (Exception e) {
+                System.out.println("Something went wrong!");
+            }
+        }
+
+        String employeeGender = "";
+        while (true) {
+            System.out.print("Input employee's gender: ");
+            try {
+                employeeGender = scanner.nextLine();
+                if (!employeeGender.matches(GenderRegex.GENDER_REGEX)) {
+                    throw new InvaildGenderException("Please input Male or Female or neither");
+                }
+                break;
+            } catch (InvaildGenderException e) {
+                System.out.println(e.getMessage());
+            } catch (Exception e) {
+                System.out.println("Something went wrong!");
+            }
+        }
+
+        String employeeCitizenIdentityNumber1 = "";
+        while (true) {
+            System.out.print("Input employee's citizen identity number: ");
+            try {
+                employeeCitizenIdentityNumber1 = scanner.nextLine();
+                break;
+            } catch (Exception e) {
+                System.out.println("Something went wrong!");
+            }
+        }
+        int employeeCitizenIdentityNumber = Integer.parseInt(employeeCitizenIdentityNumber1);
+
+        String employeePhoneNumber1 = "";
+        while (true) {
+            System.out.print("Input employee's phone number: ");
+            try {
+                employeePhoneNumber1 = scanner.nextLine();
+                if (!employeePhoneNumber1.matches(PhoneNumberRegex.PHONE_NUMBER_REGEX)) {
+                    throw new InvaildPhoneNumberException("Please enter a valid phone number!");
+                }
+                break;
+            } catch (InvaildPhoneNumberException e) {
+                System.out.println(e.getMessage());
+            } catch (Exception e) {
+                System.out.println("Something went wrong!");
+            }
+        }
+        String employeePhoneNumber = employeePhoneNumber1;
+
+        String employeeEmail = "";
+        while (true) {
+            System.out.print("Input employee's email address: ");
+            try {
+                employeeEmail = scanner.nextLine();
+                if (!employeeEmail.matches(EmailRegex.EMAIL_REGEX)) {
+                    throw new InvaildEmailException("Please enter a valid email address");
+                }
+                break;
+            } catch (InvaildEmailException e) {
+                System.out.println(e.getMessage());
+            } catch (Exception e) {
+                System.out.println("Something went wrong!");
+            }
+        }
+
+        String employeeId;
+        while (true) {
+            try {
+                System.out.print("Input employee's id: ");
+                employeeId = scanner.nextLine();
+                if (!employeeId.matches(EmployeeIdRegex.EMPLOYEE_ID_REGEX)) {
+                    throw new InvaildIdInputException("The employee id must be 'NVXXX' format");
+                }
+                break;
+            } catch (InvaildIdInputException e) {
+                System.out.println(e.getMessage());
+            } catch (Exception e) {
+                System.out.println("Something went wrong!");
+            }
+        }
 
         String employeeQualifications = "";
+        temp = true;
         while (temp) {
             System.out.print("Input employee's qualifications:\n" +
                     "1. University\n" +
@@ -150,7 +266,17 @@ public class EmployeeService implements IEmployeeService {
                     "3. Intermediate\n" +
                     "4. Post-Graduate\n");
             System.out.print("Input your choice here: ");
-            int choice = Integer.parseInt(scanner.nextLine());
+            while (true) {
+                try {
+                    choice = Integer.parseInt(scanner.nextLine());
+                    break;
+                } catch (NumberFormatException e) {
+                    System.out.println("You input String type not number try again!");
+                } catch (Exception e) {
+                    System.out.println("Something went wrong!");
+                }
+            }
+
             switch (choice) {
                 case 1:
                     employeeQualifications = "University";
@@ -174,8 +300,8 @@ public class EmployeeService implements IEmployeeService {
             }
         }
 
-        temp = true;
         String employeePosition = "";
+        temp = true;
         while (temp) {
             System.out.print("Input employee's position:\n" +
                     "1. Receptionist\n" +
@@ -185,7 +311,17 @@ public class EmployeeService implements IEmployeeService {
                     "5. Hotel manager\n" +
                     "6. Manager\n");
             System.out.print("Input your choice here: ");
-            int choice = Integer.parseInt(scanner.nextLine());
+            while (true) {
+                try {
+                    choice = Integer.parseInt(scanner.nextLine());
+                    break;
+                } catch (NumberFormatException e) {
+                    System.out.println("You input String type not number try again!");
+                } catch (Exception e) {
+                    System.out.println("Something went wrong!");
+                }
+            }
+
             switch (choice) {
                 case 1:
                     employeePosition = "Receptionist";
@@ -217,9 +353,18 @@ public class EmployeeService implements IEmployeeService {
             }
         }
 
-
-        System.out.print("Input employee's salary: ");
-        double employeeSalary = Double.parseDouble(scanner.nextLine());
+        double employeeSalary;
+        while (true) {
+            System.out.print("Input employee's salary: ");
+            try {
+                employeeSalary = Double.parseDouble(scanner.nextLine());
+                break;
+            } catch (NumberFormatException e) {
+                System.out.println(e.getMessage());
+            } catch (Exception e) {
+                System.out.println("Something went wrong!");
+            }
+        }
 
         return new Employee(employeeName, employeeBirthday, employeeGender, employeeCitizenIdentityNumber,
                 employeePhoneNumber, employeeEmail, employeeId, employeeQualifications, employeePosition, employeeSalary);

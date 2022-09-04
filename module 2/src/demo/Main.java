@@ -1,63 +1,24 @@
 package demo;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
-        List<Employee> employees;
-        employees = readFile("src\\demo\\data.txt");
-        for (Employee employee : employees) {
-            System.out.println(employee.toString());
-        }
-        writeFile("src\\demo\\ok.txt", false, employees);
-    }
+    public static void main(String[] args) throws ParseException {
+        Scanner scanner = new Scanner(System.in);
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        Date currentTime = new Date();
 
+        String birthday321 = "01/11/2005";
 
-    public static List<Employee> readFile(String path) throws IOException {
-        List<Employee> employees = new LinkedList<>();
+        Date birthday = dateFormat.parse(birthday321);
 
-        File file = new File(path);
+//        birthday.setYear(birthday.getYear() + 18);
 
-        FileReader fileReader = new FileReader(file);
-        BufferedReader bufferedReader = new BufferedReader(fileReader);
+        int over100 = currentTime.getYear() - birthday.getYear();
 
-
-        String line;
-        while ((line = bufferedReader.readLine()) != null) {
-            String[] lines = line.split(",");
-            employees.add(new Employee(lines[0], lines[1]));
-        }
-        return employees;
-    }
-
-    public static void writeFile(String path, boolean append, List<Employee> employees) throws IOException {
-        File file = new File(path);
-
-        FileWriter writer = new FileWriter(file, append);
-
-        BufferedWriter bufferedWriter = new BufferedWriter(writer);
-
-        List<String> result = listStudentConvertedToListString(employees);
-
-        for (String employee : result) {
-            bufferedWriter.write(employee);
-            bufferedWriter.newLine();
-        }
-        bufferedWriter.close();
-    }
-
-    public static List<String> listStudentConvertedToListString(List<Employee> employees) {
-        List<String> result = new ArrayList<String>();
-        for (Employee x : employees) {
-            result.add(convertEmployeeToStringInRightFormat(x));
-        }
-        return result;
-    }
-
-    public static String convertEmployeeToStringInRightFormat(Employee employee) {
-        return employee.getName() + "," + employee.getId();
+        System.out.println(over100);
     }
 }
