@@ -55,6 +55,11 @@ public class FacilityService implements IFacilityService {
     }
 
     @Override
+    public void delete() {
+
+    }
+
+    @Override
     public Facility getFacilityInfo() {
         facilities = ReadFileFacility.readFacilityFile(HOUSE_PATH, ROOM_PATH, VILLA_PATH);
         Scanner scanner = new Scanner(System.in);
@@ -88,7 +93,7 @@ public class FacilityService implements IFacilityService {
                             villaServiceId = scanner.nextLine();
                             if (!villaServiceId.matches(VILLA_SERVICE_ID_REGEX)) {
                                 throw new InvalidServiceIdException("Wrong input, please enter using the following " +
-                                        "formart (SVVLXXXX)!");
+                                        "format (SVVLXXXX)!");
                             }
                             for (Facility x : facilities.keySet()) {
                                 if (x.getServiceId().equals(villaServiceId)) {

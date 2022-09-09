@@ -18,7 +18,7 @@ public class WriteFileCustomer {
                 bufferedWriter.write(line);
                 bufferedWriter.newLine();
             }
-
+            System.out.println("ok");
             bufferedWriter.close();
         } catch (Exception e) {
             System.out.println("Something went wrong!");

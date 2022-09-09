@@ -18,6 +18,8 @@ public class CustomerService implements ICustomerService {
     public static final String PATH = "src\\data\\customer.csv";
     Scanner scanner = new Scanner(System.in);
     private List<Customer> customers = new LinkedList<>();
+    boolean temp = true;
+    int choice;
 
     @Override
     public void display() {
@@ -30,7 +32,8 @@ public class CustomerService implements ICustomerService {
     @Override
     public void add() {
         customers = ReadFileCustomer.readFileCustomer(PATH);
-        customers.add(this.getCustomerInfo());
+        Customer newCustomer = this.getCustomerInfo();
+        customers.add(newCustomer);
         System.out.println("New customer added successfully!");
         WriteFileCustomer.writeFileCustomer(PATH, customers);
     }
@@ -38,13 +41,14 @@ public class CustomerService implements ICustomerService {
     @Override
     public void edit() {
         customers = ReadFileCustomer.readFileCustomer(PATH);
-        Customer customerEdit = this.findCustomerToEdit();
+        Customer customerEdit = this.findCustomer();
+        int positionEdit;
         if (customerEdit == null) {
             System.out.println("Can't found customer to edit");
         } else {
             while (true) {
                 customers = ReadFileCustomer.readFileCustomer(PATH);
-                int positionEdit = customers.indexOf(customerEdit);
+                positionEdit = customers.indexOf(customerEdit);
                 System.out.print("What information do you want to edit?\n" +
                         "1. Name\n" +
                         "2. Birthday\n" +
@@ -64,6 +68,7 @@ public class CustomerService implements ICustomerService {
                         String newName = scanner.nextLine();
                         customers.get(positionEdit).setName(newName);
                         System.out.println("Edit name successfully!");
+                        WriteFileCustomer.writeFileCustomer(PATH, customers);
                         System.out.println("---------------------------");
                         break;
                     case 2:
@@ -71,6 +76,7 @@ public class CustomerService implements ICustomerService {
                         String newBirthday = scanner.nextLine();
                         customers.get(positionEdit).setBirthday(newBirthday);
                         System.out.println("Edit birthday successfully!");
+                        WriteFileCustomer.writeFileCustomer(PATH, customers);
                         System.out.println("---------------------------");
                         break;
                     case 3:
@@ -78,6 +84,7 @@ public class CustomerService implements ICustomerService {
                         String newGender = scanner.nextLine();
                         customers.get(positionEdit).setGender(newGender);
                         System.out.println("Edit gender successfully!");
+                        WriteFileCustomer.writeFileCustomer(PATH, customers);
                         System.out.println("---------------------------");
                         break;
                     case 4:
@@ -85,6 +92,7 @@ public class CustomerService implements ICustomerService {
                         int newCitizenIdentifyNumber = Integer.parseInt(scanner.nextLine());
                         customers.get(positionEdit).setCitizenIdentityNumber(newCitizenIdentifyNumber);
                         System.out.println("Edit Citizen identity number successfully!");
+                        WriteFileCustomer.writeFileCustomer(PATH, customers);
                         System.out.println("---------------------------");
                         break;
                     case 5:
@@ -92,6 +100,7 @@ public class CustomerService implements ICustomerService {
                         String newPhoneNumber = scanner.nextLine();
                         customers.get(positionEdit).setPhoneNumber(newPhoneNumber);
                         System.out.println("Edit phone number successfully!");
+                        WriteFileCustomer.writeFileCustomer(PATH, customers);
                         System.out.println("---------------------------");
                         break;
                     case 6:
@@ -99,6 +108,7 @@ public class CustomerService implements ICustomerService {
                         String newID = scanner.nextLine();
                         customers.get(positionEdit).setId(newID);
                         System.out.println("Edit ID successfully!");
+                        WriteFileCustomer.writeFileCustomer(PATH, customers);
                         System.out.println("---------------------------");
                         break;
                     case 7:
@@ -106,6 +116,7 @@ public class CustomerService implements ICustomerService {
                         String newClassification = scanner.nextLine();
                         customers.get(positionEdit).setCustomerClassification(newClassification);
                         System.out.println("Edit qualifications successfully!");
+                        WriteFileCustomer.writeFileCustomer(PATH, customers);
                         System.out.println("---------------------------");
                         return;
                     case 8:
@@ -113,6 +124,7 @@ public class CustomerService implements ICustomerService {
                         String newAddress = scanner.nextLine();
                         customers.get(positionEdit).setAddress(newAddress);
                         System.out.println("Edit address successfully!");
+                        WriteFileCustomer.writeFileCustomer(PATH, customers);
                         System.out.println("---------------------------");
                     case 9:
                         return;
@@ -122,6 +134,44 @@ public class CustomerService implements ICustomerService {
             }
         }
         WriteFileCustomer.writeFileCustomer(PATH, customers);
+    }
+
+    @Override
+    public void delete() {
+        temp = true;
+        customers = ReadFileCustomer.readFileCustomer(PATH);
+        Customer customerToDelete = this.findCustomer();
+
+        if (customerToDelete == null) {
+            System.out.println("Can't find customer to delete");
+        } else {
+            while (temp) {
+                System.out.print("Do you want to delete this employee?\n" +
+                        "1. Yes\n" +
+                        "2. No\n" +
+                        "Input here: ");
+                try {
+                    choice = Integer.parseInt(scanner.nextLine());
+
+                    switch (choice) {
+                        case 1:
+                            customers.removeIf(x -> x.getId().equals(customerToDelete.getId()));
+                            System.out.println("Delete successfully!");
+                            temp = false;
+                            WriteFileCustomer.writeFileCustomer(PATH, customers);
+                            break;
+                        case 2:
+                            return;
+                        default:
+                            System.out.println("Wrong input!");
+                    }
+                } catch (NumberFormatException e) {
+                    System.out.println("Invalid input, you must enter a number");
+                } catch (Exception e) {
+                    System.out.println("Something went wrong");
+                }
+            }
+        }
     }
 
     @Override
@@ -175,7 +225,7 @@ public class CustomerService implements ICustomerService {
 
         String customerGender = "";
         while (true) {
-            System.out.println("Input customer's gender: ");
+            System.out.print("Input customer's gender: ");
             try {
                 customerGender = scanner.nextLine();
                 if (!customerGender.matches(GenderRegex.GENDER_REGEX)) {
@@ -256,8 +306,6 @@ public class CustomerService implements ICustomerService {
         }
 
         String customerClassification = "";
-        boolean temp = true;
-        int choice;
         while (temp) {
             System.out.print("Input customer's classification:\n" +
                     "1. Diamond\n" +
@@ -323,7 +371,7 @@ public class CustomerService implements ICustomerService {
     }
 
     @Override
-    public Customer findCustomerToEdit() {
+    public Customer findCustomer() {
         customers = ReadFileCustomer.readFileCustomer(PATH);
         System.out.print("Input Customer ID: ");
         String idFind = scanner.nextLine();

@@ -1,3 +1,0 @@
-Nguyễn văn A,1/1/2000,Nam,001,123,a@gmail.com,NV001,University,Manager,5500000
-Nguyễn văn B,2/1/2000,Nam,002,456,b@gmail.com,NV002,University,Manager,5500000
-Nguyễn văn C,3/1/2000,Nam,003,789,c@gmail.com,NV003,University,Manager,5500000

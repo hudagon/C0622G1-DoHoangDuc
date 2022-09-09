@@ -20,7 +20,7 @@ public class PromotionService implements IPromotionSerivce {
         System.out.print("Input the year you want to display all customers who used services: ");
         int yearToDisplay = Integer.parseInt(scanner.nextLine());
 
-        List<Booking> listToDisplay1 = new LinkedList<>();
+        Set<Booking> listToDisplay1 = new HashSet<>();
         for (Booking x : customersUsedService) {
             if (x.getStartDate().getYear() == yearToDisplay - 1900) {
                 listToDisplay1.add(x);
@@ -48,6 +48,10 @@ public class PromotionService implements IPromotionSerivce {
         boolean temp = true;
         while (temp) {
             temp = false;
+            if (listToDisplay2.size() == 0) {
+                System.out.println("There are no one to get vouchers!");
+                break;
+            }
             System.out.println("There are " + listToDisplay2.size() + " customers available for getting a vouchers this month.");
             System.out.println("Please input total number vouchers equal to total number of customers.");
             System.out.print("Input numbers of 10% voucher: ");

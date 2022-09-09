@@ -5,7 +5,7 @@ import models.creatures.Employee;
 public interface IEmployeeService extends IService {
     Employee getEmployeeInfo();
 
-    Employee findEmployeeToEdit();
+    Employee findEmployee();
 
     void edit();
 }

@@ -17,7 +17,8 @@ public class EmployeeController {
                     System.out.println("1. Display list employees\n" +
                             "2. Add new employee\n" +
                             "3. Edit employee\n" +
-                            "4. Return to main menu\n");
+                            "4. Delete employee\n" +
+                            "5. Return to main menu\n");
                     System.out.print("Input your choice here: ");
                     functionOneChoice = Integer.parseInt(scanner.nextLine());
                     break;
@@ -39,6 +40,9 @@ public class EmployeeController {
                     employeeService.edit();
                     break;
                 case 4:
+                    employeeService.delete();
+                    break;
+                case 5:
                     return;
                 default:
                     System.out.println("Wrong input, please try again");

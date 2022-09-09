@@ -2,7 +2,7 @@ package services;
 
 import models.things.Contract;
 
-public interface IContractService extends IService {
+public interface IContractService  {
     void add();
 
     void display();

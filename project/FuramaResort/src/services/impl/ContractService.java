@@ -12,8 +12,9 @@ public class ContractService implements IContractService {
     static BookingService bookingService = new BookingService();
     Scanner scanner = new Scanner(System.in);
     List<Contract> contracts = new ArrayList<>();
-    List<Booking> bookingsUseToMakeContracts = new LinkedList<>(bookingService.getBookings());
+    List<Booking> bookingsUsedToMakeContracts = new LinkedList<>(bookingService.getBookings());
     String PATH = "src\\data\\contract.csv";
+    int count = 1;
 
     @Override
     public void display() {
@@ -110,7 +111,11 @@ public class ContractService implements IContractService {
         System.out.print("Input customer total payment: ");
         double customerTotalPayment = Double.parseDouble(scanner.nextLine());
 
-        Booking bookingToCreateContract = bookingsUseToMakeContracts.remove(bookingsUseToMakeContracts.size() - 1);
+        for (Contract x : contracts) {
+            count++;
+        }
+
+        Booking bookingToCreateContract = bookingsUsedToMakeContracts.get(bookingsUsedToMakeContracts.size() - count);
         String bookingCode = bookingToCreateContract.getBookingCode();
         String customerId = bookingToCreateContract.getCustomerId();
 

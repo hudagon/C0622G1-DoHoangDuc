@@ -15,7 +15,8 @@ public class CustomerController {
                 System.out.println("1. Display list customers\n" +
                         "2. Add new customers\n" +
                         "3. Edit customers\n" +
-                        "4. Return to main menu\n");
+                        "4. Delete customers\n" +
+                        "5. Return to main menu\n");
                 System.out.print("Input your choice here: ");
                 try {
                     functionTwoChoice = Integer.parseInt(scanner.nextLine());
@@ -38,6 +39,9 @@ public class CustomerController {
                     customerService.edit();
                     break;
                 case 4:
+                    customerService.delete();
+                    break;
+                case 5:
                     return;
                 default:
                     System.out.println("Wrong input, please try again");

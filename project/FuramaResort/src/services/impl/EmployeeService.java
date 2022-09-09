@@ -39,7 +39,7 @@ public class EmployeeService implements IEmployeeService {
 
     @Override
     public void edit() {
-        Employee employeeEdit = this.findEmployeeToEdit();
+        Employee employeeEdit = this.findEmployee();
         int positionEdit = employees.indexOf(employeeEdit);
         int choiceEdit;
         if (employeeEdit == null) {
@@ -66,6 +66,7 @@ public class EmployeeService implements IEmployeeService {
                         String newName = scanner.nextLine();
                         employees.get(positionEdit).setName(newName);
                         System.out.println("Edit name successfully!");
+                        WriteFileEmployee.writeEmployeeFile(PATH, false,employees);
                         System.out.println("---------------------------");
                         break;
                     case 2:
@@ -73,6 +74,7 @@ public class EmployeeService implements IEmployeeService {
                         String newBirthday = scanner.nextLine();
                         employees.get(positionEdit).setBirthday(newBirthday);
                         System.out.println("Edit birthday successfully!");
+                        WriteFileEmployee.writeEmployeeFile(PATH, false,employees);
                         System.out.println("---------------------------");
                         break;
                     case 3:
@@ -80,6 +82,7 @@ public class EmployeeService implements IEmployeeService {
                         String newGender = scanner.nextLine();
                         employees.get(positionEdit).setGender(newGender);
                         System.out.println("Edit gender successfully!");
+                        WriteFileEmployee.writeEmployeeFile(PATH, false,employees);
                         System.out.println("---------------------------");
                         break;
                     case 4:
@@ -87,6 +90,7 @@ public class EmployeeService implements IEmployeeService {
                         int newCitizenIdentifyNumber = Integer.parseInt(scanner.nextLine());
                         employees.get(positionEdit).setCitizenIdentityNumber(newCitizenIdentifyNumber);
                         System.out.println("Edit Citizen identity number successfully!");
+                        WriteFileEmployee.writeEmployeeFile(PATH, false,employees);
                         System.out.println("---------------------------");
                         break;
                     case 5:
@@ -94,6 +98,7 @@ public class EmployeeService implements IEmployeeService {
                         String newPhoneNumber = scanner.nextLine();
                         employees.get(positionEdit).setPhoneNumber(newPhoneNumber);
                         System.out.println("Edit phone number successfully!");
+                        WriteFileEmployee.writeEmployeeFile(PATH, false,employees);
                         System.out.println("---------------------------");
                         break;
                     case 6:
@@ -101,6 +106,7 @@ public class EmployeeService implements IEmployeeService {
                         String newID = scanner.nextLine();
                         employees.get(positionEdit).setId(newID);
                         System.out.println("Edit ID successfully!");
+                        WriteFileEmployee.writeEmployeeFile(PATH, false,employees);
                         System.out.println("---------------------------");
                         break;
                     case 7:
@@ -108,6 +114,7 @@ public class EmployeeService implements IEmployeeService {
                         String newQualification = scanner.nextLine();
                         employees.get(positionEdit).setEmployeeQualifications(newQualification);
                         System.out.println("Edit qualifications successfully!");
+                        WriteFileEmployee.writeEmployeeFile(PATH, false,employees);
                         System.out.println("---------------------------");
                         return;
                     case 8:
@@ -115,6 +122,7 @@ public class EmployeeService implements IEmployeeService {
                         String newPosition = scanner.nextLine();
                         employees.get(positionEdit).setEmployeePosition(newPosition);
                         System.out.println("Edit position successfully!");
+                        WriteFileEmployee.writeEmployeeFile(PATH, false,employees);
                         System.out.println("---------------------------");
                         break;
                     case 9:
@@ -122,11 +130,49 @@ public class EmployeeService implements IEmployeeService {
                         double newSalary = Double.parseDouble(scanner.nextLine());
                         employees.get(positionEdit).setEmployeeSalary(newSalary);
                         System.out.println("Edit Salary successfully!");
+                        WriteFileEmployee.writeEmployeeFile(PATH, false,employees);
                         System.out.println("---------------------------");
                     case 10:
                         return;
                     default:
                         System.out.println("Wrong input!");
+                }
+            }
+        }
+    }
+
+    @Override
+    public void delete() {
+        employees = ReadFileEmployee.readEmployeeFile(PATH);
+        Employee employeeToDelete = this.findEmployee();
+
+        if (employeeToDelete == null) {
+            System.out.println("Can't find employee to delete");
+        } else {
+            while (temp) {
+                System.out.print("Do you want to delete this employee?\n" +
+                        "1. Yes\n" +
+                        "2. No\n" +
+                        "Input here: ");
+                try {
+                    choice = Integer.parseInt(scanner.nextLine());
+
+                    switch (choice) {
+                        case 1:
+                            employees.removeIf(x -> x.getId().equals(employeeToDelete.getId()));
+                            System.out.println("Delete successfully!");
+                            temp = false;
+                            WriteFileEmployee.writeEmployeeFile(PATH, false,employees);
+                            break;
+                        case 2:
+                            return;
+                        default:
+                            System.out.println("Wrong input!");
+                    }
+                } catch (NumberFormatException e) {
+                    System.out.println("Invalid input, you must enter a number");
+                } catch (Exception e) {
+                    System.out.println("Something went wrong");
                 }
             }
         }
@@ -371,7 +417,8 @@ public class EmployeeService implements IEmployeeService {
     }
 
     @Override
-    public Employee findEmployeeToEdit() {
+    public Employee findEmployee() {
+        employees = ReadFileEmployee.readEmployeeFile(PATH);
         System.out.print("Input Employee ID: ");
         String idFind = scanner.nextLine();
 
