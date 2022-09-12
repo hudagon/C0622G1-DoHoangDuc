@@ -169,25 +169,27 @@ public class PersonService implements IPersonService {
 
     @Override
     public Person findPerson() {
-       while (true) {
-           System.out.print("Input the id of the person: ");
-           String id = scanner.nextLine();
+        students = ReadFileStudent.readCustomerFile(STUDENT_PATH);
+        employees = ReadFileEmployee.readEmployeeFile(EMPLOYEE_PATH);
+        while (true) {
+            System.out.print("Input the id of the person: ");
+            String id = scanner.nextLine();
 
-           Person person = null;
-           for (Student x : students) {
-               if (x.getId().equals(id)) {
-                   person = x;
-               }
-           }
-           for (Employee x : employees) {
-               if (x.getId().equals(id)) {
-                   person = x;
-               }
-           }
-           if (person != null) {
-               return person;
-           }
-           System.out.println("Can't find person, try again!");
-       }
+            Person person = null;
+            for (Student x : students) {
+                if (x.getId().equals(id)) {
+                    person = x;
+                }
+            }
+            for (Employee x : employees) {
+                if (x.getId().equals(id)) {
+                    person = x;
+                }
+            }
+            if (person != null) {
+                return person;
+            }
+            System.out.println("Can't find person, try again!");
+        }
     }
 }
