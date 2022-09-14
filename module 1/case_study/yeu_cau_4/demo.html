@@ -6,13 +6,16 @@
 </head>
 <body></body>
 <script>
-    let arr = [-1, 150, 190, 170, -1, -1, 160, 180];
-    let b = [], c = [];
-    for (let i = 0; i < arr.length ; i++)
-        (arr[i] === -1) ? b.push(i) : c.push(arr[i]);
-    let d = c.sort()
-    for (let i = 0; i < b.length; i++)
-        d.splice(b[i],0,-1);
-    alert(d);
+    let str = "abcbdcef";
+
+    function findChar(arg1) {
+        let a = [], b = arg1.split("");
+        for (let i = 0; i < b.length; i++)
+            for (let j = i + 1; j < b.length - 1; j++)
+                (b[i] == b[j] && !a.includes(b[j])) ? a.push(b[j]) : null;
+        return a;
+    }
+
+    alert(findChar(str));
 </script>
 </html>
