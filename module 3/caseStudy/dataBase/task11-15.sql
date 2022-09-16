@@ -61,3 +61,6 @@ from nhan_vien join trinh_do on nhan_vien.ma_trinh_do = trinh_do.ma_trinh_do
 where (hop_dong.ngay_lam_hop_dong between '2020-01-01' and '2021-12-31')
 group by nhan_vien.ma_nhan_vien
 having count(hop_dong.ma_nhan_vien) <= 3;
+
+
+
