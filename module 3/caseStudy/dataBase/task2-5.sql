@@ -6,8 +6,8 @@ from nhan_vien where ho_ten like 'H%' or
 					 ho_ten like 'K%' and char_length(ho_ten) <= 15; 
 -- 3. Hiển thị thông tin của tất cả khách hàng có độ tuổi từ 18 đến 50 tuổi và có địa chỉ ở “Đà Nẵng” hoặc “Quảng Trị”. 
 select * 
-from khach_hang where (extract(year from now()) - extract(year from ngay_sinh)) between 18 and 50 and
-				dia_chi like N'%Đà Nẵng' or dia_chi like N'%Quảng Trị';
+from khach_hang where ((extract(year from now()) - extract(year from ngay_sinh)) between 18 and 50)
+				and (dia_chi like N'%Đà Nẵng' or dia_chi like N'%Quảng Trị');
                      
 -- 4. Đếm xem tương ứng với mỗi khách hàng đã từng đặt phòng bao nhiêu lần. Kết quả hiển thị được sắp xếp tăng dần theo số lần đặt phòng của khách hàng. 
 -- Chỉ đếm những khách hàng nào có Tên loại khách hàng là “Diamond”.
@@ -37,4 +37,4 @@ from khach_hang 	 join loai_khach on khach_hang.ma_loai_khach = loai_khach.ma_lo
 				left join hop_dong_chi_tiet on hop_dong_chi_tiet.ma_hop_dong = hop_dong.ma_hop_dong
 				left join dich_vu_di_kem on dich_vu_di_kem.ma_dich_vu_di_kem = hop_dong_chi_tiet.ma_dich_vu_di_kem     
 group by khach_hang.ma_khach_hang, hop_dong.ma_hop_dong
-order by khach_hang.ma_khach_hang;   
+order by khach_hang.ma_khach_hang;
