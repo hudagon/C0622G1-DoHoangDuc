@@ -1,0 +1,119 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, serif;
+    padding: 10px;
+    background: #f1f1f1;
+}
+
+/* Header/Blog Title */
+.header {
+    color: white;
+    padding: 30px;
+    text-align: center;
+    background-image: url(https://yt3.ggpht.com/WLcu5JHizCkr0DDfUN1YK6OpWVFDHupEVMeA8dl4mAWkH7wmemWMFGyu99n00V9QiS-qOvJjEA=w1280-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj)
+}
+
+.header h1 {
+    font-size: 50px;
+}
+
+/* Style the top navigation bar */
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+}
+
+/* Style the topnav links */
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {
+    float: left;
+    width: 75%;
+}
+
+/* Right column */
+.rightcolumn {
+    float: left;
+    width: 25%;
+    background-color: #f1f1f1;
+    padding-left: 20px;
+}
+
+.doraemon {
+    background-image: url(https://cdn.cloudflare.steamstatic.com/steam/apps/965230/header.jpg?t=1662001098);
+    width: 100%;
+    padding: 20px;
+    background-repeat: no-repeat;
+}
+
+.conan {
+    background-image: url(https://i.ytimg.com/vi/INjkNVpvQxM/maxresdefault.jpg);
+    width: 100%;
+    padding: 20px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.cat {
+    background-image: url(https://www.fundacion-affinity.org/sites/default/files/los-10-sonidos-principales-del-gato-fa.jpg);
+    width: 100%;
+    padding: 20px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+/* Add a card effect for articles */
+.card {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Footer */
+.footer {
+    padding: 20px;
+    text-align: center;
+    background: #ddd;
+    margin-top: 20px;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+    .leftcolumn, .rightcolumn {
+        width: 100%;
+        padding: 0;
+    }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+    .topnav a {
+        float: none;
+        width: 100%;
+    }
+}

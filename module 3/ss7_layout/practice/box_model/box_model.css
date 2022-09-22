@@ -1,0 +1,16 @@
+#mother_box {
+    height: 500px;
+    width: 70%;
+    border: 15px solid;
+    border-color: chartreuse aqua blue blueviolet;
+}
+
+.box {
+    padding: 20px;
+    border: 5px dotted darkred;
+    margin: 30px 15px;
+}
+
+.box3 {
+    margin-top: 60px;
+}

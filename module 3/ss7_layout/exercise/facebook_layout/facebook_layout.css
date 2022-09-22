@@ -1,0 +1,144 @@
+html body {
+    margin: 0;
+    padding: 0;
+}
+
+.mother {
+    background-color: rgba(0, 0, 0, 0.89);
+    height: 100vh;
+    width: 100vw;
+}
+
+.header {
+    width: 100vw;
+    height: 8vh;
+    background-color: rgba(56, 56, 56, 0.39);
+    border-bottom: 0.1mm solid dimgrey;
+}
+
+.logo {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    left: 100px;
+    top: 19px;
+}
+
+.search_logo {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 46px;
+    top: 30px;
+}
+
+.search_bar {
+    width: 953px;
+    height: 154px;
+    background-color: rgba(94,94,94,0.74);
+    border-radius: 100px;
+    position: relative;
+    left: 338px;
+    top: -161px;
+}
+
+.real_search_bar {
+    font-family: Arial, serif;
+    position: absolute;
+    font-size: 66px;
+    left: 165px;
+    top: 39px;
+    color: rgba(210,210,210,0.8);
+    font-weight: lighter;
+}
+
+
+.nav_bar_mid {
+    position: relative;
+    left: 37%;
+    top: -291px;
+    height: 100px;
+    width: 1800px;
+}
+
+.house_icon1 {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+}
+
+.house_icon2 {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 25%;
+}
+
+.house_icon3 {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 50%;
+}
+
+.house_icon4 {
+    left: 75%;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+}
+
+.box {
+    width: 150px;
+    height: 150px;
+    background-color: rgba(94,94,94,0.74);
+    border-radius: 100%;
+    float: left;
+    margin: 15px;
+    position: relative;
+    left: 5350px;
+    top: -425px;
+}
+
+.messenger {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    left: 25px;
+    top: 25px;
+}
+
+.left_bar {
+    background-color: rgba(140,140,140,0.51);
+    width: 1300px;
+    height: 2500px;
+    border-radius: 20px;
+    position: relative;
+    top: 50px;
+    left: 82px;
+}
+
+.right_bar {
+    background-color: rgba(140,140,140,0.51);
+    width: 1300px;
+    height: 2500px;
+    border-radius: 20px;
+    position: relative;
+    top: -2450px;
+    left: 4700px;
+}
+
+.row {
+    background-color: rgba(140,140,140,0.51);
+    width: 3100px;
+    border-radius: 20px;
+    position: relative;
+    top: -2450px;
+    left: 1500px;
+}
+
+.row_1 {
+    height: 500px;
+    float: left;
+}
+

@@ -1,0 +1,26 @@
+#header {
+    background-color: darkblue;
+    height: 100px;
+    width: 100%;
+}
+
+#main {
+    background-color: blanchedalmond;
+    height: 300px;
+    width: 70%;
+    float: left;
+}
+
+#size_bar {
+    background-color: aqua;
+    height: 300px;
+    width: 30%;
+    float: right;
+}
+
+#footer {
+    background-color: blueviolet;
+    height: 100px;
+    width: 100%;
+    clear: both;
+}
