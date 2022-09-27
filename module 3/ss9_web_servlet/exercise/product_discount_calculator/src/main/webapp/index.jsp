@@ -7,22 +7,22 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
+<head>
     <title>Product Discount Calculator</title>
-  </head>
-  <body>
-  <form action="/pdc" method="post">
+</head>
+<body>
+<form action="/productdiscountcalculator" method="post">
     <div>
-      <h1>Product Discount Calculator</h1>
-      <p>Product Description</p>
-      <input type="text" name="productDescription">
-      <p>List Price</p>
-      <input type="text" name="listPrice">
-      <p>Discount percent</p>
-      <input type="text" name="discountPercent">
-      <br>
-      <button type="submit" name="calculateDiscount">Calculate Discount</button>
+        <h1>Product Discount Calculator</h1>
+        <p>Product Description</p>
+        <input type="text" name="productDescription">
+        <p>List Price</p>
+        <input type="text" name="listPrice">
+        <p>Discount percent</p>
+        <input type="text" name="discountPercent">
+        <br>
+        <button type="submit" name="calculateDiscount">Calculate Discount</button>
     </div>
-  </form>
-  </body>
+</form>
+</body>
 </html>
