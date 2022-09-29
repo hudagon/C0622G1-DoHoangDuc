@@ -27,8 +27,10 @@ public class CalculateServlet extends HttpServlet {
                 break;
             case 2:
                 operatorString = "-";
+                break;
             case 3:
                 operatorString = "*";
+                break;
             case 4:
                 operatorString = "/";
         }
