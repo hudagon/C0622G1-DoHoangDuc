@@ -20,12 +20,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c5e45f5-bef7-4a08-84f2-c26b980f091f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../module 3/ss8_bootstrap/exercise/create_gallery_using_bootstrap/create_gallery_using_bootstrap.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module 3/ss8_bootstrap/practice/demo/demo.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module 3/ss8_bootstrap/practice/demo/demo.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module 3/ss10_jstl/exercise/calculator_application/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module 3/ss10_jstl/exercise/calculator_application/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module 3/ss10_jstl/exercise/calculator_application/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module 3/ss10_jstl/exercise/calculator_application/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module 3/ss10_jstl/exercise/calculator_application/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module 3/ss10_jstl/exercise/calculator_application/src/main/java/controller/CalculateServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module 3/ss10_jstl/exercise/calculator_application/src/main/java/model/Calculator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module 3/ss10_jstl/exercise/calculator_application/src/main/webapp/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module 3/ss10_jstl/exercise/display_customer_list/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module 3/ss10_jstl/exercise/display_customer_list/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module 3/ss10_jstl/exercise/display_customer_list/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module 3/ss10_jstl/exercise/display_customer_list/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module 3/ss10_jstl/exercise/display_customer_list/src/main/java/controller/CustomerServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module 3/ss10_jstl/exercise/display_customer_list/src/main/java/model/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module 3/ss10_jstl/exercise/display_customer_list/src/main/webapp/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module 3/ss10_jstl/practice/demo/src/main/java/bean/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module 3/ss10_jstl/practice/demo/src/main/java/servlet/CustomerServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../module 1/ss4_Git&amp;Html/bai_tap/Su_dung_Git/GitProject" beforeDir="false" afterPath="$PROJECT_DIR$/../module 1/ss4_Git&amp;Html/bai_tap/Su_dung_Git/GitProject" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bai_tap_them/bai_1/data/students.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/bai_tap_them/bai_1/data/students.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module 3/demo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../module 3/demo/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module 3/ss9_web_servlet/practice/transfer_currency_application/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../module 3/ss9_web_servlet/practice/transfer_currency_application/.idea/gradle.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -244,6 +259,7 @@
       <workItem from="1663742415563" duration="42000" />
       <workItem from="1663914551926" duration="138000" />
       <workItem from="1663914952379" duration="321000" />
+      <workItem from="1664439757776" duration="427000" />
     </task>
     <servers />
   </component>
