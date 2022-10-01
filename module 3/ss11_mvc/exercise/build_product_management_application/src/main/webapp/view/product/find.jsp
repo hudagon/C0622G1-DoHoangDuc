@@ -26,33 +26,9 @@
         <legend>Find according to:</legend>
         <table>
             <tr>
-                <td><input type="radio" name="option" value="id" onclick="openInput(this.value)">ID:
+                <p>Name</p>
+                <td><input type="text" name="name" id="name"></br>
                 </td>
-                <td><input type="text" name="id" id="id" disabled="disabled">
-                </td>
-                <td>Find exactly</td>
-            </tr>
-            <tr>
-                <td><input type="radio" name="option" value="name" onclick="openInput(this.value)">Name:
-                </td>
-                <td><input type="text" name="name" id="name" disabled="disabled"></br>
-                </td>
-                <td>Find almost</td>
-            </tr>
-            <tr>
-                <td><input type="radio" name="option" value="Price" onclick="openInput(this.value)">Price: From
-                </td>
-                <td><input type="number" name="minPrice" id="minPrice" disabled="disabled">To
-                </td>
-                <td><input type="number" name="maxPrice" id="maxPrice" disabled="disabled">
-                </td>
-            </tr>
-            <tr>
-                <td><input type="radio" name="option" value="producer" onclick="openInput(this.value)">Manufacturer:
-                </td>
-                <td><input type="text" name="producer" id="producer" disabled="disabled">
-                </td>
-                <td>Find almost</td>
             </tr>
             <tr>
                 <td><input type="submit" value="Find product"></td>
@@ -60,13 +36,28 @@
         </table>
     </fieldset>
 </form>
+<c:if test="${output.size()==null}">
+    <p>Not found any product by given name!</p>
+</c:if>
+<c:if test="${output.size()!=null}">
+    <table class="table table-dark">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th>Manufacturer</th>
+        </tr>
+        <c:forEach var="x" items="${output}" varStatus="index">
+            <tr>
+                <td>${x.getId()}</td>
+                <td>${x.getName()}</td>
+                <td>${x.getPrice()}</td>
+                <td>${x.getDescription()}</td>
+                <td>${x.getManufacturer()}</td>
+            </tr>
+        </c:forEach>
+    </table>
+</c:if>
 </body>
-<script>
-    let inputId = ["id", "name", "minPrice", "maxPrice", "producer"];
-    function openInput(value) {
-        for (let element of inputId) {
-            document.getElementById(element).disabled = !element.includes(value);
-        }
-    }
-</script>
 </html>

@@ -14,6 +14,10 @@ public class ProductRepository implements IProductRepository {
         products.add(new Product(2, "Table", 7200, "None", "Company B"));
         products.add(new Product(3, "Chair", 9360, "None", "Company C"));
         products.add(new Product(4, "Computer", 6300, "None", "Company D"));
+        products.add(new Product(5, "House", 4800, "None", "Company E"));
+        products.add(new Product(6, "Van", 3150, "None", "Company F"));
+        products.add(new Product(7, "Oven", 1350, "None", "Company G"));
+        products.add(new Product(8, "Phone", 450, "None", "Company H"));
     }
 
 
@@ -52,12 +56,20 @@ public class ProductRepository implements IProductRepository {
     }
 
     @Override
-    public Product searchProduct(String name) {
-        return null;
-    }
-
-    @Override
     public List<Product> getProducts() {
         return products;
     }
+
+    @Override
+    public List<Product> findByName(String name) {
+        List<Product> productsFound = new ArrayList<>();
+
+        for (Product x : products) {
+            if (x.getName().contains(name)) {
+                productsFound.add(x);
+            }
+        }
+        return productsFound;
+    }
+
 }

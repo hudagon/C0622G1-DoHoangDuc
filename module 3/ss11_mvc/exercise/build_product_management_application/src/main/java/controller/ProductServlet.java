@@ -3,15 +3,14 @@ package controller;
 import model.Product;
 import service.impl.ProductService;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
+
 
 @WebServlet(name = "ProductServlet", value = "/product")
 public class ProductServlet extends HttpServlet {
@@ -40,39 +39,14 @@ public class ProductServlet extends HttpServlet {
     }
 
     private void findProduct(HttpServletRequest request, HttpServletResponse response) {
-        List<Product> products = new ArrayList<>();
-        String option = request.getParameter("option");
-        switch (option) {
-            case "id":
-                int id = Integer.parseInt(request.getParameter("id"));
-                Product product = this.productService.findById(id);
-                if (product != null) {
-                    products.add(product);
-                }
-                break;
-            case "name":
-                String name = request.getParameter("name");
-                products = this.productService.findByName(name);
-                break;
-            case "Price":
-                double minPrice = Double.parseDouble(request.getParameter("minPrice"));
-                double maxPrice = Double.parseDouble(request.getParameter("maxPrice"));
-                products = this.productService.findByPrice(minPrice, maxPrice);
-                break;
-            case "producer":
-                String producer = request.getParameter("producer");
-                products = this.productService.findByProducer(producer);
-                break;
-        }
+        String nameToFind = request.getParameter("name");
+        List<Product> productsFounded = productService.findByName(nameToFind);
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("product/find.jsp");
-        request.setAttribute("products", products);
-        if (products.size() == 0) {
-            request.setAttribute("message", "Not found product!");
-        } else
-            request.setAttribute("message", "Found it!");
+
+        request.setAttribute("output", productsFounded);
+
         try {
-            dispatcher.forward(request, response);
+            request.getRequestDispatcher("view/product/find.jsp").forward(request, response);
         } catch (ServletException | IOException e) {
             e.printStackTrace();
         }
@@ -144,8 +118,24 @@ public class ProductServlet extends HttpServlet {
             case "find":
                 showFindForm(request, response);
                 break;
+            case "view":
+                showDetailsPage(request, response);
+                break;
             default:
                 showProducts(request, response);
+        }
+    }
+
+    private void showDetailsPage(HttpServletRequest request, HttpServletResponse response) {
+        String idToShowDetails = request.getParameter("id");
+
+        request.setAttribute("idToShowDetails", idToShowDetails);
+        request.setAttribute("products", productService.getProducts());
+
+        try {
+            request.getRequestDispatcher("view/product/view.jsp").forward(request, response);
+        } catch (ServletException | IOException e) {
+            e.printStackTrace();
         }
     }
 

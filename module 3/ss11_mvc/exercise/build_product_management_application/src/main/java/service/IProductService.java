@@ -13,7 +13,7 @@ public interface IProductService {
 
     void viewProduct(int id);
 
-    Product searchProduct(String name);
+    List<Product> findByName(String name);
 
     List<Product> getProducts();
 }

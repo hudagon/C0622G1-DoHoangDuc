@@ -13,7 +13,7 @@ public interface IProductRepository {
 
     void viewProduct(int id);
 
-    Product searchProduct(String name);
-
     List<Product> getProducts();
+
+    List<Product> findByName(String name);
 }

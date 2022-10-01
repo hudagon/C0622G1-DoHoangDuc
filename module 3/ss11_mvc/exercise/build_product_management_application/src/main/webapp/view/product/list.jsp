@@ -32,6 +32,7 @@
         <th>Manufacturer</th>
         <th>Edit</th>
         <th>Delete</th>
+        <th>View details</th>
     </tr>
     <c:forEach var="x" items="${products}" varStatus="index">
         <tr>
@@ -42,6 +43,7 @@
             <td>${x.getManufacturer()}</td>
             <td><a href="/product?action=edit&id=${x.getId()}">Edit</a></td>
             <td><a href="/product?action=delete&id=${x.getId()}">Delete</a></td>
+            <td><a href="/product?action=view&id=${x.getId()}">View</a></td>
         </tr>
     </c:forEach>
 </table>
