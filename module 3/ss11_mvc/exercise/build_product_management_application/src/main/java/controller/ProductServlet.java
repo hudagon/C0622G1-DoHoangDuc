@@ -52,7 +52,6 @@ public class ProductServlet extends HttpServlet {
         }
     }
 
-
     private void deleteProduct(HttpServletRequest request, HttpServletResponse response) {
 
         int idOfTheProduct = Integer.parseInt(request.getParameter("id"));

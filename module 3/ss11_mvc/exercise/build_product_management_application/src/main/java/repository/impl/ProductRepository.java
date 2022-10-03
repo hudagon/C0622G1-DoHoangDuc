@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProductRepository implements IProductRepository {
-    private static List<Product> products = new ArrayList<>();
+    private static final List<Product> products = new ArrayList<>();
 
     static {
         products.add(new Product(1, "Fan", 9800, "None", "Company A"));
@@ -71,5 +71,4 @@ public class ProductRepository implements IProductRepository {
         }
         return productsFound;
     }
-
 }
