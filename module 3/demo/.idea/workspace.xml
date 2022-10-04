@@ -20,25 +20,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7fbb95b0-c905-4dd2-b5e8-f27399da95bf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/CalculatorServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/Calculator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/Demo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss12_jdbc_crud/practice/users_management_using_jsp_servlet_jdbc_jdbc_mysql/src/main/java/com/codegym/dao/BaseRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss12_jdbc_crud/practice/users_management_using_jsp_servlet_jdbc_jdbc_mysql/src/main/java/com/codegym/dao/Demo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../module 1/ss4_Git&amp;Html/bai_tap/Su_dung_Git/GitProject" beforeDir="false" afterPath="$PROJECT_DIR$/../../module 1/ss4_Git&amp;Html/bai_tap/Su_dung_Git/GitProject" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/demo_war_exploded.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ss10_jstl/exercise/calculator_application/.gradle/6.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../ss10_jstl/exercise/calculator_application/.gradle/6.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ss10_jstl/exercise/calculator_application/.gradle/6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../ss10_jstl/exercise/calculator_application/.gradle/6.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ss10_jstl/exercise/calculator_application/.gradle/6.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../ss10_jstl/exercise/calculator_application/.gradle/6.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ss10_jstl/exercise/calculator_application/.gradle/6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../ss10_jstl/exercise/calculator_application/.gradle/6.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ss10_jstl/exercise/calculator_application/.gradle/6.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../ss10_jstl/exercise/calculator_application/.gradle/6.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ss10_jstl/exercise/calculator_application/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../ss10_jstl/exercise/calculator_application/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ss10_jstl/exercise/calculator_application/build/classes/java/main/controller/CalculateServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ss10_jstl/exercise/calculator_application/build/classes/java/main/controller/CalculateServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ss10_jstl/exercise/calculator_application/build/classes/java/main/model/Calculator.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ss10_jstl/exercise/calculator_application/build/classes/java/main/model/Calculator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ss10_jstl/exercise/calculator_application/build/libs/calculator_application-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/../ss10_jstl/exercise/calculator_application/build/libs/calculator_application-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss12_jdbc_crud/practice/users_management_using_jsp_servlet_jdbc_jdbc_mysql/.gradle/6.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../ss12_jdbc_crud/practice/users_management_using_jsp_servlet_jdbc_jdbc_mysql/.gradle/6.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss12_jdbc_crud/practice/users_management_using_jsp_servlet_jdbc_jdbc_mysql/.gradle/6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../ss12_jdbc_crud/practice/users_management_using_jsp_servlet_jdbc_jdbc_mysql/.gradle/6.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss12_jdbc_crud/practice/users_management_using_jsp_servlet_jdbc_jdbc_mysql/.gradle/6.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../ss12_jdbc_crud/practice/users_management_using_jsp_servlet_jdbc_jdbc_mysql/.gradle/6.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss12_jdbc_crud/practice/users_management_using_jsp_servlet_jdbc_jdbc_mysql/.gradle/6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../ss12_jdbc_crud/practice/users_management_using_jsp_servlet_jdbc_jdbc_mysql/.gradle/6.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss12_jdbc_crud/practice/users_management_using_jsp_servlet_jdbc_jdbc_mysql/.gradle/6.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../ss12_jdbc_crud/practice/users_management_using_jsp_servlet_jdbc_jdbc_mysql/.gradle/6.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss12_jdbc_crud/practice/users_management_using_jsp_servlet_jdbc_jdbc_mysql/.gradle/6.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../ss12_jdbc_crud/practice/users_management_using_jsp_servlet_jdbc_jdbc_mysql/.gradle/6.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss12_jdbc_crud/practice/users_management_using_jsp_servlet_jdbc_jdbc_mysql/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../ss12_jdbc_crud/practice/users_management_using_jsp_servlet_jdbc_jdbc_mysql/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss12_jdbc_crud/practice/users_management_using_jsp_servlet_jdbc_jdbc_mysql/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ss12_jdbc_crud/practice/users_management_using_jsp_servlet_jdbc_jdbc_mysql/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss12_jdbc_crud/practice/users_management_using_jsp_servlet_jdbc_jdbc_mysql/build/classes/java/main/com/codegym/controller/UserServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ss12_jdbc_crud/practice/users_management_using_jsp_servlet_jdbc_jdbc_mysql/build/classes/java/main/com/codegym/controller/UserServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss12_jdbc_crud/practice/users_management_using_jsp_servlet_jdbc_jdbc_mysql/build/classes/java/main/com/codegym/dao/UserDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss12_jdbc_crud/practice/users_management_using_jsp_servlet_jdbc_jdbc_mysql/build/libs/users_management_using_jsp_servlet_jdbc_jdbc_mysql-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/../ss12_jdbc_crud/practice/users_management_using_jsp_servlet_jdbc_jdbc_mysql/build/libs/users_management_using_jsp_servlet_jdbc_jdbc_mysql-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss12_jdbc_crud/practice/users_management_using_jsp_servlet_jdbc_jdbc_mysql/src/main/java/com/codegym/controller/UserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ss12_jdbc_crud/practice/users_management_using_jsp_servlet_jdbc_jdbc_mysql/src/main/java/com/codegym/controller/UserServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss12_jdbc_crud/practice/users_management_using_jsp_servlet_jdbc_jdbc_mysql/src/main/java/com/codegym/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ss12_jdbc_crud/practice/users_management_using_jsp_servlet_jdbc_jdbc_mysql/src/main/java/com/codegym/dao/impl/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss12_jdbc_crud/practice/users_management_using_jsp_servlet_jdbc_jdbc_mysql/src/main/java/com/codegym/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ss12_jdbc_crud/practice/users_management_using_jsp_servlet_jdbc_jdbc_mysql/src/main/java/com/codegym/model/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +74,8 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -171,6 +173,8 @@
       <updated>1664498455616</updated>
       <workItem from="1664498465099" duration="198000" />
       <workItem from="1664498698358" duration="2330000" />
+      <workItem from="1664845797435" duration="19000" />
+      <workItem from="1664847424777" duration="2242000" />
     </task>
     <servers />
   </component>
