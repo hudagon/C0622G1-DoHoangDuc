@@ -6,117 +6,13 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>Customer</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="view/customer/customer.css">
-<%--    <style>--%>
-<%--        * {--%>
-<%--            box-sizing: border-box;--%>
-<%--        }--%>
-
-<%--        body {--%>
-<%--            font-family: Arial;--%>
-<%--            padding: 10px;--%>
-<%--            background: #f1f1f1;--%>
-<%--        }--%>
-
-<%--        /* Header/Blog Title */--%>
-<%--        .header {--%>
-<%--            padding: 30px;--%>
-<%--            text-align: center;--%>
-<%--            background: white;--%>
-<%--        }--%>
-
-<%--        .header h1 {--%>
-<%--            font-size: 50px;--%>
-<%--        }--%>
-
-<%--        /* Style the top navigation bar */--%>
-<%--        .topnav {--%>
-<%--            overflow: hidden;--%>
-<%--            background-color: #333;--%>
-<%--        }--%>
-
-<%--        /* Style the topnav links */--%>
-<%--        .topnav a {--%>
-<%--            float: left;--%>
-<%--            display: block;--%>
-<%--            color: #f2f2f2;--%>
-<%--            text-align: center;--%>
-<%--            padding: 14px 16px;--%>
-<%--            text-decoration: none;--%>
-<%--        }--%>
-
-<%--        /* Change color on hover */--%>
-<%--        .topnav a:hover {--%>
-<%--            background-color: #ddd;--%>
-<%--            color: black;--%>
-<%--        }--%>
-
-<%--        /* Create two unequal columns that floats next to each other */--%>
-<%--        /* Left column */--%>
-<%--        .leftcolumn {--%>
-<%--            float: left;--%>
-<%--            width: 75%;--%>
-<%--        }--%>
-
-<%--        /* Right column */--%>
-<%--        .rightcolumn {--%>
-<%--            float: left;--%>
-<%--            width: 25%;--%>
-<%--            background-color: #f1f1f1;--%>
-<%--            padding-left: 20px;--%>
-<%--        }--%>
-
-<%--        /* Fake image */--%>
-<%--        .fakeimg {--%>
-<%--            background-color: #aaa;--%>
-<%--            width: 100%;--%>
-<%--            padding: 20px;--%>
-<%--        }--%>
-
-<%--        /* Add a card effect for articles */--%>
-<%--        .card {--%>
-<%--            background-color: white;--%>
-<%--            padding: 20px;--%>
-<%--            margin-top: 20px;--%>
-<%--        }--%>
-
-<%--        /* Clear floats after the columns */--%>
-<%--        .row:after {--%>
-<%--            content: "";--%>
-<%--            display: table;--%>
-<%--            clear: both;--%>
-<%--        }--%>
-
-<%--        /* Footer */--%>
-<%--        .footer {--%>
-<%--            padding: 20px;--%>
-<%--            text-align: center;--%>
-<%--            background: #ddd;--%>
-<%--            margin-top: 20px;--%>
-<%--        }--%>
-
-<%--        /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */--%>
-<%--        @media screen and (max-width: 800px) {--%>
-<%--            .leftcolumn, .rightcolumn {--%>
-<%--                width: 100%;--%>
-<%--                padding: 0;--%>
-<%--            }--%>
-<%--        }--%>
-
-<%--        /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */--%>
-<%--        @media screen and (max-width: 400px) {--%>
-<%--            .topnav a {--%>
-<%--                float: none;--%>
-<%--                width: 100%;--%>
-<%--            }--%>
-<%--        }--%>
-
-<%--    </style>--%>
+    <title>Employee</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="view/employee/employee.css">
 </head>
 <body>
 
@@ -127,18 +23,15 @@
 
 <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#" style="margin-bottom: 2.5px">Home</a>
+        <a class="navbar-brand" href="/view/home/home.jsp" style="margin-bottom: 2.5px">Home</a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Customer</a>
+                    <a class="nav-link active" aria-current="page" href="#">Employee</a>
                 </li>
                 <li class="nav-item">
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addNewModal">
-                        Add new customer
-                    </button>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#deleteModal">
-                        Delete customer
+                        Add new employee
                     </button>
                 </li>
             </ul>
@@ -151,6 +44,57 @@
 </nav>
 <div class="row">
     <div class="leftcolumn">
+        <table id="tableCustomer" class="table table-striped table-bordered" style="width:100%">
+            <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Customer Type ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Date of Birth</th>
+                <th scope="col">Gender</th>
+                <th scope="col">ID Card</th>
+                <th scope="col">Phone Number</th>
+                <th scope="col">Email</th>
+                <th scope="col">Address</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+            </tr>
+            </thead>
+            <tbody class="table-group-divider">
+            <c:forEach var="x" items="${customerList}">
+                <tr>
+                    <th>${x.getId()}</th>
+                    <th>${x.getCustomerTypeId()}</th>
+                    <th>${x.getName()}</th>
+                    <th>${x.getDateOfBirth()}</th>
+                    <th>${x.isGender()}</th>
+                    <th>${x.getIdCard()}</th>
+                    <th>${x.getPhoneNumber()}</th>
+                    <th>${x.getEmail()}</th>
+                    <th>${x.getAddress()}</th>
+                    <th>
+                        <button onclick="getInfo('${x.getId()}','${x.getCustomerTypeId()}','${x.getName()}',
+                                '${x.getDateOfBirth()}','${x.isGender()}','${x.getIdCard()}','${x.getPhoneNumber()}',
+                                '${x.getEmail()}','${x.getAddress()}'
+                                )" type="button"
+                                class="btn btn-primary"
+                                data-bs-toggle="modal"
+                                data-bs-target="#editModal">
+                            Edit
+                        </button>
+                    </th>
+                    <th>
+                        <button onclick="showInfo('${x.getId()}','${x.getName()}')" type="button"
+                                class="btn btn-primary"
+                                data-bs-toggle="modal"
+                                data-bs-target="#deleteModal">
+                            Delete
+                        </button>
+                    </th>
+                </tr>
+            </c:forEach>
+            </tbody>
+        </table>
     </div>
     <div class="rightcolumn">
         <div class="card">
@@ -176,123 +120,213 @@
 </div>
 
 <div class="modal fade" id="addNewModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5">Add new employee</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="input-group mb-3">
-                    <span class="input-group-text">@</span>
-                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+    <form action="/customer?action=add" method="post">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5">Add new employee</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+                <div class="modal-body">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">ID</span>
+                        <input type="text" class="form-control" name="id" aria-label="ID"
+                               aria-describedby="basic-addon1">
+                    </div>
 
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                    <span class="input-group-text" >@example.com</span>
-                </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Customer Type ID</span>
+                        <select name="customerTypeID">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
 
-                <label for="addNewModal" class="form-label">Your vanity URL</label>
-                <div class="input-group mb-3">
-                    <span class="input-group-text" >https://example.com/users/</span>
-                    <input type="text" class="form-control"  aria-describedby="basic-addon3">
-                </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Name</span>
+                        <input type="text" class="form-control" name="name" aria-label="Name"
+                               aria-describedby="basic-addon1">
+                    </div>
 
-                <div class="input-group mb-3">
-                    <span class="input-group-text">$</span>
-                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-                    <span class="input-group-text">.00</span>
-                </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Date Of Birth</span>
+                        <input type="date" class="form-control" name="dateOfBirth" aria-label="Name"
+                               aria-describedby="basic-addon1">
+                    </div>
 
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Username" aria-label="Username">
-                    <span class="input-group-text">@</span>
-                    <input type="text" class="form-control" placeholder="Server" aria-label="Server">
-                </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Gender</span>
+                        <select name="gender">
+                            <option value="1">Male</option>
+                            <option value="0">Female</option>
+                        </select>
+                    </div>
 
-                <div class="input-group">
-                    <span class="input-group-text">With textarea</span>
-                    <textarea class="form-control" aria-label="With textarea"></textarea>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">ID Card</span>
+                        <input type="text" class="form-control" name="idCard" aria-label="idCard"
+                               aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Phone Number</span>
+                        <input type="text" class="form-control" name="phoneNumber" aria-label="phoneNumber"
+                               aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Email</span>
+                        <input type="text" class="form-control" name="email" aria-label="email"
+                               aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Address</span>
+                        <input type="text" class="form-control" name="address" aria-label="v"
+                               aria-describedby="basic-addon1">
+                    </div>
+
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
             </div>
         </div>
-    </div>
+    </form>
 </div>
 <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5">Add new employee</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="input-group mb-3">
-                    <span class="input-group-text">@</span>
-                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+    <form action="/customer?action=edit" method="post">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5">Edit Employee</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+                <div class="modal-body">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">ID</span>
+                        <input id="idEdit"  type="text" class="form-control" name="id" aria-label="ID"
+                               aria-describedby="basic-addon1">
+                    </div>
 
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                    <span class="input-group-text" >@example.com</span>
-                </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Customer Type ID</span>
+                        <select name="customerTypeID" id="customerTypeIdEdit">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
 
-                <label for="addNewModal" class="form-label">Your vanity URL</label>
-                <div class="input-group mb-3">
-                    <span class="input-group-text" >https://example.com/users/</span>
-                    <input type="text" class="form-control"  aria-describedby="basic-addon3">
-                </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Name</span>
+                        <input id="nameEdit" type="text" class="form-control" name="name" aria-label="Name"
+                               aria-describedby="basic-addon1">
+                    </div>
 
-                <div class="input-group mb-3">
-                    <span class="input-group-text">$</span>
-                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-                    <span class="input-group-text">.00</span>
-                </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Date Of Birth</span>
+                        <input id="dateOfBirthEdit" type="date" class="form-control" name="dateOfBirth" aria-label="Name"
+                               aria-describedby="basic-addon1">
+                    </div>
 
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Username" aria-label="Username">
-                    <span class="input-group-text">@</span>
-                    <input type="text" class="form-control" placeholder="Server" aria-label="Server">
-                </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Gender</span>
+                        <select id="genderEdit" name="gender">
+                            <option value="1">Male</option>
+                            <option value="0">Female</option>
+                        </select>
+                    </div>
 
-                <div class="input-group">
-                    <span class="input-group-text">With textarea</span>
-                    <textarea class="form-control" aria-label="With textarea"></textarea>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">ID Card</span>
+                        <input id="idCardEdit" type="text" class="form-control" name="idCard" aria-label="idCard"
+                               aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Phone Number</span>
+                        <input id="phoneNumberEdit" type="text" class="form-control" name="phoneNumber" aria-label="phoneNumber"
+                               aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Email</span>
+                        <input id="emailEdit" type="text" class="form-control" name="email" aria-label="email"
+                               aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Address</span>
+                        <input id="addressEdit" type="text" class="form-control" name="address" aria-label="v"
+                               aria-describedby="basic-addon1">
+                    </div>
+
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
             </div>
         </div>
-    </div>
+    </form>
 </div>
 <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Delete employee</h1>
-                <!--                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
-            </div>
-            <div class="modal-body">
-                <p>Are you sure want to delete this employee?</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+    <form>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Delete employee</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" name="idDelete" id="idDelete">
+                    <p>Are you sure want to delete <p id="nameDelete"></p></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
             </div>
         </div>
-    </div>
+    </form>
 </div>
+
 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-        crossorigin="anonymous">
+        crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function () {
+        $('#tableCustomer').dataTable({
+            "dom": 'lrtip',
+            "lengthChange": false,
+            "pageLength": 5
+        });
+    });
+
+    function showInfo(id,name) {
+        document.getElementById("idDelete").value = id;
+        document.getElementById("nameDelete").text = name;
+    }
+
+    function getInfo(id,customerTypeId,name,dateOfBirth,gender,idCard,phoneNumber,email,address) {
+        document.getElementById("idEdit").value = id;
+        document.getElementById("customerTypeIdEdit").value = customerTypeId;
+        document.getElementById("nameEdit").value = name;
+        document.getElementById("dateOfBirthEdit").value = dateOfBirth
+        document.getElementById("genderEdit").value = gender
+        document.getElementById("idCardEdit").value = idCard
+        document.getElementById("phoneNumberEdit").value = phoneNumber
+        document.getElementById("emailEdit").value = email
+        document.getElementById("addressEdit").value = address
+    }
 </script>
 </html>
-

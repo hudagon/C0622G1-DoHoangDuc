@@ -1,5 +1,7 @@
 package controller;
 
+import model.service.impl.EmployeeService;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -9,11 +11,17 @@ import java.io.IOException;
 
 @WebServlet(name = "FuramaServlet", value = "/employee")
 public class EmployeeServlet extends HttpServlet {
+    EmployeeService employeeService = new EmployeeService();
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html;charset=UTF-8");
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html;charset=UTF-8");
         String action = request.getParameter("action");
         if (action == null) {
             action = "";
@@ -41,6 +49,9 @@ public class EmployeeServlet extends HttpServlet {
     }
 
     private void showEmployee(HttpServletRequest request, HttpServletResponse response) {
+
+        request.setAttribute("employeeList", employeeService.getEmployeeList());
+
         try {
             request.getRequestDispatcher("view/employee/employee.jsp").forward(request, response);
         } catch (ServletException | IOException e) {

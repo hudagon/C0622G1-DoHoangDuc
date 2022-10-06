@@ -1,10 +1,11 @@
 package model.model.human.customer;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 public class Customer {
+    private int id;
     private String name;
-    private LocalDate dateOfBirth;
+    private String dateOfBirth;
     private boolean gender;
     private String idCard;
     private String phoneNumber;
@@ -15,8 +16,9 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(String name, LocalDate dateOfBirth, boolean gender, String idCard,
-                    String phoneNumber, String email, int customerTypeId, String address) {
+    public Customer(int id, String name, String dateOfBirth, boolean gender,
+                    String idCard, String phoneNumber, String email, int customerTypeId, String address) {
+        this.id = id;
         this.name = name;
         this.dateOfBirth = dateOfBirth;
         this.gender = gender;
@@ -27,6 +29,14 @@ public class Customer {
         this.address = address;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getName() {
         return name;
     }
@@ -35,11 +45,11 @@ public class Customer {
         this.name = name;
     }
 
-    public LocalDate getDateOfBirth() {
+    public String getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(LocalDate dateOfBirth) {
+    public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
@@ -94,7 +104,8 @@ public class Customer {
     @Override
     public String toString() {
         return "Customer{" +
-                "name='" + name + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 ", dateOfBirth=" + dateOfBirth +
                 ", gender=" + gender +
                 ", idCard='" + idCard + '\'' +
