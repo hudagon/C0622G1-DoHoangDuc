@@ -22,7 +22,7 @@ public class Demo {
 
             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
 
-            String sql =
+//            String sql =
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
