@@ -4,9 +4,11 @@ import model.model.human.customer.Customer;
 import model.repository.BaseRepository;
 import model.repository.ICustomerRepository;
 
-import java.sql.*;
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class CustomerRepository implements ICustomerRepository {
@@ -51,15 +53,15 @@ public class CustomerRepository implements ICustomerRepository {
 
         try {
             CallableStatement cs = connection.prepareCall("{call addNewCustomer(?,?,?,?,?,?,?,?,?)}");
-            cs.setInt(1,newCustomer.getId());
-            cs.setInt(2,newCustomer.getCustomerTypeId());
-            cs.setString(3,newCustomer.getName());
+            cs.setInt(1, newCustomer.getId());
+            cs.setInt(2, newCustomer.getCustomerTypeId());
+            cs.setString(3, newCustomer.getName());
             cs.setString(4, newCustomer.getDateOfBirth());
-            cs.setBoolean(5,newCustomer.isGender());
-            cs.setString(6,newCustomer.getIdCard());
-            cs.setString(7,newCustomer.getPhoneNumber());
-            cs.setString(8,newCustomer.getEmail());
-            cs.setString(9,newCustomer.getAddress());
+            cs.setBoolean(5, newCustomer.isGender());
+            cs.setString(6, newCustomer.getIdCard());
+            cs.setString(7, newCustomer.getPhoneNumber());
+            cs.setString(8, newCustomer.getEmail());
+            cs.setString(9, newCustomer.getAddress());
 
             cs.executeUpdate();
 
@@ -108,18 +110,33 @@ public class CustomerRepository implements ICustomerRepository {
 
     @Override
     public boolean editCustomer(Customer editCustomer) {
-        String UPDATE = "update employee set employee_name = ?, employee_birthday = ?, " +
-                "employee_id_card = ?, employee_salary = ?, employee_phone = ?, employee_email = ?, " +
-                "employee_address = ?, position_id = ?, education_degree_id = ?, division_id = ? where employee_id = ? and " +
-                "is_delete = 0;";
+        boolean check = false;
         Connection connection = BaseRepository.getConnectDB();
 
+        int gender = 0;
+        if (editCustomer.isGender()) {
+            gender = 1;
+        }
+
         try {
-            PreparedStatement cs = connection.prepareStatement(UPDATE);
+            CallableStatement cs = connection.prepareCall("{call editCustomer(?,?,?,?,?,?,?,?,?)}");
+            cs.setString(1, String.valueOf(editCustomer.getId()));
+            cs.setString(2, String.valueOf(editCustomer.getCustomerTypeId()));
+            cs.setString(3, editCustomer.getName());
+            cs.setString(4, editCustomer.getDateOfBirth());
+            cs.setInt(5, gender);
+            cs.setString(6, editCustomer.getIdCard());
+            cs.setString(7, editCustomer.getPhoneNumber());
+            cs.setString(8, editCustomer.getEmail());
+            cs.setString(9, editCustomer.getAddress());
+
+            cs.executeUpdate();
+
+            check = true;
         } catch (SQLException throwAbles) {
             throwAbles.printStackTrace();
         }
 
-
+        return check;
     }
 }

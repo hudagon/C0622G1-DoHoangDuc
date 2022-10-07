@@ -51,8 +51,20 @@ public class CustomerServlet extends HttpServlet {
 
         Customer editCustomer = new Customer(id, name, dateOfBirth, gender,
                 idCard, phoneNumber, email, customerTypeId, address);
+        String mess = "Edit Successfully!";
 
-        customerService.editCustomer(editCustomer);
+        if(!customerService.editCustomer(editCustomer)) {
+            mess = "Edit Failed!";
+        }
+
+        request.setAttribute("customerList", customerService.getCustomerList());
+        request.setAttribute("mess",mess);
+
+        try {
+            request.getRequestDispatcher("view/customer/customer.jsp").forward(request, response);
+        } catch (ServletException | IOException e) {
+            e.printStackTrace();
+        }
 
     }
 
