@@ -37,7 +37,7 @@
                     </button>
                 </li>
             </ul>
-            <form class="d-flex" role="search" action="/customer?action=searchByName" method="post">
+            <form class="d-flex" role="search" action="/service?action=searchByName" method="post">
                 <input name="searchName" class="form-control me-2" type="search" placeholder="Search"
                        aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
@@ -82,15 +82,27 @@
                     <th>${x.getNumberOfFloors()}</th>
                     <th>${x.getFacilityFree()}</th>
                     <th>
-                        <button
+                        <button onclick="getInfo('${x.getId()}','${x.getName()}','${x.getArea()}',
+                                '${x.getCost()}','${x.getMaxPeople()}','${x.getRentTypeId()}','${x.getFacilityTypeId()}',
+                                '${x.getStandardRoom()}','${x.getDesriptionOtherConvenience()}','${x.getPoolArea()}',
+                                '${x.getNumberOfFloors()}','${x.getFacilityFree()}'
+                                )" type="button"
                                 class="btn btn-primary"
                                 data-bs-toggle="modal"
-                                data-bs-target="#editModal">
+                                <c:if test="${x.getFacilityTypeId()==1}">
+                                    data-bs-target="#editVillaModal">
+                                </c:if>
+                                <c:if test="${x.getFacilityTypeId()==2}">
+                                    data-bs-target="#editRoomModal">
+                                </c:if>
+                                <c:if test="${x.getFacilityTypeId()==3}">
+                                    data-bs-target="#editHouseModal">
+                                </c:if>
                             Edit
                         </button>
                     </th>
                     <th>
-                        <button type="button"
+                        <button onclick="showInfo('${x.getId()}','${x.getName()}')" type="button"
                                 class="btn btn-primary"
                                 data-bs-toggle="modal"
                                 data-bs-target="#deleteModal">
@@ -151,8 +163,6 @@
         </div>
     </div>
 </div>
-
-
 <div class="modal fade" id="addNewVilla" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <form action="/service?action=add" method="post">
         <div class="modal-dialog">
@@ -234,7 +244,8 @@
 
                     <div class="input-group mb-3" hidden>
                         <span class="input-group-text">Facility Type</span>
-                        <input value="1" type="text" class="form-control" name="facilityTypeId" aria-label="facilityFree"
+                        <input value="1" type="text" class="form-control" name="facilityTypeId"
+                               aria-label="facilityFree"
                                aria-describedby="basic-addon1">
                     </div>
 
@@ -295,22 +306,41 @@
                         </select>
                     </div>
 
-                    <div class="input-group mb-3">
+                    <div class="input-group mb-3" hidden>
                         <span class="input-group-text">Standard room</span>
                         <input type="text" class="form-control" name="standardRoom" aria-label="standardRoom"
                                aria-describedby="basic-addon1">
                     </div>
 
-                    <div class="input-group mb-3">
+                    <div class="input-group mb-3" hidden>
                         <span class="input-group-text">Description</span>
                         <input type="text" class="form-control" name="descriptionOtherConvenience"
                                aria-label="descriptionOtherConvenience"
                                aria-describedby="basic-addon1">
                     </div>
 
-                    <div class="input-group mb-3">
+                    <div class="input-group mb-3" hidden>
+                        <span class="input-group-text">Pool Area</span>
+                        <input type="text" class="form-control" name="poolArea" aria-label="poolArea"
+                               aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3" hidden>
                         <span class="input-group-text">Number Of Floors</span>
                         <input type="text" class="form-control" name="numberOfFloors" aria-label="numberOfFloors"
+                               aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Facility Free</span>
+                        <input type="text" class="form-control" name="facilityFree" aria-label="facilityFree"
+                               aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3" hidden>
+                        <span class="input-group-text">Facility Type</span>
+                        <input value="2" type="text" class="form-control" name="facilityTypeId"
+                               aria-label="facilityFree"
                                aria-describedby="basic-addon1">
                     </div>
 
@@ -328,17 +358,16 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5">Add new service</h1>
+                    <h1 class="modal-title fs-5">Add new house</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-
-
                     <div class="input-group mb-3">
                         <span class="input-group-text">ID</span>
                         <input type="text" class="form-control" name="id" aria-label="ID"
                                aria-describedby="basic-addon1">
                     </div>
+
                     <div class="input-group mb-3">
                         <span class="input-group-text">Name</span>
                         <input type="text" class="form-control" name="name" aria-label="Name"
@@ -374,10 +403,43 @@
                     </div>
 
                     <div class="input-group mb-3">
+                        <span class="input-group-text">Standard room</span>
+                        <input type="text" class="form-control" name="standardRoom" aria-label="standardRoom"
+                               aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Description</span>
+                        <input type="text" class="form-control" name="descriptionOtherConvenience"
+                               aria-label="descriptionOtherConvenience"
+                               aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Number Of Floors</span>
+                        <input type="text" class="form-control" name="numberOfFloors" aria-label="numberOfFloors"
+                               aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3" hidden>
+                        <span class="input-group-text">Pool Area</span>
+                        <input value="" type="text" class="form-control" name="poolArea" aria-label="poolArea"
+                               aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3" hidden>
                         <span class="input-group-text">Facility Free</span>
                         <input type="text" class="form-control" name="facilityFree" aria-label="facilityFree"
                                aria-describedby="basic-addon1">
                     </div>
+
+                    <div class="input-group mb-3" hidden>
+                        <span class="input-group-text">Facility Type</span>
+                        <input value="3" type="text" class="form-control" name="facilityTypeId"
+                               aria-label="facilityFree"
+                               aria-describedby="basic-addon1">
+                    </div>
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -387,79 +449,100 @@
         </div>
     </form>
 </div>
-<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <form action="/customer?action=edit" method="post">
+
+<div class="modal fade" id="editVillaModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <form action="/service?action=edit" method="post">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5">Edit Employee</h1>
+                    <h1 class="modal-title fs-5">Edit Villa</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div class="input-group mb-3">
-                        <span class="input-group-text">ID</span>
-                        <input id="idEdit" type="text" class="form-control" name="id" aria-label="ID"
+
+                    <div class="input-group mb-3" hidden>
+                        <span class="input-group-text">Facility Type</span>
+                        <input type="text" class="form-control" name="facilityTypeId" id="facilityTypeIdVilla"
+                               aria-label="facilityFree"
                                aria-describedby="basic-addon1">
                     </div>
 
                     <div class="input-group mb-3">
-                        <span class="input-group-text">Customer Type ID</span>
-                        <select name="customerTypeID" id="customerTypeIdEdit">
+                        <span class="input-group-text">ID</span>
+                        <input type="text" class="form-control" name="id" id="idVilla" aria-label="ID"
+                               aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Name</span>
+                        <input type="text" class="form-control" name="name" id="nameVilla" aria-label="Name"
+                               aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Area</span>
+                        <input type="text" class="form-control" name="area" id="areaVilla" aria-label="area"
+                               aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Cost</span>
+                        <input type="text" class="form-control" name="cost" id="costVilla" aria-label="cost"
+                               aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Max people</span>
+                        <input type="text" class="form-control" name="maxPeople" id="maxPeopleVilla" aria-label="maxPeople"
+                               aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Rent Type ID</span>
+                        <select name="rentTypeId" id="rentTypeIdVilla">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
                             <option value="4">4</option>
-                            <option value="5">5</option>
                         </select>
                     </div>
 
                     <div class="input-group mb-3">
-                        <span class="input-group-text">Name</span>
-                        <input id="nameEdit" type="text" class="form-control" name="name" aria-label="Name"
+                        <span class="input-group-text">Standard room</span>
+                        <input type="text" class="form-control" name="standardRoom" id="standardRoomVilla"
+                               aria-label="standardRoom"
                                aria-describedby="basic-addon1">
                     </div>
 
                     <div class="input-group mb-3">
-                        <span class="input-group-text">Date Of Birth</span>
-                        <input id="dateOfBirthEdit" type="date" class="form-control" name="dateOfBirth"
-                               aria-label="Name"
+                        <span class="input-group-text">Description</span>
+                        <input type="text" class="form-control" name="descriptionOtherConvenience"
+                               id="descriptionOtherConvenienceVilla"
+                               aria-label="descriptionOtherConvenience"
                                aria-describedby="basic-addon1">
                     </div>
 
                     <div class="input-group mb-3">
-                        <span class="input-group-text">Gender</span>
-                        <select id="genderEdit" name="gender">
-                            <option value="1">Male</option>
-                            <option value="0">Female</option>
-                        </select>
-                    </div>
-
-                    <div class="input-group mb-3">
-                        <span class="input-group-text">ID Card</span>
-                        <input id="idCardEdit" type="text" class="form-control" name="idCard" aria-label="idCard"
+                        <span class="input-group-text">Pool Area</span>
+                        <input type="text" class="form-control" name="poolArea" id="poolAreaVilla" aria-label="poolArea"
                                aria-describedby="basic-addon1">
                     </div>
 
                     <div class="input-group mb-3">
-                        <span class="input-group-text">Phone Number</span>
-                        <input id="phoneNumberEdit" type="text" class="form-control" name="phoneNumber"
-                               aria-label="phoneNumber"
+                        <span class="input-group-text">Number Of Floors</span>
+                        <input type="text" class="form-control" name="numberOfFloors" id="numberOfFloorsVilla"
+                               aria-label="numberOfFloors"
                                aria-describedby="basic-addon1">
                     </div>
 
-                    <div class="input-group mb-3">
-                        <span class="input-group-text">Email</span>
-                        <input id="emailEdit" type="text" class="form-control" name="email" aria-label="email"
-                               aria-describedby="basic-addon1">
-                    </div>
-
-                    <div class="input-group mb-3">
-                        <span class="input-group-text">Address</span>
-                        <input id="addressEdit" type="text" class="form-control" name="address" aria-label="v"
+                    <div class="input-group mb-3" hidden>
+                        <span class="input-group-text">Facility Free</span>
+                        <input type="text" class="form-control" name="facilityFree" id="facilityFreeVilla"
+                               aria-label="facilityFree"
                                aria-describedby="basic-addon1">
                     </div>
 
                 </div>
+
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-primary">Save changes</button>
@@ -468,8 +551,220 @@
         </div>
     </form>
 </div>
+<div class="modal fade" id="editRoomModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+
+    <form action="/service?action=edit" method="post">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5">Edit Room</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="input-group mb-3" hidden>
+                        <span class="input-group-text">Facility Type</span>
+                        <input type="text" class="form-control" name="facilityTypeId" id="facilityTypeIdRoom"
+                               aria-label="facilityFree"
+                               aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">ID</span>
+                        <input type="text" class="form-control" name="id" id="idRoom" aria-label="ID"
+                               aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Name</span>
+                        <input type="text" class="form-control" name="name" id="nameRoom" aria-label="Name"
+                               aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Area</span>
+                        <input type="text" class="form-control" name="area" id="areaRoom" aria-label="area"
+                               aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Cost</span>
+                        <input type="text" class="form-control" name="cost" id="costRoom" aria-label="cost"
+                               aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Max people</span>
+                        <input type="text" class="form-control" name="maxPeople" id="maxPeopleRoom" aria-label="maxPeople"
+                               aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Rent Type ID</span>
+                        <select name="rentTypeId" id="rentTypeIdRoom">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group mb-3" hidden>
+                        <span class="input-group-text">Standard room</span>
+                        <input type="text" class="form-control" name="standardRoom" id="standardRoomRoom"
+                               aria-label="standardRoom"
+                               aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3" hidden>
+                        <span class="input-group-text">Description</span>
+                        <input type="text" class="form-control" name="descriptionOtherConvenience"
+                               id="descriptionOtherConvenienceRoom"
+                               aria-label="descriptionOtherConvenience"
+                               aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3" hidden>
+                        <span class="input-group-text">Pool Area</span>
+                        <input type="text" class="form-control" name="poolArea" id="poolAreaRoom" aria-label="poolArea"
+                               aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3" hidden>
+                        <span class="input-group-text">Number Of Floors</span>
+                        <input type="text" class="form-control" name="numberOfFloors" id="numberOfFloorsRoom"
+                               aria-label="numberOfFloors"
+                               aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Facility Free</span>
+                        <input type="text" class="form-control" name="facilityFree" id="facilityFreeRoom"
+                               aria-label="facilityFree"
+                               aria-describedby="basic-addon1">
+                    </div>
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+</div>
+<div class="modal fade" id="editHouseModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+
+    <form action="/service?action=edit" method="post">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5">Edit House</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="input-group mb-3" hidden>
+                        <span class="input-group-text">Facility Type</span>
+                        <input type="text" class="form-control" name="facilityTypeId" id="facilityTypeIdHouse"
+                               aria-label="facilityFree"
+                               aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">ID</span>
+                        <input type="text" class="form-control" name="id" id="idHouse" aria-label="ID"
+                               aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Name</span>
+                        <input type="text" class="form-control" name="name" id="nameHouse" aria-label="Name"
+                               aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Area</span>
+                        <input type="text" class="form-control" name="area" id="areaHouse" aria-label="area"
+                               aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Cost</span>
+                        <input type="text" class="form-control" name="cost" id="costHouse" aria-label="cost"
+                               aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Max people</span>
+                        <input type="text" class="form-control" name="maxPeople" id="maxPeopleHouse" aria-label="maxPeople"
+                               aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Rent Type ID</span>
+                        <select name="rentTypeId" id="rentTypeIdHouse">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group mb-3" >
+                        <span class="input-group-text">Standard room</span>
+                        <input type="text" class="form-control" name="standardRoom" id="standardRoomHouse"
+                               aria-label="standardRoom"
+                               aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3" >
+                        <span class="input-group-text">Description</span>
+                        <input type="text" class="form-control" name="descriptionOtherConvenience"
+                               id="descriptionOtherConvenienceHouse"
+                               aria-label="descriptionOtherConvenience"
+                               aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3" hidden>
+                        <span class="input-group-text">Pool Area</span>
+                        <input type="text" class="form-control" name="poolArea" id="poolAreaHouse" aria-label="poolArea"
+                               aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3" >
+                        <span class="input-group-text">Number Of Floors</span>
+                        <input type="text" class="form-control" name="numberOfFloors" id="numberOfFloorsHouse"
+                               aria-label="numberOfFloors"
+                               aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3" hidden>
+                        <span class="input-group-text">Facility Free</span>
+                        <input type="text" class="form-control" name="facilityFree" id="facilityFreeHouse"
+                               aria-label="facilityFree"
+                               aria-describedby="basic-addon1">
+                    </div>
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+</div>
+
+
 <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <form>
+    <form action="/service?action=delete" method="post">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -477,7 +772,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <input type="text" name="idDelete" id="idDelete">
+                    <input type="text" name="idDelete" id="idDelete" hidden>
                     <p>Are you sure want to delete
                     <p id="nameDelete"></p></p>
                 </div>
@@ -509,19 +804,52 @@
 
     function showInfo(id, name) {
         document.getElementById("idDelete").value = id;
-        document.getElementById("nameDelete").text = name;
+        document.getElementById("nameDelete").innerHTML = name;
     }
 
-    function getInfo(id, customerTypeId, name, dateOfBirth, gender, idCard, phoneNumber, email, address) {
-        document.getElementById("idEdit").value = id;
-        document.getElementById("customerTypeIdEdit").value = customerTypeId;
-        document.getElementById("nameEdit").value = name;
-        document.getElementById("dateOfBirthEdit").value = dateOfBirth
-        document.getElementById("genderEdit").value = gender
-        document.getElementById("idCardEdit").value = idCard
-        document.getElementById("phoneNumberEdit").value = phoneNumber
-        document.getElementById("emailEdit").value = email
-        document.getElementById("addressEdit").value = address
+    function getInfo(id, name, area,
+                     cost, maxPeople, rentTypeId, facilityTypeId,
+                     standardRoom, desriptionOtherConvenience, poolArea,
+                     numberOfFloors, facilityFree) {
+
+        document.getElementById("facilityTypeIdVilla").value = facilityTypeId;
+        document.getElementById("idVilla").value = id;
+        document.getElementById("nameVilla").value = name;
+        document.getElementById("areaVilla").value = area;
+        document.getElementById("costVilla").value = cost;
+        document.getElementById("maxPeopleVilla").value = maxPeople;
+        document.getElementById("rentTypeIdVilla").value = rentTypeId;
+        document.getElementById("standardRoomVilla").value = standardRoom;
+        document.getElementById("descriptionOtherConvenienceVilla").value = desriptionOtherConvenience;
+        document.getElementById("poolAreaVilla").value = poolArea;
+        document.getElementById("numberOfFloorsVilla").value = numberOfFloors;
+        document.getElementById("facilityFreeVilla").value = facilityFree;
+
+        document.getElementById("facilityTypeIdRoom").value = facilityTypeId;
+        document.getElementById("idRoom").value = id;
+        document.getElementById("nameRoom").value = name;
+        document.getElementById("areaRoom").value = area;
+        document.getElementById("costRoom").value = cost
+        document.getElementById("maxPeopleRoom").value = maxPeople
+        document.getElementById("rentTypeIdRoom").value = rentTypeId
+        document.getElementById("standardRoomRoom").value = standardRoom
+        document.getElementById("descriptionOtherConvenienceRoom").value = desriptionOtherConvenience
+        document.getElementById("poolAreaRoom").value = poolArea
+        document.getElementById("numberOfFloorsRoom").value = numberOfFloors
+        document.getElementById("facilityFreeRoom").value = facilityFree
+
+        document.getElementById("facilityTypeIdHouse").value = facilityTypeId;
+        document.getElementById("idHouse").value = id;
+        document.getElementById("nameHouse").value = name;
+        document.getElementById("areaHouse").value = area;
+        document.getElementById("costHouse").value = cost
+        document.getElementById("maxPeopleHouse").value = maxPeople
+        document.getElementById("rentTypeIdHouse").value = rentTypeId
+        document.getElementById("standardRoomHouse").value = standardRoom
+        document.getElementById("descriptionOtherConvenienceHouse").value = desriptionOtherConvenience
+        document.getElementById("poolAreaHouse").value = poolArea
+        document.getElementById("numberOfFloorsHouse").value = numberOfFloors
+        document.getElementById("facilityFreeHouse").value = facilityFree
     }
 </script>
 </html>
