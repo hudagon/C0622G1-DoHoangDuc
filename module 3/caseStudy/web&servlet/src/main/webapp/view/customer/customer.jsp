@@ -9,12 +9,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>Employee</title>
+    <title>Customer</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel="stylesheet" href="bootstrap520/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="datatables/css/dataTables.bootstrap5.min.css" />
-    <link rel="stylesheet" type="text/css" href="view/employee/employee.css">
+    <link rel="stylesheet" href="bootstrap520/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="datatables/css/dataTables.bootstrap5.min.css"/>
+    <link rel="stylesheet" type="text/css" href="view/customer/customer.css">
 </head>
 <body>
 
@@ -29,74 +29,148 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Employee</a>
+                    <a class="nav-link active" aria-current="page" href="/customer">Customer</a>
                 </li>
                 <li class="nav-item">
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addNewModal">
-                        Add new employee
-                    </button>
+                    <a class="nav-link active" aria-current="page"
+                       href="/customer?action=getListCustomerWhoAreUsingService">Customers who are using services</a>
                 </li>
+                <c:if test="${listCustomerWhoAreUsingServiceCheck != 0}">
+                    <li class="nav-item">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#addNewModal">
+                            Add new customer
+                        </button>
+                    </li>
+                </c:if>
             </ul>
-            <form class="d-flex" role="search" action="/customer?action=searchByName" method="post">
-                <input name="searchName" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+            <c:if test="${customerListCheck == 0}">
+                <form class="d-flex" role="search" action="/customer?action=searchByName" method="post">
+                    <input name="searchName" class="form-control me-2" type="search" placeholder="Search"
+                           aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </c:if>
+            <c:if test="${listCustomerWhoAreUsingServiceCheck == 0}">
+                <form class="d-flex" role="search" action="/customer?action=searchCustomerWAUSByName" method="post">
+                    <input name="searchName" class="form-control me-2" type="search" placeholder="Search"
+                           aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </c:if>
         </div>
     </div>
 </nav>
 <div class="row">
     <div class="leftcolumn">
-        <table id="tableCustomer" class="table table-striped table-bordered" style="width:100%">
-            <thead>
-            <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Customer Type ID</th>
-                <th scope="col">Name</th>
-                <th scope="col">Date of Birth</th>
-                <th scope="col">Gender</th>
-                <th scope="col">ID Card</th>
-                <th scope="col">Phone Number</th>
-                <th scope="col">Email</th>
-                <th scope="col">Address</th>
-                <th scope="col">Edit</th>
-                <th scope="col">Delete</th>
-            </tr>
-            </thead>
-            <tbody class="table-group-divider">
-            <c:forEach var="x" items="${customerList}">
+        <c:if test="${customerListCheck != -1}">
+            <table id="tableCustomer" class="table table-striped table-bordered" style="width:100%">
+                <thead>
                 <tr>
-                    <th>${x.getId()}</th>
-                    <th>${x.getCustomerTypeId()}</th>
-                    <th>${x.getName()}</th>
-                    <th>${x.getDateOfBirth()}</th>
-                    <th>${x.isGender()}</th>
-                    <th>${x.getIdCard()}</th>
-                    <th>${x.getPhoneNumber()}</th>
-                    <th>${x.getEmail()}</th>
-                    <th>${x.getAddress()}</th>
-                    <th>
-                        <button onclick="getInfo('${x.getId()}','${x.getCustomerTypeId()}','${x.getName()}',
-                                '${x.getDateOfBirth()}','${x.isGender()}','${x.getIdCard()}','${x.getPhoneNumber()}',
-                                '${x.getEmail()}','${x.getAddress()}'
-                                )" type="button"
-                                class="btn btn-primary"
-                                data-bs-toggle="modal"
-                                data-bs-target="#editModal">
-                            Edit
-                        </button>
-                    </th>
-                    <th>
-                        <button onclick="showInfo('${x.getId()}','${x.getName()}')" type="button"
-                                class="btn btn-primary"
-                                data-bs-toggle="modal"
-                                data-bs-target="#deleteModal">
-                            Delete
-                        </button>
-                    </th>
+                    <th scope="col" hidden>ID</th>
+                    <th scope="col">Customer Type ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Date of Birth</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">ID Card</th>
+                    <th scope="col">Phone Number</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
                 </tr>
-            </c:forEach>
-            </tbody>
-        </table>
+                </thead>
+                <tbody class="table-group-divider">
+                <c:forEach var="x" items="${customerList}">
+                    <tr>
+                        <th hidden>${x.getId()}</th>
+                        <th>${x.getCustomerTypeId()}</th>
+                        <th>${x.getName()}</th>
+                        <th>${x.getDateOfBirth()}</th>
+                        <th>${x.isGender()}</th>
+                        <th>${x.getIdCard()}</th>
+                        <th>${x.getPhoneNumber()}</th>
+                        <th>${x.getEmail()}</th>
+                        <th>${x.getAddress()}</th>
+                        <th>
+                            <button onclick="getInfo('${x.getId()}','${x.getCustomerTypeId()}','${x.getName()}',
+                                    '${x.getDateOfBirth()}','${x.isGender()}','${x.getIdCard()}','${x.getPhoneNumber()}',
+                                    '${x.getEmail()}','${x.getAddress()}'
+                                    )" type="button"
+                                    class="btn btn-primary"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#editModal">
+                                Edit
+                            </button>
+                        </th>
+                        <th>
+                            <button onclick="showInfo('${x.getId()}','${x.getName()}')" type="button"
+                                    class="btn btn-primary"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#deleteModal">
+                                Delete
+                            </button>
+                        </th>
+                    </tr>
+                </c:forEach>
+                </tbody>
+            </table>
+        </c:if>
+        <c:if test="${listCustomerWhoAreUsingServiceCheck != -1}">
+            <table id="tableCustomer" class="table table-striped table-bordered" style="width:100%">
+                <thead>
+                <tr>
+                    <th scope="col" hidden>ID</th>
+                    <th scope="col">Customer Type ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Date of Birth</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">ID Card</th>
+                    <th scope="col">Phone Number</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Service Name</th>
+                    <th scope="col">Link To</th>
+                    <th scope="col">Attach Services</th>
+                </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                <c:forEach var="x" items="${listCustomerWhoAreUsingService}">
+                    <tr>
+                        <th hidden>${x.getId()}</th>
+                        <th>${x.getCustomerTypeId()}</th>
+                        <th>${x.getName()}</th>
+                        <th>${x.getDateOfBirth()}</th>
+                        <th>${x.isGender()}</th>
+                        <th>${x.getIdCard()}</th>
+                        <th>${x.getPhoneNumber()}</th>
+                        <th>${x.getEmail()}</th>
+                        <th>${x.getAddress()}</th>
+                        <th>${x.getServiceName()}</th>
+                        <th>
+                            <button type="button" class="btn btn-primary">
+                                <a style="color: white" href="/service">Service</a>
+                            </button>
+                        </th>
+                        <th>
+                            <c:forEach var="y" items="${listAttachService}">
+                                <c:if test="${x.getId() == y.getCustomerId()}">
+                                    <button onclick="getInfoAttachService('${y.getCustomerId()}','${y.getContractId()}',
+                                        ${y.getAttachFacilityName()})"
+                                            type="button"
+                                            class="btn btn-primary"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#listAttachServiceModal">
+                                        List Attach Services
+                                    </button>
+                                </c:if>
+                            </c:forEach>
+                        </th>
+                    </tr>
+                </c:forEach>
+                </tbody>
+            </table>
+        </c:if>
         <p>${mess}</p>
     </div>
     <div class="rightcolumn">
@@ -212,7 +286,7 @@
                 <div class="modal-body">
                     <div class="input-group mb-3">
                         <span class="input-group-text">ID</span>
-                        <input id="idEdit"  type="text" class="form-control" name="id" aria-label="ID"
+                        <input id="idEdit" type="text" class="form-control" name="id" aria-label="ID"
                                aria-describedby="basic-addon1">
                     </div>
 
@@ -235,7 +309,8 @@
 
                     <div class="input-group mb-3">
                         <span class="input-group-text">Date Of Birth</span>
-                        <input id="dateOfBirthEdit" type="date" class="form-control" name="dateOfBirth" aria-label="Name"
+                        <input id="dateOfBirthEdit" type="date" class="form-control" name="dateOfBirth"
+                               aria-label="Name"
                                aria-describedby="basic-addon1">
                     </div>
 
@@ -255,7 +330,8 @@
 
                     <div class="input-group mb-3">
                         <span class="input-group-text">Phone Number</span>
-                        <input id="phoneNumberEdit" type="text" class="form-control" name="phoneNumber" aria-label="phoneNumber"
+                        <input id="phoneNumberEdit" type="text" class="form-control" name="phoneNumber"
+                               aria-label="phoneNumber"
                                aria-describedby="basic-addon1">
                     </div>
 
@@ -285,12 +361,12 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Delete employee</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Delete Customer</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <input type="text" name="idDelete" id="idDelete">
-                    <p>Are you sure want to delete <p id="nameDelete"></p></p>
+                    <p>Are you sure want to delete <span id="nameDelete"></span></p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -299,6 +375,35 @@
             </div>
         </div>
     </form>
+</div>
+
+<div class="modal fade" id="listAttachServiceModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5">List Attach Service</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <table id="listAttachService" class="table table-striped table-bordered" style="width:100%">
+                    <tr>
+                        <th scope="col">Contract ID</th>
+                        <th scope="col">Attach Facility Name</th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <p id="contractIdAttachService"></p>
+                        </th>
+                        <th><p id="attachServiceNameAttachService"></p></th>
+                    <tr>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
 </div>
 
 
@@ -318,12 +423,19 @@
         });
     });
 
-    function showInfo(id,name) {
+    function getInfoAttachService(customerId, contractId, AttachFacilityName) {
+        document.getElementById("contractIdAttachService").innerHTML = customerId;
+        document.getElementById("contractIdAttachService").innerHTML = contractId;
+        document.getElementById("attachServiceNameAttachService").innerHTML = AttachFacilityName;
+    }
+
+
+    function showInfo(id, name) {
         document.getElementById("idDelete").value = id;
         document.getElementById("nameDelete").text = name;
     }
 
-    function getInfo(id,customerTypeId,name,dateOfBirth,gender,idCard,phoneNumber,email,address) {
+    function getInfo(id, customerTypeId, name, dateOfBirth, gender, idCard, phoneNumber, email, address) {
         document.getElementById("idEdit").value = id;
         document.getElementById("customerTypeIdEdit").value = customerTypeId;
         document.getElementById("nameEdit").value = name;

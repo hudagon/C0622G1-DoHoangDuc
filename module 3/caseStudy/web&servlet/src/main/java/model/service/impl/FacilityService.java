@@ -3,6 +3,7 @@ package model.service.impl;
 import model.model.facility.Facility;
 import model.repository.impl.FacilityRepository;
 import model.service.IFacilityService;
+import validation.FacilityNameRegex;
 
 import java.util.List;
 
@@ -16,7 +17,12 @@ public class FacilityService implements IFacilityService {
 
     @Override
     public boolean addNewFacility(Facility newFacility) {
-        return facilityRepository.addNewFacility(newFacility);
+        String facilityName = newFacility.getName();
+
+        if (FacilityNameRegex.validate(facilityName)) {
+            return facilityRepository.addNewFacility(newFacility);
+        }
+        return false;
     }
 
     @Override

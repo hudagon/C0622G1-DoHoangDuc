@@ -1,5 +1,6 @@
 package controller;
 
+import model.customerDto.CustomerDto;
 import model.model.human.customer.Customer;
 import model.service.impl.CustomerService;
 
@@ -31,11 +32,38 @@ public class CustomerServlet extends HttpServlet {
             case "searchByName":
                 searchByName(request, response);
                 break;
+            case "searchCustomerWAUSByName":
+                searchCustomerWAUSByName(request, response);
+                break;
             case "edit":
                 edit(request, response);
                 break;
 
         }
+    }
+
+    private void searchCustomerWAUSByName(HttpServletRequest request, HttpServletResponse response) {
+        String searchName = request.getParameter("searchName");
+
+        List<CustomerDto> listCustomerWAUSFound = customerService.searchCustomerWAUSByName(searchName);
+
+        String mess = "Found!";
+        if (listCustomerWAUSFound.size() == 0) {
+            mess = "Not found!";
+        }
+
+        request.setAttribute("listCustomerWhoAreUsingService", listCustomerWAUSFound);
+        request.setAttribute("mess", mess);
+        request.setAttribute("listCustomerWhoAreUsingServiceCheck", 0);
+        request.setAttribute("customerListCheck", -1);
+
+        try {
+            request.getRequestDispatcher("view/customer/customer.jsp").forward(request, response);
+        } catch (ServletException | IOException e) {
+            e.printStackTrace();
+        }
+
+
     }
 
     private void edit(HttpServletRequest request, HttpServletResponse response) {
@@ -53,12 +81,12 @@ public class CustomerServlet extends HttpServlet {
                 idCard, phoneNumber, email, customerTypeId, address);
         String mess = "Edit Successfully!";
 
-        if(!customerService.editCustomer(editCustomer)) {
+        if (!customerService.editCustomer(editCustomer)) {
             mess = "Edit Failed!";
         }
 
         request.setAttribute("customerList", customerService.getCustomerList());
-        request.setAttribute("mess",mess);
+        request.setAttribute("mess", mess);
 
         try {
             request.getRequestDispatcher("view/customer/customer.jsp").forward(request, response);
@@ -76,8 +104,10 @@ public class CustomerServlet extends HttpServlet {
         if (foundedCustomerList.size() == 0) {
             mess = "Not founded!";
         }
-        request.setAttribute("mess",mess);
+        request.setAttribute("mess", mess);
         request.setAttribute("customerList", customerService.searchByName(searchName));
+        request.setAttribute("listCustomerWhoAreUsingServiceCheck", -1);
+        request.setAttribute("customerListCheck", 0);
 
         try {
             request.getRequestDispatcher("/view/customer/customer.jsp").forward(request, response);
@@ -100,6 +130,7 @@ public class CustomerServlet extends HttpServlet {
         Customer newCustomer = new Customer(id, name, dateOfBirth, gender,
                 idCard, phoneNumber, email, customerTypeId, address);
         String mess = "Adding new customer successfully!";
+
         if (!customerService.addCustomer(newCustomer)) {
             mess = "Adding new customer failed";
         }
@@ -127,16 +158,34 @@ public class CustomerServlet extends HttpServlet {
             case "delete":
                 deleteCustomer(request, response);
                 break;
+            case "getListCustomerWhoAreUsingService":
+                getListCustomerWhoAreUsingService(request, response);
+                break;
             default:
                 showCustomer(request, response);
         }
+    }
+
+    private void getListCustomerWhoAreUsingService(HttpServletRequest request, HttpServletResponse response) {
+        request.setAttribute("listAttachService", customerService.getlistAttachService());
+        request.setAttribute("listCustomerWhoAreUsingService", customerService.getListCustomerWhoAreUsingService());
+        request.setAttribute("listCustomerWhoAreUsingServiceCheck", 0);
+        request.setAttribute("customerListCheck", -1);
+
+        try {
+            request.getRequestDispatcher("view/customer/customer.jsp").forward(request, response);
+        } catch (ServletException | IOException e) {
+            e.printStackTrace();
+        }
+
+
     }
 
     private void deleteCustomer(HttpServletRequest request, HttpServletResponse response) {
         String idDelete = request.getParameter("id");
         String mess = "Delete Successfully!";
 
-        if(!customerService.deleteCustomer(idDelete)) {
+        if (!customerService.deleteCustomer(idDelete)) {
             mess = "Delete Failed!";
         }
 
@@ -152,6 +201,8 @@ public class CustomerServlet extends HttpServlet {
 
     private void showCustomer(HttpServletRequest request, HttpServletResponse response) {
         request.setAttribute("customerList", customerService.getCustomerList());
+        request.setAttribute("listCustomerWhoAreUsingServiceCheck", -1);
+        request.setAttribute("customerListCheck", 0);
         try {
             request.getRequestDispatcher("view/customer/customer.jsp").forward(request, response);
         } catch (ServletException | IOException e) {

@@ -47,7 +47,7 @@
 </nav>
 <div class="row">
     <div class="leftcolumn">
-        <table id="tableCustomer" class="table table-striped table-bordered" style="width:100%">
+        <table id="tableService" class="table table-striped table-bordered" style="width:100%">
             <thead>
             <tr>
                 <th scope="col">ID</th>
@@ -449,7 +449,6 @@
         </div>
     </form>
 </div>
-
 <div class="modal fade" id="editVillaModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <form action="/service?action=edit" method="post">
         <div class="modal-dialog">
@@ -552,8 +551,6 @@
     </form>
 </div>
 <div class="modal fade" id="editRoomModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-
-
     <form action="/service?action=edit" method="post">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -657,8 +654,6 @@
 
 </div>
 <div class="modal fade" id="editHouseModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-
-
     <form action="/service?action=edit" method="post">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -761,8 +756,6 @@
 
 
 </div>
-
-
 <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <form action="/service?action=delete" method="post">
         <div class="modal-dialog">
@@ -785,7 +778,6 @@
     </form>
 </div>
 
-
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
@@ -794,8 +786,9 @@
 <script src="datatables/js/jquery.dataTables.min.js"></script>
 <script src="datatables/js/dataTables.bootstrap5.min.js"></script>
 <script>
+
     $(document).ready(function () {
-        $('#tableCustomer').dataTable({
+        $('#tableService').dataTable({
             "dom": 'lrtip',
             "lengthChange": false,
             "pageLength": 5
