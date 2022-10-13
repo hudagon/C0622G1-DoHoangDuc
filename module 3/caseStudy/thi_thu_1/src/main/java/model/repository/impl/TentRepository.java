@@ -24,6 +24,9 @@ public class TentRepository implements ITentRepository {
             "\ttenant_name like ? and\n" +
             "    phone_number like ?;";
     private static final String SELECT_ALL_PAY_METHOD = "select * from pay_method;";
+    private static final String UPDATE_TENT = "UPDATE `thi_thu_1`.`tent` \n" +
+            "SET `tenant_name` = ?, `phone_number` = ?, `start_date` = ?, `pay_method_id` = ?, `description` = ?\n" +
+            "WHERE (`id` = ?);";
 
     @Override
     public List<Tent> getListTent() {
@@ -86,7 +89,7 @@ public class TentRepository implements ITentRepository {
         try {
             PreparedStatement ps = connection.prepareStatement(DELETE_TENT);
 
-            ps.setInt(1,idDelete);
+            ps.setInt(1, idDelete);
 
             ps.executeUpdate();
 
@@ -108,9 +111,9 @@ public class TentRepository implements ITentRepository {
         try {
             PreparedStatement ps = connection.prepareStatement(SEARCH_TENT);
 
-            ps.setString(1, "%"+tentIdSearch+"%");
-            ps.setString(2, "%"+tenantNameSearch+"%");
-            ps.setString(3, "%"+phoneNumberSearch+"%");
+            ps.setString(1, "%" + tentIdSearch + "%");
+            ps.setString(2, "%" + tenantNameSearch + "%");
+            ps.setString(3, "%" + phoneNumberSearch + "%");
 
             ResultSet rs = ps.executeQuery();
 
@@ -130,7 +133,7 @@ public class TentRepository implements ITentRepository {
         }
 
 
-       return foundTent;
+        return foundTent;
     }
 
     @Override
@@ -155,5 +158,45 @@ public class TentRepository implements ITentRepository {
         }
 
         return listPayMethod;
+    }
+
+    @Override
+    public boolean editTent(Tent editTent) {
+        boolean check = false;
+
+        Connection connection = BaseRepository.getConnectDB();
+
+        try {
+            PreparedStatement ps = connection.prepareStatement(UPDATE_TENT);
+
+            ps.setString(1, editTent.getTenantName());
+            ps.setString(2, editTent.getPhoneNumber());
+            ps.setString(3, editTent.getStartDate());
+            ps.setString(4, String.valueOf(editTent.getPayMethodId()));
+            ps.setString(5, editTent.getDescription());
+            ps.setString(6, String.valueOf(editTent.getIdTent()));
+
+            if (ps.executeUpdate() > 0) {
+                check = true;
+            }
+
+
+        } catch (SQLException throwAbles) {
+            throwAbles.printStackTrace();
+        }
+        return check;
+    }
+
+    @Override
+    public Tent findById(int idTent) {
+        List<Tent> tentList = getListTent();
+
+        for (Tent x : tentList) {
+            if (x.getIdTent() == idTent) {
+                return x;
+            }
+        }
+
+        return null;
     }
 }

@@ -15,4 +15,8 @@ public interface ITentRepository {
     List<Tent> search(String tentIdSearch, String tenantNameSearch, String phoneNumberSearch);
 
     List<PayMethod> getListPayMethod();
+
+    boolean editTent(Tent editTent);
+
+    Tent findById(int idTent);
 }

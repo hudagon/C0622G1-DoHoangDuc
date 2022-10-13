@@ -33,7 +33,42 @@ public class TentServlet extends HttpServlet {
             case "search":
                 searchTent(request, response);
                 break;
+            case "edit":
+                showEditForm(request, response);
+                break;
+            case "reallyEdit":
+                reallyEdit(request, response);
+                break;
         }
+    }
+
+    private void reallyEdit(HttpServletRequest request, HttpServletResponse response) {
+        int idTent = Integer.parseInt(request.getParameter("idTent"));
+        String tenantName = request.getParameter("tenantName");
+        String phoneNumber = request.getParameter("phoneNumber");
+        String startDate = request.getParameter("startDate");
+        int payMethodId = Integer.parseInt(request.getParameter("payMethodId"));
+        String description = request.getParameter("description");
+
+        Tent editTent = new Tent(idTent,tenantName,phoneNumber,startDate,
+                payMethodId,description);
+
+        String mess = "Edit Successfully!";
+        if(!tentService.editTent(editTent)) {
+            mess = "Edit failed!";
+        };
+
+        request.setAttribute("mess",mess);
+        request.setAttribute("tentList", tentService.getListTent());
+        request.setAttribute("payMethodList", tentService.getListPayMethod());
+
+        try {
+            request.getRequestDispatcher("view/tent/tent.jsp").forward(request, response);
+        } catch (ServletException | IOException e) {
+            e.printStackTrace();
+        }
+
+
     }
 
     private void searchTent(HttpServletRequest request, HttpServletResponse response) {
@@ -57,8 +92,14 @@ public class TentServlet extends HttpServlet {
     private void deleteTent(HttpServletRequest request, HttpServletResponse response) {
         int idDelete = Integer.parseInt(request.getParameter("idDelete"));
 
-        tentService.deleteTent(idDelete);
         String mess = "Delete Successfully!";
+        if (tentService.findById(idDelete) == null) {
+            mess = "Can't found tent";
+        } else {
+            tentService.deleteTent(idDelete);
+        }
+
+
         request.setAttribute("mess", mess);
         request.setAttribute("tentList", tentService.getListTent());
         request.setAttribute("listCheck", 0);
@@ -113,6 +154,27 @@ public class TentServlet extends HttpServlet {
             default:
                 showTentList(request, response);
         }
+    }
+
+    private void showEditForm(HttpServletRequest request, HttpServletResponse response) {
+        String idTent = request.getParameter("idTenant");
+        String tenantName = request.getParameter("tenantName");
+        String phoneNumber = request.getParameter("phoneNumber");
+        String startDate = request.getParameter("startDate");
+        String payMethodId = request.getParameter("payMethodId");
+        String description = request.getParameter("description");
+
+        Tent editTent = new Tent(Integer.parseInt(idTent),tenantName,phoneNumber,startDate,
+                Integer.parseInt(payMethodId),description);
+
+        request.setAttribute("editTent",editTent);
+
+        try {
+            request.getRequestDispatcher("view/tent/edit.jsp").forward(request, response);
+        } catch (ServletException | IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
     private void showAddingForm(HttpServletRequest request, HttpServletResponse response) {

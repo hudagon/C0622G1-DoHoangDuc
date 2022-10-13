@@ -20,13 +20,11 @@ public class TentService implements ITentService {
     @Override
     public boolean addNewTent(Tent newTent) {
 
-        if (!newTent.getTenantName().matches(TenantNameRegex.TENANT_NAME_REGEX) &&
-            !newTent.getPhoneNumber().matches(PhoneNumberRegex.PHONE_NUMBER_REGEX) &&
+        if (!newTent.getTenantName().matches(TenantNameRegex.TENANT_NAME_REGEX) ||
+            !newTent.getPhoneNumber().matches(PhoneNumberRegex.PHONE_NUMBER_REGEX) ||
             !newTent.getDescription().matches(DescriptionRegex.DESCRIPTION_REGEX)) {
             return false;
         }
-
-
 
         return tentRepository.addNewTent(newTent);
     }
@@ -44,5 +42,15 @@ public class TentService implements ITentService {
     @Override
     public List<PayMethod> getListPayMethod() {
         return tentRepository.getListPayMethod();
+    }
+
+    @Override
+    public boolean editTent(Tent editTent) {
+        return tentRepository.editTent(editTent);
+    }
+
+    @Override
+    public Tent findById(int idTent) {
+        return tentRepository.findById(idTent);
     }
 }

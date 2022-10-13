@@ -108,7 +108,8 @@
                     <th>Start Date</th>
                     <th>Pay Method</th>
                     <th>Description</th>
-                    <th>Select</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -124,6 +125,18 @@
                             </c:if>
                         </c:forEach>
                         <td>${x.getDescription()}</td>
+                        <td>
+                            <form action="/tent?action=edit" method="post">
+                                <input type="text" value="${x.getIdTent()}" name="idTenant" hidden>
+                                <input type="text" value="${x.getTenantName()}" name="tenantName" hidden>
+                                <input type="text" value="${x.getPhoneNumber()}" name="phoneNumber" hidden>
+                                <input type="text" value="${x.getStartDate()}" name="startDate" hidden>
+                                <input type="text" value="${x.getPayMethodId()}" name="payMethodId" hidden>
+                                <input type="text" value="${x.getDescription()}" name="description" hidden>
+
+                                <button type="submit" class="btn btn-primary">Edit</button>
+                            </form>
+                        </td>
                         <td>
                             <button onclick="getInfo('${x.getIdTent()}')"
                                     type="button"
