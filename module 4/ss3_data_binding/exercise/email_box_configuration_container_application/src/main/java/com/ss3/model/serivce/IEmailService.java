@@ -1,0 +1,20 @@
+package com.ss3.model.serivce;
+
+import com.ss3.model.model.EmailSetting;
+
+import java.util.List;
+
+public interface IEmailService {
+
+    List<String> getListLanguage();
+
+    List<Integer> getListPageSize();
+
+    void AddNewEmailSetting(EmailSetting emailSetting);
+
+    List<EmailSetting> getListEmailSetting();
+
+    List<String> getListSignature();
+
+    EmailSetting getEmailSettingBasedOnSignature(String signature);
+}
