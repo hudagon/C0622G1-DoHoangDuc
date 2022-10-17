@@ -4,7 +4,6 @@ import com.ss3.model.model.EmailSetting;
 import com.ss3.model.serivce.IEmailService;
 import org.springframework.stereotype.Service;
 
-import java.security.Signature;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -74,5 +73,25 @@ public class EmailService implements IEmailService {
         }
 
         return null;
+    }
+
+    @Override
+    public void updateEmailSetting(EmailSetting emailSetting) {
+        for (EmailSetting x : emailSettingList) {
+            if (x.getSignature().equals(emailSetting.getSignature())) {
+                x.setLanguage(emailSetting.getLanguage());
+                x.setPageSize(emailSetting.getPageSize());
+                x.setSpamsFilter(emailSetting.isSpamsFilter());
+            }
+        }
+    }
+
+    @Override
+    public void deleteEmailSetting(EmailSetting emailSetting) {
+        for (EmailSetting x : emailSettingList) {
+            if (x.getSignature().equals(emailSetting.getSignature())) {
+                emailSettingList.remove(x);
+            }
+        }
     }
 }

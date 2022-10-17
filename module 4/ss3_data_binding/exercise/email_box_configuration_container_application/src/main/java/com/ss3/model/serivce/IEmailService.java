@@ -17,4 +17,8 @@ public interface IEmailService {
     List<String> getListSignature();
 
     EmailSetting getEmailSettingBasedOnSignature(String signature);
+
+    void updateEmailSetting(EmailSetting emailSetting);
+
+    void deleteEmailSetting(EmailSetting emailSetting);
 }

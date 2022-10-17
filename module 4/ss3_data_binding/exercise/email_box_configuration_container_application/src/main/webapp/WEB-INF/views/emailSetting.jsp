@@ -17,7 +17,7 @@
 <hr>
 <form:form action="/email/showEmailSetting" method="get">
     <p>Email Setting:
-        <select name="signature" >
+        <select name="signature">
             <option>--</option>
             <c:forEach var="x" items="${signatureList}">
                 <option value="${x}">${x}</option>
@@ -35,7 +35,9 @@
                                     items="${pageSizeList}"/> emails per page</p>
     <p>Spams filter: <form:checkbox path="spamsFilter" value="${emailSetting.spamsFilter}"/></p>
     <p>Signature: <form:textarea path="signature" value="${emailSetting.signature}"/></p>
-    <button type="submit">Add</button>
+    <input type="submit" name="function" value="add">
+    <input type="submit" name="function" value="update">
+    <input type="submit" name="function" value="delete">
 </form:form>
 <h3>${mess}</h3>
 </body>
