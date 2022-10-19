@@ -1,8 +1,8 @@
 package com.ss4.controller;
 
-import com.ss4.model.model.Product;
-import com.ss4.model.service.IProductService;
-import com.ss4.model.service.ProductService;
+import com.ss4.model.Product;
+import com.ss4.service.IProductService;
+import com.ss4.service.ProductService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -12,22 +12,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-@RequestMapping("")
+@RequestMapping("/product")
 public class ProductController {
 
     private final IProductService productService = new ProductService();
 
-    @GetMapping("")
+    @GetMapping("/list")
     public String toIndex(Model model) {
         List<Product> productList = productService.getProductList();
         model.addAttribute("productList", productList);
-        return "/index";
+        return "/product/list";
     }
 
     @GetMapping("/showAddNewForm")
     public String showAddNewForm(Model model) {
         model.addAttribute("newProduct", new Product());
-        return "/create";
+        return "/product/create";
     }
 
     @PostMapping("/addNewProduct")
@@ -39,7 +39,7 @@ public class ProductController {
         }
 
         redirectAttributes.addFlashAttribute("mess", mess);
-        return "redirect:/";
+        return "redirect:/product/list";
     }
 
     @GetMapping("/showUpdateForm")
@@ -48,7 +48,7 @@ public class ProductController {
 
         model.addAttribute("productUpdate", productUpdate);
 
-        return "/edit";
+        return "/product/edit";
     }
 
     @PostMapping("/editProduct")
@@ -60,7 +60,7 @@ public class ProductController {
         }
 
         redirectAttributes.addFlashAttribute("mess", mess);
-        return "redirect:/";
+        return "redirect:/product/list";
     }
 
     @PostMapping("/deleteProduct")
@@ -69,7 +69,7 @@ public class ProductController {
         productService.deleteProduct(idDelete);
 
         redirectAttributes.addFlashAttribute("mess", "Delete product successfully!");
-        return "redirect:/";
+        return "redirect:/product/list";
     }
 
     @GetMapping("/viewProduct")
@@ -82,7 +82,7 @@ public class ProductController {
 
         model.addAttribute("productList", productToView);
 
-        return "/index";
+        return "/product/list";
     }
 
     @GetMapping("/searchByName")
@@ -98,7 +98,7 @@ public class ProductController {
         model.addAttribute("productList", productFound);
         model.addAttribute("mess", mess);
 
-        return "/index";
+        return "/product/list";
     }
 
 

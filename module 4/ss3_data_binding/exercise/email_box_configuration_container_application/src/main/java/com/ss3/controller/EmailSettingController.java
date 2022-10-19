@@ -1,7 +1,7 @@
 package com.ss3.controller;
 
-import com.ss3.model.model.EmailSetting;
-import com.ss3.model.serivce.impl.EmailService;
+import com.ss3.model.EmailSetting;
+import com.ss3.serivce.impl.EmailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
