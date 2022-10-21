@@ -1,12 +1,13 @@
-package com.ss7.service.impl;
+package com.ss7.service.blog.impl;
 
 import com.ss7.model.Blog;
 import com.ss7.repository.IBlogRepository;
-import com.ss7.service.IBlogService;
+import com.ss7.service.blog.IBlogService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import org.springframework.data.domain.Pageable;
 import java.util.Optional;
 
 @Service
@@ -14,6 +15,11 @@ public class BlogService implements IBlogService {
 
     @Autowired
     IBlogRepository blogRepository;
+
+    @Override
+    public Page<Blog> findAll(Pageable pageable) {
+        return blogRepository.findAll(pageable);
+    }
 
     @Override
     public Iterable<Blog> findAll() {

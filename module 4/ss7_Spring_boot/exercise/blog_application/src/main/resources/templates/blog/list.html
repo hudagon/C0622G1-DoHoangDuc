@@ -6,7 +6,10 @@
 </head>
 <body>
 <h1>Welcome to blog of mine!</h1>
-<button><a href="/blog/create" style="text-decoration: none">Add new blog</a></button>
+<p>
+    <button><a href="/blog/create" style="text-decoration: none">Add new blog</a></button>
+    <button><a href="/category/list" style="text-decoration: none">Category manager</a></button>
+</p>
 <hr>
 <p th:text="${mess}"></p>
 <table border="1">
@@ -15,6 +18,7 @@
         <th>Name</th>
         <th>Author</th>
         <th>Date Published</th>
+        <th>Category</th>
         <th>View</th>
         <th>Edit</th>
         <th>Delete</th>
@@ -24,6 +28,7 @@
         <td th:text="${x.getName()}"></td>
         <td th:text="${x.getAuthor()}"></td>
         <td th:text="${x.getDatePublished()}"></td>
+        <td th:text="${x.category.getName()}"></td>
         <td><button><a th:href="@{/blog/view-blog/__${x.getId()}__}">View</a></button></td>
         <td><button><a th:href="@{/blog/edit-blog/__${x.getId()}__}">Edit</a></button></td>
         <td><button><a th:href="@{/blog/delete-blog/__${x.getId()}__}">Delete</a></button></td>

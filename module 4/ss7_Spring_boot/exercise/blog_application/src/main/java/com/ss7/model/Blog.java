@@ -1,24 +1,29 @@
 package com.ss7.model;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Blog {
 
     @Id
-    private int id;
+    private Integer id;
     private String name;
     private String author;
     private String datePublished;
     private String content;
 
+    @ManyToOne
+    @JoinColumn(name = "category_id", referencedColumnName = "id")
+    private Category category;
+
+
     public Blog() {
     }
 
-    public Blog(int id, String name, String author, String datePublished, String content) {
+    public Blog(Integer id, String name, String author, String datePublished, String content) {
         this.id = id;
         this.name = name;
         this.author = author;
@@ -26,11 +31,11 @@ public class Blog {
         this.content = content;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -75,5 +80,13 @@ public class Blog {
                 ", datePublished='" + datePublished + '\'' +
                 ", content='" + content + '\'' +
                 '}';
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 }

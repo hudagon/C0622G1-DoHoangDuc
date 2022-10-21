@@ -12,6 +12,9 @@
     <p>Name: <input type="text" th:field="*{name}"></p>
     <p>Author: <input type="text" th:field="*{author}" ></p>
     <p>Date Published: <input type="text" th:field="*{datePublished}"></p>
+    <p>Category: <select th:field="*{category}">
+        <option th:each="x : ${categoryList}" th:value="${x.getId()}" th:text="${x.getName()}"></option>
+    </select></p>
     <p>Content: <br><textarea  th:field="*{content}" rows="9" cols="70"  form="blogCreateForm">
     Input content here...
     </textarea></p>

@@ -1,14 +1,16 @@
 package com.ss7.controller;
 
 import com.ss7.model.Blog;
-import com.ss7.service.impl.BlogService;
+import com.ss7.service.blog.impl.BlogService;
+import com.ss7.service.category.impl.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import java.nio.file.Path;
 import java.util.Optional;
 
 @Controller
@@ -18,10 +20,15 @@ public class BlogController {
     @Autowired
     BlogService blogService;
 
-    @GetMapping("/list")
-    public String showList(Model model) {
+    @Autowired
+    CategoryService categoryService;
 
-        model.addAttribute("blogList", blogService.findAll());
+
+    @GetMapping("/list")
+    public String showList(Model model, @PageableDefault(value = 3) Pageable pageable) {
+
+
+        model.addAttribute("blogList", blogService.findAll(pageable));
 
         return "/blog/list";
     }
@@ -41,6 +48,7 @@ public class BlogController {
     @GetMapping("/create")
     public String showCreateForm(Model model) {
 
+        model.addAttribute("categoryList",categoryService.findAll());
         model.addAttribute("blogNew", new Blog());
 
         return "/blog/formCreate";
