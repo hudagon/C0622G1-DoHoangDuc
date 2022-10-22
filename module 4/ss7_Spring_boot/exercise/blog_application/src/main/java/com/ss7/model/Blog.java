@@ -1,18 +1,18 @@
 package com.ss7.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 @Entity
 public class Blog {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
     private String author;
-    private String datePublished;
+    private LocalDate datePublished;
     private String content;
 
     @ManyToOne
@@ -23,7 +23,7 @@ public class Blog {
     public Blog() {
     }
 
-    public Blog(Integer id, String name, String author, String datePublished, String content) {
+    public Blog(Integer id, String name, String author, LocalDate datePublished, String content) {
         this.id = id;
         this.name = name;
         this.author = author;
@@ -55,11 +55,11 @@ public class Blog {
         this.author = author;
     }
 
-    public String getDatePublished() {
+    public LocalDate getDatePublished() {
         return datePublished;
     }
 
-    public void setDatePublished(String datePublished) {
+    public void setDatePublished(LocalDate datePublished) {
         this.datePublished = datePublished;
     }
 
@@ -88,5 +88,9 @@ public class Blog {
 
     public void setCategory(Category category) {
         this.category = category;
+    }
+
+    public String getDateFormatted() {
+        return this.datePublished.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
     }
 }

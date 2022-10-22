@@ -22,6 +22,16 @@ public class BlogService implements IBlogService {
     }
 
     @Override
+    public Page<Blog> findAllBlogSorted(Pageable pageable) {
+        return blogRepository.findByOrderByDatePublishedAsc(pageable);
+    }
+
+    @Override
+    public Page<Blog> findAllByName(String nameSearch, Pageable pageable) {
+        return blogRepository.findAllByName(nameSearch, pageable);
+    }
+
+    @Override
     public Iterable<Blog> findAll() {
         return blogRepository.findAll();
     }

@@ -1,9 +1,12 @@
 package com.ss7.controller;
 
 import com.ss7.model.Blog;
+import com.ss7.service.blog.IBlogService;
 import com.ss7.service.blog.impl.BlogService;
+import com.ss7.service.category.ICategoryService;
 import com.ss7.service.category.impl.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
@@ -18,15 +21,14 @@ import java.util.Optional;
 public class BlogController {
 
     @Autowired
-    BlogService blogService;
+    IBlogService blogService;
 
     @Autowired
-    CategoryService categoryService;
+    ICategoryService categoryService;
 
 
     @GetMapping("/list")
     public String showList(Model model, @PageableDefault(value = 3) Pageable pageable) {
-
 
         model.addAttribute("blogList", blogService.findAll(pageable));
 
@@ -48,7 +50,7 @@ public class BlogController {
     @GetMapping("/create")
     public String showCreateForm(Model model) {
 
-        model.addAttribute("categoryList",categoryService.findAll());
+        model.addAttribute("categoryList", categoryService.findAll());
         model.addAttribute("blogNew", new Blog());
 
         return "/blog/formCreate";
@@ -59,13 +61,13 @@ public class BlogController {
 
         blogService.save(newBlog);
 
-        redirectAttributes.addFlashAttribute("mess","New blog created successfully!");
+        redirectAttributes.addFlashAttribute("mess", "New blog created successfully!");
 
         return "redirect:/blog/list";
     }
 
     @GetMapping("/edit-blog/{idEdit}")
-    public String showEditForm(Model model,@PathVariable int idEdit) {
+    public String showEditForm(Model model, @PathVariable int idEdit) {
         Optional<Blog> blogEdit = blogService.findById(idEdit);
 
         if (blogEdit.isPresent()) {
@@ -80,7 +82,7 @@ public class BlogController {
     public String editBlog(@ModelAttribute Blog blogEdit, RedirectAttributes redirectAttributes) {
         blogService.save(blogEdit);
 
-        redirectAttributes.addFlashAttribute("mess","Blog Edited successfully!");
+        redirectAttributes.addFlashAttribute("mess", "Blog Edited successfully!");
 
         return "redirect:/blog/list";
     }
@@ -100,9 +102,34 @@ public class BlogController {
     public String deleteBlog(@ModelAttribute Blog blogDelete, RedirectAttributes redirectAttributes) {
         blogService.deleteBlog(blogDelete.getId());
 
-        redirectAttributes.addFlashAttribute("mess","Blog Deleted successfully!");
+        redirectAttributes.addFlashAttribute("mess", "Blog Deleted successfully!");
 
         return "redirect:/blog/list";
+    }
+
+    @GetMapping("/sortByDate")
+    public String getBlogListSorted(Model model, @PageableDefault(value = 3) Pageable pageable) {
+
+        model.addAttribute("blogList", blogService.findAllBlogSorted(pageable));
+
+        return "/blog/list";
+    }
+
+    @GetMapping("/searchBlogByName")
+    public String searchBlogByName(Model model,
+                                   @PageableDefault(value = 3) Pageable pageable,
+                                   @RequestParam(value = "searchName") String searchName) {
+        String mess = "Found!";
+        Page<Blog> blogListFound = blogService.findAllByName(searchName, pageable);
+
+        if (blogListFound == null) {
+            mess = "No blog found";
+        }
+
+        model.addAttribute("blogList", blogListFound);
+        model.addAttribute("mess", mess);
+
+        return "/blog/list";
     }
 
 }
