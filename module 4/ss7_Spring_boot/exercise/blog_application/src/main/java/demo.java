@@ -10,7 +10,5 @@ public class demo {
 
 
 
-        System.out.println(LocalDate.now().format(DateTimeFormatter
-                .ofPattern("dd-MM-yyyy")));
     }
 }

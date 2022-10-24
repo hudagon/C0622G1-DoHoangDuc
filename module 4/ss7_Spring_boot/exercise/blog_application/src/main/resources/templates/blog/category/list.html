@@ -23,7 +23,7 @@
     <tr th:each="x,y : ${categoryList}">
         <td th:text="${y.count}"></td>
         <td th:text="${x.getName()}"></td>
-        <td th:text="${x.getBlogs().size()}"></td>
+        <td th:text="${x.getListBlogsAccordingToCategory()}"></td>
         <td><button><a th:href="@{/category/edit-category/__${x.getId()}__}">Edit</a></button></td>
         <td><button><a th:href="@{/category/delete-category/__${x.getId()}__}">Delete</a></button></td>
     </tr>

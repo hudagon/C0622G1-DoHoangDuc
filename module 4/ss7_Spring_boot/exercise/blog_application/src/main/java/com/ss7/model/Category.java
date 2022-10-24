@@ -1,6 +1,8 @@
 package com.ss7.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -51,5 +53,19 @@ public class Category {
 
     public void setBlogs(Set<Blog> blogs) {
         this.blogs = blogs;
+    }
+
+    public String getListBlogsAccordingToCategory() {
+        List<Blog> blogDummies =  new ArrayList<>(this.blogs);
+        StringBuilder listBlogName = new StringBuilder();
+
+        for (int i = 0; i < blogDummies.size(); i++) {
+            listBlogName.append(blogDummies.get(i).getName());
+            if (i != blogDummies.size() - 1) {
+                listBlogName.append(", ");
+            }
+        }
+
+        return listBlogName.toString();
     }
 }
