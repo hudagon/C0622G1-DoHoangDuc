@@ -22,7 +22,7 @@ public class SongService implements ISongService {
 
     @Override
     public Optional<Song> findById(Integer id) {
-        return Optional.empty();
+        return songRepository.findById(id);
     }
 
     @Override
