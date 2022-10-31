@@ -8,6 +8,8 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface IBlogRepository extends JpaRepository<Blog, Integer> {
 
@@ -20,5 +22,12 @@ public interface IBlogRepository extends JpaRepository<Blog, Integer> {
             value = "select * from blog where name like %:nameSearch%",
             nativeQuery = true)
     Page<Blog> findAllByName(@Param("nameSearch") String nameSearch, Pageable pageable);
+
+    @Query(
+            value = "select * from blog where category_id = :idCategory",
+            nativeQuery = true
+    )
+    List<Blog> findAllBasedOnCategory(@Param("idCategory") Integer idCategory);
+
 
 }
