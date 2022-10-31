@@ -1,6 +1,7 @@
 package com.ss7.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -19,6 +20,7 @@ public class Blog {
 
     @ManyToOne
     @JsonBackReference
+    @JsonIgnore
     @JoinColumn(name = "category_id", referencedColumnName = "id")
     private Category category;
 

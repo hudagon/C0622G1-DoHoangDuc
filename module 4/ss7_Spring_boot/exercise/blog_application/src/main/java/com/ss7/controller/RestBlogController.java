@@ -1,7 +1,9 @@
 package com.ss7.controller;
 
+import com.ss7.dto.BlogDto;
 import com.ss7.model.Blog;
 import com.ss7.service.blog.IBlogService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -22,14 +25,24 @@ public class RestBlogController {
 
 
     @GetMapping
-    public ResponseEntity<Iterable<Blog>> getBlogList() {
+    public ResponseEntity<Iterable<BlogDto>> getBlogList() {
         List<Blog> blogList = (List<Blog>) blogService.findAll();
 
         if (blogList.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
 
-        return new ResponseEntity<>(blogList, HttpStatus.OK);
+        List<BlogDto> blogListDto = new ArrayList<>();
+
+        for (Blog x : blogList) {
+            BlogDto blogDto = new BlogDto();
+            BeanUtils.copyProperties(x, blogDto);
+            blogDto.setCategoryId(x.getCategory().getId());
+            blogListDto.add(blogDto);
+        }
+
+
+        return new ResponseEntity<>(blogListDto, HttpStatus.OK);
     }
 
     @GetMapping("/category-{id}")
