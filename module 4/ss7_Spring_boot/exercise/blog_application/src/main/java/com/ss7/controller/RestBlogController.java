@@ -7,22 +7,19 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/api/blog")
 public class RestBlogController {
 
     @Autowired
     private IBlogService blogService;
-
 
     @GetMapping
     public ResponseEntity<Iterable<BlogDto>> getBlogList() {
@@ -65,5 +62,26 @@ public class RestBlogController {
         }
 
         return new ResponseEntity<>(blogViewed.get(), HttpStatus.OK);
+    }
+
+    @GetMapping("/searchByAuthor/{authorName}")
+    public ResponseEntity<List<BlogDto>> findByProducer(@PathVariable String authorName) {
+        List<Blog> blogList =  blogService.findByAuthor(authorName);
+
+        if (blogList.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+
+        List<BlogDto> blogListDto = new ArrayList<>();
+
+        for (Blog x : blogList) {
+            BlogDto blogDto = new BlogDto();
+            BeanUtils.copyProperties(x, blogDto);
+            blogDto.setCategoryId(x.getCategory().getId());
+            blogListDto.add(blogDto);
+        }
+
+
+        return new ResponseEntity<>(blogListDto, HttpStatus.OK);
     }
 }

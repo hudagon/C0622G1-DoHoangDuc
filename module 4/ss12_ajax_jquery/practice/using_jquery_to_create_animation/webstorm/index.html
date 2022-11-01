@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+
+<body>
+
+<h1>Welcome</h1>
+<p>
+    <input type="text" id="searchProducer" placeholder="Search by producer...">
+    <button id="searchAction">Search</button>
+</p>
+<hr>
+<table border="1" id="tableSmartPhone">
+    <thead>
+    <tr>
+        <th>Model</th>
+        <th>Price</th>
+        <th>Producer</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+<button id="nextButton">Next</button>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        init();
+
+        function init() {
+            $.ajax({
+                url: 'http://localhost:8080/smartphone',
+                type: "GET",
+                dataType: 'json',
+                success: function (data) {
+                    console.log(data);
+                    let tr = [];
+                    for (let i = 0; i < data.length; i++) {
+                        tr.push("<tr>");
+                        tr.push("<td>" + data[i].model + "</td>");
+                        tr.push("<td>" + data[i].price + "</td>");
+                        tr.push("<td>" + data[i].producer + "</td>");
+                        tr.push("</tr>");
+                    }
+                    $("tbody").append(tr.join(""));
+                }
+            })
+        }
+
+        $("#searchAction").click(function () {
+            let producerSearch = $("#searchProducer").val();
+            $("tbody").empty();
+            $.ajax({
+                url: `http://localhost:8080/smartphone/searchByProducer/${producerSearch}`,
+                type: "GET",
+                dataType: 'json',
+                success: function (data) {
+                    console.log(data);
+                    let tr = [];
+                    for (let i = 0; i < data.length; i++) {
+                        tr.push("<tr>");
+                        tr.push("<td>" + data[i].model + "</td>");
+                        tr.push("<td>" + data[i].price + "</td>");
+                        tr.push("<td>" + data[i].producer + "</td>");
+                        tr.push("</tr>");
+                    }
+                    $("tbody").append(tr.join(""));
+                }
+            })
+
+        })
+
+
+
+    })
+</script>
+</html>

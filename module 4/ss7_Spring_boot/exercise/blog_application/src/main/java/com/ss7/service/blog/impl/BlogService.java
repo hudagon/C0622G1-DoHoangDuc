@@ -39,6 +39,11 @@ public class BlogService implements IBlogService {
     }
 
     @Override
+    public List<Blog> findByAuthor(String authorName) {
+        return blogRepository.findByAuthor(authorName);
+    }
+
+    @Override
     public Iterable<Blog> findAll() {
         return blogRepository.findAll();
     }

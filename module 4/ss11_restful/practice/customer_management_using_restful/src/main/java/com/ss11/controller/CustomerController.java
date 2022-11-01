@@ -54,6 +54,19 @@ public class CustomerController {
         return new ResponseEntity<>(customerService.save(customer), HttpStatus.OK);
     }
 
+    @PatchMapping("/{id}")
+    public ResponseEntity<Customer> updateCustomer1(@PathVariable Long id, @RequestBody Customer customer) {
+        Optional<Customer> customerEdited = customerService.findById(id);
+
+        if (!customerEdited.isPresent()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+
+        customer.setId(customerEdited.get().getId());
+
+        return new ResponseEntity<>(customerService.save(customer), HttpStatus.OK);
+    }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<Customer> deleteCustomer (@PathVariable Long id) {
         Optional<Customer> customerDeleted = customerService.findById(id);
