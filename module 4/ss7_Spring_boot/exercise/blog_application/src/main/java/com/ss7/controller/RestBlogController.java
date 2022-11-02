@@ -5,6 +5,9 @@ import com.ss7.model.Blog;
 import com.ss7.service.blog.IBlogService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -83,5 +86,12 @@ public class RestBlogController {
 
 
         return new ResponseEntity<>(blogListDto, HttpStatus.OK);
+    }
+
+    @GetMapping("/page")
+    public ResponseEntity<List<Blog>> findAll(@PageableDefault(value = 3) Pageable pageable) {
+        Page<Blog> blogList = blogService.findAll(pageable);
+
+        return new ResponseEntity<>(blogList.getContent(), HttpStatus.OK);
     }
 }
