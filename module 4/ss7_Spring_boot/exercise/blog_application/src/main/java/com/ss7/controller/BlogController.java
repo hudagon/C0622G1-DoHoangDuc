@@ -30,7 +30,7 @@ public class BlogController {
 
         model.addAttribute("blogList", blogService.findAll(pageable));
 
-        return "/blog/list";
+        return "/blog/blog/list";
     }
 
     @GetMapping("/view-blog/{idView}")
@@ -39,9 +39,9 @@ public class BlogController {
 
         if (blogView.isPresent()) {
             model.addAttribute("blogView", blogView.get());
-            return "/blog/view";
+            return "/blog/blog/view";
         } else {
-            return "/blog/error";
+            return "/blog/blog/error";
         }
     }
 
@@ -51,7 +51,7 @@ public class BlogController {
         model.addAttribute("categoryList", categoryService.findAll());
         model.addAttribute("blogNew", new Blog());
 
-        return "/blog/formCreate";
+        return "/blog/blog/formCreate";
     }
 
     @PostMapping("/create")
@@ -70,9 +70,9 @@ public class BlogController {
 
         if (blogEdit.isPresent()) {
             model.addAttribute("blogEdit", blogEdit.get());
-            return "/blog/formEdit";
+            return "/blog/blog/formEdit";
         } else {
-            return "/blog/error";
+            return "/blog/blog/error";
         }
     }
 
@@ -90,9 +90,9 @@ public class BlogController {
         Optional<Blog> blogDelete = blogService.findById(idDelete);
         if (blogDelete.isPresent()) {
             model.addAttribute("blogDelete", blogDelete.get());
-            return "/blog/delete";
+            return "/blog/blog/delete";
         } else {
-            return "/blog/error";
+            return "/blog/blog/error";
         }
     }
 
@@ -110,7 +110,7 @@ public class BlogController {
 
         model.addAttribute("blogList", blogService.findAllBlogSorted(pageable));
 
-        return "/blog/list";
+        return "/blog/blog/list";
     }
 
     @GetMapping("/searchBlogByName")
@@ -127,7 +127,7 @@ public class BlogController {
         model.addAttribute("blogList", blogListFound);
         model.addAttribute("mess", mess);
 
-        return "/blog/list";
+        return "/blog/blog/list";
     }
 
 }

@@ -1,6 +1,5 @@
 package com.ss7.controller;
 
-import com.ss7.model.Blog;
 import com.ss7.model.Category;
 import com.ss7.service.category.impl.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
