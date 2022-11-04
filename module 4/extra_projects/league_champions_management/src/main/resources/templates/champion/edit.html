@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Champion</title>
+</head>
+<body>
+<h1>Edit Champion</h1>
+<hr>
+<form action="/champion/edit/" method="post" th:object="${championToEdit}">
+    <p hidden>Champion id: <input type="text" th:field="*{id}"></p>
+    <p>Champion name: <input type="text" th:field="*{name}"></p>
+    <p>Champion class:
+        <select th:field="*{championClass.name}">
+            <option>select option</option>
+            <option th:each="x : ${championClassList}" th:value="${x.getId()}" th:text="${x.name}"></option>
+        </select>
+    </p>
+    <button type="submit">Edit</button>
+    <button type="submit">Back</button>
+</form>
+</body>
+</html>

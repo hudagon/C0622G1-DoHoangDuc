@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Champion List</title>
+</head>
+<body>
+<h1>Champion List</h1>
+<div>
+    <button>Home</button>
+    <button>Champion Class List</button>
+</div>
+<hr>
+<table border="1">
+    <tr>
+        <th>N.o</th>
+        <th>Name</th>
+        <th>Champion Class</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    <tr th:each="x,y : ${championListDtoShow}">
+        <td th:text="${y.count}"></td>
+        <td th:text="${x.name}"></td>
+        <td th:text="${x.getChampionClassName()}"></td>
+        <td><Button><a style="color: green" th:href="@{/champion/edit/__${x.id}__}">Edit</a></Button></td>
+        <td><Button style="color: red" th:href="@{/champion/delete/__${x.id}__}">Delete</Button></td>
+    </tr>
+</table>
+<p style="color: green" th:text="${mess}"></p>
+</body>
+</html>

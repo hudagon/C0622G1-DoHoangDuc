@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer List</title>
+    <style>
+        body {
+            background-color: whitesmoke;
+        }
+
+        table {
+            background-color: white;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+    </style>
+</head>
+<body>
+<h1>Customer List</h1>
+<div class="navBar">
+
+    <button class="createButton"><a th:href="@{/customer/create}">Create</a></button>
+
+    <div class="searchBar">
+        <p>
+        <form action="/customer/search">
+
+            <input type="text" placeholder="name..." name="searchName">
+            <input type="text" placeholder="address..." name="searchAddress">
+
+            <select name="searchCustomerType">
+                <option value="">Customer Type</option>
+                <option th:each="x : ${customerTypeList}" th:text="${x.getName()}" th:value="${x.getId()}"></option>
+            </select>
+
+            <button type="submit">Search</button>
+        </form>
+        </p>
+    </div>
+</div>
+
+<hr>
+<table border="1">
+    <tr>
+        <th>N.o</th>
+        <th>Name</th>
+        <th>Birthday</th>
+        <th>Gender</th>
+        <th>Identify Card</th>
+        <th>Phone Number</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Customer Type</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    <tr th:each="x,y : ${customerList}">
+        <td th:text="${y.count}"></td>
+        <td th:text="${x.getName()}"></td>
+        <td th:text="${x.getDateOfBirth()}"></td>
+        <td th:text="${x.getGender()}"></td>
+        <td th:text="${x.getIdCard()}"></td>
+        <td th:text="${x.getPhoneNumber()}"></td>
+        <td th:text="${x.getEmail()}"></td>
+        <td th:text="${x.getAddress()}"></td>
+        <td th:text="${x.getCustomerType()}"></td>
+        <td>
+            <button style="color: green"><a th:href="@{/customer/edit/__${x.getId()}__}"></a>Edit</button>
+        </td>
+        <td>
+            <button style="color: red"><a th:href="@{/customer/delete/__${x.getId()}__}"></a>Delete</button>
+        </td>
+    </tr>
+</table>
+
+<div th:if="${flag} == 'list'">
+    <a th:if="${customerList.hasPrevious()}"
+       th:href="@{'/customer/list'(page = ${customerList.number - 1})}">Previous</a>
+    <span th:text="${customerList.number + 1}"></span>/<span th:text="${customerList.totalPages}"></span>
+    <a th:if="${customerList.hasNext()}" th:href="@{'/customer/list'(page = ${customerList.number + 1})}">Next</a>
+</div>
+
+<div th:if="${flag} == 'search'">
+    <a th:if="${customerList.hasPrevious()}" th:href="@{'/customer/search'(page = ${customerList.number - 1},
+    searchName = ${searchName}, searchAddress = ${searchAddress}, searchCustomerType = ${searchCustomerType})}">Previous</a>
+    <span th:text="${customerList.number + 1}"></span>/<span th:text="${customerList.totalPages}"></span>
+    <a th:if="${customerList.hasNext()}" th:href="@{'/customer/search'(page = ${customerList.number + 1},
+    searchName = ${searchName}, searchAddress = ${searchAddress}, searchCustomerType = ${searchCustomerType})}">Next</a>
+</div>
+
+</body>
+</html>
