@@ -97,8 +97,6 @@ public class CustomerController {
         model.addAttribute("searchName", searchName);
         model.addAttribute("searchAddress", searchAddress);
         model.addAttribute("searchCustomerType", searchCustomerType);
-
-
         return "/customer/list";
     }
 
@@ -130,9 +128,84 @@ public class CustomerController {
 
         customerService.save(customerATBC);
 
-        redirectAttributes.addFlashAttribute("mess", "New customer added successfully!");
+        redirectAttributes.addFlashAttribute("messSuccess", "New customer added successfully!");
 
         return "redirect:/customer/list";
     }
 
+    @GetMapping("/edit/{id}")
+    public String showEditForm(@PathVariable String id,
+                               Model model) {
+
+        CustomerDto editedCustomerDto = new CustomerDto();
+        Optional<Customer> customerATBE = customerService.findById(Integer.valueOf(id));
+        List<CustomerType> customerTypeList = (List<CustomerType>) customerTypeService.findAll();
+
+        if (!customerATBE.isPresent()) {
+            model.addAttribute("messFailure", "Customer not found!");
+        }
+
+        BeanUtils.copyProperties(customerATBE.get(), editedCustomerDto);
+        editedCustomerDto.setCustomerType(String.valueOf(customerATBE.get().getCustomerType().getId()));
+
+        if (customerATBE.get().getGender() == 1) {
+            editedCustomerDto.setGender("1");
+        } else {
+            editedCustomerDto.setGender("0");
+        }
+
+        model.addAttribute("editedCustomerDto", editedCustomerDto);
+        model.addAttribute("customerTypeList", customerTypeList);
+
+        return "/customer/edit";
+    }
+
+    @PostMapping("/edit")
+    public String editCustomer(@ModelAttribute CustomerDto editedCustomerDto,
+                               RedirectAttributes redirectAttributes) {
+
+        Customer editedCustomer = new Customer();
+        Optional<CustomerType> customerType = customerTypeService.findById(Integer.valueOf(editedCustomerDto.getCustomerType()));
+
+        BeanUtils.copyProperties(editedCustomerDto, editedCustomer);
+        editedCustomer.setGender(Integer.valueOf(editedCustomerDto.getGender()));
+
+        if (customerType.isPresent()) {
+            editedCustomer.setCustomerType(customerType.get());
+        }
+
+        customerService.save(editedCustomer);
+
+        redirectAttributes.addFlashAttribute("messSuccess", "Customer edited successfully!");
+
+        return "redirect:/customer/list";
+    }
+
+    @PostMapping("/delete")
+    public String deleteCustomer(@RequestParam String customerDeleteId,
+                                 RedirectAttributes redirectAttributes) {
+
+        Optional<Customer> customerATBD = customerService.findById(Integer.valueOf(customerDeleteId));
+
+        if (customerATBD.isPresent()) {
+            Customer customerDelete = customerATBD.get();
+            customerDelete.setStatus(0);
+            customerService.save(customerDelete);
+        }
+
+        redirectAttributes.addFlashAttribute("messSuccess", "Customer deleted successfully");
+
+        return "redirect:/customer/list";
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
