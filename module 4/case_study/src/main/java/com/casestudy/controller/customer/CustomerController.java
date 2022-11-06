@@ -58,7 +58,7 @@ public class CustomerController {
         model.addAttribute("customerTypeList", customerTypeList);
         model.addAttribute("flag", "list");
 
-        return "/customer/list";
+        return "/customer/list/list";
     }
 
     @GetMapping("/search")
@@ -97,7 +97,8 @@ public class CustomerController {
         model.addAttribute("searchName", searchName);
         model.addAttribute("searchAddress", searchAddress);
         model.addAttribute("searchCustomerType", searchCustomerType);
-        return "/customer/list";
+
+        return "/customer/list/list";
     }
 
     @GetMapping("/create")
