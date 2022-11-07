@@ -11,6 +11,7 @@ import validation.TenantNameRegex;
 import java.util.List;
 
 public class TentService implements ITentService {
+
     TentRepository tentRepository = new TentRepository();
     @Override
     public List<Tent> getListTent() {
@@ -53,4 +54,5 @@ public class TentService implements ITentService {
     public Tent findById(int idTent) {
         return tentRepository.findById(idTent);
     }
+
 }

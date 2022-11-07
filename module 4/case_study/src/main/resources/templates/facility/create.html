@@ -22,6 +22,10 @@
 
 <body>
 <h1>Create Form</h1>
+<div>
+    <button><a th:href="@{/}">Home</a></button>
+    <button><a th:href="@{/facility/list}">Facility Management</a></button>
+</div>
 <hr>
 
 <h3>Select facility type you want to create</h3>
@@ -58,7 +62,7 @@
         </p>
 
         <button type="submit">Create</button>
-        <button>Back</button>
+        <button><a th:href="@{/facility/list}">Back</a></button>
     </form>
 </div>
 
@@ -86,7 +90,7 @@
         </p>
 
         <button type="submit">Create</button>
-        <button>Back</button>
+        <button><a th:href="@{/facility/list}">Back</a></button>
     </form>
 </div>
 
@@ -112,7 +116,7 @@
         </p>
 
         <button type="submit">Create</button>
-        <button>Back</button>
+        <button><a th:href="@{/facility/list}">Back</a></button>
     </form>
 </div>
 

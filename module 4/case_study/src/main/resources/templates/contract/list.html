@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Contract List</title>
+
+    <style>
+        body {
+            margin: 10px;
+            background-color: whitesmoke;
+        }
+
+        table {
+            background-color: white;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0); /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Header */
+        .modal-header {
+            padding: 2px 16px;
+            background-color: #5cb85c;
+            color: white;
+        }
+
+        /* Modal Body */
+        .modal-body {
+            padding: 15px 16px;
+        }
+
+        /* Modal Footer */
+        .modal-footer {
+            padding: 2px 16px;
+            background-color: #5cb85c;
+            color: white;
+        }
+
+        /* Modal Content */
+        .modal-content {
+            position: relative;
+            background-color: #fefefe;
+            margin: 20vh auto auto;
+            padding: 0;
+            border: 1px solid #888;
+            width: 80%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            animation-name: animatetop;
+            animation-duration: 0.4s
+        }
+
+        /* Add Animation */
+        @keyframes animatetop {
+            from {
+                top: -300px;
+                opacity: 0
+            }
+            to {
+                top: 0;
+                opacity: 1
+            }
+        }
+    </style>
+
+</head>
+<body>
+<h1>Contract List</h1>
+
+<div>
+    <button><a th:href="@{/}">Home</a></button>
+    <button><a th:href="@{/contract/create}">Create</a></button>
+
+    <div class="searchBar">
+        <p>
+        <form action="/contract/list">
+
+            <input type="text" placeholder="customer name..." name="customerNameSearch" th:value="${customerNameSearch}">
+            <input type="text" placeholder="facility name..." name="facilityNameSearch" th:value="${facilityNameSearch}">
+
+            <button type="submit">Search</button>
+
+        </form>
+        </p>
+    </div>
+</div>
+
+<hr>
+
+<table border="1">
+    <tr>
+        <th>N.o</th>
+        <th>Facility</th>
+        <th>Customer</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Deposit</th>
+        <th>Total Money</th>
+        <th>Attach Facilites</th>
+    </tr>
+    <tr th:each="x,y : ${contractList}">
+        <td th:text="${y.count}"></td>
+        <td th:text="${x.getFacilityName()}"></td>
+        <td th:text="${x.getCustomerName()}"></td>
+        <td th:text="${x.getStartDate()}"></td>
+        <td th:text="${x.getEndDate()}"></td>
+        <td th:text="${x.getDeposit()}"></td>
+        <td>iu nhi 3000</td>
+        <td>
+            <button>+</button>
+            <button>List attach facilities</button>
+        </td>
+    </tr>
+</table>
+
+<p th:text="${messSuccess}"></p>
+
+<div style="margin-top: 10px">
+    <a th:if="${contractList.hasPrevious()}"
+       th:href="@{'/contract/list'(page = ${contractList.number - 1},
+    customerNameSearch = ${customerNameSearch}, facilityNameSearch = ${facilityNameSearch})}">Previous</a>
+
+    <span th:text="${contractList.number + 1}"></span>/<span th:text="${contractList.totalPages}"></span>
+
+    <a th:if="${contractList.hasNext()}"
+       th:href="@{'/contract/list'(page = ${contractList.number + 1},
+     customerNameSearch = ${customerNameSearch}, facilityNameSearch = ${facilityNameSearch})}">Next</a>
+</div>
+
+</body>
+
+</html>
