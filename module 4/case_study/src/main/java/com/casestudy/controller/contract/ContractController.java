@@ -76,8 +76,14 @@ public class ContractController {
             Model model,
             @RequestParam(required = false) String customerNameSearch,
             @RequestParam(required = false) String facilityNameSearch,
+            @RequestParam(required = false) String displayType,
             @PageableDefault(value = 4) Pageable pageable) {
 
+        Page<Contract> contractList;
+
+        if(displayType == null) {
+            displayType = String.valueOf(0);
+        }
 
         if (customerNameSearch == null) {
             customerNameSearch = "";
@@ -87,8 +93,12 @@ public class ContractController {
             facilityNameSearch = "";
         }
 
+        if (displayType.equals("0")) {
+            contractList = contractService.findAll(customerNameSearch, facilityNameSearch, pageable);
+        } else {
+            contractList = contractService.findAllCurrent(customerNameSearch, facilityNameSearch, pageable);
+        }
 
-        Page<Contract> contractList = contractService.findAll(customerNameSearch, facilityNameSearch, pageable);
         List<ContractDto> contractDtoList = new ArrayList<>();
 
         for (Contract x : contractList) {
@@ -107,6 +117,7 @@ public class ContractController {
 
         model.addAttribute("facilityNameSearch", facilityNameSearch);
         model.addAttribute("customerNameSearch", customerNameSearch);
+        model.addAttribute("displayType", displayType);
         model.addAttribute("contractList", contractDtoPage);
         model.addAttribute("newContractDto", new ContractDto());
         model.addAttribute("newContractDetailDto", new ContractDetailDto());
@@ -134,22 +145,24 @@ public class ContractController {
 
         contractService.save(contractATBC);
 
-        String[] contractDetails = newContractDto.getContractDetailsString().split("");
+        if (!newContractDto.getContractDetailsString().equals("")) {
+            String[] contractDetails = newContractDto.getContractDetailsString().split("");
 
-        for (int i = 0; i < contractDetails.length ; i = i + 2) {
-            ContractDetail contractDetailATBC = new ContractDetail();
-            contractDetailATBC.setQuantity(Integer.valueOf(contractDetails[i]));
+            for (int i = 0; i < contractDetails.length ; i = i + 2) {
+                ContractDetail contractDetailATBC = new ContractDetail();
+                contractDetailATBC.setQuantity(Integer.valueOf(contractDetails[i]));
 
-            Optional<AttachFacility> attachFacilityATBC = attachFacilityService.findById(
-                    Integer.valueOf(contractDetails[i+1]));
+                Optional<AttachFacility> attachFacilityATBC = attachFacilityService.findById(
+                        Integer.valueOf(contractDetails[i+1]));
 
-            contractDetailATBC.setAttachFacility(attachFacilityATBC.get());
+                contractDetailATBC.setAttachFacility(attachFacilityATBC.get());
 
-            contractDetailATBC.setContract(contractATBC);
+                contractDetailATBC.setContract(contractATBC);
 
-            contractDetailATBC.setStatus(1);
+                contractDetailATBC.setStatus(1);
 
-            contractDetailService.save(contractDetailATBC);
+                contractDetailService.save(contractDetailATBC);
+            }
         }
 
         redirectAttributes.addFlashAttribute("messSuccess", "New contract added successfully!");

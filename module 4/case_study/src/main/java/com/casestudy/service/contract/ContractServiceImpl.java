@@ -69,4 +69,10 @@ public class ContractServiceImpl implements IContractService {
         return String.valueOf(totalMoney);
     }
 
+    @Override
+    public Page<Contract> findAllCurrent(String customerSearchName, String facilitySearchName, Pageable pageable) {
+        return contractRepository.findAllCurrent(customerSearchName, facilitySearchName, pageable);
+    }
+
+
 }

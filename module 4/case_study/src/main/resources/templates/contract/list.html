@@ -15,18 +15,24 @@
         body {
             font-family: Arial;
             padding: 10px;
-            background: #f1f1f1;
+            background: linear-gradient(110.79248633202553deg,
+            rgba(233, 255, 247, 1) 5.533854166666667%, rgba(170, 216, 227, 1) 96.67968749999999%);
         }
 
         /* Header/Blog Title */
         .header {
-            height: 80%;
+            background-image: url("https://wallpapershome.com/images/wallpapers/ios-11-1920x1080-4k-5k-beach-ocean-13655.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 20vh;
             padding: 30px;
             text-align: center;
-            background: white;
         }
 
         .header h1 {
+            font-style: italic;
+            color: white;
+            font-family: "Times New Roman";
             font-size: 50px;
         }
 
@@ -117,7 +123,7 @@
 <body>
 
 <div class="header">
-    <h1>Contract List</h1>
+    <h1>Furama Resort</h1>
 </div>
 
 <nav class="navbar navbar-expand-lg bg-light">
@@ -130,22 +136,21 @@
         <div class="collapse navbar-collapse" id="navbarScroll">
             <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                 <li class="nav-item">
-                    <a class="nav-link active openCreateContract"
+                    <a style="margin-top: 2px;"
+                       class="nav-link active openCreateContract"
                        data-bs-toggle="modal" data-bs-target="#createModal"
                        aria-current="page" href="#">Create</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                       aria-expanded="false">
-                        Display
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><button class="dropdown-item" id="displayAllContract">All Contract</button></li>
-                        <li><button class="dropdown-item" id="displayCurrentContract">Current Contract</button></li>
-                    </ul>
-                </li>
             </ul>
             <form class="d-flex" role="search" action="/contract/list">
+
+                <select style="width: 50%; margin-right: 8px;"
+                        class="form-select" name="displayType" th:value="${displayType}">
+                    <option th:value="0">--</option>
+                    <option th:value="0">All Contract</option>
+                    <option th:value="1">Current Contract</option>
+                </select>
+
                 <input class="form-control me-2"
                        type="text"
                        placeholder="customer name..."
@@ -183,9 +188,7 @@
                 <td th:text="${x.getFacilityName()}"></td>
                 <td th:text="${x.getCustomerName()}"></td>
                 <td th:text="${x.getStartDate()}"></td>
-                <td th:text="${x.getEndDate()}"
-                    th:id="endDate + ${x.getId()}"
-                    class="endDate"></td>
+                <td th:text="${x.getEndDate()}"></td>
                 <td th:text="${x.getDeposit()}"></td>
                 <td th:text="${x.getTotalMoney()}"></td>
                 <td>
@@ -212,13 +215,15 @@
         <div style="margin-top: 10px">
             <a th:if="${contractList.hasPrevious()}"
                th:href="@{'/contract/list'(page = ${contractList.number - 1},
-            customerNameSearch = ${customerNameSearch}, facilityNameSearch = ${facilityNameSearch})}">Previous</a>
+            customerNameSearch = ${customerNameSearch}, facilityNameSearch = ${facilityNameSearch},
+            displayType = ${displayType})}">Previous</a>
 
             <span th:text="${contractList.number + 1}"></span>/<span th:text="${contractList.totalPages}"></span>
 
             <a th:if="${contractList.hasNext()}"
                th:href="@{'/contract/list'(page = ${contractList.number + 1},
-            customerNameSearch = ${customerNameSearch}, facilityNameSearch = ${facilityNameSearch})}">Next</a>
+            customerNameSearch = ${customerNameSearch}, facilityNameSearch = ${facilityNameSearch},
+            displayType = ${displayType})}">Next</a>
         </div>
     </div>
 
@@ -610,12 +615,6 @@
 
         $(".btn.btn-primary.btn-sm.outAdding").click(function () {
 
-
-        })
-
-        $("#displayCurrentContract").click(function () {
-
-            document.getElementById("endDate").style.display = "none";
 
         })
 
