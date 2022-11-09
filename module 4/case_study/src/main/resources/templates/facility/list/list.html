@@ -90,10 +90,10 @@
 
             <input type="text" placeholder="name..." name="searchName" th:value="${searchName}">
 
-        <select name="searchRentType" th:selected="${searchFacilityType}">
-            <option value="">Rent Type</option>
-            <option th:each="x : ${rentTypeList}" th:text="${x.getName()}" th:value="${x.getId()}"></option>
-        </select>
+            <select name="searchRentType" th:selected="${searchFacilityType}">
+                <option value="">Rent Type</option>
+                <option th:each="x : ${rentTypeList}" th:text="${x.getName()}" th:value="${x.getId()}"></option>
+            </select>
 
             <select name="searchFacilityType" th:selected="${searchFacilityType}">
                 <option value="">Facility Type</option>

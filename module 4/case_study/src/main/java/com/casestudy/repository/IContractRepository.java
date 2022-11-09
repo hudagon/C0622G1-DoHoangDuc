@@ -9,14 +9,14 @@ import org.springframework.data.repository.query.Param;
 
 public interface IContractRepository extends JpaRepository<Contract, Integer> {
 
-    @Query(value = "select \n" +
-            "\t`contract`.*\n" +
+    @Query(value = "select " +
+            " `contract`.* " +
             "from `contract` join `customer` on `contract`.customer_id = `customer`.id\n" +
-            "\t\t\t  join `facility` on `contract`.facility_id = `facility`.id\n" +
-            "where `customer`.`name` like %:customerSearchName% and `facility`.`name` like %:facilitySearchName% \n" +
-            "\t  and `facility`.`status` = 1\n" +
-            "\t  and `customer`.`status` = 1 \n" +
-            "      and `contract`.`status` = 1 \n",
+            " join `facility` on `contract`.facility_id = `facility`.id " +
+            "where `customer`.`name` like %:customerSearchName% and `facility`.`name` like %:facilitySearchName%  " +
+            " and `facility`.`status` = 1 " +
+            "  and `customer`.`status` = 1  " +
+            "      and `contract`.`status` = 1",
             nativeQuery = true)
     Page<Contract> findAll(@Param("customerSearchName") String customerSearchName,
                            @Param("facilitySearchName") String facilitySearchName,

@@ -1,16 +1,22 @@
 package com.casestudy.service.contract;
 
 import com.casestudy.model.contract.Contract;
+import com.casestudy.model.contract.ContractDetail;
 import com.casestudy.repository.IContractRepository;
+import com.casestudy.service.contract_detail.IContractDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
 public class ContractServiceImpl implements IContractService {
+
+    @Autowired
+    private IContractDetailService contractDetailService;
 
     @Autowired
     private IContractRepository contractRepository;
@@ -22,12 +28,12 @@ public class ContractServiceImpl implements IContractService {
 
     @Override
     public Optional<Contract> findById(Integer id) {
-        return Optional.empty();
+        return contractRepository.findById(id);
     }
 
     @Override
     public Contract save(Contract contract) {
-        return null;
+        return contractRepository.save(contract);
     }
 
     @Override
@@ -39,4 +45,28 @@ public class ContractServiceImpl implements IContractService {
     public Page<Contract> findAll(String customerSearchName, String facilitySearchName, Pageable pageable) {
         return contractRepository.findAll(customerSearchName, facilitySearchName, pageable);
     }
+
+    @Override
+    public String getTotalMoney(Integer contractId) {
+
+        Double totalMoney = 0.0;
+        Double totalAttachFacilityMoney = 0.0;
+
+        List<ContractDetail> contractDetailList = contractDetailService.findByContractIdForMoney(contractId);
+
+        for (ContractDetail x : contractDetailList) {
+            totalAttachFacilityMoney += (x.getAttachFacility().getCost() * x.getQuantity());
+        }
+
+        Optional<Contract> contractABTG = contractRepository.findById(contractId);
+
+        if (contractABTG.isPresent()) {
+            Contract contract = contractABTG.get();
+
+            totalMoney = contract.getFacility().getCost() + totalAttachFacilityMoney;
+        }
+
+        return String.valueOf(totalMoney);
+    }
+
 }

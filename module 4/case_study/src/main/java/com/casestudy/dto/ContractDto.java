@@ -9,6 +9,8 @@ public class ContractDto {
     private String customerName;
     private String facilityName;
     private String employeeName;
+    private String totalMoney;
+    private String contractDetailsString;
 
     public ContractDto() {
     }
@@ -78,5 +80,21 @@ public class ContractDto {
 
     public void setEmployeeName(String employeeName) {
         this.employeeName = employeeName;
+    }
+
+    public String getTotalMoney() {
+        return totalMoney;
+    }
+
+    public void setTotalMoney(String totalMoney) {
+        this.totalMoney = totalMoney;
+    }
+
+    public String getContractDetailsString() {
+        return contractDetailsString;
+    }
+
+    public void setContractDetailsString(String contractDetailsString) {
+        this.contractDetailsString = contractDetailsString;
     }
 }

@@ -3,6 +3,9 @@ package com.casestudy.model.contract;
 import com.casestudy.model.customer.Customer;
 import com.casestudy.model.employee.Employee;
 import com.casestudy.model.facility.Facility;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -19,18 +22,22 @@ public class Contract {
     private Integer status = 1;
 
     @OneToMany(mappedBy = "contract")
+    @JsonBackReference
     private Set<ContractDetail> contractDetails;
 
     @ManyToOne
     @JoinColumn(name = "facility_id", referencedColumnName = "id")
+    @JsonIgnore
     private Facility facility;
 
     @ManyToOne
     @JoinColumn(name = "employee_id", referencedColumnName = "id")
+    @JsonIgnore
     private Employee employee;
 
     @ManyToOne
     @JoinColumn(name = "customer_id", referencedColumnName = "id")
+    @JsonIgnore
     private Customer customer;
 
     public Contract() {

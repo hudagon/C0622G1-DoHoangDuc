@@ -2,6 +2,8 @@ package com.casestudy.model.employee;
 
 import com.casestudy.model.contract.Contract;
 import com.casestudy.model.security.User;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.Set;
