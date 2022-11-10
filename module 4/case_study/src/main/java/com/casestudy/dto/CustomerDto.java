@@ -1,16 +1,36 @@
 package com.casestudy.dto;
 
 
-public class CustomerDto {
+import org.springframework.validation.Errors;
+import org.springframework.validation.Validator;
+
+import javax.validation.constraints.NotEmpty;
+
+public class CustomerDto implements Validator {
+
 
     private Integer id;
+
+    @NotEmpty(message = "Name is required!")
     private String name;
+
+    @NotEmpty(message = "Birthday is required!")
     private String dateOfBirth;
+
     private String gender;
+
+    @NotEmpty(message = "Id card is required!")
     private String idCard;
+
+    @NotEmpty(message = "Phone number is required!")
     private String phoneNumber;
+
+    @NotEmpty(message = "Email is required!")
     private String email;
+
+    @NotEmpty(message = "Address is required!")
     private String address;
+
     private String customerType;
 
     public CustomerDto() {
@@ -99,5 +119,58 @@ public class CustomerDto {
 
     public void setCustomerType(String customerType) {
         this.customerType = customerType;
+    }
+
+    @Override
+    public boolean supports(Class<?> clazz) {
+        return false;
+    }
+
+    @Override
+    public void validate(Object target, Errors errors) {
+        CustomerDto customer = (CustomerDto) target;
+
+        String name = customer.getName();
+        String phoneNumber = customer.getPhoneNumber();
+        String idCard = customer.getIdCard();
+        String email = customer.getEmail();
+        String gender = customer.getGender();
+        String customerType = customer.getCustomerType();
+
+
+        if (!name.equals("")) {
+            if (!name.matches("^[A-Z][a-z]*(?: [A-Z][a-z]*)*$")) {
+                errors.rejectValue("name", "customerName.matches", "error!");
+            }
+        }
+
+        if (!phoneNumber.equals("")) {
+            if (!phoneNumber.matches("^([(]84[)][+]90|[(]84[)][+]91|090|091)[0-9]{7}$")) {
+                errors.rejectValue("phoneNumber", "customerPhone.matches", "error!");
+            }
+
+        }
+
+        if (!idCard.equals("")) {
+            if (!idCard.matches("^([0-9]{9}|[0-9]{12})$")) {
+                errors.rejectValue("idCard", "idCard.matches", "error!");
+            }
+        }
+
+        if (!email.equals("")) {
+            if (!email.matches("^[a-zA-Z0-9]+[@]{1}[a-zA-Z0-9]+[.]{1}[a-zA-Z0-9]+$")) {
+                errors.rejectValue("email", "email.matches", "error!");
+            }
+        }
+
+        if (gender.equals("-1")) {
+            errors.rejectValue("gender", "gender.matches", "error!");
+        }
+
+        if (customerType.equals("-1")) {
+            errors.rejectValue("customerType", "customerType.matches", "error!");
+        }
+
+
     }
 }

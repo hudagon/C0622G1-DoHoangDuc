@@ -13,6 +13,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -30,11 +32,15 @@ public class CustomerController {
     @Autowired
     private ICustomerTypeService customerTypeService;
 
+    @ModelAttribute("customerTypeList")
+    public List<CustomerType> customerTypeList () {
+        return (List<CustomerType>) customerTypeService.findAll();
+    }
+
     @GetMapping("/list")
     public String showListCustomerNormal(Model model, @PageableDefault(value = 5) Pageable pageable) {
 
         Page<Customer> customerList = customerService.findAll(pageable);
-        List<CustomerType> customerTypeList = (List<CustomerType>) customerTypeService.findAll();
         List<CustomerDto> customerDtoList = new ArrayList<>();
 
         for (Customer x : customerList) {
@@ -55,7 +61,6 @@ public class CustomerController {
         Page<CustomerDto> customerDtoListPage = new PageImpl<>(customerDtoList, pageable, customerList.getTotalElements());
 
         model.addAttribute("customerList", customerDtoListPage);
-        model.addAttribute("customerTypeList", customerTypeList);
         model.addAttribute("flag", "list");
 
         return "/customer/list/list";
@@ -71,7 +76,6 @@ public class CustomerController {
         Page<Customer> customersFound = customerService.search(searchName, searchAddress,
                 searchCustomerType, pageable);
         List<CustomerDto> customerDtosFound = new ArrayList<>();
-        List<CustomerType> customerTypeList = (List<CustomerType>) customerTypeService.findAll();
 
 
         for (Customer x : customersFound) {
@@ -92,7 +96,6 @@ public class CustomerController {
                 pageable, customersFound.getTotalElements());
 
         model.addAttribute("customerList", customerDtosFoundPage);
-        model.addAttribute("customerTypeList", customerTypeList);
         model.addAttribute("flag", "search");
         model.addAttribute("searchName", searchName);
         model.addAttribute("searchAddress", searchAddress);
@@ -104,17 +107,22 @@ public class CustomerController {
     @GetMapping("/create")
     public String showCreateForm(Model model) {
 
-        List<CustomerType> customerTypeList = (List<CustomerType>) customerTypeService.findAll();
 
         model.addAttribute("newCustomer", new CustomerDto());
-        model.addAttribute("customerTypeList", customerTypeList);
 
         return "/customer/create";
     }
 
     @PostMapping("/create")
-    public String createCustomer(@ModelAttribute CustomerDto newCustomer,
+    public String createCustomer(@Validated @ModelAttribute("newCustomer") CustomerDto newCustomer,
+                                 BindingResult bindingResult,
                                  RedirectAttributes redirectAttributes) {
+
+        new CustomerDto().validate(newCustomer, bindingResult);
+
+        if (bindingResult.hasErrors()) {
+            return "/customer/create";
+        }
 
         Customer customerATBC = new Customer();
         Optional<CustomerType> customerType = customerTypeService.findById(Integer.valueOf(newCustomer.getCustomerType()));
@@ -140,7 +148,6 @@ public class CustomerController {
 
         CustomerDto editedCustomerDto = new CustomerDto();
         Optional<Customer> customerATBE = customerService.findById(Integer.valueOf(id));
-        List<CustomerType> customerTypeList = (List<CustomerType>) customerTypeService.findAll();
 
         if (!customerATBE.isPresent()) {
             model.addAttribute("messFailure", "Customer not found!");
@@ -156,7 +163,6 @@ public class CustomerController {
         }
 
         model.addAttribute("editedCustomerDto", editedCustomerDto);
-        model.addAttribute("customerTypeList", customerTypeList);
 
         return "/customer/edit";
     }

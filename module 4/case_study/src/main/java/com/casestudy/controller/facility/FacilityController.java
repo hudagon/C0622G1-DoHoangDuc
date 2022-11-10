@@ -204,6 +204,16 @@ public class FacilityController {
         return "redirect:/facility/list";
     }
 
+    @GetMapping("/test")
+    public String test(Model model) {
+        List<RentType> rentTypeList = (List<RentType>) rentTypeService.findAll();
+
+        model.addAttribute("newFacility", new FacilityDto());
+        model.addAttribute("rentTypeList", rentTypeList);
+
+        return "facility/create";
+    }
+
 }
 
 

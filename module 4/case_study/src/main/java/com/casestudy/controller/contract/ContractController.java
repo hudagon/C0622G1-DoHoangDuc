@@ -131,7 +131,6 @@ public class ContractController {
 
         Contract contractATBC = new Contract();
 
-
         BeanUtils.copyProperties(newContractDto, contractATBC);
 
         Optional<Customer> customerContract = customerService.findById(Integer.valueOf(newContractDto.getCustomerName()));
