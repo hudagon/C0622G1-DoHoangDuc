@@ -107,7 +107,6 @@ public class CustomerController {
     @GetMapping("/create")
     public String showCreateForm(Model model) {
 
-
         model.addAttribute("newCustomer", new CustomerDto());
 
         return "/customer/create";

@@ -18,6 +18,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -37,6 +39,11 @@ public class FacilityController {
 
     @Autowired
     private IRentTypeService rentTypeService;
+
+    @ModelAttribute("renTypeList")
+    public List<RentType> renTypeList() {
+        return (List<RentType>) rentTypeService.findAll();
+    }
 
     @GetMapping("/list")
     public String showFacilityList(
@@ -108,18 +115,35 @@ public class FacilityController {
 
     @GetMapping("/create")
     public String showCreateForm(Model model) {
-        List<RentType> rentTypeList = (List<RentType>) rentTypeService.findAll();
 
         model.addAttribute("newFacility", new FacilityDto());
-        model.addAttribute("rentTypeList", rentTypeList);
-
 
         return "/facility/create";
     }
 
     @PostMapping("/create")
-    public String createFacility (@ModelAttribute FacilityDto newFacility,
-                                  RedirectAttributes redirectAttributes) {
+    public String createFacility (@Validated @ModelAttribute("newFacility") FacilityDto newFacility,
+                                  BindingResult bindingResult,
+                                  RedirectAttributes redirectAttributes,
+                                  Model model) {
+
+        new FacilityDto().validate(newFacility, bindingResult);
+
+        if (bindingResult.hasErrors()) {
+            if (newFacility.getFacilityType().equals("1")) {
+                model.addAttribute("flag", "1");
+            }
+
+            if (newFacility.getFacilityType().equals("2")) {
+                model.addAttribute("flag", "2");
+            }
+
+            if (newFacility.getFacilityType().equals("3")) {
+                model.addAttribute("flag", "3");
+            }
+            return "facility/create";
+        }
+
 
         Optional<RentType> rentType = rentTypeService.findById(Integer.valueOf(newFacility.getRentType()));
         Optional<FacilityType> facilityType = facilityTypeService.findById(Integer.valueOf(newFacility.getFacilityType()));
@@ -202,16 +226,6 @@ public class FacilityController {
         redirectAttributes.addFlashAttribute("messSuccess", "Facility deleted successfully");
 
         return "redirect:/facility/list";
-    }
-
-    @GetMapping("/test")
-    public String test(Model model) {
-        List<RentType> rentTypeList = (List<RentType>) rentTypeService.findAll();
-
-        model.addAttribute("newFacility", new FacilityDto());
-        model.addAttribute("rentTypeList", rentTypeList);
-
-        return "facility/create";
     }
 
 }

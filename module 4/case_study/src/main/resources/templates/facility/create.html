@@ -30,6 +30,8 @@
 
 <h3>Select facility type you want to create</h3>
 
+<input hidden id="flag" th:value="${flag}">
+
 <select id="mySelect" onchange="getFacilityForm()">
     <option value="0">---</option>
     <option value="1">Villa</option>
@@ -39,14 +41,47 @@
 
 <div id="villaForm" style="display: none">
     <form th:object="${newFacility}" th:action="@{/facility/create}" method="post">
-        <p>Name: <input type="text" th:field="*{name}"></p>
-        <p>Area: <input type="text" th:field="*{area}"></p>
-        <p>Cost: <input type="text" th:field="*{cost}"></p>
-        <p>Max People: <input type="text" th:field="*{maxPeople}"></p>
-        <p>Standard Room: <input type="text" th:field="*{standardRoom}"></p>
-        <p>Description Other Convenience: <input type="text" th:field="*{descriptionOtherConvenience}"></p>
-        <p>Pool Area: <input type="text" th:field="*{poolArea}"></p>
-        <p>Number Of Floors: <input type="text" th:field="*{numberOfFloors}"></p>
+
+        <p>
+            Name: <input type="text" th:field="*{name}">
+            <span style="color: red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+        </p>
+
+        <p>
+            Area: <input type="text" th:field="*{area}">
+            <span style="color: red" th:if="${#fields.hasErrors('area')}" th:errors="*{area}"></span>
+        </p>
+
+        <p>
+            Cost: <input type="text" th:field="*{cost}">
+            <span style="color: red" th:if="${#fields.hasErrors('cost')}" th:errors="*{cost}"></span>
+        </p>
+
+        <p>Max People:
+            <input type="text" th:field="*{maxPeople}">
+            <span style="color: red" th:if="${#fields.hasErrors('maxPeople')}" th:errors="*{maxPeople}"></span>
+        </p>
+
+        <p>Standard Room:
+            <input type="text" th:field="*{standardRoom}">
+            <span style="color: red" th:if="${#fields.hasErrors('standardRoom')}" th:errors="*{standardRoom}"></span>
+        </p>
+
+        <p>Description Other Convenience:
+            <input type="text" th:field="*{descriptionOtherConvenience}">
+            <span style="color: red" th:if="${#fields.hasErrors('descriptionOtherConvenience')}"
+                  th:errors="*{descriptionOtherConvenience}"></span>
+        </p>
+
+        <p>Pool Area:
+            <input type="text" th:field="*{poolArea}">
+            <span style="color: red" th:if="${#fields.hasErrors('poolArea')}" th:errors="*{poolArea}"></span>
+        </p>
+
+        <p>Number Of Floors:
+            <input type="text" th:field="*{numberOfFloors}">
+            <span style="color: red" th:if="${#fields.hasErrors('numberOfFloors')}" th:errors="*{numberOfFloors}"></span>
+        </p>
 
         <p>Facility Type:
             <select th:field="*{facilityType}">
@@ -57,7 +92,7 @@
         <p>Rent Type:
             <select th:field="*{rentType}">
                 <option th:value="-1">--</option>
-                <option th:each="x : ${rentTypeList}" th:text="${x.getName()}" th:value="${x.getId()}"></option>
+                <option th:each="x : ${renTypeList}" th:text="${x.getName()}" th:value="${x.getId()}"></option>
             </select>
         </p>
 
@@ -68,7 +103,14 @@
 
 <div id="houseForm" style="display: none">
     <form th:object="${newFacility}" th:action="@{/facility/create}" method="post">
-        <p>Name: <input type="text" th:field="*{name}"></p>
+
+        <p>
+            Name: <input type="text" th:field="*{name}">
+            <span style="color: red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+        </p>
+
+
+
         <p>Area: <input type="text" th:field="*{area}"></p>
         <p>Cost: <input type="text" th:field="*{cost}"></p>
         <p>Max People: <input type="text" th:field="*{maxPeople}"></p>
@@ -122,8 +164,10 @@
 
 </body>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
     function getFacilityForm() {
+
         let x = document.getElementById("mySelect").value;
 
         if (x === "1") {
@@ -150,6 +194,38 @@
             document.getElementById("houseForm").style.display = "none";
         }
     }
+
+    function initFlag() {
+
+        let y = document.getElementById("flag").value;
+
+        if (y === "1") {
+            document.getElementById("villaForm").style.display = "block";
+            document.getElementById("houseForm").style.display = "none";
+            document.getElementById("roomForm").style.display = "none";
+        }
+
+        if (y === "2") {
+            document.getElementById("houseForm").style.display = "block";
+            document.getElementById("roomForm").style.display = "none";
+            document.getElementById("villaForm").style.display = "none";
+        }
+
+        if (y === "3") {
+            document.getElementById("roomForm").style.display = "block";
+            document.getElementById("villaForm").style.display = "none";
+            document.getElementById("houseForm").style.display = "none";
+        }
+
+        if (y === "0") {
+            document.getElementById("roomForm").style.display = "none";
+            document.getElementById("villaForm").style.display = "none";
+            document.getElementById("houseForm").style.display = "none";
+        }
+
+    }
+
+    initFlag();
 </script>
 
 </html>
