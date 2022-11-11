@@ -3,7 +3,9 @@ package com.casestudy.dto;
 public class ContractDto {
 
     private Integer id;
+
     private Double deposit;
+
     private String startDate;
     private String endDate;
     private String customerName;

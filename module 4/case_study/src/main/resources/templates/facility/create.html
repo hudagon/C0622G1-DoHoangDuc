@@ -94,6 +94,7 @@
                 <option th:value="-1">--</option>
                 <option th:each="x : ${renTypeList}" th:text="${x.getName()}" th:value="${x.getId()}"></option>
             </select>
+            <span style="color: red" th:if="${#fields.hasErrors('rentType')}" th:errors="*{rentType}"></span>
         </p>
 
         <button type="submit">Create</button>
@@ -106,30 +107,55 @@
 
         <p>
             Name: <input type="text" th:field="*{name}">
-            <span style="color: red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+            <span style="color: #ff0000" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
         </p>
 
+        <p>
+            Area: <input type="text" th:field="*{area}">
+            <span style="color: red" th:if="${#fields.hasErrors('area')}" th:errors="*{area}"></span>
+        </p>
 
+        <p>
+            Cost: <input type="text" th:field="*{cost}">
+            <span style="color: red" th:if="${#fields.hasErrors('cost')}" th:errors="*{cost}"></span>
+        </p>
 
-        <p>Area: <input type="text" th:field="*{area}"></p>
-        <p>Cost: <input type="text" th:field="*{cost}"></p>
-        <p>Max People: <input type="text" th:field="*{maxPeople}"></p>
-        <p>Standard Room: <input type="text" th:field="*{standardRoom}"></p>
-        <p>Description Other Convenience: <input type="text" th:field="*{descriptionOtherConvenience}"></p>
-        <p>Number Of Floors: <input type="text" th:field="*{numberOfFloors}"></p>
+        <p>Max People:
+            <input type="text" th:field="*{maxPeople}">
+            <span style="color: red" th:if="${#fields.hasErrors('maxPeople')}" th:errors="*{maxPeople}"></span>
+        </p>
+
+        <p>Standard Room:
+            <input type="text" th:field="*{standardRoom}">
+            <span style="color: red" th:if="${#fields.hasErrors('standardRoom')}" th:errors="*{standardRoom}"></span>
+        </p>
+
+        <p>Description Other Convenience:
+            <input type="text" th:field="*{descriptionOtherConvenience}">
+            <span style="color: red" th:if="${#fields.hasErrors('descriptionOtherConvenience')}"
+                  th:errors="*{descriptionOtherConvenience}"></span>
+        </p>
+
+        <p>Number Of Floors:
+            <input type="text" th:field="*{numberOfFloors}">
+            <span style="color: red" th:if="${#fields.hasErrors('numberOfFloors')}" th:errors="*{numberOfFloors}"></span>
+        </p>
 
         <p>Facility Type:
             <select th:field="*{facilityType}">
                 <option th:value="2">House</option>
             </select>
+            <span style="color: red" th:if="${#fields.hasErrors('facilityType')}" th:errors="*{facilityType}"></span>
         </p>
 
         <p>Rent Type:
             <select th:field="*{rentType}">
                 <option th:value="-1">--</option>
-                <option th:each="x : ${rentTypeList}" th:text="${x.getName()}" th:value="${x.getId()}"></option>
+                <option th:each="x : ${renTypeList}" th:text="${x.getName()}" th:value="${x.getId()}"></option>
             </select>
+            <span style="color: red" th:if="${#fields.hasErrors('rentType')}" th:errors="*{rentType}"></span>
         </p>
+
 
         <button type="submit">Create</button>
         <button><a th:href="@{/facility/list}">Back</a></button>
@@ -138,23 +164,47 @@
 
 <div id="roomForm" style="display: none">
     <form th:object="${newFacility}" th:action="@{/facility/create}" method="post">
-        <p>Name: <input type="text" th:field="*{name}"></p>
-        <p>Area: <input type="text" th:field="*{area}"></p>
-        <p>Cost: <input type="text" th:field="*{cost}"></p>
-        <p>Max People: <input type="text" th:field="*{maxPeople}"></p>
-        <p>Facility Free: <input type="text" th:field="*{facilityFree}"></p>
+
+
+        <p>
+            Name: <input type="text" th:field="*{name}">
+            <span style="color: #ff0000" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+        </p>
+
+        <p>
+            Area: <input type="text" th:field="*{area}">
+            <span style="color: red" th:if="${#fields.hasErrors('area')}" th:errors="*{area}"></span>
+        </p>
+
+        <p>
+            Cost: <input type="text" th:field="*{cost}">
+            <span style="color: red" th:if="${#fields.hasErrors('cost')}" th:errors="*{cost}"></span>
+        </p>
+
+        <p>Max People:
+            <input type="text" th:field="*{maxPeople}">
+            <span style="color: red" th:if="${#fields.hasErrors('maxPeople')}" th:errors="*{maxPeople}"></span>
+        </p>
+
+        <p>
+            Facility Free: <input type="text" th:field="*{facilityFree}">
+            <span style="color: red" th:if="${#fields.hasErrors('facilityFree')}" th:errors="*{facilityFree}"></span>
+
+        </p>
 
         <p>Facility Type:
             <select th:field="*{facilityType}">
                 <option th:value="3">Room</option>
             </select>
+            <span style="color: red" th:if="${#fields.hasErrors('facilityType')}" th:errors="*{facilityType}"></span>
         </p>
 
         <p>Rent Type:
             <select th:field="*{rentType}">
                 <option th:value="-1">--</option>
-                <option th:each="x : ${rentTypeList}" th:text="${x.getName()}" th:value="${x.getId()}"></option>
+                <option th:each="x : ${renTypeList}" th:text="${x.getName()}" th:value="${x.getId()}"></option>
             </select>
+            <span style="color: red" th:if="${#fields.hasErrors('rentType')}" th:errors="*{rentType}"></span>
         </p>
 
         <button type="submit">Create</button>

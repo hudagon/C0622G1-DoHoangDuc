@@ -148,7 +148,6 @@ public class CustomerDto implements Validator {
             if (!phoneNumber.matches("^([(]84[)][+]90|[(]84[)][+]91|090|091)[0-9]{7}$")) {
                 errors.rejectValue("phoneNumber", "customerPhone.matches", "error!");
             }
-
         }
 
         if (!idCard.equals("")) {

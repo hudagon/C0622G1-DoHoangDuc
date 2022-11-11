@@ -158,7 +158,8 @@ public class FacilityDto implements Validator {
         String name = facility.getName();
         String cost = facility.getCost();
         String maxPeople = facility.getMaxPeople();
-
+        String rentType = facility.getRentType();
+        String facilityType = facility.getFacilityType();
 
         if (!name.equals("")) {
             if (!name.matches("^[A-Za-z0-9]*(?: [A-Z][a-z]*)*$")) {
@@ -193,6 +194,14 @@ public class FacilityDto implements Validator {
 
         }
 
+        if (rentType.equals("-1")) {
+            errors.rejectValue("rentType", "rentType.matches", "error!");
+        }
+
+        if (facilityType.equals("-1")) {
+            errors.rejectValue("facilityType", "facilityType.matches", "error!");
+        }
+
         if (facility.getFacilityType().equals("1")) {
             String standardRoom = facility.getStandardRoom();
             String descriptionOtherConvenience = facility.getDescriptionOtherConvenience();
@@ -209,7 +218,11 @@ public class FacilityDto implements Validator {
                         "descriptionOtherConvenience.matches", "error!");
             }
 
-            if (!poolArea.equals("")) {
+            if (poolArea == null || poolArea.trim().equals("")) {
+
+                errors.rejectValue("poolArea", "poolAreaNotEmpty.matches", "error!");
+
+            } else {
                 Double poolAreaValidate = Double.valueOf(facility.getPoolArea());
 
                 if (poolAreaValidate <= 0) {
@@ -218,7 +231,11 @@ public class FacilityDto implements Validator {
 
             }
 
-            if (!numberOfFloors.equals("")) {
+            if (numberOfFloors == null || numberOfFloors.trim().equals("")) {
+
+                errors.rejectValue("numberOfFloors", "numberOfFloorsNotEmpty.matches", "error!");
+
+            } else {
                 Integer numberOfFloorsValidate = Integer.valueOf(facility.getNumberOfFloors());
 
                 if (numberOfFloorsValidate <= 0) {
@@ -243,12 +260,17 @@ public class FacilityDto implements Validator {
                         "descriptionOtherConvenience.matches", "error!");
             }
 
-            if (!numberOfFloors.equals("")) {
-                Integer numberOfFloorsValidate = Integer.valueOf(facility.getCost());
+            if (numberOfFloors == null || numberOfFloors.trim().equals("")) {
+
+                errors.rejectValue("numberOfFloors", "numberOfFloorsNotEmpty.matches", "error!");
+
+            } else {
+                Integer numberOfFloorsValidate = Integer.valueOf(facility.getNumberOfFloors());
 
                 if (numberOfFloorsValidate <= 0) {
-                    errors.rejectValue("poolArea", "poolArea.matches", "error!");
+                    errors.rejectValue("numberOfFloors", "numberOfFloors.matches", "error!");
                 }
+
             }
 
         }
