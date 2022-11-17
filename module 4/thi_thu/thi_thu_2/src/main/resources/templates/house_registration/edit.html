@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+</head>
+<body>
+<h1>House Registration Edit</h1>
+<hr>
+<form th:object="${houseRegistrationDtoATBE}" action="/houseRegistration/edit" method="post">
+
+    <input type="text" th:field="*{id}" hidden>
+
+    <pre>House Code:        <input readonly type="text" th:field="*{houseCode}"> </pre>
+    <pre>Host Name:         <input type="text" th:field="*{hostName}"> </pre>
+    <pre>Number Of Members: <input readonly type="text" th:field="*{numberOfMembers}"> </pre>
+    <pre>Registry Date:     <input type="date" th:field="*{registryDate}"> </pre>
+    <pre>House Address:     <input type="text" th:field="*{houseAddress}"> </pre>
+
+    <button type="submit">Edit</button>
+    <button type="button"><a style="text-decoration: none" th:href="@{/houseRegistration/list}">Back</a></button>
+
+</form>
+</body>
+</html>

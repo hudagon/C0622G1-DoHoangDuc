@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Champion List</title>
+</head>
+<body>
+<h1>Champion List</h1>
+<div>
+    <form>
+
+        <input type="text" name="name" th:value="${name}">
+        <input type="text" name="nation" th:value="${nation}">
+
+        <select name="championClassId">
+            <option value="-1">---</option>
+            <option th:each="x : ${championClassList}" th:value="${x.getId()}" th:text="${x.getName()}"></option>
+        </select>
+
+        <button type="submit">Search</button>
+
+    </form>
+</div>
+<hr>
+<table border="1">
+        <tr>
+            <th>N.o</th>
+            <th>Name</th>
+            <th>Nation</th>
+            <th>Champion Class</th>
+            <th><button type="submit">Delete</button></th>
+        </tr>
+        <tr th:each="x,y : ${championList}">
+            <td th:text="${y.count}"></td>
+            <td th:text="${x.getName()}"></td>
+            <td th:text="${x.getNation()}"></td>
+            <td th:text="${x.getChampionClass()}"></td>
+            <td><input type="radio"></td>
+        </tr>
+</table>
+
+<div style="margin-top: 10px">
+    <a th:if="${championList.hasPrevious()}"
+       th:href="@{'/champion/list'(page = ${championList.number - 1},
+            name = ${name}, nation = ${nation},
+            championClassId = ${championClassId})}">Previous</a>
+
+    <span th:text="${championList.number + 1}"></span>/<span th:text="${championList.totalPages}"></span>
+
+    <a th:if="${championList.hasNext()}"
+       th:href="@{'/champion/list'(page = ${championList.number + 1},
+            name = ${name}, nation = ${nation},
+            championClassId = ${championClassId})}">Next</a>
+</div>
+</body>
+</html>

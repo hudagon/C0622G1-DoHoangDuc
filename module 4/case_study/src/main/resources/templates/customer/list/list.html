@@ -87,7 +87,7 @@
 
     <div class="searchBar">
         <p>
-        <form action="/customer/search">
+        <form action="/customer/list">
 
             <input type="text" placeholder="name..." name="searchName">
             <input type="text" placeholder="address..." name="searchAddress">
@@ -147,19 +147,11 @@
 
 <p style="color: green" th:text="${messSuccess}"></p>
 
-<div th:if="${flag} == 'list'">
+<div>
     <a th:if="${customerList.hasPrevious()}"
        th:href="@{'/customer/list'(page = ${customerList.number - 1})}">Previous</a>
     <span th:text="${customerList.number + 1}"></span>/<span th:text="${customerList.totalPages}"></span>
     <a th:if="${customerList.hasNext()}" th:href="@{'/customer/list'(page = ${customerList.number + 1})}">Next</a>
-</div>
-
-<div th:if="${flag} == 'search'">
-    <a th:if="${customerList.hasPrevious()}" th:href="@{'/customer/search'(page = ${customerList.number - 1},
-    searchName = ${searchName}, searchAddress = ${searchAddress}, searchCustomerType = ${searchCustomerType})}">Previous</a>
-    <span th:text="${customerList.number + 1}"></span>/<span th:text="${customerList.totalPages}"></span>
-    <a th:if="${customerList.hasNext()}" th:href="@{'/customer/search'(page = ${customerList.number + 1},
-    searchName = ${searchName}, searchAddress = ${searchAddress}, searchCustomerType = ${searchCustomerType})}">Next</a>
 </div>
 
 <div id="myModal" class="modal">

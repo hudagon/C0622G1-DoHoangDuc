@@ -38,40 +38,24 @@ public class CustomerController {
     }
 
     @GetMapping("/list")
-    public String showListCustomerNormal(Model model, @PageableDefault(value = 5) Pageable pageable) {
+    public String searchCustomer(
+            @RequestParam(required = false) String searchName,
+            @RequestParam(required = false) String searchAddress,
+            @RequestParam(required = false) String searchCustomerType,
+            @PageableDefault(value = 5) Pageable pageable,
+            Model model) {
 
-        Page<Customer> customerList = customerService.findAll(pageable);
-        List<CustomerDto> customerDtoList = new ArrayList<>();
-
-        for (Customer x : customerList) {
-            CustomerDto customerDto = new CustomerDto();
-            BeanUtils.copyProperties(x, customerDto);
-
-            if (x.getGender() == 1) {
-                customerDto.setGender("Nam");
-            } else {
-                customerDto.setGender("Nữ");
-            }
-
-            customerDto.setCustomerType(x.getCustomerType().getName());
-
-            customerDtoList.add(customerDto);
+        if (searchAddress == null) {
+            searchAddress = "";
         }
 
-        Page<CustomerDto> customerDtoListPage = new PageImpl<>(customerDtoList, pageable, customerList.getTotalElements());
+        if (searchName == null) {
+            searchName = "";
+        }
 
-        model.addAttribute("customerList", customerDtoListPage);
-        model.addAttribute("flag", "list");
-
-        return "/customer/list/list";
-    }
-
-    @GetMapping("/search")
-    public String searchCustomer(@RequestParam String searchName,
-                                 @RequestParam String searchAddress,
-                                 @RequestParam String searchCustomerType,
-                                 @PageableDefault(value = 5) Pageable pageable,
-                                 Model model) {
+        if (searchCustomerType == null) {
+            searchCustomerType = "";
+        }
 
         Page<Customer> customersFound = customerService.search(searchName, searchAddress,
                 searchCustomerType, pageable);
@@ -96,7 +80,6 @@ public class CustomerController {
                 pageable, customersFound.getTotalElements());
 
         model.addAttribute("customerList", customerDtosFoundPage);
-        model.addAttribute("flag", "search");
         model.addAttribute("searchName", searchName);
         model.addAttribute("searchAddress", searchAddress);
         model.addAttribute("searchCustomerType", searchCustomerType);
