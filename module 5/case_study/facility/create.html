@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Landed by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+    <title>Create - Facility</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="../assets/css/main.css"/>
+    <link rel="stylesheet" href="../facility/create.css"/>
+
+    <noscript>
+        <link rel="stylesheet" href="../assets/css/noscript.css"/>
+    </noscript>
+
+    <style>
+        #contact {
+            overflow: auto;
+        }
+
+        #contact #form {
+            width: 410px;
+            float: left;
+        }
+
+        #contact #form h2 {
+            font: 48px 'Bree Serif', Georgia, serif;
+        }
+
+        #contact #form span {
+            display: block;
+            float: left;
+            width: 100px;
+            padding-top: 5px;
+            font: 14px/16px 'Bree Serif', Georgia, serif;
+        }
+
+        #contact #form input {
+            float: left;
+            width: 255px;
+            border: 0px;
+            color: #F1F1F1;
+            padding: 10px 10px 10px 30px;
+            font: 11px/20px 'Open Sans', Verdana, Helvetica, sans-serif;
+            margin-bottom: 10px;
+        }
+
+        #contact #form textarea {
+            float: left;
+            border: 0px;
+            width: 255px;
+            height: 140px;
+            padding: 10px 10px 10px 30px;
+            font: 11px/20px 'Open Sans', Verdana, Helvetica, sans-serif;
+            color: #F1F1F1;
+            resize: none;
+        }
+
+        #contact #form input.name {
+            background: #222222 url(http://img7.uploadhouse.com/fileuploads/17737/177370145f09fe433945815665aa214f80dbc6af.png) no-repeat 10px 8px;
+        }
+
+        #contact #form input.email {
+            background: #222222 url(http://img6.uploadhouse.com/fileuploads/17737/177370138cc63992182149e9befabff3eafa6d23.png) no-repeat 10px 9px;
+        }
+
+        #contact #form input.captcha {
+            background: #222222 url(http://img3.uploadhouse.com/fileuploads/17737/17737011310213e71805ecf2292144cbbecf42ad.png) no-repeat 10px 9px;
+        }
+
+        #contact #form textarea.message {
+            background: #222222 url(http://img3.uploadhouse.com/fileuploads/17737/1773701229ed8c2f465a8274623ca8976adaf196.png) no-repeat 10px 8px;
+        }
+
+        #contact #form input.submit {
+            cursor: pointer;
+            width: 85px;
+            height: 30px;
+            float: right;
+            padding: 0px 0px 5px 0px;
+            margin: 10px 16px 0px 0px;
+            background: #222222;
+            color: #F1F1F1;
+            font: 14px/16px 'Bree Serif', Georgia, serif;
+        }
+
+        #contact #captcha span {
+            width: 44px;
+        }
+
+        #contact #captcha input {
+            background: url(http://img3.uploadhouse.com/fileuploads/17737/17737011310213e71805ecf2292144cbbecf42ad.png) no-repeat scroll 0 0 transparent;
+            margin: 5px 0 0;
+            padding: 0;
+            border: medium none;
+            cursor: pointer;
+            width: 15px;
+        }
+    </style>
+
+</head>
+<body class="is-preload">
+<div id="page-wrapper">
+
+    <!-- Header -->
+    <header id="header">
+        <h1 id="logo"><a href="../index.html">Home</a></h1>
+        <nav id="nav">
+            <ul>
+                <li>
+                    <a href="#">Management</a>
+                    <ul>
+                        <li><a href="#">Employee</a></li>
+                        <li><a href="#">Customer</a></li>
+
+                        <li>
+                            <a href="/facility/list.html">Facility</a>
+                            <ul>
+                                <li><a href="#">Create</a></li>
+                                <li><a href="#">Edit</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="#">Contract</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="button primary">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main -->
+    <div id="main" class="wrapper style1">
+        <div class="container">
+            <header class="major">
+                <h2>Facility Create Form</h2>
+            </header>
+            <div class="row gtr-150">
+                <div class="col-4 col-12-medium">
+
+                    <!-- Sidebar -->
+                    <section id="sidebar">
+                        <section>
+                            <h3>Tao lap Facility Furama</h3>
+                            <p>O day ban se tao lap facility moi thoi :D</p>
+                            <p>Ban se tao lap facility moi o day :))</p>
+                            <p>Van la facility nhung ma ban se tao moi no =))</p>
+                            <p>Khong co gi thay doi, ban se tao moi facility :></p>
+                            <footer>
+                                <ul class="actions">
+                                    <li><a href="#" class="button">Learn More</a></li>
+                                </ul>
+                            </footer>
+                        </section>
+                        <hr/>
+                        <section>
+                            <a href="#" class="image fit"><img src="../images/crush.jpg" alt=""/></a>
+                            <h3>Con day la crush cua toi :></h3>
+                            <footer>
+                                <ul class="actions">
+                                    <li><a href="#" class="button">Learn More</a></li>
+                                </ul>
+                            </footer>
+                        </section>
+                    </section>
+
+                </div>
+                <div class="col-8 col-12-medium imp-medium">
+
+                    <!-- Content -->
+                    <section id="content">
+                        <section id="contact">
+                            <div class="content">
+                                <div id="form">
+                                    <form action="" id="contactForm" method="post">
+                                        <span>Name</span>
+                                        <input type="text" name="name" class="name" placeholder="Enter your name" tabindex=1/>
+                                        <span>Email</span>
+                                        <input type="text" name="email" class="email" placeholder="Enter your email" tabindex=2/>
+                                        <span id="captcha"></span>
+                                        <input type="text" name="captcha" class="captcha" maxlength="4" size="4"
+                                               placeholder="Enter captcha code" tabindex=3/>
+                                        <span>Message</span>
+                                        <textarea class="message" placeholder="Enter your message" tabindex=4></textarea>
+                                        <input type="submit" name="submit" value="Send e-mail" class="submit" tabindex=5>
+                                    </form>
+                                </div>
+                            </div>
+                        </section>
+                    </section>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <ul class="icons">
+            <li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+            <li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+            <li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+            <li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+            <li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+            <li><a href="#" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+        </ul>
+        <ul class="copyright">
+            <li>&copy; Untitled. All rights reserved.</li>
+            <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+        </ul>
+    </footer>
+
+</div>
+
+<!-- Scripts -->
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/jquery.scrolly.min.js"></script>
+<script src="../assets/js/jquery.dropotron.min.js"></script>
+<script src="../assets/js/jquery.scrollex.min.js"></script>
+<script src="../assets/js/browser.min.js"></script>
+<script src="../assets/js/breakpoints.min.js"></script>
+<script src="../assets/js/util.js"></script>
+<script src="../assets/js/main.js"></script>
+
+</body>
+</html>
