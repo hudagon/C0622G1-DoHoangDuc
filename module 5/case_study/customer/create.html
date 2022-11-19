@@ -1,0 +1,207 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Create - Customer</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="../assets/css/main.css"/>
+
+    <style>
+
+        #content section {
+            padding: 30px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        body {
+            font-family: "Roboto", -apple-system,
+            BlinkMacSystemFont, "Segoe UI", Roboto,
+            "Helvetica Neue", Arial, "Noto Sans",
+            sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+            "Segoe UI Symbol", "Noto Color Emoji";
+            background-image: -webkit-linear-gradient(top, rgba(31, 163, 115, 0.56),
+            rgb(11, 11, 11)), url("../images/pic07.jpg");;
+            background-size: cover;
+            font-weight: 300;
+        }
+
+        #header {
+            background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.5),
+            rgba(21, 21, 22, 0)), url("../images/pic04.jpg");;
+            background-size: cover;
+        }
+
+        #sidebar section {
+            font-family: "Segoe UI";
+        }
+
+    </style>
+
+    <noscript>
+        <link rel="stylesheet" href="../assets/css/noscript.css"/>
+    </noscript>
+
+</head>
+<body class="is-preload">
+<div id="page-wrapper">
+
+    <!-- Header -->
+    <header id="header">
+        <h1 id="logo"><a href="../index.html">Furama</a></h1>
+        <nav id="nav">
+            <ul>
+                <li>
+                    <a href="#">Management</a>
+                    <ul>
+                        <li>
+                            <a href="#">Employee</a>
+                            <ul>
+                                <li><a href="../facility/list.html">List</a></li>
+                                <li><a href="../facility/create.html">Create</a></li>
+                                <li><a href="#">Edit</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#">Customer</a>
+                            <ul>
+                                <li><a href="../customer/list.html">List</a></li>
+                                <li><a href="../customer/create.html">Create</a></li>
+                                <li><a href="../customer/edit.html">Edit</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#">Facility</a>
+                            <ul>
+                                <li><a href="../facility/list.html">List</a></li>
+                                <li><a href="../facility/create.html">Create</a></li>
+                                <li><a href="../facility/edit.html">Edit</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="#">Contract</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="button primary">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main -->
+    <div id="main" class="wrapper style1">
+        <div class="container">
+            <header class="major">
+                <h2>Customer Create Form</h2>
+            </header>
+            <div class="row gtr-150">
+                <div class="col-4 col-12-medium">
+
+                    <!-- Sidebar -->
+                    <section id="sidebar">
+                        <section>
+                            <h3>Tạo Lập customer Furama</h3>
+                            <p>Ở đây bạn sẽ tạo lập customer mới :D</p>
+                            <p>Bạn sẽ tạo mới customer ở đây :))</p>
+                            <p>Vẫn là customer nhưng bạn sẽ tạo mới nó =))</p>
+                            <p>Không có gì thay đổi, bạn sẽ tạo mới customer :></p>
+                        </section>
+                        <hr/>
+                        <section>
+                            <a href="#" class="image fit"><img src="../images/crush.jpg" alt=""/></a>
+                            <h3>Con day la crush cua toi :></h3>
+                        </section>
+                    </section>
+
+                </div>
+                <div class="col-8 col-12-medium imp-medium">
+
+                    <section id="content" style="width: 110%; height: 80%">
+                        <section>
+                            <form method="post" action="#">
+                                <div class="row gtr-uniform gtr-50">
+                                    <div class="col-6 col-12-xsmall">
+                                        <input type="text" name="name" id="name" value="" placeholder="Name"/>
+                                    </div>
+                                    <div class="col-6 col-12-xsmall">
+                                        <input type="email" name="email" id="email" value="" placeholder="Email"/>
+                                    </div>
+                                    <div class="col-12">
+                                        <select name="category" id="category">
+                                            <option value="">- Category -</option>
+                                            <option value="1">Manufacturing</option>
+                                            <option value="1">Shipping</option>
+                                            <option value="1">Administration</option>
+                                            <option value="1">Human Resources</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-4 col-12-medium">
+                                        <input type="radio" id="priority-low" name="priority" checked>
+                                        <label for="priority-low">Low Priority</label>
+                                    </div>
+                                    <div class="col-4 col-12-medium">
+                                        <input type="radio" id="priority-normal" name="priority">
+                                        <label for="priority-normal">Normal Priority</label>
+                                    </div>
+                                    <div class="col-4 col-12-medium">
+                                        <input type="radio" id="priority-high" name="priority">
+                                        <label for="priority-high">High Priority</label>
+                                    </div>
+                                    <div class="col-6 col-12-medium">
+                                        <input type="checkbox" id="copy" name="copy">
+                                        <label for="copy">Email me a copy of this message</label>
+                                    </div>
+                                    <div class="col-6 col-12-medium">
+                                        <input type="checkbox" id="human" name="human" checked>
+                                        <label for="human">I am a human and not a robot</label>
+                                    </div>
+                                    <div class="col-12">
+                                        <textarea name="message" id="message" placeholder="Enter your message"
+                                                  rows="6"></textarea>
+                                    </div>
+                                    <div class="col-12">
+                                        <ul class="actions">
+                                            <li><input type="submit" value="Send Message" class="primary"/></li>
+                                            <li><input type="reset" value="Reset"/></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </form>
+                        </section>
+                    </section>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <ul class="icons">
+            <li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+            <li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+            <li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+            <li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+            <li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+            <li><a href="#" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+        </ul>
+        <ul class="copyright">
+            <li>&copy; Untitled. All rights reserved.</li>
+            <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+        </ul>
+    </footer>
+
+</div>
+
+<!-- Scripts -->
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/jquery.scrolly.min.js"></script>
+<script src="../assets/js/jquery.dropotron.min.js"></script>
+<script src="../assets/js/jquery.scrollex.min.js"></script>
+<script src="../assets/js/browser.min.js"></script>
+<script src="../assets/js/breakpoints.min.js"></script>
+<script src="../assets/js/util.js"></script>
+<script src="../assets/js/main.js"></script>
+
+</body>
+</html>
