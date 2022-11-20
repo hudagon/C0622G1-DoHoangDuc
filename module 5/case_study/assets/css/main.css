@@ -4070,3 +4070,7 @@ h2 {
     font-family: Rondalo;
     font-size: 60px;
 }
+
+tr th {
+    text-align: center;
+}

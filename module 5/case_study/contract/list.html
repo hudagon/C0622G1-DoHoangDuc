@@ -2,7 +2,7 @@
 
 <html>
 <head>
-    <title>Furama - Customer</title>
+    <title>Furama - Contract</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
     <link rel="stylesheet" href="../assets/css/main.css"/>
@@ -12,7 +12,6 @@
     </noscript>
 
     <style>
-
         td {
             font-size: large;
             font-weight: normal;
@@ -24,7 +23,7 @@
             "Helvetica Neue", Arial, "Noto Sans",
             sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
             "Segoe UI Symbol", "Noto Color Emoji";
-            background-image: -webkit-linear-gradient(top, rgba(31, 163, 115, 0.56),
+            background-image: -webkit-linear-gradient(top, rgba(19, 48, 109, 0.82),
             rgb(11, 11, 11)), url("../images/pic07.jpg");;
             background-size: cover;
             font-weight: 300;
@@ -32,7 +31,7 @@
 
         #header {
             background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.5),
-            rgba(21, 21, 22, 0)), url("../images/pic04.jpg");;
+            rgba(21, 21, 22, 0)), url("../images/contractheader.jpg");;
             background-size: cover;
         }
 
@@ -51,22 +50,10 @@
             margin-right: 5px;
         }
 
-        .button-delete:hover,
-        .button-delete:active {
-            box-shadow: inset 0 0 0 1px #e44c65;
-            color: #e44c4c !important;
-        }
-
-        .button-edit:hover,
-        .button-edit:active {
-            box-shadow: inset 0 0 0 1px #e4cb4c;
-            color: #e4cb4c !important;
-        }
-
-        .button-view:hover,
-        .button-view:active {
-            box-shadow: inset 0 0 0 1px #56e44c;
-            color: #56e44c !important;
+        .button-af:hover,
+        .button-af:active {
+            box-shadow: inset 0 0 0 1px #395bbe;
+            color: #395bbe !important;
         }
 
     </style>
@@ -126,99 +113,53 @@
     <div id="main" class="wrapper style1">
         <div class="container">
             <header class="major">
-                <h2 style="font-size: 60px; font-family: Rondalo">Customer Management</h2>
+                <h2 style="font-size: 60px">Contract Management</h2>
             </header>
-
+            <!-- Content -->
             <section id="content">
                 <div class="table-responsive">
                     <div class="table-wrapper">
                         <table class="alt">
+
                             <thead>
                             <tr>
                                 <th>N.o</th>
-                                <th>Name</th>
-                                <th>Gender</th>
-                                <th>Address</th>
-                                <th>Email</th>
-                                <th>Customer Type</th>
-                                <th>Actions</th>
+                                <th>Facility</th>
+                                <th>Customer</th>
+                                <th>Start Date</th>
+                                <th>End Date</th>
+                                <th>Deposit</th>
+                                <th>Total Money</th>
+                                <th>Attach Facilites</th>
                             </tr>
                             </thead>
 
                             <tbody>
-
                             <tr>
                                 <td>1</td>
+                                <td>Villa 001</td>
                                 <td>Lê Trần Thảo Nhi</td>
-                                <td>Nữ</td>
-                                <td>Huế, Việt Nam</td>
-                                <td>nhicute@gmail.com</td>
-                                <td>Diamond</td>
+                                <td>20-11-2022</td>
+                                <td>21-11-2022</td>
+                                <td>10000</td>
+                                <td>90000</td>
                                 <td class="table-actions">
-                                    <button class="button button-view">View Details</button>
-                                    <button class="button button-edit">Edit</button>
-                                    <button class="button button-delete">Delete</button>
+                                    <button class="button button-af">Attach Facilites</button>
                                 </td>
                             </tr>
 
                             <tr>
                                 <td>2</td>
+                                <td>Room 001</td>
                                 <td>Đỗ Hoàng Đức</td>
-                                <td>Nam</td>
-                                <td>Quảng Nam, Việt Nam</td>
-                                <td>hudagon111@gmail.com</td>
-                                <td>Diamond</td>
+                                <td>10-11-2022</td>
+                                <td>10-11-2022</td>
+                                <td>10000</td>
+                                <td>90000</td>
                                 <td class="table-actions">
-                                    <button class="button button-view">View Details</button>
-                                    <button class="button button-edit">Edit</button>
-                                    <button class="button button-delete">Delete</button>
+                                    <button class="button button-af">Attach Facilites</button>
                                 </td>
                             </tr>
-
-
-                            <tr>
-                                <td>3</td>
-                                <td>dummy</td>
-                                <td>Nam</td>
-                                <td>somewhere</td>
-                                <td>something@gmail.com</td>
-                                <td>member</td>
-                                <td class="table-actions">
-                                    <button class="button button-view">View Details</button>
-                                    <button class="button button-edit">Edit</button>
-                                    <button class="button button-delete">Delete</button>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>3</td>
-                                <td>dummy</td>
-                                <td>Nam</td>
-                                <td>somewhere</td>
-                                <td>something@gmail.com</td>
-                                <td>member</td>
-                                <td class="table-actions">
-                                    <button class="button button-view">View Details</button>
-                                    <button class="button button-edit">Edit</button>
-                                    <button class="button button-delete">Delete</button>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>3</td>
-                                <td>dummy</td>
-                                <td>Nam</td>
-                                <td>somewhere</td>
-                                <td>something@gmail.com</td>
-                                <td>member</td>
-                                <td class="table-actions">
-                                    <button class="button button-view">View Details</button>
-                                    <button class="button button-edit">Edit</button>
-                                    <button class="button button-delete">Delete</button>
-                                </td>
-                            </tr>
-
-
                             </tbody>
 
                         </table>
@@ -229,6 +170,7 @@
         </div>
     </div>
 
+    <!-- Footer -->
     <footer id="footer">
         <ul class="icons">
             <li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>

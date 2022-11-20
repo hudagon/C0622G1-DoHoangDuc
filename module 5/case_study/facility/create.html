@@ -37,14 +37,29 @@
 
     <!-- Header -->
     <header id="header">
-        <h1 id="logo"><a href="../index.html">Home</a></h1>
+        <h1 id="logo"><a href="../index.html">Furama</a></h1>
         <nav id="nav">
             <ul>
                 <li>
                     <a href="#">Management</a>
                     <ul>
-                        <li><a href="#">Employee</a></li>
-                        <li><a href="#">Customer</a></li>
+                        <li>
+                            <a href="#">Employee</a>
+                            <ul>
+                                <li><a href="../employee/list.html">List</a></li>
+                                <li><a href="../employee/create.html">Create</a></li>
+                                <li><a href="../employee/edit.html">Edit</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#">Customer</a>
+                            <ul>
+                                <li><a href="../customer/list.html">List</a></li>
+                                <li><a href="../customer/create.html">Create</a></li>
+                                <li><a href="../customer/edit.html">Edit</a></li>
+                            </ul>
+                        </li>
 
                         <li>
                             <a href="#">Facility</a>
@@ -55,7 +70,13 @@
                             </ul>
                         </li>
 
-                        <li><a href="#">Contract</a></li>
+                        <li>
+                            <a href="#">Contract</a>
+                            <ul>
+                                <li><a href="../contract/list.html">List</a></li>
+                                <li><a href="../contract/create.html">Create</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
                 <li><a href="#" class="button primary">Sign Up</a></li>
@@ -72,7 +93,6 @@
             <div class="row gtr-150">
                 <div class="col-4 col-12-medium">
 
-                    <!-- Sidebar -->
                     <section id="sidebar">
                         <section>
                             <h3>Tạo Lập Facility Furama</h3>
@@ -95,48 +115,50 @@
                         <section>
                             <form method="post" action="#">
                                 <div class="row gtr-uniform gtr-50">
-                                    <div class="col-6 col-12-xsmall">
+                                    <div class="col-12">
                                         <input type="text" name="name" id="name" value="" placeholder="Name"/>
                                     </div>
                                     <div class="col-6 col-12-xsmall">
-                                        <input type="email" name="email" id="email" value="" placeholder="Email"/>
+                                        <input type="text" name="area" id="area" value="" placeholder="Area"/>
                                     </div>
-                                    <div class="col-12">
-                                        <select name="category" id="category">
-                                            <option value="">- Category -</option>
-                                            <option value="1">Manufacturing</option>
-                                            <option value="1">Shipping</option>
-                                            <option value="1">Administration</option>
-                                            <option value="1">Human Resources</option>
+                                    <div class="col-6 col-12-xsmall">
+                                        <input type="text" name="cost" id="cost" value="" placeholder="Cost"/>
+                                    </div>
+                                    <div class="col-6 col-12-xsmall">
+                                        <input type="text" name="maxPeople" id="maxPeople" value=""
+                                               placeholder="Max People"/>
+                                    </div>
+                                    <div class="col-6 col-12-xsmall">
+                                        <input type="text" name="standardRoom" id="standardRoom" value=""
+                                               placeholder="Standard Room"/>
+                                    </div>
+                                    <div class="col-6 col-12-xsmall">
+                                        <input type="text" name="poolArea" id="poolArea" value=""
+                                               placeholder="Pool Area"/>
+                                    </div>
+                                    <div class="col-6 col-12-xsmall">
+                                        <input type="text" name="numberOfFloors" id="numberOfFloors" value=""
+                                               placeholder="Number Of Floors"/>
+                                    </div>
+                                    <div class="col-6">
+                                        <select name="facilityType" id="facilityType">
+                                            <option value="">- Facility Type -</option>
+                                            <option value="1">Villa</option>
+                                            <option value="2">House</option>
+                                            <option value="3">Room</option>
                                         </select>
                                     </div>
-                                    <div class="col-4 col-12-medium">
-                                        <input type="radio" id="priority-low" name="priority" checked>
-                                        <label for="priority-low">Low Priority</label>
-                                    </div>
-                                    <div class="col-4 col-12-medium">
-                                        <input type="radio" id="priority-normal" name="priority">
-                                        <label for="priority-normal">Normal Priority</label>
-                                    </div>
-                                    <div class="col-4 col-12-medium">
-                                        <input type="radio" id="priority-high" name="priority">
-                                        <label for="priority-high">High Priority</label>
-                                    </div>
-                                    <div class="col-6 col-12-medium">
-                                        <input type="checkbox" id="copy" name="copy">
-                                        <label for="copy">Email me a copy of this message</label>
-                                    </div>
-                                    <div class="col-6 col-12-medium">
-                                        <input type="checkbox" id="human" name="human" checked>
-                                        <label for="human">I am a human and not a robot</label>
-                                    </div>
-                                    <div class="col-12">
-                                        <textarea name="message" id="message" placeholder="Enter your message"
-                                                  rows="6"></textarea>
+                                    <div class="col-6">
+                                        <select name="rentType" id="rentType">
+                                            <option value="">- Rent Type -</option>
+                                            <option value="1">Hour</option>
+                                            <option value="2">Day</option>
+                                            <option value="3">Month</option>
+                                        </select>
                                     </div>
                                     <div class="col-12">
                                         <ul class="actions">
-                                            <li><input type="submit" value="Send Message" class="primary"/></li>
+                                            <li><input type="submit" value="Create" class="primary"/></li>
                                             <li><input type="reset" value="Reset"/></li>
                                         </ul>
                                     </div>
