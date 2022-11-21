@@ -1,0 +1,14 @@
+<h1>Calculator</h1>
+<hr>
+
+<p>First number: <input type="text" [(ngModel)]="firstNumber"></p>
+<p>Second number: <input type="text" [(ngModel)]="secondNumber"></p>
+
+<p>
+  <button (click)="add()">Addition</button>
+  <button (click)="subtract()">Subtraction</button>
+  <button (click)="multiply()">Multiplication</button>
+  <button (click)="divide()">Division</button>
+</p>
+
+<p>Result: {{result.toString()}}</p>

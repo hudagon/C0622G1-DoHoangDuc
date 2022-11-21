@@ -1,0 +1,10 @@
+<h1>Color picker</h1>
+<hr>
+
+<p [style.color]="color">Change the input and this line will change its color!</p>
+
+<select #colorPicker (change)="changeColor(colorPicker.value)" >
+  <option value="red">Red</option>
+  <option value="blue">Blue</option>
+  <option value="yellow">Yellow</option>
+</select>
