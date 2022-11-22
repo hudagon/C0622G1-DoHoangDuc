@@ -1,0 +1,52 @@
+<app-header></app-header>
+
+<button style="margin-right: 5px" (click)="toggleList()">List</button>
+<button (click)="toggleCreate()">Create</button>
+
+
+<div style="margin-top: 10px" *ngIf="listFlag">
+  <table border="1">
+    <tr>
+      <th>N.o</th>
+      <th>Title</th>
+      <th>Url</th>
+    </tr>
+    <tr *ngFor="let x of articleList; let i = index">
+      <td>{{i + 1}}</td>
+      <td>{{x.title}}</td>
+      <td>
+        <a href="{{x.url}}">Link</a>:
+        <app-like-component></app-like-component>
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+<div *ngIf="createFlag">
+  <div>
+    <h2>Article Information</h2>
+    <table>
+      <tr>
+        <td>Title:</td>
+        <td><textarea [(ngModel)]="article.title" cols="70"></textarea></td>
+      </tr>
+      <tr>
+        <td>Url:</td>
+        <td>
+          <textarea [(ngModel)]="article.url" cols="70"></textarea>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          <button (click)="createArticle()">Create</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+
+<app-footer></app-footer>
+
