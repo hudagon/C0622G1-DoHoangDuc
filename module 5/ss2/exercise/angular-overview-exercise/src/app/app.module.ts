@@ -9,6 +9,11 @@ import { ArticleComponent } from './article/article.component';
 import { LikeComponentComponent } from './article/like-component/like-component.component';
 import { HeaderComponent } from './article/header/header.component';
 import { FooterComponent } from './article/footer/footer.component';
+import { NameCardComponent } from './name-card/name-card.component';
+import { ProgressBarComponent } from './progress-bar/progress-bar.component';
+import { RatingBarComponent } from './rating-bar/rating-bar.component';
+import { CountdownTimerComponent } from './countdown-timer/countdown-timer.component';
+import { HomeHeaderComponent } from './case-study/home-header/home-header.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +24,11 @@ import { FooterComponent } from './article/footer/footer.component';
     LikeComponentComponent,
     HeaderComponent,
     FooterComponent,
+    NameCardComponent,
+    ProgressBarComponent,
+    RatingBarComponent,
+    CountdownTimerComponent,
+    HomeHeaderComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0cefd0ab-649a-4f7e-9827-65612677734a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../case_study/demo.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study/demo.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study2/.idea/case_study2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study2/demo.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study2/demo.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study2/facility/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study2/facility/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study2/ie_style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/case_study_chuan.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/css/fontawesome-all.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/css/images/arrow.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/css/images/ie/banner-overlay.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/css/images/overlay.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/css/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/css/noscript.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/css/owl.carousel.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/fonts/icomoon/Read Me.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/fonts/icomoon/demo-files/demo.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/fonts/icomoon/demo-files/demo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/fonts/icomoon/demo.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/fonts/icomoon/fonts/icomoon.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/fonts/icomoon/fonts/icomoon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/fonts/icomoon/fonts/icomoon.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/fonts/icomoon/fonts/icomoon.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/fonts/icomoon/selection.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/fonts/icomoon/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/js/breakpoints.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/js/browser.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/js/jquery-3.3.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/js/jquery.dropotron.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/js/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/js/jquery.scrollex.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/js/jquery.scrolly.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/js/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/js/owl.carousel.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/js/popper.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/js/util.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/sass/libs/_breakpoints.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/sass/libs/_functions.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/sass/libs/_html-grid.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/sass/libs/_mixins.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/sass/libs/_vars.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/sass/libs/_vendor.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/sass/main.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/sass/noscript.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/_alert.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/_badge.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/_breadcrumb.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/_button-group.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/_buttons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/_card.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/_carousel.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/_close.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/_code.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/_custom-forms.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/_dropdown.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/_forms.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/_functions.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/_grid.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/_images.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/_input-group.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/_jumbotron.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/_list-group.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/_media.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/_mixins.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/_modal.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/_nav.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/_navbar.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/_pagination.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/_popover.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/_print.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/_progress.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/_reboot.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/_root.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/_spinners.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/_tables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/_toasts.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/_tooltip.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/_transitions.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/_type.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/_utilities.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/_variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/bootstrap-grid.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/bootstrap-reboot.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/bootstrap.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/mixins/_alert.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/mixins/_background-variant.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/mixins/_badge.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/mixins/_border-radius.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/mixins/_box-shadow.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/mixins/_breakpoints.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/mixins/_buttons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/mixins/_caret.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/mixins/_clearfix.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/mixins/_deprecate.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/mixins/_float.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/mixins/_forms.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/mixins/_gradients.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/mixins/_grid-framework.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/mixins/_grid.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/mixins/_hover.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/mixins/_image.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/mixins/_list-group.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/mixins/_lists.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/mixins/_nav-divider.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/mixins/_pagination.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/mixins/_reset-text.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/mixins/_resize.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/mixins/_screen-reader.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/mixins/_size.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/mixins/_table-row.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/mixins/_text-emphasis.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/mixins/_text-hide.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/mixins/_text-truncate.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/mixins/_transition.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/mixins/_visibility.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/utilities/_align.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/utilities/_background.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/utilities/_borders.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/utilities/_clearfix.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/utilities/_display.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/utilities/_embed.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/utilities/_flex.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/utilities/_float.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/utilities/_overflow.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/utilities/_position.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/utilities/_screenreaders.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/utilities/_shadows.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/utilities/_sizing.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/utilities/_spacing.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/utilities/_stretched-link.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/utilities/_text.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/utilities/_visibility.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/bootstrap/vendor/_rfs.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/scss/style.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/webfonts/fa-brands-400.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/webfonts/fa-brands-400.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/webfonts/fa-brands-400.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/webfonts/fa-brands-400.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/webfonts/fa-brands-400.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/webfonts/fa-regular-400.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/webfonts/fa-regular-400.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/webfonts/fa-regular-400.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/webfonts/fa-regular-400.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/webfonts/fa-regular-400.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/webfonts/fa-solid-900.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/webfonts/fa-solid-900.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/webfonts/fa-solid-900.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/webfonts/fa-solid-900.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/assets/webfonts/fa-solid-900.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/model/i-rating-unit.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module 1/ss4_Git&amp;Html/bai_tap/Su_dung_Git/GitProject" beforeDir="false" afterPath="$PROJECT_DIR$/../../module 1/ss4_Git&amp;Html/bai_tap/Su_dung_Git/GitProject" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_using_angular/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study_using_angular/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_using_angular/cs/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study_using_angular/cs/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_using_angular/cs/src/assets/js/browser.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study_using_angular/cs/src/assets/js/browser.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/app/calculator/calculator.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/app/calculator/calculator.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/app/calculator/calculator.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/app/calculator/calculator.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/index.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="2HwPgIwdcJRmG8HXFqTThbo2IHM" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RunManager" selected="npm.Angular CLI Server">
+    <configuration name="E2E Tests (cs-chuan)" type="JavaScriptTestRunnerProtractor">
+      <config-file value="$PROJECT_DIR$/cs-chuan/e2e/protractor.conf.js" />
+      <node-interpreter value="project" />
+      <protractor-options value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular CLI Server" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/cs-chuan/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0cefd0ab-649a-4f7e-9827-65612677734a" name="Default Changelist" comment="" />
+      <created>1669193282842</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1669193282842</updated>
+      <workItem from="1669193284172" duration="744000" />
+      <workItem from="1669198023032" duration="474000" />
+      <workItem from="1669205915654" duration="377000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="496" y="112" key="FileChooserDialogImpl" timestamp="1669206295391">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="496" y="112" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1669206295391" />
+    <state x="209" y="38" key="new project wizard" timestamp="1669206296328">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="209" y="38" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1669206296328" />
+  </component>
+</project>

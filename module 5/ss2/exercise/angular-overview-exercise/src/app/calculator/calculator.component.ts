@@ -9,7 +9,7 @@ export class CalculatorComponent implements OnInit {
 
   firstNumber: number = 0;
   secondNumber: number = 0;
-  result: number = 0;
+  result: string = 'nothing';
 
   constructor() {
   }
@@ -18,19 +18,23 @@ export class CalculatorComponent implements OnInit {
   }
 
   add() {
-    this.result = (+this.firstNumber + +this.secondNumber);
+    this.result = String((+this.firstNumber + +this.secondNumber));
   }
 
   subtract() {
-    this.result = this.firstNumber - this.secondNumber;
+    this.result = String(this.firstNumber - this.secondNumber);
   }
 
   multiply() {
-    this.result = this.firstNumber * this.secondNumber;
+    this.result = String(this.firstNumber * this.secondNumber);
   }
 
   divide() {
-    this.result = this.firstNumber / this.secondNumber;
+    if (this.secondNumber == 0) {
+      this.result = "Can't be divided!"
+    } else {
+      this.result = String(this.firstNumber / this.secondNumber);
+    }
   }
 
 
