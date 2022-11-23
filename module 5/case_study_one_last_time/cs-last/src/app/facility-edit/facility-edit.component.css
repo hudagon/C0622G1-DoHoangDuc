@@ -1,0 +1,16 @@
+#content section {
+  padding: 30px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+body {
+  background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.95),
+  rgba(23, 24, 32, 0)), url("src/assets/images/pic06.jpg");
+  background-size: cover;
+}
+
+#sidebar section {
+
+  font-family: "Segoe UI";
+
+}
