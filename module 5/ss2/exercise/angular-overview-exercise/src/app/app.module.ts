@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { CalculatorComponent } from './calculator/calculator.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { ColorPickerComponent } from './color-picker/color-picker.component';
 import { ArticleComponent } from './article/article.component';
 import { LikeComponentComponent } from './article/like-component/like-component.component';
@@ -14,6 +14,9 @@ import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 import { RatingBarComponent } from './rating-bar/rating-bar.component';
 import { CountdownTimerComponent } from './countdown-timer/countdown-timer.component';
 import { HomeHeaderComponent } from './case-study/home-header/home-header.component';
+import { TodoAppComponent } from './todo-app/todo-app.component';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -28,12 +31,16 @@ import { HomeHeaderComponent } from './case-study/home-header/home-header.compon
     ProgressBarComponent,
     RatingBarComponent,
     CountdownTimerComponent,
-    HomeHeaderComponent
+    HomeHeaderComponent,
+    TodoAppComponent,
+    RegisterComponent,
+    LoginComponent
   ],
-  imports: [
-    BrowserModule,
-    FormsModule
-  ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        ReactiveFormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

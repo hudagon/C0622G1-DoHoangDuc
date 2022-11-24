@@ -1,0 +1,49 @@
+<div class="container" style="width: 30vw; margin-top:30px;
+border: 1px #0b2e13 solid; padding: 10px ">
+  <h1>Login</h1>
+  <hr>
+  <form [formGroup]="rfLogin" (ngSubmit)="onSubmit()">
+
+    <div class="mb-3">
+      <label class="form-label">Email address</label>
+      <input formControlName="emailAddress" type="email" class="form-control"
+             [ngClass]="rfLogin.controls['emailAddress'].invalid &&
+             (rfLogin.controls['emailAddress']) ? 'is-invalid' : 'is-valid'">
+
+      <div class="invalid-feedback">
+        <div *ngIf="rfLogin.controls['emailAddress'].hasError('required') &&
+        (rfLogin.controls['emailAddress'])">
+          Email address is required!
+        </div>
+
+        <div *ngIf="rfLogin.controls['emailAddress'].hasError('pattern') &&
+        (rfLogin.controls['emailAddress'])">
+          Email must be the same as format!
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Password</label>
+      <input formControlName="password" type="password" class="form-control"
+             [ngClass]="rfLogin.controls['password'].invalid &&
+             (rfLogin.controls['password']) ? 'is-invalid' : 'is-valid'">
+
+      <div class="invalid-feedback">
+        <div *ngIf="rfLogin.controls['password'].hasError('required') &&
+        (rfLogin.controls['password'])">
+          Password is required!
+        </div>
+
+        <div *ngIf="rfLogin.controls['password'].hasError('minlength') &&
+        (rfLogin.controls['password'])">
+          Password must has at least 6 characters!
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <button [disabled]="!rfLogin.valid" type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

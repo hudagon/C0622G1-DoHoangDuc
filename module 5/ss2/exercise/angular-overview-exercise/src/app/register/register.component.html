@@ -1,0 +1,142 @@
+<div class="container" style="width: 30vw; margin-top:30px;
+border: 1px #0b2e13 solid; padding: 10px ">
+  <h1>Register Form</h1>
+  <hr>
+  <form [formGroup]="rfRegister" (ngSubmit)="onSubmit()">
+
+    <div class="mb-3">
+      <label class="form-label">Email address</label>
+      <input formControlName="emailAddress" type="email" class="form-control"
+             [ngClass]="rfRegister.controls['emailAddress'].invalid &&
+             (rfRegister.controls['emailAddress']) ? 'is-invalid' : 'is-valid'">
+
+      <div class="invalid-feedback">
+        <div *ngIf="rfRegister.controls['emailAddress'].hasError('required') &&
+        (rfRegister.controls['emailAddress'])">
+          Email address is required!
+        </div>
+
+        <div *ngIf="rfRegister.controls['emailAddress'].hasError('pattern') &&
+        (rfRegister.controls['emailAddress'])">
+          Email must be the same as format!
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Password</label>
+      <input formControlName="password" type="password" class="form-control"
+             [ngClass]="rfRegister.controls['password'].invalid &&
+             (rfRegister.controls['password']) ? 'is-invalid' : 'is-valid'">
+
+      <div class="invalid-feedback">
+        <div *ngIf="rfRegister.controls['password'].hasError('required') &&
+        (rfRegister.controls['password'])">
+          Password is required!
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Confirm Password</label>
+      <input formControlName="confirmPassword" type="password" class="form-control"
+             [ngClass]="(rfRegister.controls['confirmPassword'].invalid &&
+             rfRegister.hasError('checkPassword') &&
+             (rfRegister.controls['confirmPassword'])) ? 'is-invalid' : 'is-valid'">
+
+      <div class="invalid-feedback">
+        <div *ngIf="rfRegister.controls['confirmPassword'].hasError('required') &&
+        (rfRegister.controls['confirmPassword'])">
+          Confirm Password is required!
+        </div>
+        <div *ngIf="rfRegister.hasError('checkPassword') &&
+        (rfRegister.controls['confirmPassword'])">
+          Password not match...
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Phone Number</label>
+      <input formControlName="phoneNumber" type="text" class="form-control"
+             [ngClass]="rfRegister.controls['phoneNumber'].invalid &&
+             (rfRegister.controls['phoneNumber']) ? 'is-invalid' : 'is-valid'">
+
+      <div class="invalid-feedback">
+        <div *ngIf="rfRegister.controls['phoneNumber'].hasError('required') &&
+        (rfRegister.controls['phoneNumber'])">
+          Phone Number is required!
+        </div>
+
+        <div *ngIf="rfRegister.controls['phoneNumber'].hasError('pattern') &&
+        (rfRegister.controls['phoneNumber'])">
+          Phone Number must be the same as format!
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Country</label>
+      <select formControlName="country" class="form-control"
+              [ngClass]="rfRegister.controls['country'].invalid &&
+             (rfRegister.controls['country']) ? 'is-invalid' : 'is-valid'">
+
+        <option value="0" selected>Open this select menu</option>
+        <option value="1">VietNam</option>
+        <option value="2">Japan</option>
+        <option value="3">USA</option>
+      </select>
+
+      <div class="invalid-feedback">
+        <div *ngIf="rfRegister.controls['country'].hasError('pattern')">
+          Country is required!
+        </div>
+      </div>
+
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Age</label>
+      <input formControlName="age" type="text" class="form-control"
+             [ngClass]="rfRegister.controls['age'].invalid &&
+             (rfRegister.controls['age']) ? 'is-invalid' : 'is-valid'">
+
+      <div class="invalid-feedback">
+        <div *ngIf="rfRegister.controls['age'].hasError('required') &&
+        (rfRegister.controls['age'])">
+          Age is required!
+        </div>
+
+        <div *ngIf="rfRegister.controls['age'].hasError('min') &&
+        (rfRegister.controls['age'])">
+          Age must be greater than 18!
+        </div>
+      </div>
+
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Gender</label>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" formControlName="gender" value="1" name="flexRadioDefault"
+               id="flexRadioDefault1">
+        <label class="form-check-label">
+          Male
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" formControlName="gender" value="0" name="flexRadioDefault"
+               id="flexRadioDefault2">
+        <label class="form-check-label">
+          Female
+        </label>
+      </div>
+    </div>
+
+    <hr>
+
+    <button [disabled]="!rfRegister.valid" type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
