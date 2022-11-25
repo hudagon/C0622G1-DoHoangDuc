@@ -17,8 +17,6 @@ import { HomeHeaderComponent } from './case-study/home-header/home-header.compon
 import { TodoAppComponent } from './todo-app/todo-app.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
-import { CustomerEditComponent } from './customer-edit/customer-edit.component';
-import { CustomerCreateComponent } from './customer-create/customer-create.component';
 
 @NgModule({
   declarations: [
@@ -37,8 +35,6 @@ import { CustomerCreateComponent } from './customer-create/customer-create.compo
     TodoAppComponent,
     RegisterComponent,
     LoginComponent,
-    CustomerEditComponent,
-    CustomerCreateComponent,
   ],
     imports: [
         BrowserModule,
