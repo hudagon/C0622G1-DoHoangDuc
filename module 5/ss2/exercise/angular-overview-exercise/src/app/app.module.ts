@@ -18,6 +18,7 @@ import { TodoAppComponent } from './todo-app/todo-app.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { LifetimeCalculateComponent } from './lifetime-calculate/lifetime-calculate.component';
+import { AppRoutingModule } from '../app-routing.module';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { LifetimeCalculateComponent } from './lifetime-calculate/lifetime-calcul
     imports: [
         BrowserModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        AppRoutingModule
     ],
   providers: [],
   bootstrap: [AppComponent]

@@ -5,54 +5,41 @@
     </header>
 
     <section id="content">
+      <div class="table-responsive">
+        <div class="table-wrapper">
+          <table class="alt">
+            <thead>
+            <tr>
+              <th>N.o</th>
+              <th>Name</th>
+              <th>Area</th>
+              <th>Max People</th>
+              <th>Cost</th>
+              <th>Rent Type</th>
+              <th>Actions</th>
+            </tr>
+            </thead>
 
-      <div class="row">
+            <tbody>
+            <tr *ngFor="let x of facilityList, let i = index">
+              <td>{{i + 1}}</td>
+              <td>{{x.name}}</td>
+              <td>{{x.area}}</td>
+              <td>{{x.maxPeople}}</td>
+              <td>{{x.cost}}</td>
+              <td>{{x.rentType}}</td>
+              <td style="display: flex; align-content: center; justify-content: center">
+                <button style="margin-right: 50px" class="button button-edit">Edit</button>
+                <button class="button button-delete">Delete</button>
+              </td>
+            </tr>
+            </tbody>
 
-        <div class="column">
-          <div class="card">
-            <img src="assets/images/furamaVilla1.jpg" alt="Avatar" style="width:100%; height: 80%">
-            <div class="container">
-              <h4><b>Villa 1</b></h4>
-              <p>Architect & Engineer</p>
-            </div>
-          </div>
+          </table>
         </div>
-
-        <div class="column">
-          <div class="card">
-            <img src="assets/images/furamaHouse1.jpg" alt="Avatar" style="width:100%; height: 100%">
-            <div class="container">
-              <h4><b>House 1</b></h4>
-              <p>Architect & Engineer</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="column">
-          <div class="card">
-            <img src="assets/images/furamaRoom1.jpg" alt="Avatar" style="width:100%; height: 80%">
-            <div class="container">
-              <h4><b>Room 1</b></h4>
-              <p>Architect & Engineer</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="column">
-          <div class="card">
-            <img src="assets/images/furamaRoom2.jpg" alt="Avatar" style="width:100%; height: 80%">
-            <div class="container">
-              <h4><b>Room 2</b></h4>
-              <p>Architect & Engineer</p>
-            </div>
-          </div>
-        </div>
-
-
       </div>
-
-
     </section>
 
   </div>
 </div>
+

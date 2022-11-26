@@ -12,6 +12,8 @@ import { CustomerEditComponent } from './customer-edit/customer-edit.component';
 import { CustomerCreateComponent } from './customer-create/customer-create.component';
 import { ContractListComponent } from './contract-list/contract-list.component';
 import { ContractCreateComponent } from './contract-create/contract-create.component';
+import { AppRoutingModule } from './app-routing.module';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -27,9 +29,11 @@ import { ContractCreateComponent } from './contract-create/contract-create.compo
     ContractListComponent,
     ContractCreateComponent,
   ],
-  imports: [
-    BrowserModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        RouterModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
