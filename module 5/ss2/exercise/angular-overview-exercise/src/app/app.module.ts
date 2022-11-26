@@ -17,6 +17,7 @@ import { HomeHeaderComponent } from './case-study/home-header/home-header.compon
 import { TodoAppComponent } from './todo-app/todo-app.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+import { LifetimeCalculateComponent } from './lifetime-calculate/lifetime-calculate.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { LoginComponent } from './login/login.component';
     TodoAppComponent,
     RegisterComponent,
     LoginComponent,
+    LifetimeCalculateComponent,
   ],
     imports: [
         BrowserModule,
