@@ -1,0 +1,19 @@
+<h1>Product Edit</h1>
+<hr>
+<form [formGroup]="rfProductEdit" (ngSubmit)="editProduct()">
+
+  <pre>Id:           <input disabled type="text" formControlName="id"></pre>
+  <pre>Name:         <input type="text" formControlName="name"></pre>
+  <pre>Price:        <input type="text" formControlName="price"></pre>
+  <pre>Description:  <input type="text" formControlName="description"></pre>
+
+
+
+  <button type="submit">Edit</button>
+</form>
+
+
+<!--<pre>Id:           {{productEdit.id}}</pre>-->
+<!--<pre>Name:         {{productEdit.name}}</pre>-->
+<!--<pre>Price:        {{productEdit.price}}</pre>-->
+<!--<pre>Description:  {{productEdit.description}}</pre>-->

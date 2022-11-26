@@ -1,0 +1,23 @@
+<h1>Dictionary View</h1>
+<hr>
+<div *ngIf="dictionaryView; else noData">
+  <table border="1">
+    <tr>
+      <td>Word</td>
+      <td>{{dictionaryView.word}}</td>
+    </tr>
+    <tr>
+      <td>Mean</td>
+      <td>{{dictionaryView.mean}}</td>
+    </tr>
+    <tr>
+      <td>Description</td>
+      <td>{{dictionaryView.description}}</td>
+    </tr>
+  </table>
+</div>
+
+<ng-template #noData>
+  <p style="color: red">No data</p>
+</ng-template>
+
