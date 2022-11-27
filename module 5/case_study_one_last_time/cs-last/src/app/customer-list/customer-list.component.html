@@ -21,79 +21,18 @@
             </thead>
 
             <tbody>
-
-            <tr>
-              <td>1</td>
-              <td>Lê Trần Thảo Nhi</td>
-              <td>Nữ</td>
-              <td>Huế, Việt Nam</td>
-              <td>nhicute@gmail.com</td>
-              <td>Diamond</td>
-              <td class="table-actions">
-                <button class="button button-view">View Details</button>
-                <button class="button button-edit">Edit</button>
+            <tr *ngFor="let x of customerList, let i = index">
+              <td>{{i + 1}}</td>
+              <td>{{x.name}}</td>
+              <td>{{x.gender}}</td>
+              <td>{{x.address}}</td>
+              <td>{{x.email}}</td>
+              <td>{{x.customerType}}</td>
+              <td style="display: flex; align-content: center; justify-content: center">
+                <button style="margin-right: 50px" class="button button-edit">Edit</button>
                 <button class="button button-delete">Delete</button>
               </td>
             </tr>
-
-            <tr>
-              <td>2</td>
-              <td>Đỗ Hoàng Đức</td>
-              <td>Nam</td>
-              <td>Quảng Nam, Việt Nam</td>
-              <td>hudagon111@gmail.com</td>
-              <td>Diamond</td>
-              <td class="table-actions">
-                <button class="button button-view">View Details</button>
-                <button class="button button-edit">Edit</button>
-                <button class="button button-delete">Delete</button>
-              </td>
-            </tr>
-
-
-            <tr>
-              <td>3</td>
-              <td>dummy</td>
-              <td>Nam</td>
-              <td>somewhere</td>
-              <td>something@gmail.com</td>
-              <td>member</td>
-              <td class="table-actions">
-                <button class="button button-view">View Details</button>
-                <button class="button button-edit">Edit</button>
-                <button class="button button-delete">Delete</button>
-              </td>
-            </tr>
-
-            <tr>
-              <td>3</td>
-              <td>dummy</td>
-              <td>Nam</td>
-              <td>somewhere</td>
-              <td>something@gmail.com</td>
-              <td>member</td>
-              <td class="table-actions">
-                <button class="button button-view">View Details</button>
-                <button class="button button-edit">Edit</button>
-                <button class="button button-delete">Delete</button>
-              </td>
-            </tr>
-
-            <tr>
-              <td>3</td>
-              <td>dummy</td>
-              <td>Nam</td>
-              <td>somewhere</td>
-              <td>something@gmail.com</td>
-              <td>member</td>
-              <td class="table-actions">
-                <button class="button button-view">View Details</button>
-                <button class="button button-edit">Edit</button>
-                <button class="button button-delete">Delete</button>
-              </td>
-            </tr>
-
-
             </tbody>
 
           </table>
