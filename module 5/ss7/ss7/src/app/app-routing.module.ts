@@ -9,6 +9,7 @@ import {ListComponent} from "./dictionary/list/list.component";
 import {ViewComponent} from "./dictionary/view/view.component";
 import {ProductEditComponent} from "./product/product-edit/product-edit.component";
 import {ProductDeleteComponent} from "./product/product-delete/product-delete.component";
+import {TodoComponent} from "./todo/todo.component";
 
 
 const routes: Routes = [
@@ -27,6 +28,7 @@ const routes: Routes = [
   {path: 'dictionaryView/:index', component: ViewComponent},
   {path: 'productEdit/:productId', component: ProductEditComponent},
   {path: 'productDelete/:productId', component: ProductDeleteComponent},
+  {path: 'todo', component: TodoComponent},
 ];
 
 @NgModule({

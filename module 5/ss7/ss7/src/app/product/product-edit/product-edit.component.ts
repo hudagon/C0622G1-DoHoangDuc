@@ -3,6 +3,8 @@ import {Product} from "../../model/product";
 import {ProductServiceService} from "../../service/product-service.service";
 import {ActivatedRoute, Params, Router} from "@angular/router";
 import {FormBuilder, FormGroup} from "@angular/forms";
+import {CategoryService} from "../../service/category.service";
+import {Category} from "../../model/category";
 
 @Component({
   selector: 'app-product-edit',
@@ -12,14 +14,15 @@ import {FormBuilder, FormGroup} from "@angular/forms";
 export class ProductEditComponent implements OnInit {
 
   rfProductEdit: FormGroup;
-  productEdit: Product;
   productId: number;
+  categoryList: Category[];
 
   constructor(
     private formBuilder: FormBuilder,
     private productService: ProductServiceService,
     private activateRoute: ActivatedRoute,
     private router: Router,
+    private categoryService: CategoryService
   ) {
   }
 
@@ -27,23 +30,36 @@ export class ProductEditComponent implements OnInit {
     this.activateRoute.params.subscribe(
       (params: Params) => {
         this.productId = params.productId;
-        this.productEdit = this.productService.findProductById(this.productId)
-        console.log(this.productEdit);
       })
 
-
-    this.rfProductEdit = this.formBuilder.group({
-      id: [this.productEdit.id],
-      name: [this.productEdit.name],
-      price: [this.productEdit.price],
-      description: [this.productEdit.description]
-    })
+    this.getCategoryList();
+    this.getEditProduct(this.productId);
 
   }
 
   editProduct() {
     const productEdit = this.rfProductEdit.value;
-    this.productService.editProduct(productEdit);
-    this.router.navigateByUrl('/productList');
+    this.productService.editProduct(productEdit).subscribe(productEdit => {
+      this.router.navigateByUrl('/productList');
+    });
   }
+
+  getEditProduct(productId: number) {
+    this.productService.findProductById(productId).subscribe(product => {
+      this.rfProductEdit = this.formBuilder.group({
+        id: [product.id],
+        name: [product.name],
+        price: [product.price],
+        description: [product.description],
+        category: [product.category]
+      })
+    })
+  }
+
+  getCategoryList() {
+    this.categoryService.getAll().subscribe(categoryList => {
+      this.categoryList = categoryList;
+    })
+  }
+
 }

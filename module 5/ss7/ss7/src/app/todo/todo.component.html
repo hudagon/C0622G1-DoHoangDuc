@@ -1,0 +1,19 @@
+<h2 class="text-center">
+  Todo App
+</h2>
+<div class="col-md-8 offset-md-2">
+  <input type="text" class="form-control" [formControl]="rfTodo.controls.content" (change)="create()">
+  <ul>
+    <div>
+      <p (click)="toggleTodo(i)"
+         [class.complete]="todo.complete"
+         *ngFor="let todo of todoList; index as i">
+        {{todo.content}}
+        <button>
+          <a (click)="delete(todo.id)" >Delete</a>
+        </button>
+      </p>
+    </div>
+
+  </ul>
+</div>
