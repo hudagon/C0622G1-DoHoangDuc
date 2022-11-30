@@ -42,10 +42,14 @@ export class RegisterComponent implements OnInit {
       country: ['0', [Validators.pattern('^[^0]$')]],
 
       gender: ['1'],
+
       age: [4, [Validators.required, Validators.min(18)]],
+
       phoneNumber: ['', [Validators.required,
         Validators.pattern('^\\+84\\d{9,10}$')]],
+
       password: ['', Validators.required],
+
       confirmPassword: ['', Validators.required]
     }, {validators: checkPassword})
   }

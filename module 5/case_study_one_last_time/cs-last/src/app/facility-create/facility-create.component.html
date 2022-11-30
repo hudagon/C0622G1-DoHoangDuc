@@ -26,55 +26,183 @@
 
         <section id="content" style="width: 110%; height: 80%">
           <section>
-            <form method="post" action="#">
+            <form [formGroup]="rfFacility">
               <div class="row gtr-uniform gtr-50">
+
+                <div class="col-4">
+                  <input type="text" formControlName="id" placeholder="Id"/>
+
+                  <div class="invalid-feedback" style="display: flex; color: red;
+                  align-content: center; justify-content: center">
+                    <div *ngIf="rfFacility.controls['id'].hasError('required') &&
+                    (rfFacility.controls['id']).touched">
+                      Id is required!
+                    </div>
+
+                    <div *ngIf="rfFacility.controls['id'].hasError('pattern') &&
+                    (rfFacility.controls['id'])">
+                      Id must be the same as format!
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-8">
+                  <input type="text" formControlName="name" placeholder="Name"/>
+
+                  <div class="invalid-feedback" style="display: flex; color: red;
+                  align-content: center; justify-content: center">
+                    <div *ngIf="rfFacility.controls['name'].hasError('required') &&
+                    (rfFacility.controls['name']).touched">
+                      Name is required!
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-6">
+                  <input type="text" formControlName="area" placeholder="Area"/>
+
+                  <div class="invalid-feedback" style="display: flex; color: red;
+                  align-content: center; justify-content: center">
+                    <div *ngIf="rfFacility.controls['area'].hasError('required') &&
+                    (rfFacility.controls['area']).touched">
+                      Email is required!
+                    </div>
+
+                    <div *ngIf="rfFacility.controls['area'].hasError('min') &&
+                    (rfFacility.controls['email'])">
+                      Area must be greater than 0!
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-6">
+                  <input type="text" formControlName="cost" placeholder="cost"/>
+
+                  <div class="invalid-feedback" style="display: flex; color: red;
+                  align-content: center; justify-content: center">
+                    <div *ngIf="rfFacility.controls['cost'].hasError('required') &&
+                    (rfFacility.controls['cost']).touched">
+                      Birthday is required!
+                    </div>
+
+                    <div *ngIf="rfFacility.controls['cost'].hasError('min') &&
+                    (rfFacility.controls['cost'])">
+                      Cost must be greater than 0!
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-6">
+                  <select formControlName="rentType" id="gender">
+                    <option value="0" selected>- Rent Type -</option>
+                    <option value="1">Hours</option>
+                    <option value="2">Days</option>
+                    <option value="3">Months</option>
+                  </select>
+
+                  <div class="invalid-feedback" style="display: flex; color: red;
+                  align-content: center; justify-content: center">
+                    <div *ngIf="rfFacility.controls['rentType'].hasError('pattern') &&
+                    (rfFacility.controls['rentType']).touched">
+                      Rent Type is required!
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-6">
+                  <input type="text" formControlName="maxPeople" placeholder="Max People"/>
+
+                  <div class="invalid-feedback" style="display: flex; color: red;
+                  align-content: center; justify-content: center">
+                    <div *ngIf="rfFacility.controls['maxPeople'].hasError('required') &&
+                    (rfFacility.controls['maxPeople']).touched">
+                      Max people is required!
+                    </div>
+
+                    <div *ngIf="rfFacility.controls['maxPeople'].hasError('min') &&
+                    (rfFacility.controls['maxPeople'])">
+                      Max people must be greater than 0!
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-6">
+                  <input type="text" formControlName="standardRoom" placeholder="Standard Room"/>
+
+                  <div class="invalid-feedback" style="display: flex; color: red;
+                  align-content: center; justify-content: center">
+                    <div *ngIf="rfFacility.controls['standardRoom'].hasError('required') &&
+                    (rfFacility.controls['standardRoom']).touched">
+                      Standard Room is required!
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-6">
+                  <input type="text" formControlName="poolArea" placeholder="Pool Area"/>
+
+                  <div class="invalid-feedback" style="display: flex; color: red;
+                  align-content: center; justify-content: center">
+                    <div *ngIf="rfFacility.controls['poolArea'].hasError('required') &&
+                    (rfFacility.controls['poolArea']).touched">
+                      Pool Area is required!
+                    </div>
+
+                    <div *ngIf="rfFacility.controls['poolArea'].hasError('min') &&
+                    (rfFacility.controls['maxPeople'])">
+                      Pool Area must be greater than 0!
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-6">
+                  <input type="text" formControlName="attachFacility" placeholder="Attach Facility"/>
+
+                  <div class="invalid-feedback" style="display: flex; color: red;
+                  align-content: center; justify-content: center">
+                    <div *ngIf="rfFacility.controls['attachFacility'].hasError('required') &&
+                    (rfFacility.controls['attachFacility']).touched">
+                      Standard Room is required!
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-6">
+                  <input type="text" formControlName="numberOfFloors" placeholder="Number Of Floors"/>
+
+                  <div class="invalid-feedback" style="display: flex; color: red;
+                  align-content: center; justify-content: center">
+                    <div *ngIf="rfFacility.controls['numberOfFloors'].hasError('required') &&
+                    (rfFacility.controls['numberOfFloors']).touched">
+                      Number Of Floors is required!
+                    </div>
+
+                    <div *ngIf="rfFacility.controls['numberOfFloors'].hasError('min') &&
+                    (rfFacility.controls['numberOfFloors'])">
+                      Number Of Floors must be greater than 0!
+                    </div>
+                  </div>
+                </div>
+
                 <div class="col-12">
-                  <input type="text" name="name" id="name" value="" placeholder="Name"/>
+                  <textarea rows="6" type="text" formControlName="descriptionOfOtherConvenience"
+                            placeholder="Description Of Other Conveninences"></textarea>
+
+                  <div class="invalid-feedback" style="display: flex; color: red;
+                  align-content: center; justify-content: center">
+                    <div *ngIf="rfFacility.controls['descriptionOfOtherConvenience'].hasError('required') &&
+                    (rfFacility.controls['descriptionOfOtherConvenience']).touched">
+                      Description Of Other Conveninences are required!
+                    </div>
+                  </div>
                 </div>
-                <div class="col-6 col-12-xsmall">
-                  <input type="text" name="area" id="area" value="" placeholder="Area"/>
-                </div>
-                <div class="col-6 col-12-xsmall">
-                  <input type="text" name="cost" id="cost" value="" placeholder="Cost"/>
-                </div>
-                <div class="col-6 col-12-xsmall">
-                  <input type="text" name="maxPeople" id="maxPeople" value=""
-                         placeholder="Max People"/>
-                </div>
-                <div class="col-6 col-12-xsmall">
-                  <input type="text" name="standardRoom" id="standardRoom" value=""
-                         placeholder="Standard Room"/>
-                </div>
-                <div class="col-6 col-12-xsmall">
-                  <input type="text" name="poolArea" id="poolArea" value=""
-                         placeholder="Pool Area"/>
-                </div>
-                <div class="col-6 col-12-xsmall">
-                  <input type="text" name="numberOfFloors" id="numberOfFloors" value=""
-                         placeholder="Number Of Floors"/>
-                </div>
-                <div class="col-6">
-                  <select name="facilityType" id="facilityType">
-                    <option value="">- Facility Type -</option>
-                    <option value="1">Villa</option>
-                    <option value="2">House</option>
-                    <option value="3">Room</option>
-                  </select>
-                </div>
-                <div class="col-6">
-                  <select name="rentType" id="rentType">
-                    <option value="">- Rent Type -</option>
-                    <option value="1">Hour</option>
-                    <option value="2">Day</option>
-                    <option value="3">Month</option>
-                  </select>
-                </div>
+
                 <div class="col-12">
                   <ul class="actions">
-                    <li><input type="submit" value="Create" class="primary"/></li>
-                    <li><input type="reset" value="Reset"/></li>
+                    <li><input [disabled]="rfFacility.invalid" type="submit" class="primary"></li>
                   </ul>
                 </div>
+
               </div>
             </form>
           </section>

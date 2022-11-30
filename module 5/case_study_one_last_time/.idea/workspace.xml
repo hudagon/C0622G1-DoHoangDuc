@@ -20,14 +20,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="094f86ff-bae4-45e3-8fd6-2ff93e19bcf6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../ss7/ss7/src/app/data/productList.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../module 1/ss4_Git&amp;Html/bai_tap/Su_dung_Git/GitProject" beforeDir="false" afterPath="$PROJECT_DIR$/../../module 1/ss4_Git&amp;Html/bai_tap/Su_dung_Git/GitProject" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study/contract/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study/contract/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study/contract/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study/contract/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study/customer/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study/customer/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study/customer/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study/customer/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study/customer/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study/customer/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study/facility/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study/facility/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study/facility/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study/facility/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study/facility/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study/facility/list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ss7/ss7/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ss7/ss7/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ss7/ss7/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../ss7/ss7/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ss7/ss7/src/app/product/product-list/product-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../ss7/ss7/src/app/product/product-list/product-list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ss7/ss7/src/app/service/product-service.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../ss7/ss7/src/app/service/product-service.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ss7/ss7/src/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../ss7/ss7/src/environments/environment.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs-last/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cs-last/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs-last/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cs-last/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs-last/src/app/contract-list/contract-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/cs-last/src/app/contract-list/contract-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs-last/src/app/customer-create/customer-create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/cs-last/src/app/customer-create/customer-create.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs-last/src/app/customer-create/customer-create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cs-last/src/app/customer-create/customer-create.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs-last/src/app/customer-edit/customer-edit.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/cs-last/src/app/customer-edit/customer-edit.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs-last/src/app/customer-edit/customer-edit.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cs-last/src/app/customer-edit/customer-edit.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs-last/src/app/customer-list/customer-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/cs-last/src/app/customer-list/customer-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs-last/src/app/facility-create/facility-create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/cs-last/src/app/facility-create/facility-create.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs-last/src/app/facility-create/facility-create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cs-last/src/app/facility-create/facility-create.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs-last/src/app/facility-edit/facility-edit.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/cs-last/src/app/facility-edit/facility-edit.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs-last/src/app/facility-edit/facility-edit.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cs-last/src/app/facility-edit/facility-edit.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs-last/src/app/facility-list/facility-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/cs-last/src/app/facility-list/facility-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs-last/src/app/home-header/home-header.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/cs-last/src/app/home-header/home-header.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs-last/src/app/home-header/home-header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/cs-last/src/app/home-header/home-header.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs-last/src/app/model/customer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cs-last/src/app/model/customer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs-last/src/app/model/facility.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cs-last/src/app/model/facility.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs-last/src/app/service/customer.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cs-last/src/app/service/customer.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs-last/src/app/service/facility.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cs-last/src/app/service/facility.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs-last/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/cs-last/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/app/register/register.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise/src/app/register/register.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +71,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ss2/exercise/angular-overview-exercise" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -80,6 +103,7 @@
       <workItem from="1669443268490" duration="376000" />
       <workItem from="1669538357990" duration="1372000" />
       <workItem from="1669597900506" duration="2578000" />
+      <workItem from="1669770668642" duration="1143000" />
     </task>
     <servers />
   </component>
@@ -99,6 +123,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="660" y="281" key="#Notifications" timestamp="1669770867456">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="660" y="281" key="#Notifications/0.0.1536.824@0.0.1536.824" timestamp="1669770867456" />
     <state x="249" y="0" key="#Project_Structure" timestamp="1669206301733">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

@@ -2,6 +2,7 @@
   <div class="container">
     <header class="major">
       <h2 style="font-size: 60px">Facility Management</h2>
+      <h5><button class="button button-view" routerLink="/facility/create">Create</button></h5>
     </header>
 
     <section id="content">
@@ -29,7 +30,8 @@
               <td>{{x.cost}}</td>
               <td>{{x.rentType}}</td>
               <td style="display: flex; align-content: center; justify-content: center">
-                <button style="margin-right: 50px" class="button button-edit">Edit</button>
+                <button style="margin-right: 50px" class="button button-edit"
+                        [routerLink]="['/facility/edit',x.id]">Edit</button>
                 <button class="button button-delete">Delete</button>
               </td>
             </tr>

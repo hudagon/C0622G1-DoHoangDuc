@@ -8,7 +8,7 @@ export class FacilityService {
 
   facilityList: Facility[] = [
     {
-      id: 1,
+      id: 'DV-0001',
       name: 'Villa 001',
       area: 100,
       cost: 5500,
@@ -20,7 +20,7 @@ export class FacilityService {
     },
 
     {
-      id: 2,
+      id: 'DV-0002',
       name: 'House 001',
       area: 200,
       cost: 7000,
@@ -31,7 +31,7 @@ export class FacilityService {
     },
 
     {
-      id: 3,
+      id: 'DV-0003',
       name: 'Room 001',
       area: 50,
       cost: 1000,
@@ -47,6 +47,15 @@ export class FacilityService {
 
   getAll() {
     return this.facilityList;
+  }
+
+  getFacilityById(facilityId: string) {
+    console.log(facilityId)
+    for (let x of this.facilityList) {
+      if (x.id === facilityId) {
+        return x;
+      }
+    }
   }
 
 }
