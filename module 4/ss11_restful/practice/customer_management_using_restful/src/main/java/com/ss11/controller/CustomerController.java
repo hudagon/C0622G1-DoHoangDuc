@@ -1,17 +1,18 @@
 package com.ss11.controller;
 
+import com.ss11.dto.CustomerDto;
 import com.ss11.model.Customer;
+import com.ss11.model.CustomerType;
 import com.ss11.service.ICustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
 
-@Controller
+@RestController
 @RequestMapping("/api/customers")
 public class CustomerController {
 
@@ -36,9 +37,10 @@ public class CustomerController {
         return new ResponseEntity<>(customer.get(), HttpStatus.OK);
     }
 
-    @PostMapping
-    public ResponseEntity<Customer> addCustomer(@RequestBody Customer customer) {
-        return new ResponseEntity<>(customerService.save(customer), HttpStatus.CREATED);
+    @PostMapping("/create")
+    public ResponseEntity<Void> addCustomer(@RequestBody CustomerDto customerDto) {
+        customerService.save(customerDto);
+        return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     @PutMapping("/{id}")

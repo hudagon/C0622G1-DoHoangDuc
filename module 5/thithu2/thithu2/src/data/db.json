@@ -1,0 +1,78 @@
+{
+  "product": [
+    {
+      "id": 1,
+      "name": "Iphone123123",
+      "price": 1000,
+      "description": "none",
+      "productType": {
+        "id": 1,
+        "name": "Điện Thoại"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Laptop01",
+      "price": 2000,
+      "description": "none",
+      "productType": {
+        "id": 2,
+        "name": "Laptop"
+      }
+    },
+    {
+      "id": 3,
+      "name": "TV01",
+      "price": 3000,
+      "description": "none",
+      "productType": {
+        "id": 3,
+        "name": "TV"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Iphone8",
+      "price": 2500,
+      "description": "none",
+      "productType": {
+        "id": 1,
+        "name": "Điện Thoại"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Laptop03",
+      "price": 3000,
+      "description": "none",
+      "productType": {
+        "id": 2,
+        "name": "Laptop"
+      }
+    },
+    {
+      "id": 6,
+      "name": "TV02",
+      "price": 1200,
+      "description": "123",
+      "productType": {
+        "id": 3,
+        "name": "TV"
+      }
+    }
+  ],
+  "productType": [
+    {
+      "id": 1,
+      "name": "Điện Thoại"
+    },
+    {
+      "id": 2,
+      "name": "Laptop"
+    },
+    {
+      "id": 3,
+      "name": "TV"
+    }
+  ]
+}

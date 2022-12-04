@@ -1,0 +1,206 @@
+<div class="row">
+
+  <div class="leftcolumn">
+
+    <div class="card">
+      <h2>Ticket List</h2>
+      <hr>
+      <table class="table table-hover">
+        <thead>
+        <tr>
+          <th>N.o</th>
+          <th>Start Point</th>
+          <th>End Point</th>
+          <th (click)="sortByPrice()">Price</th>
+          <th>Start Date</th>
+          <th>Start Time</th>
+          <th>Car Host</th>
+          <th>Amount</th>
+          <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let x of ticketList, let  i = index ">
+          <td>{{i + 1}}</td>
+          <td>{{x.startPoint}}</td>
+          <td>{{x.endPoint}}</td>
+          <td>{{x.price}}</td>
+          <td>{{x.startDate}}</td>
+          <td>{{x.startTime}}</td>
+          <td>{{x.carHost.name}}</td>
+          <td>{{x.amount}}</td>
+          <td style="display: flex; gap: 10px;">
+
+            <button (click)="viewBookTicket(x.id)"
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#bookingModal">Book
+            </button>
+
+            <button (click)="viewBookTicket(x.id)"
+                    class="btn btn-info"
+                    data-bs-toggle="modal"
+                    data-bs-target="#viewModal">View
+            </button>
+
+            <button [routerLink]="['/edit',x.id]"
+                    class="btn btn-warning">Edit
+            </button>
+
+            <button (click)="getDeleteInfo(x.id)"
+                    class="btn btn-danger"
+                    data-bs-toggle="modal"
+                    data-bs-target="#deleteModal">Delete
+            </button>
+
+          </td>
+        </tr>
+        </tbody>
+      </table>
+
+      <div class="pagination">
+        <a *ngFor="let x of numberOfPages" (click)="goToPage(x)">{{x}}</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="rightcolumn">
+
+    <div class="card">
+      <h2>Search</h2>
+      <hr>
+      <pre style="font-family: 'Segoe UI'">Start Point:          <input placeholder="..."
+                                                                      type="text"
+                                                                      [(ngModel)]="startPointSearch"/></pre>
+
+      <pre style="font-family: 'Segoe UI'">End Point:           <input placeholder="..."
+                                                                    type="text"
+                                                                    [(ngModel)]="endPointSearch"/></pre>
+
+      <pre style="font-family: 'Segoe UI'">First Date:           <input placeholder="..."
+                                                                           type="date"
+                                                                           [(ngModel)]="firstDateSearch"/></pre>
+
+      <pre style="font-family: 'Segoe UI'">Second Date:      <input placeholder="..."
+                                                                       type="date"
+                                                                       [(ngModel)]="secondDateSearch"/></pre>
+
+      <hr>
+      <div style="display: flex; align-content: center; justify-content: center">
+        <button class="btn btn-primary" style="max-width: 50%" (click)="getTicketList()">Search</button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="modal fade" id="bookingModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5">Book Ticket</h1>
+          <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <div *ngIf="ticketView.amount == 0">
+            <p>There is no more of this ticket!</p>
+          </div>
+
+          <div *ngIf="ticketView.amount !== 0">
+            <p>Do you want to book ticket from <span style="color: red">{{ticketView.startPoint}}</span>
+              to <span style="color: red">{{ticketView.endPoint}}</span> at
+              <span style="color: red">{{ticketView.startTime}}</span> of
+              <span style="color: red">{{ticketView.startDate}}</span> ?
+            </p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button
+            class="btn btn-secondary" data-bs-dismiss="modal">Close
+          </button>
+
+          <button (click)="bookTicket()" class="btn btn-danger" data-bs-dismiss="modal">Yes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="viewModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5">View Ticket</h1>
+          <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <table class="table table-hover">
+            <tbody>
+            <tr>
+              <th>Price</th>
+              <td>{{ticketView.price}}</td>
+            </tr>
+            <tr>
+              <th>Start Point</th>
+              <td>{{ticketView.startPoint}}</td>
+            </tr>
+            <tr>
+              <th>End Point</th>
+              <td>{{ticketView.endPoint}}</td>
+            </tr>
+            <tr>
+              <th>Start Date</th>
+              <td>{{ticketView.startDate}}</td>
+            </tr>
+            <tr>
+              <th>Start Time</th>
+              <td>{{ticketView.startTime}}</td>
+            </tr>
+            <tr>
+              <th>Amount</th>
+              <td>{{ticketView.amount}}</td>
+            </tr>
+            <tr>
+              <th>Car Host</th>
+              <td>{{ticketView.carHost.name}}</td>
+            </tr>
+            </tbody>
+
+          </table>
+
+        </div>
+        <div class="modal-footer">
+          <button
+            class="btn btn-secondary" data-bs-dismiss="modal">Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="deleteModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5">Delete Contract</h1>
+          <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <p>Do you really want to Delete this Ticket ?</p>
+          <p>{{deleteTicketId}}</p>
+        </div>
+        <div class="modal-footer">
+          <button
+            class="btn btn-secondary" data-bs-dismiss="modal">Close
+          </button>
+
+          <button (click)="deleteTicketById()" class="btn btn-danger" data-bs-dismiss="modal">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,92 @@
+{
+  "champion": [
+    {
+      "id": 1,
+      "name": "Shennhaha",
+      "nation": "Lonia",
+      "genre": "Soul",
+      "championType": {
+        "id": "4",
+        "name": "Tanker"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Sett",
+      "nation": "Noxus",
+      "genre": "Human",
+      "championType": {
+        "id": "2",
+        "name": "Fighter"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Ahriiiii123",
+      "nation": "Lonia",
+      "genre": "Mutant",
+      "championType": {
+        "id": "3",
+        "name": "Assassin"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Aatrox",
+      "nation": "Targon",
+      "genre": "Darkin",
+      "championType": {
+        "id": "2",
+        "name": "Fighter"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Nidalee",
+      "nation": "Lonia",
+      "genre": "Mutant",
+      "championType": {
+        "id": "3",
+        "name": "Assassin"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Nautilus",
+      "nation": "Bilgewater",
+      "genre": "Mutant",
+      "championType": {
+        "id": "4",
+        "name": "Tanker"
+      }
+    },
+    {
+      "id": 7,
+      "name": "Amumuuuu",
+      "nation": "Shurima",
+      "genre": "Yordle",
+      "championType": {
+        "id": "4",
+        "name": "Tanker"
+      }
+    }
+  ],
+  "championType": [
+    {
+      "id": "1",
+      "name": "Mage"
+    },
+    {
+      "id": "2",
+      "name": "Fighter"
+    },
+    {
+      "id": "3",
+      "name": "Assassin"
+    },
+    {
+      "id": "4",
+      "name": "Tanker"
+    }
+  ]
+}

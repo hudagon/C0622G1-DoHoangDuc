@@ -1,0 +1,163 @@
+<div class="row">
+
+  <div class="leftcolumn">
+
+    <div class="card">
+      <h2>Contract List</h2>
+      <hr>
+      <table class="table table-hover">
+        <thead>
+        <tr>
+          <th>N.o</th>
+          <th>Customer</th>
+          <th>Employee</th>
+          <th>Facility</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let x of contractList | paginate: { itemsPerPage: 2, currentPage: page }, let  i = index">
+          <td>{{i + 1}}</td>
+          <td>{{x.customer.name}}</td>
+          <td>{{x.employee.name}}</td>
+          <td>{{x.facility.name}}</td>
+          <td>{{x.startDate}}</td>
+          <td>{{x.endDate}}</td>
+          <td style="display: flex; gap: 10px;">
+
+            <button (click)="viewContract(x.id)"
+                    class="btn btn-info"
+                    data-bs-toggle="modal"
+                    data-bs-target="#viewModal">View
+            </button>
+
+            <button [routerLink]="['/edit',x.id]"
+                    class="btn btn-warning">Edit
+            </button>
+
+            <button
+              (click)="getDeleteInfo(x.id)"
+              class="btn btn-danger"
+              data-bs-toggle="modal"
+              data-bs-target="#deleteModal">
+              Delete
+            </button>
+
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <pagination-controls (pageChange)="page = $event"></pagination-controls>
+    </div>
+  </div>
+
+  <div class="rightcolumn">
+
+    <div class="card">
+      <h2>Search</h2>
+      <hr>
+      <pre style="font-family: 'Segoe UI'">Facility Name:        <input placeholder="..."
+                                                                        type="text"
+                                                                        [(ngModel)]="facilityNameSearch"/></pre>
+
+      <pre style="font-family: 'Segoe UI'">First Date:              <input placeholder="..."
+                                                                           type="date"
+                                                                           [(ngModel)]="firstDateSearch"/></pre>
+
+      <pre style="font-family: 'Segoe UI'">Second Date:         <input placeholder="..."
+                                                                       type="date"
+                                                                       [(ngModel)]="secondDateSearch"/></pre>
+
+      <pre style="font-family: 'Segoe UI'">Employee Name:   <select [(ngModel)]="employeeNameSearch">
+        <option value="">-- Employee --</option>
+        <option *ngFor="let x of employeeList" value="{{x.id}}">{{x.name}}</option>
+      </select></pre>
+
+      <pre style="font-family: 'Segoe UI'">Customer Name:   <select [(ngModel)]="customerNameSearch">
+        <option value="">-- Customer --</option>
+        <option *ngFor="let x of customerList" value="{{x.id}}">{{x.name}}</option>
+      </select></pre>
+
+      <hr>
+      <div style="display: flex; align-content: center; justify-content: center">
+        <button class="btn btn-primary" style="max-width: 50%" (click)="getContractList()">Search</button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="modal fade" id="deleteModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5">Delete Contract</h1>
+            <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+
+            <p>Do you really want to Delete this contract ?</p>
+
+          </div>
+          <div class="modal-footer">
+            <button
+              class="btn btn-secondary" data-bs-dismiss="modal">Close
+            </button>
+
+            <button (click)="deleteContractById()" class="btn btn-danger" data-bs-dismiss="modal">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <div class="modal fade" id="viewModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5">View Contract</h1>
+          <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <table class="table table-hover">
+            <tbody>
+            <tr>
+              <th>Customer</th>
+              <td>{{contractView.customer.name}}</td>
+            </tr>
+            <tr>
+              <th>Employee</th>
+              <td>{{contractView.employee.name}}</td>
+            </tr>
+            <tr>
+              <th>Facility</th>
+              <td>{{contractView.facility.name}}</td>
+            </tr>
+            <tr>
+              <th>Start Date</th>
+              <td>{{contractView.startDate}}</td>
+            </tr>
+            <tr>
+              <th>End Date</th>
+              <td>{{contractView.endDate}}</td>
+            </tr>
+            <tr>
+              <th>Deposit</th>
+              <td>{{contractView.deposit}}</td>
+            </tr>
+            </tbody>
+
+          </table>
+
+        </div>
+        <div class="modal-footer">
+          <button
+            class="btn btn-secondary" data-bs-dismiss="modal">Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

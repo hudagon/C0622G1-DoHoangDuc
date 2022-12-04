@@ -12,19 +12,22 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class PhoneController {
+
     @GetMapping("/")
-    public String showForm(Model model){
+    public String showForm(Model model) {
         model.addAttribute("phoneNumber", new PhoneNumber());
         return "/index";
     }
+
     @PostMapping("/")
-    public String checkValidation (@Validated @ModelAttribute("phoneNumber")PhoneNumber phoneNumber,
-                                   BindingResult bindingResult, Model model){
+    public String checkValidation(@Validated @ModelAttribute("phoneNumber") PhoneNumber phoneNumber,
+                                  BindingResult bindingResult, Model model) {
+
         new PhoneNumber().validate(phoneNumber, bindingResult);
-        if (bindingResult.hasFieldErrors()){
+
+        if (bindingResult.hasFieldErrors()) {
             return "/index";
-        }
-        else {
+        } else {
             model.addAttribute("phoneNumber", phoneNumber);
             return "/result";
         }

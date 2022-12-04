@@ -1,0 +1,121 @@
+{
+  "contract": [
+    {
+      "id": 1,
+      "customer": {
+        "id": 1,
+        "name": "Nguyen Van A"
+      },
+      "employee": {
+        "id": 1,
+        "name": "Nguyen Van B"
+      },
+      "facility": {
+        "id": 1,
+        "name": "Villa So 1",
+        "price": 3000
+      },
+      "startDate": "2022-11-10",
+      "endDate": "2022-11-12",
+      "deposit": "1500"
+    },
+    {
+      "id": 2,
+      "customer": {
+        "id": 2,
+        "name": "Nguyen Van C"
+      },
+      "employee": {
+        "id": 1,
+        "name": "Nguyen Van B"
+      },
+      "facility": {
+        "id": 2,
+        "name": "Villa So 2",
+        "price": 4000
+      },
+      "startDate": "2022-08-07",
+      "endDate": "2022-08-09",
+      "deposit": "1200"
+    },
+    {
+      "id": 3,
+      "customer": {
+        "id": 3,
+        "name": "Nguyen Van G"
+      },
+      "employee": {
+        "id": 2,
+        "name": "Nguyen Van A"
+      },
+      "facility": {
+        "id": 3,
+        "name": "Room So 1",
+        "price": 600
+      },
+      "startDate": "2022-01-03",
+      "endDate": "2022-01-05",
+      "deposit": 100
+    },
+    {
+      "id": 4,
+      "customer": {
+        "id": 1,
+        "name": "Nguyen Van A"
+      },
+      "employee": {
+        "id": 1,
+        "name": "Nguyen Van B"
+      },
+      "facility": {
+        "id": 1,
+        "name": "Villa So 1",
+        "price": 3000
+      },
+      "startDate": "2022-12-02",
+      "endDate": "2022-12-04",
+      "deposit": "123"
+    }
+  ],
+  "customer": [
+    {
+      "id": 1,
+      "name": "Nguyen Van A"
+    },
+    {
+      "id": 2,
+      "name": "Nguyen Van C"
+    },
+    {
+      "id": 3,
+      "name": "Nguyen Van G"
+    }
+  ],
+  "employee": [
+    {
+      "id": 1,
+      "name": "Nguyen Van B"
+    },
+    {
+      "id": 2,
+      "name": "Nguyen Van A"
+    }
+  ],
+  "facility": [
+    {
+      "id": 1,
+      "name": "Villa So 1",
+      "price": 3000
+    },
+    {
+      "id": 2,
+      "name": "Villa So 2",
+      "price": 4000
+    },
+    {
+      "id": 3,
+      "name": "Room So 1",
+      "price": 600
+    }
+  ]
+}

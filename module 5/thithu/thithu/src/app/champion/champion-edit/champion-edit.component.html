@@ -1,0 +1,71 @@
+<div class="row">
+
+  <div class="leftcolumn">
+
+    <div class="card">
+      <h2>Edit Champion</h2>
+      <hr>
+      <form [formGroup]="rfChampionEdit" *ngIf="rfChampionEdit" (ngSubmit)="edit()">
+        <div class="row">
+
+          <div class="mb-3 col-6">
+            <input disabled formControlName="id" type="text" class="form-control" placeholder="Id...">
+          </div>
+
+          <div class="mb-3 col-6">
+            <input formControlName="name" type="text" class="form-control" placeholder="name...">
+
+            <div style="display: flex; justify-content: center; align-content: center; color: red"
+                 *ngIf="rfChampionEdit.controls['name'].hasError('required') &&
+              rfChampionEdit.controls['name'].touched">
+              Name is required!
+            </div>
+          </div>
+
+          <div class="mb-3 col-6">
+            <input formControlName="nation" type="text" class="form-control" placeholder="nation...">
+
+            <div style="display: flex; justify-content: center; align-content: center; color: red"
+                 *ngIf="rfChampionEdit.controls['nation'].hasError('required') &&
+              rfChampionEdit.controls['nation'].touched">
+              Nation is required!
+            </div>
+          </div>
+
+          <div class="mb-3 col-6">
+            <input formControlName="genre" type="text" class="form-control" placeholder="genre...">
+
+            <div style="display: flex; justify-content: center; align-content: center; color: red"
+                 *ngIf="rfChampionEdit.controls['genre'].hasError('required') &&
+              rfChampionEdit.controls['genre'].touched">
+              Genre is required!
+            </div>
+          </div>
+
+          <div class="mb-3 col-6">
+            <select formControlName="championType" class="form-select">
+              <option [value]="championATBE.championType">{{championATBE.championType.name}}</option>
+              <ng-container *ngFor="let x of championTypeList">
+                <option [ngValue]="x" *ngIf="x.id != championATBE.championType.id">{{x.name}}</option>
+              </ng-container>
+            </select>
+
+
+            <div style="display: flex; justify-content: center; align-content: center; color: red"
+                 *ngIf="rfChampionEdit.controls['championType'].hasError('required') &&
+              rfChampionEdit.controls['championType'].touched">
+              Champion Type is required!
+            </div>
+          </div>
+
+        </div>
+        <button type="submit" class="btn btn-primary" style="margin-right: 8px" [disabled]="!rfChampionEdit.valid">
+          Edit
+        </button>
+        <input type="reset" role="button" class="btn btn-warning" value="reset">
+      </form>
+    </div>
+
+  </div>
+
+</div>

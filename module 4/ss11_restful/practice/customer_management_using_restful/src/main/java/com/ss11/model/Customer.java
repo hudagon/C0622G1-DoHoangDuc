@@ -1,9 +1,8 @@
 package com.ss11.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
+import javax.persistence.*;
 
 @Entity
 public class Customer {
@@ -13,6 +12,11 @@ public class Customer {
     private Long id;
     private String firstName;
     private String lastName;
+
+    @ManyToOne
+    @JoinColumn(name = "customerType_id", referencedColumnName = "id")
+    @JsonManagedReference
+    private CustomerType customerType;
 
     public Customer() {
     }
@@ -45,5 +49,13 @@ public class Customer {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public CustomerType getCustomerType() {
+        return customerType;
+    }
+
+    public void setCustomerType(CustomerType customerType) {
+        this.customerType = customerType;
     }
 }

@@ -1,0 +1,96 @@
+<div class="row">
+
+  <div class="leftcolumn">
+
+    <div class="card">
+      <h2>Create Contract</h2>
+      <hr>
+      <form [formGroup]="rfContract" (ngSubmit)="create()">
+        <div class="row">
+
+          <div class="mb-3 col-6">
+            <label>Start Date:</label>
+            <input formControlName="startDate" type="date" class="form-control">
+
+            <div style="display: flex; justify-content: center; align-content: center; color: red"
+                 *ngIf="rfContract.controls['startDate'].hasError('required') &&
+              rfContract.controls['startDate'].touched">
+              Start Date is required!
+            </div>
+          </div>
+
+          <div class="mb-3 col-6">
+            <label>End Date:</label>
+            <input formControlName="endDate" type="date" class="form-control">
+
+            <div style="display: flex; justify-content: center; align-content: center; color: red"
+                 *ngIf="rfContract.controls['endDate'].hasError('required') &&
+              rfContract.controls['endDate'].touched">
+              End Date is required!
+            </div>
+          </div>
+
+          <div class="mb-3 col-6">
+            <label>Deposit:</label>
+            <input formControlName="deposit" type="text" class="form-control">
+
+            <div style="display: flex; justify-content: center; align-content: center; color: red"
+                 *ngIf="rfContract.controls['deposit'].hasError('required') &&
+              rfContract.controls['deposit'].touched">
+              Deposit is required!
+            </div>
+          </div>
+
+          <div class="mb-3 col-6">
+            <label>Customer:</label>
+            <select formControlName="customer" class="form-select">
+              <option value="">-- Customer --</option>
+              <option *ngFor="let x of customerList" [ngValue]="x">{{x.name}}</option>
+            </select>
+
+
+            <div style="display: flex; justify-content: center; align-content: center; color: red"
+                 *ngIf="rfContract.controls['customer'].hasError('required') &&
+              rfContract.controls['customer'].touched">
+              Customer is required!
+            </div>
+          </div>
+
+          <div class="mb-3 col-6">
+            <label>Employee:</label>
+            <select formControlName="employee" class="form-select">
+              <option value="">-- Employee --</option>
+              <option *ngFor="let x of employeeList" [ngValue]="x">{{x.name}}</option>
+            </select>
+
+            <div style="display: flex; justify-content: center; align-content: center; color: red"
+                 *ngIf="rfContract.controls['employee'].hasError('required') &&
+              rfContract.controls['employee'].touched">
+              Employee is required!
+            </div>
+          </div>
+
+          <div class="mb-3 col-6">
+            <label>Facility:</label>
+            <select formControlName="facility" class="form-select">
+              <option value="">-- Facility --</option>
+              <option *ngFor="let x of facilityList" [ngValue]="x">{{x.name}}</option>
+            </select>
+
+            <div style="display: flex; justify-content: center; align-content: center; color: red"
+                 *ngIf="rfContract.controls['facility'].hasError('required') &&
+              rfContract.controls['facility'].touched">
+              Facility is required!
+            </div>
+          </div>
+
+        </div>
+        <button type="submit" class="btn btn-primary" style="margin-right: 8px" [disabled]="!rfContract.valid">Create
+        </button>
+        <input type="reset" role="button" class="btn btn-warning" value="reset">
+      </form>
+    </div>
+
+  </div>
+
+</div>

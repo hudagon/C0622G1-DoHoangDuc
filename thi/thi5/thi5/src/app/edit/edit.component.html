@@ -1,0 +1,124 @@
+<div class="row">
+
+  <div class="leftcolumn">
+
+    <div class="card">
+      <h2>Edit Ticket</h2>
+      <hr>
+      <form [formGroup]="rfTicketEdit" (ngSubmit)="edit()">
+        <div class="row">
+
+          <div class="mb-3 col-6">
+            <label>Id:</label>
+            <input disabled formControlName="id" type="text" class="form-control">
+          </div>
+
+          <div class="mb-3 col-6">
+            <label>Price:</label>
+            <input formControlName="price" type="text" class="form-control" placeholder="price...">
+
+            <div style="display: flex; justify-content: center; align-content: center; color: red"
+                 *ngIf="rfTicketEdit.controls['price'].hasError('required') &&
+              rfTicketEdit.controls['price'].touched">
+              Price is required!
+            </div>
+
+            <div style="display: flex; justify-content: center; align-content: center; color: red"
+                 *ngIf="rfTicketEdit.controls['price'].hasError('min') &&
+              rfTicketEdit.controls['price'].touched">
+              Price must be greater than Zero!
+            </div>
+          </div>
+
+          <div class="mb-3 col-6">
+            <label>Start Point:</label>
+            <input formControlName="startPoint" type="text" class="form-control" placeholder="start point...">
+
+            <div style="display: flex; justify-content: center; align-content: center; color: red"
+                 *ngIf="rfTicketEdit.controls['startPoint'].hasError('required') &&
+              rfTicketEdit.controls['startPoint'].touched">
+              Start Point is required!
+            </div>
+          </div>
+
+          <div class="mb-3 col-6">
+            <label>End Point:</label>
+            <input formControlName="endPoint" type="text" class="form-control" placeholder="end point...">
+
+            <div style="display: flex; justify-content: center; align-content: center; color: red"
+                 *ngIf="rfTicketEdit.controls['endPoint'].hasError('required') &&
+              rfTicketEdit.controls['endPoint'].touched">
+              End Point is required!
+            </div>
+          </div>
+
+          <div class="mb-3 col-6">
+            <label>Start Date:</label>
+            <input formControlName="startDate" type="date" class="form-control">
+
+            <div style="display: flex; justify-content: center; align-content: center; color: red"
+                 *ngIf="rfTicketEdit.controls['startDate'].hasError('required') &&
+              rfTicketEdit.controls['startDate'].touched">
+              Start Date is required!
+            </div>
+          </div>
+
+          <div class="mb-3 col-6">
+            <label>Start Time:</label>
+            <input formControlName="startTime" type="text" class="form-control" placeholder="start time...">
+
+            <div style="display: flex; justify-content: center; align-content: center; color: red"
+                 *ngIf="rfTicketEdit.controls['startTime'].hasError('required') &&
+              rfTicketEdit.controls['startTime'].touched">
+              Start Time is required!
+            </div>
+
+            <div style="display: flex; justify-content: center; align-content: center; color: red"
+                 *ngIf="rfTicketEdit.controls['startTime'].hasError('pattern') &&
+              rfTicketEdit.controls['startTime'].touched">
+              Start Time must the the same as format hh:mm !
+            </div>
+          </div>
+
+          <div class="mb-3 col-6">
+            <label>Car Host:</label>
+            <select formControlName="carHostId" class="form-select">
+              <option value="">-- Car Host --</option>
+              <option *ngFor="let x of carHostList" [ngValue]="x.id">{{x.name}}</option>
+            </select>
+
+            <div style="display: flex; justify-content: center; align-content: center; color: red"
+                 *ngIf="rfTicketEdit.controls['carHostId'].hasError('required') &&
+              rfTicketEdit.controls['carHostId'].touched">
+              Car Host is required!
+            </div>
+          </div>
+
+          <div class="mb-3 col-6">
+            <label>Amount:</label>
+            <input formControlName="amount" type="text" class="form-control" placeholder="amount...">
+
+            <div style="display: flex; justify-content: center; align-content: center; color: red"
+                 *ngIf="rfTicketEdit.controls['amount'].hasError('required') &&
+              rfTicketEdit.controls['amount'].touched">
+              Amount is required!
+            </div>
+
+            <div style="display: flex; justify-content: center; align-content: center; color: red"
+                 *ngIf="rfTicketEdit.controls['amount'].hasError('min') &&
+              rfTicketEdit.controls['amount'].touched">
+              Amount must be greater than Zero!
+            </div>
+          </div>
+
+        </div>
+        <button type="submit" class="btn btn-primary" style="margin-right: 8px" [disabled]="!rfTicketEdit.valid">Edit
+        </button>
+        <input type="reset" role="button" class="btn btn-warning" value="reset">
+      </form>
+    </div>
+
+  </div>
+
+</div>
+

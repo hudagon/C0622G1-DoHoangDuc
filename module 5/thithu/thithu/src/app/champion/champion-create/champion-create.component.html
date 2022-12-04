@@ -1,0 +1,63 @@
+<div class="row">
+
+  <div class="leftcolumn">
+
+    <div class="card">
+      <h2>Create Champion</h2>
+      <hr>
+      <form [formGroup]="rfChampion" (ngSubmit)="create()">
+        <div class="row">
+
+          <div class="mb-3 col-6">
+            <input formControlName="name" type="text" class="form-control" placeholder="name...">
+
+            <div style="display: flex; justify-content: center; align-content: center; color: red"
+              *ngIf="rfChampion.controls['name'].hasError('required') &&
+              rfChampion.controls['name'].touched">
+              Name is required!
+            </div>
+          </div>
+
+          <div class="mb-3 col-6">
+            <input formControlName="nation" type="text" class="form-control" placeholder="nation...">
+
+            <div style="display: flex; justify-content: center; align-content: center; color: red"
+                 *ngIf="rfChampion.controls['nation'].hasError('required') &&
+              rfChampion.controls['nation'].touched">
+              Nation is required!
+            </div>
+          </div>
+
+          <div class="mb-3 col-6">
+            <input formControlName="genre" type="text" class="form-control" placeholder="genre...">
+
+            <div style="display: flex; justify-content: center; align-content: center; color: red"
+                 *ngIf="rfChampion.controls['genre'].hasError('required') &&
+              rfChampion.controls['genre'].touched">
+              Genre is required!
+            </div>
+          </div>
+
+          <div class="mb-3 col-6">
+            <select formControlName="championType" class="form-select">
+              <option value="">-- Champion Type --</option>
+              <option *ngFor="let x of championTypeList" [ngValue]="x">{{x.name}}</option>
+            </select>
+
+            <div style="display: flex; justify-content: center; align-content: center; color: red"
+                 *ngIf="rfChampion.controls['championType'].hasError('required') &&
+              rfChampion.controls['championType'].touched">
+              Champion Type is required!
+            </div>
+          </div>
+
+        </div>
+        <button type="submit" class="btn btn-primary" style="margin-right: 8px" [disabled]="!rfChampion.valid">Create
+        </button>
+        <input type="reset" role="button" class="btn btn-warning" value="reset">
+      </form>
+    </div>
+
+  </div>
+
+</div>

@@ -1,5 +1,6 @@
 package com.ss11.service.impl;
 
+import com.ss11.dto.CustomerDto;
 import com.ss11.model.Customer;
 import com.ss11.repository.ICustomerRepository;
 import com.ss11.service.ICustomerService;
@@ -26,11 +27,19 @@ public class CustomerService implements ICustomerService {
 
     @Override
     public Customer save(Customer customer) {
-        return customerRepository.save(customer);
+        return null;
+    }
+
+    @Override
+    public void save(CustomerDto customer) {
+        customerRepository.save(Long.valueOf(customer.getId()),customer.getFirstName(),
+                customer.getLastName(),customer.getCustomerTypeId());
+//        return  customerRepository.save(customer);
     }
 
     @Override
     public void remove(Long id) {
         customerRepository.deleteById(id);
     }
+
 }

@@ -1,0 +1,74 @@
+<div class="row">
+
+  <div class="leftcolumn">
+
+    <div class="card">
+      <h2>Edit Contract</h2>
+      <hr>
+      <form [formGroup]="rfContractEdit" (ngSubmit)="edit()">
+        <div class="row">
+
+          <div class="mb-3 col-6">
+            <label>Id:</label>
+            <input disabled formControlName="id" type="text" class="form-control">
+          </div>
+
+
+
+          <div class="mb-3 col-6">
+            <label>Start Date:</label>
+            <input formControlName="startDate" type="date" class="form-control">
+          </div>
+
+          <div class="mb-3 col-6">
+            <label>End Date:</label>
+            <input formControlName="endDate" type="date" class="form-control">
+          </div>
+
+          <div class="mb-3 col-6">
+            <label>Deposit:</label>
+            <input formControlName="deposit" type="text" class="form-control">
+          </div>
+
+          <div class="mb-3 col-6">
+            <label>Customer:</label>
+
+            <select formControlName="customer" class="form-select">
+              <option [value]="contractATBE.customer">{{contractATBE.customer.name}}</option>
+              <ng-container *ngFor="let x of customerList">
+                <option [ngValue]="x" *ngIf="x.id != contractATBE.customer.id">{{x.name}}</option>
+              </ng-container>
+            </select>
+          </div>
+
+          <div class="mb-3 col-6">
+            <label>Employee:</label>
+            <select formControlName="employee" class="form-select">
+              <option [value]="contractATBE.employee">{{contractATBE.employee.name}}</option>
+              <ng-container *ngFor="let x of employeeList">
+                <option [ngValue]="x" *ngIf="x.id != contractATBE.employee.id">{{x.name}}</option>
+              </ng-container>
+            </select>
+          </div>
+
+          <div class="mb-3 col-6">
+            <label>Facility:</label>
+            <select formControlName="facility" class="form-select">
+              <option [value]="contractATBE.facility">{{contractATBE.facility.name}}</option>
+              <ng-container *ngFor="let x of facilityList">
+                <option [ngValue]="x" *ngIf="x.id != contractATBE.facility.id">{{x.name}}</option>
+              </ng-container>
+            </select>
+          </div>
+
+        </div>
+        <button type="submit" class="btn btn-primary" style="margin-right: 8px" [disabled]="!rfContractEdit.valid">Edit
+        </button>
+        <input type="reset" role="button" class="btn btn-warning" value="reset">
+      </form>
+    </div>
+
+  </div>
+
+</div>
+

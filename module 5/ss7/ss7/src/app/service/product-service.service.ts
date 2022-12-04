@@ -11,8 +11,6 @@ export class ProductServiceService  {
 
   product: Product;
 
-  productList: Product[] = [];
-
   constructor(
     private httpClient: HttpClient,
   ) {
