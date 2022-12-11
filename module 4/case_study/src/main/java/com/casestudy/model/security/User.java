@@ -15,7 +15,7 @@ public class User {
     private String password;
     private Integer status = 1;
 
-    @OneToMany(mappedBy = "role")
+    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
     private Set<UserRole> UserRoles;
 
     @OneToOne(mappedBy = "user")

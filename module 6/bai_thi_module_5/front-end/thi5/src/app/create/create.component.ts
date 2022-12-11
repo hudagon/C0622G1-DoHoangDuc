@@ -57,11 +57,9 @@ export class CreateComponent implements OnInit {
 
   create() {
     this.ticketService.create(this.rfTicket.value).subscribe(ticket => {
-      this.ticketABTC = this.rfTicket.value;
+      console.log('ok');
       this.toastr.success('New Ticket created successfully!')
       this.router.navigateByUrl('list');
-    }, error => {
-      console.log(error);
     })
   }
 }

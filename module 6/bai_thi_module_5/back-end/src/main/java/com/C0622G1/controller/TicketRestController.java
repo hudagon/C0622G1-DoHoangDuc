@@ -63,14 +63,7 @@ public class TicketRestController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<?> createTicket(@Valid @RequestBody TicketDto ticketATBC, BindingResult bindingResult) {
-
-        ticketByRequestDtoValidator.validate(ticketATBC, bindingResult);
-
-        if (bindingResult.hasErrors()) {
-            return new ResponseEntity<>(bindingResult.getAllErrors(), HttpStatus.NOT_MODIFIED);
-        }
-
+    public ResponseEntity<TicketDto> createTicket(@RequestBody TicketDto ticketATBC) {
         ticketService.create(ticketATBC);
         return new ResponseEntity<>(HttpStatus.OK);
     }

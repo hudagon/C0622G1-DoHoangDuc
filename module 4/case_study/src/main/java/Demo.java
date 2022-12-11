@@ -5,15 +5,8 @@ import java.util.Scanner;
 public class Demo {
     public static void main(String[] args) {
 
-        System.out.print("Enter date of birth in YYYY-MM-DD format: ");
-        Scanner scanner = new Scanner(System.in);
 
-        String input = scanner.nextLine();
-        scanner.close();
 
-        LocalDate dob = LocalDate.parse(input);
-
-        System.out.println("You are " + calculateAge(dob) + " years old.");
 
     }
 

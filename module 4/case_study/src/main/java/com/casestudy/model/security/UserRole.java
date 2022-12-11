@@ -9,11 +9,11 @@ public class UserRole {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @ManyToOne
+    @ManyToOne()
     @JoinColumn(name = "userId", referencedColumnName = "Id")
     private User user;
 
-    @ManyToOne
+    @ManyToOne()
     @JoinColumn(name = "roleId", referencedColumnName = "Id")
     private Role role;
 

@@ -42,19 +42,8 @@ export class TicketService {
     return this.httpClient.put<TicketDto>(environment.apiUrl + 'api/ticket/v1/edit', ticketABTE);
   }
 
-  create(ticketABTC: TicketDto): Observable<any> {
-    console.log(ticketABTC);
-    return this.httpClient.post<any>(environment.apiUrl + 'api/ticket/v1/create', (ticketABTC)).pipe(this.errorHandler)
+  create(ticketABTC: TicketDto): Observable<TicketDto> {
+    return this.httpClient.post<TicketDto>(environment.apiUrl + 'api/ticket/v1/create', (ticketABTC))
   }
 
-  errorHandler(error) {
-    let errorMessage = '';
-    if (error.error instanceof ErrorEvent) {
-      errorMessage = error.error.message;
-    } else {
-      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
-    }
-    console.log(errorMessage);
-    return throwError(errorMessage);
-  };
 }
