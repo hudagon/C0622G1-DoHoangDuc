@@ -31,6 +31,13 @@
   --cultured: hsl(0, 0%, 93%);
   --white: hsl(0, 100%, 100%);
   --onyx: hsl(0, 0%, 27%);
+  --dark-green: #738054;
+  --light-green: #A3A86D;
+  --light-cream: #E1D5B8;
+  --dark-cream: #D6C7A7;
+  --light-brown: #BE996E;
+  --brown: #AA722A;
+
 
   /**
    * typography
@@ -111,7 +118,7 @@ input {
 
 input::placeholder { font: inherit; }
 
-body { background: var(--white); }
+body { background: var(--light-cream); }
 
 /**
  * scrollbar style
