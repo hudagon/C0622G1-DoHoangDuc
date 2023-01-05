@@ -1,0 +1,292 @@
+/*
+Template Name:Do Kids
+File: Layout CSS
+Author: Templates On Web
+Author URI: http://templateonweb.com/
+Licence: <a href="http://www.templateonweb.com/terms.php?v=content&contentid=152">Website Template Licence</a>
+*/
+/*********************detail****************/
+#detail{
+padding-top:40px;
+padding-bottom:40px; 
+ }
+/* Main carousel style */
+.carousel {
+    width: 100%;
+}
+
+/* Indicators list style */
+.article-slide .carousel-indicators {
+    bottom: -110px;
+    left: 0;
+    margin-left: 5px;
+    width: 100%;
+}
+/* Indicators list style */
+.article-slide .carousel-indicators li {
+    border: medium none;
+    border-radius: 0;
+    float: left;
+    height: 80px;
+    margin-bottom: 5px;
+    margin-left: 0;
+    margin-right: 5px !important;
+    margin-top: 0;
+    width:23.9%;
+}
+/* Indicators images style */
+.article-slide .carousel-indicators img {
+    border: 2px solid #FFFFFF;
+    float: left;
+    height: 80px;
+    left: 0;
+     width:100%;
+}
+/* Indicators active image style */
+.article-slide .carousel-indicators .active img {
+    border: 2px solid #f85f89;
+    opacity: 0.7;
+}
+.mag img {
+    max-width: 100%;
+}
+.magnify {
+    position: relative;
+    cursor: none
+}
+.magnify-large {
+	position: absolute;
+	display: none;
+	width: 175px;
+	height: 175px;
+	-webkit-box-shadow: 0 0 0 7px rgba(255, 255, 255, 0.85), 0 0 7px 7px rgba(0, 0, 0, 0.25), inset 0 0 40px 2px rgba(0, 0, 0, 0.25);
+	-moz-box-shadow: 0 0 0 7px rgba(255, 255, 255, 0.85), 0 0 7px 7px rgba(0, 0, 0, 0.25), inset 0 0 40px 2px rgba(0, 0, 0, 0.25);
+	box-shadow: 0 0 0 7px rgba(255, 255, 255, 0.85), 0 0 7px 7px rgba(0, 0, 0, 0.25), inset 0 0 40px 2px rgba(0, 0, 0, 0.25);
+	-webkit-border-radius: 100%;
+	-moz-border-radius: 100%;
+	border-radius: 100%
+}
+
+.detail_1r .span_1 {
+    display: block;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.detail_1r h5{
+display:inline-block;
+margin-right:10px;
+float:left;
+margin-top:30px;
+ }
+.detail_1r h4{
+margin-top:9px;
+ }
+.detail_1r .input-group {
+    width: 26%;
+	margin-top:10px;
+	float:left;
+	margin-right:10px;
+}
+.detail_1r .input-group .form-control{
+height:55px;
+}
+.detail_1r .input-group .btn{
+padding:16.5px 16px;
+}
+.detail_1r ul li{
+margin-top:10px;
+}
+.detail_1r ul li a{
+padding-left:5px;
+padding-right:5px;
+}
+.detail_1r ul li span{
+padding-left:5px;
+padding-right:5px;
+}
+.detail_1r h6 i{
+margin-right:5px;
+}
+
+.detail_2{
+ margin-top:120px;
+ }
+.click {
+    padding: 20px 15px;
+    border: 1px solid #ddd;
+    border-top: none;
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
+    color: #f85f89;
+    font-weight: bold;
+}
+.detail_2i ul li a{
+ background:none;
+ font-weight:bold;
+ font-size:22px;
+  }
+.detail_2i ul li a:hover{
+ color:#f85f89;
+  background:none;
+  }
+.click_inner ul {
+    margin-top: 10px;
+    list-style: disc;
+    padding-left: 20px;
+    color: #666;
+}
+.click_inner_2i .span_1 {
+    font-size: 20px;
+}
+.click_inner_2i img{
+float:left;
+margin-right:20px; 
+ }
+.click_inner_2i1 .span_1 {
+	display:block;
+	margin-top:15px;
+}
+.click_inner_2i1 .form-control {
+height:50px;
+border-radius:10px;
+background:#fafafa;
+margin-top:15px;
+width:60%;
+border-color:#eee;
+}
+.click_inner_2i1 .form_1 {
+height:150px;
+margin-top:15px;
+width:100%;
+}
+.click_inner_2i1 p span{
+margin-left:5px; 
+ }
+.detail_3{
+margin-top:30px; 
+ }
+
+.prod_home_2m1 span{
+display:block;
+margin-top:10px;
+font-size:20px; 
+ }
+.prod_home_2m1 h2{
+margin-top:10px; 
+ }
+.bg h5{
+ background:#dce086;
+ display:inline-block;
+ padding:5px 10px;
+ }
+.bg1 h5{
+ background:#fdbecf;
+ display:inline-block;
+ padding:5px 10px;
+ }
+.bg2 h5{
+ background:#b7eaf2;
+ display:inline-block;
+ padding:5px 10px;
+ }
+.prod_home_2m{
+position:relative;
+ }
+.prod_home_2m2{
+position:absolute;
+width:100%;
+top:15px;
+left:15px;
+ }
+.prod_home_2m3{
+position:absolute;
+width:100%;
+top:70px;
+display:none;
+ }
+.prod_home_2m:hover .prod_home_2m3{
+display:block;
+ }
+.prod_home_2{
+margin-top:30px; 
+ }
+/*********************detail_end****************/
+
+@media screen and (max-width : 767px){
+.article-slide .carousel-indicators li{
+width:23%; 
+ }
+.detail_1r {
+ margin-top:120px;
+ text-align:center;
+ }
+.detail_1r h5{
+display:block;
+margin-right:0;
+float:none; 
+margin-top:0;
+ }
+.detail_1r .input-group{
+margin-left:auto;
+margin-right:auto;
+float:none;
+width:51%; 
+ }
+.click{
+text-align:center; 
+ }
+.click_inner ul{
+margin-left:0;
+list-style:none; 
+ }
+.click_inner_2 {
+text-align:left;  
+ }
+.detail_3 {
+text-align:center; 
+ }
+.prod_home_2m {
+margin-top:10px; 
+ }
+.detail_2{
+margin-top:20px; 
+ }
+.prod_home_2m3{
+top:30%; 
+ }
+}
+
+@media (min-width:768px) and (max-width:991px) {
+.article-slide .carousel-indicators li{
+width:23%; 
+ }
+.detail_1r .input-group{
+width:42%;
+margin-bottom:10px;
+ }
+.prod_home_2m1 img{
+ min-height:200px;
+ }
+.detail_2{
+margin-top:30px; 
+ }
+ }
+@media (min-width:992px) and (max-width:1200px) {
+.detail_1r .input-group{
+width:32%;
+ }
+.prod_home_2m1 img{
+ min-height:200px;
+ }
+.detail_2{
+margin-top:30px; 
+ }
+ }
+@media (min-width:1201px) and (max-width:1350px) {
+
+ }
+
+
+
+
