@@ -60,24 +60,6 @@
 
 </header>
 
-<!--<div class="container-login">-->
-<!--  <div class="login">-->
-<!--    <form>-->
-<!--      <h1 class="newsletter-title">Login</h1>-->
-<!--      <p class="newsletter-desc" style="color: white">-->
-<!--        Welcome back, friend!-->
-<!--      </p>-->
-<!--      <hr/>-->
-<!--      <input type="email" name="email" class="email-field" placeholder="username..." required>-->
-<!--      <input type="password" class="email-field" placeholder="password..." required>-->
-<!--      <button type="submit" class="btn-newsletter">Login</button>-->
-<!--    </form>-->
-<!--  </div>-->
-<!--  <div class="pic">-->
-<!--    <img src="assets/images/login.jpg"/>-->
-<!--  </div>-->
-<!--</div>-->
-
 <div class="container-login">
 
   <div class="login-board">
@@ -89,9 +71,11 @@
         </div>
         <hr>
         <div class="body">
-          <input type="text" placeholder="username...">
-          <input type="password" placeholder="password...">
-          <button>Login</button>
+          <form [formGroup]="rfLogin" (ngSubmit)="login()">
+            <input formControlName="username" type="text" placeholder="username...">
+            <input formControlName="password" type="password" placeholder="password...">
+            <button type="submit">Login</button>
+          </form>
         </div>
       </div>
     </div>

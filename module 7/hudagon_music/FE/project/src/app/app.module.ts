@@ -10,6 +10,8 @@ import { OverviewProductComponent } from './component/landing-page/overview-prod
 import { SpecificProductComponent } from './component/landing-page/specific-product/specific-product.component';
 import { LoginSignUpComponent } from './component/login-sign-up/login-sign-up.component';
 import { ProductDetailComponent } from './component/product-detail/product-detail.component';
+import {HttpClientModule} from '@angular/common/http';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { ProductDetailComponent } from './component/product-detail/product-detai
   imports: [
     BrowserModule,
     AppRoutingModule,
-    IonicModule.forRoot()
+    HttpClientModule,
+    IonicModule.forRoot(),
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
