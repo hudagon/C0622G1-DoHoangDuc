@@ -8,7 +8,7 @@ public class PasswordEncoder {
 
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
-        System.out.println(passwordEncoder.encode("iuNhi"));
+        System.out.println(passwordEncoder.encode("123456"));
 
     }
 

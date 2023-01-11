@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {TokenService} from '../../service/security/token.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  checkLogin = false;
+
+  constructor(
+    private tokenService: TokenService,
+    private router: Router
+  ) {
+  }
 
   ngOnInit(): void {
+
+    if (this.tokenService.isLogged()) {
+      this.checkLogin = true;
+    }
+
+  }
+
+  logOut() {
+    this.tokenService.logOut();
+    this.router.navigateByUrl('').then(() => {
+      location.reload();
+    });
   }
 
 }

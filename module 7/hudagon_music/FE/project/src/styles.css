@@ -1102,7 +1102,7 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
 }
 
 .product-minimal .showcase-category:hover {
-  color: var(--salmon-pink);
+  color: var(--light-green);
 }
 
 .product-minimal .price-box {
@@ -1114,7 +1114,7 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
 .product-minimal .price {
   font-size: var(--fs-7);
   font-weight: var(--weight-700);
-  color: var(--salmon-pink);
+  color: var(--light-brown);
 }
 
 .product-minimal .price-box del {
@@ -1191,7 +1191,7 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
 }
 
 .product-featured .price {
-  color: var(--salmon-pink);
+  color: var(--light-brown);
   font-weight: var(--weight-700);
 }
 

@@ -71,7 +71,7 @@
 
       </div>
 
-      <div  class="header-user-actions">
+      <div *ngIf="!checkLogin" class="header-user-actions">
 
         <a href="/login" class="btn41-43 signUp">
           Sign Up
@@ -84,8 +84,20 @@
 
       </div>
 
-    </div>
+      <div *ngIf="checkLogin" class="header-user-actions">
 
+        <ion-icon name="cart-outline" class="dropbtn"></ion-icon>
+
+        <div class="dropdown">
+          <ion-icon name="person-circle-outline" class="dropbtn"></ion-icon>
+          <div class="dropdown-content">
+            <a style="cursor: pointer">My Profile</a>
+            <a style="cursor: pointer" (click)="logOut()">Log Out</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </div>
 
   <nav class="desktop-navigation-menu">

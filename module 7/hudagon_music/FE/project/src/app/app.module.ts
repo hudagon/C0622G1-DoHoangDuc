@@ -12,6 +12,7 @@ import { LoginSignUpComponent } from './component/login-sign-up/login-sign-up.co
 import { ProductDetailComponent } from './component/product-detail/product-detail.component';
 import {HttpClientModule} from '@angular/common/http';
 import {ReactiveFormsModule} from '@angular/forms';
+import { FooterComponent } from './component/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {ReactiveFormsModule} from '@angular/forms';
     OverviewProductComponent,
     SpecificProductComponent,
     LoginSignUpComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
