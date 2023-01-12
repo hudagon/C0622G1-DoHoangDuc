@@ -13,6 +13,8 @@ import { ProductDetailComponent } from './component/product-detail/product-detai
 import {HttpClientModule} from '@angular/common/http';
 import {ReactiveFormsModule} from '@angular/forms';
 import { FooterComponent } from './component/footer/footer.component';
+import { CartComponent } from './component/cart/cart.component';
+import { UserManagementComponent } from './component/user-management/user-management.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { FooterComponent } from './component/footer/footer.component';
     SpecificProductComponent,
     LoginSignUpComponent,
     ProductDetailComponent,
-    FooterComponent
+    FooterComponent,
+    CartComponent,
+    UserManagementComponent
   ],
   imports: [
     BrowserModule,

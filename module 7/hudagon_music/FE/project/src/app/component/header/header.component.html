@@ -31,13 +31,6 @@
 
       </ul>
 
-      <!--      <div class="header-alert-news">-->
-      <!--        <p>-->
-      <!--          <b>Free Shipping</b>-->
-      <!--          This Week Order Over - $55-->
-      <!--        </p>-->
-      <!--      </div>-->
-
       <div class="header-top-actions">
 
         <select name="language">
@@ -86,7 +79,7 @@
 
       <div *ngIf="checkLogin" class="header-user-actions">
 
-        <ion-icon name="cart-outline" class="dropbtn"></ion-icon>
+        <ion-icon routerLink="cart" name="cart-outline" class="dropbtn"></ion-icon>
 
         <div class="dropdown">
           <ion-icon name="person-circle-outline" class="dropbtn"></ion-icon>
@@ -118,19 +111,19 @@
             <ul class="dropdown-panel-list">
 
               <li class="menu-title">
-                <a href="#">Piano</a>
+                <a routerLink="specific">Piano</a>
               </li>
 
               <li class="panel-list-item">
-                <a href="#">Electronic Piano</a>
+                <a routerLink="specific">Electronic Piano</a>
               </li>
 
               <li class="panel-list-item">
-                <a href="#">Acoustic Piano</a>
+                <a routerLink="specific">Acoustic Piano</a>
               </li>
 
               <li class="panel-list-item">
-                <a href="#">
+                <a routerLink="specific">
                   <img src="./assets/images/piano-banner.jpg" alt="headphone collection"
                        style="width: 250px; height: 130px">
                 </a>
@@ -141,19 +134,19 @@
             <ul class="dropdown-panel-list">
 
               <li class="menu-title">
-                <a href="#">Guitar</a>
+                <a [routerLink]="['specific']">Guitar</a>
               </li>
 
               <li class="panel-list-item">
-                <a href="#">Electronic Guitar</a>
+                <a [routerLink]="['specific']">Electronic Guitar</a>
               </li>
 
               <li class="panel-list-item">
-                <a href="#">Acoustic Guitar</a>
+                <a [routerLink]="['specific']">Acoustic Guitar</a>
               </li>
 
               <li class="panel-list-item">
-                <a href="#">
+                <a [routerLink]="['specific']">
                   <img src="./assets/images/guitar-banner.jpg" alt="headphone collection"
                        style="width: 250px; height: 130px">
                 </a>

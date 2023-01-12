@@ -5,6 +5,8 @@ import {OverviewProductComponent} from './component/landing-page/overview-produc
 import {SpecificProductComponent} from './component/landing-page/specific-product/specific-product.component';
 import {LoginSignUpComponent} from './component/login-sign-up/login-sign-up.component';
 import {ProductDetailComponent} from './component/product-detail/product-detail.component';
+import {CartComponent} from './component/cart/cart.component';
+import {UserGuard} from './security/guard/user.guard';
 
 
 const routes: Routes = [
@@ -18,7 +20,10 @@ const routes: Routes = [
     path: 'login', component: LoginSignUpComponent
   },
   {
-    path: 'product-detail', component: ProductDetailComponent
+    path: 'product-detail', component: ProductDetailComponent, canActivate: [UserGuard]
+  },
+  {
+    path: 'cart', component: CartComponent, canActivate: [UserGuard]
   }
 ];
 
