@@ -1,20 +1,12 @@
-package com.project.be.model.product;
+package com.project.be.dto.product;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.project.be.model.order.ProductOrderDetail;
+import com.project.be.model.product.*;
 
-import javax.persistence.*;
 import java.util.Set;
 
-@Entity
-public class Product {
+public class ProductDto {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
-    private String name;
 
     private String registerDay;
 
@@ -26,38 +18,24 @@ public class Product {
 
     private Integer deleteStatus;
 
-    @JsonBackReference
-    @ManyToOne
-    @JoinColumn(name = "brand_id", referencedColumnName = "id")
     private Brand brand;
 
-    @JsonBackReference
-    @ManyToOne
-    @JoinColumn(name = "category_id", referencedColumnName = "id")
     private Category category;
 
-    @JsonManagedReference
-    @OneToMany(mappedBy = "product")
     private Set<ImgUrlProduct> imgUrlProductSet;
 
-    @JsonManagedReference
-    @OneToOne(mappedBy = "product")
     private Guitar guitar;
 
-    @JsonManagedReference
-    @OneToOne(mappedBy = "product")
     private Piano piano;
 
-    @JsonManagedReference
-    @OneToMany(mappedBy = "product")
-    private Set<ProductOrderDetail> productOrderDetailSet;
+    public ProductDto() {
+    }
 
-    public Product(Integer id, String registerDay, String name,
-                   String description, Double price,
-                   Integer quantity, Integer deleteStatus,
-                   Brand brand, Category category) {
+    public ProductDto(Integer id, String registerDay, String description,
+                      Double price, Integer quantity, Integer deleteStatus,
+                      Brand brand, Category category, Set<ImgUrlProduct> imgUrlProductSet,
+                      Guitar guitar, Piano piano) {
         this.id = id;
-        this.name = name;
         this.registerDay = registerDay;
         this.description = description;
         this.price = price;
@@ -65,17 +43,9 @@ public class Product {
         this.deleteStatus = deleteStatus;
         this.brand = brand;
         this.category = category;
-    }
-
-    public Set<ProductOrderDetail> getProductOrderDetailSet() {
-        return productOrderDetailSet;
-    }
-
-    public void setProductOrderDetailSet(Set<ProductOrderDetail> productOrderDetailSet) {
-        this.productOrderDetailSet = productOrderDetailSet;
-    }
-
-    public Product() {
+        this.imgUrlProductSet = imgUrlProductSet;
+        this.guitar = guitar;
+        this.piano = piano;
     }
 
     public Integer getId() {
@@ -164,13 +134,5 @@ public class Product {
 
     public void setPiano(Piano piano) {
         this.piano = piano;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 }

@@ -1,5 +1,7 @@
 package com.project.be.model.product;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -18,6 +20,7 @@ public class Brand {
 
     private String deleteStatus;
 
+    @JsonManagedReference
     @OneToMany(mappedBy = "brand")
     private Set<Product> productSet;
 

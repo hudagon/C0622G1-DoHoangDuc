@@ -1,5 +1,7 @@
 package com.project.be.model.product;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 
 @Entity
@@ -8,8 +10,6 @@ public class Piano {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
-    private String name;
 
     private String numberOfKeys;
 
@@ -47,6 +47,7 @@ public class Piano {
 
     private String deleteStatus;
 
+    @JsonBackReference
     @OneToOne
     @JoinColumn(name = "product_id", referencedColumnName = "id")
     private Product product;
@@ -54,7 +55,7 @@ public class Piano {
     public Piano() {
     }
 
-    public Piano(Integer id, String name,
+    public Piano(Integer id,
                  String numberOfKeys, String keySensitivity,
                  String pianoSound, String maxPolyphony,
                  String numberOfSounds, String pianoEffect,
@@ -65,7 +66,6 @@ public class Piano {
                  String pianoAccessories, String pianoSize,
                  String pianoWeight, String deleteStatus) {
         this.id = id;
-        this.name = name;
         this.numberOfKeys = numberOfKeys;
         this.keySensitivity = keySensitivity;
         this.pianoSound = pianoSound;
@@ -100,14 +100,6 @@ public class Piano {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getNumberOfKeys() {

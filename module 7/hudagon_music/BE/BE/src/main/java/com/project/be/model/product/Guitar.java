@@ -1,5 +1,7 @@
 package com.project.be.model.product;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 
 @Entity
@@ -8,8 +10,6 @@ public class Guitar {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
-    private String name;
 
     private String bodyWood;
 
@@ -43,6 +43,7 @@ public class Guitar {
 
     private Integer deleteStatus;
 
+    @JsonBackReference
     @OneToOne
     @JoinColumn(name = "product_id", referencedColumnName = "id")
     private Product product;
@@ -50,7 +51,7 @@ public class Guitar {
     public Guitar() {
     }
 
-    public Guitar(Integer id, String name, String bodyWood,
+    public Guitar(Integer id, String bodyWood,
                   String bodyColor, String neckMaterial,
                   String neckCurvature, String scaleLength,
                   String neckInlay, String guitarBridge,
@@ -60,7 +61,6 @@ public class Guitar {
                   String guitarPickGuards, String tuningMachine,
                   Integer deleteStatus) {
         this.id = id;
-        this.name = name;
         this.bodyWood = bodyWood;
         this.bodyColor = bodyColor;
         this.neckMaterial = neckMaterial;
@@ -93,14 +93,6 @@ public class Guitar {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getBodyWood() {

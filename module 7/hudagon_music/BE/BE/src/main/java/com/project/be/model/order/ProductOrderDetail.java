@@ -1,5 +1,6 @@
 package com.project.be.model.order;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.project.be.model.product.Product;
 
 import javax.persistence.*;
@@ -15,10 +16,12 @@ public class ProductOrderDetail {
 
     private Integer deleteStatus;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "product_id", referencedColumnName = "id")
     private Product product;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "productOrder_id", referencedColumnName = "id")
     private ProductOrder productOrder;

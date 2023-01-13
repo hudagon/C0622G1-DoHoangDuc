@@ -1,5 +1,7 @@
 package com.project.be.model.product;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 
 @Entity
@@ -13,6 +15,7 @@ public class ImgUrlProduct {
 
     private Integer deleteStatus;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "product_id", referencedColumnName = "id")
     private Product product;
