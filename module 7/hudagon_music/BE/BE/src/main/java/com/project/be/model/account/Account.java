@@ -27,7 +27,7 @@ public class Account {
 
     @OneToOne(mappedBy = "account")
     @JsonBackReference
-    private User userSet;
+    private User user;
 
     public Account() {
     }
@@ -86,5 +86,13 @@ public class Account {
 
     public void setAccountRoleSet(Set<AccountRole> accountRoleSet) {
         this.accountRoleSet = accountRoleSet;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUserSet(User user) {
+        this.user = user;
     }
 }

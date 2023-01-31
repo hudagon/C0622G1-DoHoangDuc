@@ -1,17 +1,17 @@
-package com.project.be.dto.product;
+package com.project.be.payload.request;
 
-public class ProductSearchDto {
+public class ProductSearchInfo {
 
     private String productName;
     private String categoryId;
     private String brandId;
     private String priceRange;
 
-    public ProductSearchDto() {
+    public ProductSearchInfo() {
     }
 
-    public ProductSearchDto(String productName, String categoryId,
-                            String brandId, String priceRange) {
+    public ProductSearchInfo(String productName, String categoryId,
+                             String brandId, String priceRange) {
         this.productName = productName;
         this.categoryId = categoryId;
         this.brandId = brandId;

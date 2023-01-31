@@ -18,11 +18,9 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
     if (this.tokenService.isLogged()) {
       this.checkLogin = true;
     }
-
   }
 
   logOut() {

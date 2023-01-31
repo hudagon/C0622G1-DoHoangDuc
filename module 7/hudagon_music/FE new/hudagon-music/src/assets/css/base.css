@@ -1,0 +1,164 @@
+
+/* Custom property */
+
+:root {
+
+  /* Color */
+  --light-green: #a3a86d;
+  --light-cream: rgba(225, 213, 184, 0.4);
+  --dark-cream: #d6c7a7;
+  --light-brown: #be996e;
+  
+  --white-color: #fff;
+  --black-color: #000;
+  --text-color: #333;
+  --primary-color: #738054;
+  --secondary-color: #aa722a;
+  --border-color: #dbdbdb;
+  --hover-color: #fafafa;
+  --container-background-color: #f5f5f5;
+  --star-gold-color: #FFCE3E;
+
+  /* Typography */
+  --fs-1: 1.563rem;
+  --fs-2: 1.375rem;
+  --fs-3: 1.25rem;
+  --fs-4: 1.125rem;
+  --fs-5: 1rem;
+  --fs-6: 0.938rem;
+  --fs-7: 0.875rem;
+  --fs-8: 0.813rem;
+  --fs-9: 0.75rem;
+  --fs-10: 0.688rem;
+  --fs-11: 0.625rem;
+
+  --weight-300: 300;
+  --weight-400: 400;
+  --weight-500: 500;
+  --weight-600: 600;
+  --weight-700: 700;
+
+  /* Border radius */
+  --border-radius-md: 10px;
+  --border-radius-sm: 5px;
+
+  /* Transition */
+  --transition-timing: 0.2s ease;
+
+  /* Height */
+  --navbar-height: 34px;
+  --header-height: 120px;
+  --header-search-height: calc((var(--header-height) - var(--navbar-height)));
+
+}
+
+/* Reset css */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  background: none;
+  font: inherit;
+  border: none;
+  cursor: pointer;
+}
+
+img, ion-icon, button, a {
+  display: block;
+}
+
+span {
+  display: inline-block;
+}
+
+html {
+  font-size: 62.5%;
+  line-height: 1.5rem;
+  font-family: "Roboto", sans-serif;
+  overscroll-behavior: contain;
+}
+
+input {
+  display: block;
+  width: 100%;
+  font: inherit;
+}
+
+input::placeholder {
+  font: inherit;
+}
+
+body {
+  background: var(--white);
+  height: 100vh;
+  width: 100vw;
+  overflow: auto;
+}
+
+/* Responsive */
+
+.grid {
+    width: 1400px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+  
+.grid__full-width {
+    width: 100%;
+}
+  
+.grid__row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -6px;
+    margin-right: -6px;
+}
+  
+.grid__column-2 {
+    padding-left: 6px;
+    padding-right: 6px;
+    width: 16.6667%;
+}
+  
+.grid__column-2-4 {
+    padding-left: 6px;
+    padding-right: 6px;
+    width: 20%;
+}
+  
+.grid__column-10 {
+    padding-left: 6px;
+    padding-right: 6px;
+    width: 83.3334%;
+}
+
+/* Modal */
+
+.modal {
+  position: fixed;
+  inset: 0 0 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn linear 0.2s;
+}
+
+.modal__overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal__content {
+  --growth-from: 0.7;
+  --growth-to: 1;
+  position: relative;
+  z-index: 1;
+  margin: auto;
+  animation: growth linear 0.2s;
+}

@@ -4,6 +4,7 @@ import com.project.be.model.account.Account;
 import com.project.be.payload.request.SignInForm;
 import com.project.be.payload.response.JwtRespone;
 import com.project.be.payload.response.MessageRespone;
+import com.project.be.payload.response.UserInfomartion;
 import com.project.be.security.jwt.JwtProvider;
 import com.project.be.security.user_detail.MyUserDetail;
 import com.project.be.service.account.IAccountService;
@@ -17,7 +18,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin("*")
+@CrossOrigin("http://localhost:4200")
 @RestController
 @RequestMapping("/api/v1/security")
 public class SecurityController {
@@ -52,10 +53,13 @@ public class SecurityController {
 
         MyUserDetail myUserDetail = (MyUserDetail) authentication.getPrincipal();
 
+        UserInfomartion userInfomartion = new UserInfomartion();
+        userInfomartion.setUsername(myUserDetail.getAccount().getUsername());
+        userInfomartion.setAvatar(myUserDetail.getAccount().getUser().getAvatar());
+        userInfomartion.setLastName(myUserDetail.getAccount().getUser().getLastName());
+
         return ResponseEntity.ok(new JwtRespone(token,
-                myUserDetail.getAccount(),
+                userInfomartion,
                 myUserDetail.getAuthorities()));
     }
-
-
 }

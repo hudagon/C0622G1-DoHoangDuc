@@ -9,20 +9,18 @@ public class JwtRespone {
 
     private String token;
     private String type = "Bearer";
-    private Account account;
+    private UserInfomartion userInfomartion;
     private Collection<? extends GrantedAuthority> roles;
 
-    public JwtRespone(String token, String type, Account account, Collection<? extends GrantedAuthority> roles) {
-        this.token = token;
-        this.type = type;
-        this.account = account;
-        this.roles = roles;
+    public JwtRespone() {
     }
 
-    public JwtRespone(String token, Account account, Collection<? extends GrantedAuthority> authorities) {
+    public JwtRespone(String token,
+                      UserInfomartion userInfomartion,
+                      Collection<? extends GrantedAuthority> roles) {
         this.token = token;
-        this.account = account;
-        this.roles = authorities;
+        this.userInfomartion = userInfomartion;
+        this.roles = roles;
     }
 
     public String getToken() {
@@ -41,12 +39,12 @@ public class JwtRespone {
         this.type = type;
     }
 
-    public Account getAccount() {
-        return account;
+    public UserInfomartion getUserInfomartion() {
+        return userInfomartion;
     }
 
-    public void setAccount(Account account) {
-        this.account = account;
+    public void setUserInfomartion(UserInfomartion userInfomartion) {
+        this.userInfomartion = userInfomartion;
     }
 
     public Collection<? extends GrantedAuthority> getRoles() {
