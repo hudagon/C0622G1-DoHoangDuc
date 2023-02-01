@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.project.be.model.order.ProductOrderDetail;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -38,7 +39,7 @@ public class Product {
 
     @JsonManagedReference
     @OneToMany(mappedBy = "product")
-    private Set<ImgUrlProduct> imgUrlProductSet;
+    private List<ImgUrlProduct> imgUrlProductList;
 
     @JsonManagedReference
     @OneToOne(mappedBy = "product")
@@ -52,10 +53,14 @@ public class Product {
     @OneToMany(mappedBy = "product")
     private Set<ProductOrderDetail> productOrderDetailSet;
 
-    public Product(Integer id, String registerDay, String name,
-                   String description, Double price,
-                   Integer quantity, Integer deleteStatus,
-                   Brand brand, Category category) {
+    public Product() {
+    }
+
+    public Product(Integer id, String name, String registerDay,
+                   String description, Double price, Integer quantity,
+                   Integer deleteStatus, Brand brand, Category category,
+                   List<ImgUrlProduct> imgUrlProductList, Guitar guitar,
+                   Piano piano, Set<ProductOrderDetail> productOrderDetailSet) {
         this.id = id;
         this.name = name;
         this.registerDay = registerDay;
@@ -65,17 +70,10 @@ public class Product {
         this.deleteStatus = deleteStatus;
         this.brand = brand;
         this.category = category;
-    }
-
-    public Set<ProductOrderDetail> getProductOrderDetailSet() {
-        return productOrderDetailSet;
-    }
-
-    public void setProductOrderDetailSet(Set<ProductOrderDetail> productOrderDetailSet) {
+        this.imgUrlProductList = imgUrlProductList;
+        this.guitar = guitar;
+        this.piano = piano;
         this.productOrderDetailSet = productOrderDetailSet;
-    }
-
-    public Product() {
     }
 
     public Integer getId() {
@@ -84,6 +82,14 @@ public class Product {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getRegisterDay() {
@@ -142,12 +148,12 @@ public class Product {
         this.category = category;
     }
 
-    public Set<ImgUrlProduct> getImgUrlProductSet() {
-        return imgUrlProductSet;
+    public List<ImgUrlProduct> getImgUrlProductList() {
+        return imgUrlProductList;
     }
 
-    public void setImgUrlProductSet(Set<ImgUrlProduct> imgUrlProductSet) {
-        this.imgUrlProductSet = imgUrlProductSet;
+    public void setImgUrlProductList(List<ImgUrlProduct> imgUrlProductList) {
+        this.imgUrlProductList = imgUrlProductList;
     }
 
     public Guitar getGuitar() {
@@ -166,11 +172,11 @@ public class Product {
         this.piano = piano;
     }
 
-    public String getName() {
-        return name;
+    public Set<ProductOrderDetail> getProductOrderDetailSet() {
+        return productOrderDetailSet;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setProductOrderDetailSet(Set<ProductOrderDetail> productOrderDetailSet) {
+        this.productOrderDetailSet = productOrderDetailSet;
     }
 }

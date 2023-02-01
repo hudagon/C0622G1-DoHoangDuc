@@ -366,6 +366,11 @@
     border-radius: 2px;
     display: flex;
   }
+
+  .header__search-search-bar form {
+    width: auto;
+    height: auto;
+  }
   
   /* Cart */
   

@@ -168,26 +168,33 @@
             Trợ giúp
           </a>
         </li>
-        <li *ngIf="!checkLogin"
+        <li
+          *ngIf="!checkLogin"
           id="registerLink"
           class="navbar-list__navbar-item navbar-list__navbar-item--strong navbar-list__navbar-item--separate"
         >
           Đăng ký
         </li>
-        <li *ngIf="!checkLogin"
+        <li
+          *ngIf="!checkLogin"
           id="loginLink"
           class="navbar-list__navbar-item navbar-list__navbar-item--strong"
         >
           Đăng nhập
         </li>
 
-        <li *ngIf="checkLogin" class="navbar-list__navbar-item navbar-item__user">
+        <li
+          *ngIf="checkLogin"
+          class="navbar-list__navbar-item navbar-item__user"
+        >
           <img
-            src="{{userInformation.avatar}}"
+            src="{{ userInformation.avatar }}"
             alt=""
             class="navbar-item__user-img"
           />
-          <span class="navbar-item__user-name">{{userInformation.lastName}}</span>
+          <span class="navbar-item__user-name">{{
+            userInformation.lastName
+          }}</span>
 
           <ul class="navbar-item__user-menu">
             <li class="user-menu__item">
@@ -224,6 +231,8 @@
       <div class="header__search-search-bar">
         <div class="search-search-bar__input-wrap">
           <input
+            [(ngModel)]="productSearchName"
+            (keyup.enter)="searchProduct()"
             type="text"
             class="search-search-bar__input"
             placeholder="Bạn muốn tìm gì?..."
@@ -265,7 +274,7 @@
           </ul>
         </div>
 
-        <button class="search-search-bar__btn">
+        <button (click)="searchProduct()" type="submit" class="search-search-bar__btn">
           <ion-icon
             class="search-search-bar__btn-icon"
             name="search-outline"
@@ -455,7 +464,10 @@
               </li>
             </ul>
 
-            <button routerLink="/cart" class="search-cart__detail-checkout btn btn--primary">
+            <button
+              routerLink="/cart"
+              class="search-cart__detail-checkout btn btn--primary"
+            >
               Xem giỏ hàng
             </button>
           </div>
@@ -545,7 +557,12 @@
     </div>
 
     <!-- Login Form -->
-    <form [formGroup]="rfLogin" (ngSubmit)="login()" id="loginModal" class="auth-form login-form">
+    <form
+      [formGroup]="rfLogin"
+      (ngSubmit)="login()"
+      id="loginModal"
+      class="auth-form login-form"
+    >
       <div class="auth-form__container">
         <div class="auth-form__header">
           <h3 class="auth-form__header-heading">Đăng Nhập</h3>

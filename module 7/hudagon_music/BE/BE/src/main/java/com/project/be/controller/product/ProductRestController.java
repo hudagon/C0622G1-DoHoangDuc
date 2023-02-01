@@ -51,7 +51,7 @@ public class ProductRestController {
             productHomeShow.setCategory(x.getCategory().getName());
             productHomeShow.setPrice(x.getPrice());
 
-            for (ImgUrlProduct y : x.getImgUrlProductSet()) {
+            for (ImgUrlProduct y : x.getImgUrlProductList()) {
                 productHomeShow.setHomeImgCart(y.getUrl());
                 break;
             }

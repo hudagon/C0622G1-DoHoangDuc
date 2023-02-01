@@ -42,7 +42,14 @@ public class ReadAndWriteFile {
 
     public void writeFile(String filePath, int max) throws IOException {
         try {
-            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(filePath));
+
+            File file = new File(filePath);
+
+            if (!file.exists()) {
+                throw new FileNotFoundException();
+            }
+
+            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file));
             bufferedWriter.write("Max is: " + max);
             bufferedWriter.close();
         } catch (IOException e) {

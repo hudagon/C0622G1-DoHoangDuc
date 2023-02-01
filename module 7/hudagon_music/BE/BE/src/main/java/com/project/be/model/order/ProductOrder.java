@@ -16,6 +16,10 @@ public class ProductOrder {
 
     private Integer deleteStatus;
 
+    private Integer paymentStatus = 0;
+
+    private Long totalMoney;
+
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private User user;
@@ -23,10 +27,16 @@ public class ProductOrder {
     @OneToMany(mappedBy = "productOrder")
     private Set<ProductOrderDetail> productOrderDetailSet;
 
-    public ProductOrder(Integer id, String orderDate, Integer deleteStatus) {
+    public ProductOrder(Integer id, String orderDate, Integer deleteStatus,
+                        Integer paymentStatus, Long totalMoney,
+                        User user, Set<ProductOrderDetail> productOrderDetailSet) {
         this.id = id;
         this.orderDate = orderDate;
         this.deleteStatus = deleteStatus;
+        this.paymentStatus = paymentStatus;
+        this.totalMoney = totalMoney;
+        this.user = user;
+        this.productOrderDetailSet = productOrderDetailSet;
     }
 
     public Set<ProductOrderDetail> getProductOrderDetailSet() {
@@ -70,5 +80,21 @@ public class ProductOrder {
 
     public void setDeleteStatus(Integer deleteStatus) {
         this.deleteStatus = deleteStatus;
+    }
+
+    public Integer getPaymentStatus() {
+        return paymentStatus;
+    }
+
+    public void setPaymentStatus(Integer paymentStatus) {
+        this.paymentStatus = paymentStatus;
+    }
+
+    public Long getTotalMoney() {
+        return totalMoney;
+    }
+
+    public void setTotalMoney(Long totalMoney) {
+        this.totalMoney = totalMoney;
     }
 }

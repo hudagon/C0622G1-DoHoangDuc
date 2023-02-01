@@ -38,10 +38,17 @@ public class ProductServiceImpl implements IProductService {
 
     @Override
     public Page<Product> searchProduct(ProductSearchInfo productSearchInfo, Pageable pageable) {
+
+        String[] price = productSearchInfo.getPriceRange().split("-");
+
+        String firstPrice = price[0];
+        String lastPrice = price[1];
+
         return productRepository.searchProduct(
                 productSearchInfo.getBrandId(),
                 productSearchInfo.getCategoryId(),
                 productSearchInfo.getProductName(),
+                firstPrice, lastPrice,
                 pageable);
     }
 }

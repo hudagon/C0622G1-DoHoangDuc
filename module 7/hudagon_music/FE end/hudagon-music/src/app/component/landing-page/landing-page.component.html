@@ -1,9 +1,12 @@
+
 <div class="app__container">
   <div class="grid">
     <div class="grid__row app_content">
-      <div class="grid__column-2">
+      <form [formGroup]="rfSearch" (change)="searchProduct()" class="grid__column-2">
         <nav class="category">
-          <h3 class="category__heading">Danh mục</h3>
+          <h3 class="category__heading">
+            <span>Danh mục sản phẩm</span> 
+          </h3>
 
           <ul class="category__list">
             <li class="category__list-item category__list-item--active">
@@ -17,7 +20,48 @@
             </li>
           </ul>
         </nav>
-      </div>
+
+        <nav class="search-detail">
+          <h3 class="search-detail__heading">
+            <span>Mức giá</span> 
+          </h3>
+
+          <ul class="search-detail__price">
+
+            <li class="search-detail__price-item">
+              <span>Tất cả</span>
+              <input type="radio" value="0-9999999999999999999" formControlName="priceRange"> 
+            </li>
+
+            <li class="search-detail__price-item">
+              <span>Dưới 5 triệu</span>
+              <input type="radio" value="0-5000000" formControlName="priceRange"> 
+            </li>
+
+            <li class="search-detail__price-item">
+                <span>Từ 5 - 10 triệu</span>
+                <input type="radio" value="5000000-10000000" formControlName="priceRange"> 
+            </li>
+
+            <li class="search-detail__price-item">
+              <span>Từ 10 - 20 triệu</span>
+              <input type="radio" value="10000000-20000000" formControlName="priceRange"> 
+            </li>
+
+            <li class="search-detail__price-item">
+              <span>Từ 20 - 50 triệu</span>
+              <input type="radio" value="20000000-50000000" formControlName="priceRange"> 
+            </li>
+
+            <li class="search-detail__price-item">
+              <span>Trên 50 triệu</span>
+              <input type="radio" value="50000000-99999999999999999999" formControlName="priceRange"> 
+            </li>
+            
+          </ul>
+
+        </nav>
+      </form>
 
       <div class="grid__column-10">
         <div class="home-filter">
@@ -25,6 +69,8 @@
           <button class="home-filter__btn btn">Phổ biến</button>
           <button class="home-filter__btn btn btn--primary">Mới nhất</button>
           <button class="home-filter__btn btn">Bán chạy</button>
+
+          <button (click)="searchProduct()" id="search-multiple" hidden>search</button>
 
           <div class="select_input home-filter__select">
             <span class="select_input__label">Giá</span>
@@ -88,13 +134,12 @@
                 ></div>
 
                 <h4 class="home-product-item__name">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit Soluta
-                  accusamus mollitia tenetur odio.
+                  {{x.name}}
                 </h4>
 
                 <div class="home-product-item__price">
-                  <div class="home-product-item__price-old">1.200.000đ</div>
-                  <div class="home-product-item__price-current">999.000đ</div>
+                  <!-- <div class="home-product-item__price-old">1.200.000đ</div> -->
+                  <div class="home-product-item__price-current">{{x.price}}</div>
                 </div>
 
                 <div class="home-product-item__action">
@@ -133,8 +178,8 @@
                 </div>
 
                 <div class="home-product-item__overview">
-                  <span class="item__origin-brand">Whoo</span>
-                  <span class="item__origin-country">Nhật Bản</span>
+                  <span class="item__origin-brand">{{x.brand}}</span>
+                  <span class="item__origin-country">{{x.category}}</span>
                 </div>
 
                 <div class="home-product-item__favourite">

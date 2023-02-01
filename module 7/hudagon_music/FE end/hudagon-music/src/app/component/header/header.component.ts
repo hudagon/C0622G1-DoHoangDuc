@@ -1,7 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup } from "@angular/forms";
 import { Router } from "@angular/router";
+import { ProductHomeShow } from "src/app/dto/product-home-show";
 import { UserInformation } from "src/app/payload/response/user-information";
+import { ProductService } from "src/app/service/product/product.service";
 import { AuthServiceService } from "src/app/service/security/auth-service.service";
 import { TokenServiceService } from "src/app/service/security/token-service.service";
 
@@ -15,12 +17,14 @@ export class HeaderComponent implements OnInit {
   checkLogin = false;
   rfLogin: FormGroup;
   userInformation: UserInformation;
+  productSearchName: string = '';
 
   constructor(
     private formBuiler: FormBuilder,
     private authService: AuthServiceService,
     private tokenService: TokenServiceService,
-    private router: Router
+    private productService: ProductService,
+    private router: Router,
   ) {}
 
   ngOnInit(): void {
@@ -60,4 +64,11 @@ export class HeaderComponent implements OnInit {
       location.reload();
     });
   }
+
+  searchProduct() {
+    this.productService.updateProductSearchName(this.productSearchName);
+    document.getElementById("search-multiple").click();
+  }
+
+
 }
