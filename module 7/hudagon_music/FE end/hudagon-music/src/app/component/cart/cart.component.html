@@ -2,7 +2,10 @@
 <div class="app__container">
   <div class="grid">
     <div class="grid__row app_content">
-      <div class="grid__column-9">
+      <div *ngIf="productOrderDetailList.length === 0" class="grid__cloumn-12 empty-shopping-cart">
+        <img src="/assets/img/others/empty-shopping-cart.jpg" alt="Ảnh cart trống" class="empty-shopping-cart-img">
+      </div>
+      <div *ngIf="productOrderDetailList.length !== 0" class="grid__column-9">
         <div class="main-cart">
           <table class="cart-table">
             <thead class="cart-table__thead">
@@ -52,7 +55,7 @@
           </div>
         </div>
       </div>
-      <div class="grid__column-3">
+      <div *ngIf="productOrderDetailList.length !== 0" class="grid__column-3">
         <div class="cart-infomartion">
           <table class="cart-information-table">
             <thead class="cart-information-table__thead">

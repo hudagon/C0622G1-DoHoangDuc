@@ -2,11 +2,13 @@ package com.project.be.payload.response;
 
 public class UserInfomartion {
 
-    String username;
+    private String username;
 
-    String avatar;
+    private String avatar;
 
-    String lastName;
+    private String lastName;
+
+    private String userId;
 
     public UserInfomartion() {
     }
@@ -39,5 +41,13 @@ public class UserInfomartion {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 }

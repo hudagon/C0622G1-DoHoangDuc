@@ -41,11 +41,11 @@ public class Product {
     @OneToMany(mappedBy = "product")
     private List<ImgUrlProduct> imgUrlProductList;
 
-    @JsonManagedReference
+    @JsonBackReference
     @OneToOne(mappedBy = "product")
     private Guitar guitar;
 
-    @JsonManagedReference
+    @JsonBackReference
     @OneToOne(mappedBy = "product")
     private Piano piano;
 

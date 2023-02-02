@@ -16,8 +16,11 @@ export class HeaderComponent implements OnInit {
 
   checkLogin = false;
   rfLogin: FormGroup;
-  userInformation: UserInformation;
   productSearchName: string = '';
+
+  /* User Information */
+  userInformation: UserInformation;
+  userId: string;
 
   constructor(
     private formBuiler: FormBuilder,
@@ -32,6 +35,7 @@ export class HeaderComponent implements OnInit {
       this.checkLogin = true;
 
       this.userInformation = JSON.parse(this.tokenService.getUserInformation());
+      this.userId = String(this.userInformation.userId);
       
     }
     this.getLoginForm();

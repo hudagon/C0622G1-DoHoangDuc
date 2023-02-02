@@ -16,7 +16,7 @@
   --secondary-color: #aa722a;
   --border-color: #dbdbdb;
   --hover-color: #fafafa;
-  --container-background-color: #f5f5f5;
+  --container-background-color: hsl(0, 0%, 96%);
   --grey-block-background-color: rgba(0, 0, 0, 0.04);
   --star-gold-color: #FFCE3E;
 

@@ -142,3 +142,14 @@ tr {
   align-items: center;
   padding: 0 21px;
 }
+
+.empty-shopping-cart-img {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  width: 50%;
+}
+
+.empty-shopping-cart {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}

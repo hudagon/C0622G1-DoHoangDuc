@@ -6,5 +6,5 @@ export interface ProductOrderDetail {
     quantity?: number;
     deleteStatus?: number;
     product?: Product;
-    // productOrder?: ProductOrder;
+    productOrder?: ProductOrder;
 }

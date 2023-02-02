@@ -57,6 +57,7 @@ public class SecurityController {
         userInfomartion.setUsername(myUserDetail.getAccount().getUsername());
         userInfomartion.setAvatar(myUserDetail.getAccount().getUser().getAvatar());
         userInfomartion.setLastName(myUserDetail.getAccount().getUser().getLastName());
+        userInfomartion.setUserId(String.valueOf(myUserDetail.getAccount().getUser().getId()));
 
         return ResponseEntity.ok(new JwtRespone(token,
                 userInfomartion,

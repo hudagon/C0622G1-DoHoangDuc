@@ -1,5 +1,7 @@
 package com.project.be.model.user;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -14,6 +16,7 @@ public class UserType {
 
     private Integer deleteStatus;
 
+    @JsonManagedReference
     @OneToMany(mappedBy = "userType")
     private Set<User> userSet;
 

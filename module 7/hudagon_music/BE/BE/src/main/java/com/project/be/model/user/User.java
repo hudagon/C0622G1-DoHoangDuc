@@ -1,5 +1,7 @@
 package com.project.be.model.user;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.project.be.model.order.ProductOrder;
 import com.project.be.model.account.Account;
 
@@ -29,17 +31,21 @@ public class User {
 
     private Integer deleteStatus;
 
+    @JsonBackReference
     @OneToOne
     @JoinColumn(name = "account_id", referencedColumnName = "id")
     private Account account;
 
+    @JsonManagedReference
     @OneToMany(mappedBy = "user")
     private Set<Address> addressSet;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "userType_id", referencedColumnName = "id")
     private UserType userType;
 
+    @JsonManagedReference
     @OneToMany(mappedBy = "user")
     private Set<ProductOrder> productOrderSet;
 

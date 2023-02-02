@@ -1,5 +1,7 @@
 package com.project.be.model.account;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -12,6 +14,7 @@ public class Role {
 
     private String name;
 
+    @JsonManagedReference
     @OneToMany(mappedBy = "role")
     private Set<AccountRole> accountRoleSet;
 

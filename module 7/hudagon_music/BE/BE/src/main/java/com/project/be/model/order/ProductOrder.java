@@ -1,5 +1,7 @@
 package com.project.be.model.order;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.project.be.model.user.User;
 
 import javax.persistence.*;
@@ -20,10 +22,12 @@ public class ProductOrder {
 
     private Long totalMoney;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private User user;
 
+    @JsonManagedReference
     @OneToMany(mappedBy = "productOrder")
     private Set<ProductOrderDetail> productOrderDetailSet;
 

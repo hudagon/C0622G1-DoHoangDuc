@@ -5,6 +5,7 @@ import com.project.be.model.order.ProductOrder;
 import com.project.be.service.order.IOrderService;
 import com.project.be.util.GetDate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,7 +18,7 @@ public class ProductOrderController {
     private IOrderService orderService;
 
     @GetMapping("/getProductOrder")
-    public String getProductOrderByUserId(
+    public ResponseEntity<ProductOrder> getProductOrderByUserId(
             @RequestParam String userId
     ) {
 
@@ -30,9 +31,15 @@ public class ProductOrderController {
             newProductOrderDto.setDeleteStatus(1);
             newProductOrderDto.setPaymentStatus(1);
             newProductOrderDto.setTotalMoney(0L);
+
+            orderService.saveManually(newProductOrderDto);
+
+            ProductOrder productOrderNew = orderService.getOrderByUserId(Integer.valueOf(userId));
+
+            return new ResponseEntity<>(productOrderNew, HttpStatus.OK);
         }
 
-        return "ko ok";
+        return new ResponseEntity<>(productOrderFound, HttpStatus.OK);
     }
 
 }

@@ -1,5 +1,7 @@
 package com.project.be.model.guide;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 
 @Entity
@@ -13,6 +15,7 @@ public class ImgUrlGuide {
 
     private Integer deleteStatus;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "guide_id", referencedColumnName = "id")
     private Guide guide;

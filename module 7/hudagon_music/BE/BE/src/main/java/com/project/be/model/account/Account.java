@@ -1,6 +1,7 @@
 package com.project.be.model.account;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.project.be.model.user.User;
 
 import javax.persistence.*;
@@ -21,12 +22,12 @@ public class Account {
 
     private Integer lockStatus;
 
+    @JsonManagedReference
     @OneToMany(mappedBy = "account", fetch = FetchType.EAGER)
-    @JsonBackReference
     private Set<AccountRole> accountRoleSet;
 
-    @OneToOne(mappedBy = "account")
     @JsonBackReference
+    @OneToOne(mappedBy = "account")
     private User user;
 
     public Account() {
