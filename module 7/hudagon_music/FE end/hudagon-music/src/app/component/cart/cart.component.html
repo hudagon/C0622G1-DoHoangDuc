@@ -15,33 +15,35 @@
               <th>Tổng cộng</th>
             </thead>
             <tbody>
-              <tr>
-                <td class="cart-table__product">
-                  <div class="cart-table__product-remove">
-                    <ion-icon name="close-circle-outline"></ion-icon>
-                  </div>
-                  <img
-                    class="cart-table__product-img"
-                    src="https://upload.wikimedia.org/wikipedia/commons/4/4d/Cat_November_2010-1a.jpg"
-                    alt="Chú mèo con"
-                  />
-                  <div class="cart-table__product-name">
-                    Sản phẩm chú mèo con
-                  </div>
-                </td>
-                <td class="cart-table__price">$5.00</td>
-                <td class="cart-table__quantity">
-                  <ion-icon
-                    class="cart-table__quantity-icon"
-                    name="remove-outline"
-                  ></ion-icon>
-                  <span>3</span>
-                  <ion-icon
-                    class="cart-table__quantity-icon"
-                    name="add-outline"
-                  ></ion-icon>
-                </td>
-                <td class="cart-table__total">$15.00</td>
+              <tr *ngFor="let x of productOrderDetailList, let i = index">
+                  <td class="cart-table__product">
+                    <div class="cart-table__product-remove">
+                      <ion-icon name="close-circle-outline"></ion-icon>
+                    </div>
+                    <img
+                      class="cart-table__product-img"
+                      src="{{x.product.imgUrlProductList[0].url}}"
+                      alt="Ảnh guitar"
+                    />
+                    <div class="cart-table__product-name">
+                      {{x.product.name}}
+                    </div>
+                  </td>
+                  <td id="productOrderDetailPrice{{x.id}}" class="cart-table__price">{{x.product.price}}</td>
+                  <td class="cart-table__quantity">
+                    <ion-icon
+                      (click)="calculateMoney(x.id, '2')"
+                      class="cart-table__quantity-icon"
+                      name="remove-outline"
+                    ></ion-icon>
+                    <span id="productOrderDetailQuantity{{x.id}}">{{x.quantity}}</span>
+                    <ion-icon
+                    (click)="calculateMoney(x.id, '1')"
+                      class="cart-table__quantity-icon"
+                      name="add-outline"
+                    ></ion-icon>
+                  </td>
+                  <td id="productOrderDetailTotalMoney{{x.id}}" class="cart-table__total">{{x.product.price * x.quantity}}</td>
               </tr>
             </tbody>
           </table>
@@ -64,7 +66,7 @@
             <tbody>
               <tr>
                 <td class="body-title">Tạm tính</td>
-                <td class="body-money">$92.00</td>
+                <td class="body-money">{{estimatedMoney}}</td>
               </tr>
               <tr>
                 <td class="body-title">Thành tiền</td>

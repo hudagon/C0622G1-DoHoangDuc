@@ -17,17 +17,17 @@ public class ProductServiceImpl implements IProductService {
     private IProductRepository productRepository;
 
     @Override
-    public Iterable findAll() {
+    public Iterable<Product> findAll() {
         return productRepository.findAll();
     }
 
     @Override
-    public Optional findById(Integer id) {
-        return Optional.empty();
+    public Optional<Product> findById(Integer id) {
+        return productRepository.findById(id);
     }
 
     @Override
-    public Object save(Object o) {
+    public Product save(Product product) {
         return null;
     }
 

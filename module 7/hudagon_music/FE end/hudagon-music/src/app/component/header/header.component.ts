@@ -2,7 +2,10 @@ import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup } from "@angular/forms";
 import { Router } from "@angular/router";
 import { ProductHomeShow } from "src/app/dto/product-home-show";
+import { ProductOrder } from "src/app/model/order/product-order";
+import { ProductOrderDetail } from "src/app/model/order/product-order-detail";
 import { UserInformation } from "src/app/payload/response/user-information";
+import { OrderService } from "src/app/service/order/order.service";
 import { ProductService } from "src/app/service/product/product.service";
 import { AuthServiceService } from "src/app/service/security/auth-service.service";
 import { TokenServiceService } from "src/app/service/security/token-service.service";
@@ -14,13 +17,20 @@ import { TokenServiceService } from "src/app/service/security/token-service.serv
 })
 export class HeaderComponent implements OnInit {
 
+  /* Authen information */
   checkLogin = false;
   rfLogin: FormGroup;
+
+  /* Search Information */
   productSearchName: string = '';
 
-  /* User Information */
+  /* User information */
   userInformation: UserInformation;
   userId: string;
+
+  /* Product order information */
+  productOrderDetailList: ProductOrderDetail[] = [];
+  productOrder: ProductOrder;
 
   constructor(
     private formBuiler: FormBuilder,
@@ -28,6 +38,7 @@ export class HeaderComponent implements OnInit {
     private tokenService: TokenServiceService,
     private productService: ProductService,
     private router: Router,
+    private orderService: OrderService
   ) {}
 
   ngOnInit(): void {
@@ -37,10 +48,12 @@ export class HeaderComponent implements OnInit {
       this.userInformation = JSON.parse(this.tokenService.getUserInformation());
       this.userId = String(this.userInformation.userId);
       
+      this.getProductOrder();
     }
     this.getLoginForm();
   }
 
+  /* Authen methods */
   getLoginForm() {
     this.rfLogin = this.formBuiler.group({
       username: [""],
@@ -69,10 +82,18 @@ export class HeaderComponent implements OnInit {
     });
   }
 
+  /* Search methods */
   searchProduct() {
     this.productService.updateProductSearchName(this.productSearchName);
     document.getElementById("search-multiple").click();
   }
 
+  /* Product order methods */
+  getProductOrder() {
+    this.orderService.getProductOrder(this.userId).subscribe((data) => {
+      this.orderService.productOrderId = data.id;
+      this.productOrderDetailList = data.productOrderDetailSet;
+    });
+  }
 
 }

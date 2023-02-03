@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.project.be.model.user.User;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -29,35 +30,7 @@ public class ProductOrder {
 
     @JsonManagedReference
     @OneToMany(mappedBy = "productOrder")
-    private Set<ProductOrderDetail> productOrderDetailSet;
-
-    public ProductOrder(Integer id, String orderDate, Integer deleteStatus,
-                        Integer paymentStatus, Long totalMoney,
-                        User user, Set<ProductOrderDetail> productOrderDetailSet) {
-        this.id = id;
-        this.orderDate = orderDate;
-        this.deleteStatus = deleteStatus;
-        this.paymentStatus = paymentStatus;
-        this.totalMoney = totalMoney;
-        this.user = user;
-        this.productOrderDetailSet = productOrderDetailSet;
-    }
-
-    public Set<ProductOrderDetail> getProductOrderDetailSet() {
-        return productOrderDetailSet;
-    }
-
-    public void setProductOrderDetailSet(Set<ProductOrderDetail> productOrderDetailSet) {
-        this.productOrderDetailSet = productOrderDetailSet;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
+    private List<ProductOrderDetail> productOrderDetailSet;
 
     public ProductOrder() {
     }
@@ -100,5 +73,21 @@ public class ProductOrder {
 
     public void setTotalMoney(Long totalMoney) {
         this.totalMoney = totalMoney;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public List<ProductOrderDetail> getProductOrderDetailSet() {
+        return productOrderDetailSet;
+    }
+
+    public void setProductOrderDetailSet(List<ProductOrderDetail> productOrderDetailSet) {
+        this.productOrderDetailSet = productOrderDetailSet;
     }
 }

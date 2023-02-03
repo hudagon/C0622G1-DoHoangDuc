@@ -1,6 +1,7 @@
 package com.project.be.model.order;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.project.be.model.product.Product;
 
 import javax.persistence.*;
@@ -16,7 +17,7 @@ public class ProductOrderDetail {
 
     private Integer deleteStatus;
 
-    @JsonBackReference
+    @JsonManagedReference
     @ManyToOne
     @JoinColumn(name = "product_id", referencedColumnName = "id")
     private Product product;

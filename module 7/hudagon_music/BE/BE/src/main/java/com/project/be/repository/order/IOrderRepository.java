@@ -22,9 +22,9 @@ public interface IOrderRepository extends JpaRepository<ProductOrder, Integer> {
 
     @Modifying
     @Query(
-            value = " insert into `hudagon_music`.`product_order` (`delete_status`, `order_date`, " +
-                    " `user_id`, `payment_status`, `total_money`)  " +
-                    "  values ( :delete_status , :order_date , :user_id , :payment_status , :total_money) ",
+            value = " insert into `hudagon_music`.`product_order` " +
+                    " (`delete_status`, `order_date`, `user_id`, `payment_status`, `total_money`)  " +
+                    " values ( :delete_status , :order_date , :user_id , :payment_status , :total_money) ",
             nativeQuery = true
     )
     void saveManually(
@@ -34,5 +34,22 @@ public interface IOrderRepository extends JpaRepository<ProductOrder, Integer> {
             @Param("payment_status") String paymentStatus,
             @Param("total_money") String totalMoney
     );
+
+    @Modifying
+    @Query(
+            value = " insert into `hudagon_music`.`product_order_detail` " +
+                    " (`delete_status`, `quantity`, `product_id`, `product_order_id`) " +
+                    " values ('1', :quantity , :product_id , :product_order_id ) ",
+            nativeQuery = true
+    )
+    void addProductOrderDetail(
+            @Param("product_order_id") String productOrderId,
+            @Param("quantity") String productQuantity,
+            @Param("product_id") String productId
+    );
+
+
+
+
 
 }

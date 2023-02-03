@@ -21,7 +21,7 @@ public class OrderServiceImpl implements IOrderService {
 
     @Override
     public Optional<ProductOrder> findById(Integer id) {
-        return Optional.empty();
+        return orderRepository.findById(id);
     }
 
     @Override
@@ -48,4 +48,10 @@ public class OrderServiceImpl implements IOrderService {
                 String.valueOf(productOrderDto.getTotalMoney())
         );
     }
+
+    @Override
+    public void addProductOrderDetail(String productOrderId, String productQuantity, String productId) {
+        orderRepository.addProductOrderDetail(productOrderId, productQuantity, productId);
+    }
+
 }

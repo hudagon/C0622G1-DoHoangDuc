@@ -16,11 +16,11 @@ import org.springframework.transaction.annotation.Transactional;
 public interface IProductRepository extends JpaRepository<Product, Integer> {
 
     @Query(
-            value = " select *\n" +
-                    "from product\n" +
-                    "where name like %:product_name% and if ( :brand_id > 0, brand_id = :brand_id , brand_id > 0)\n" +
-                    "\t\t\t\t     and if ( :category_id > 0, category_id = :category_id , category_id > 0)\n" +
-                    "\t\t\t\t\t and price between :first_price and :second_price "
+            value = " select * " +
+                    " from product " +
+                    " where name like %:product_name% and if ( :brand_id > 0, brand_id = :brand_id , brand_id > 0) " +
+                    "           and if ( :category_id > 0, category_id = :category_id , category_id > 0) " +
+                    "           and price between :first_price and :second_price "
             , nativeQuery = true
     )
     Page<Product> searchProduct(

@@ -49,7 +49,7 @@ public class Product {
     @OneToOne(mappedBy = "product")
     private Piano piano;
 
-    @JsonManagedReference
+    @JsonBackReference
     @OneToMany(mappedBy = "product")
     private Set<ProductOrderDetail> productOrderDetailSet;
 

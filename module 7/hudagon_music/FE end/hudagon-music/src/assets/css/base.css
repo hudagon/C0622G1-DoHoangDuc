@@ -209,6 +209,7 @@ body {
   height: 30px;
   font-size: 13px;
   padding: 0 8px;
+  min-width: 90px;
 }
 
 .btn--with-icon {

@@ -470,7 +470,7 @@
   /* Cart - Cart items */
   
   .search-cart__detail-heading {
-    margin: 12px 0 0 12px;
+    margin: 12px 12px;
     font-size: 1.4rem;
     color: #999;
     font-weight: 400;
@@ -479,8 +479,8 @@
   .search-cart__detail-list-item {
     list-style: none;
     padding-left: 0;
-    height: 45vh;
-    overflow-y: auto;
+    max-height: 400px;
+    overflow: auto;
   }
   
   .detail-list-item__item {

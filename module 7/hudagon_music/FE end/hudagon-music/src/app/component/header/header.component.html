@@ -290,7 +290,8 @@
           <span class="search-cart__badge">3</span>
 
           <!-- No item: search-cart__detail--nothing -->
-          <div class="search-cart__detail">
+          <div [ngClass]="{'search-cart__detail--nothing' : productOrderDetailList.length === 0}" 
+               class="search-cart__detail">
             <img
               src="/assets/img/others/no-cart.png"
               alt=""
@@ -304,9 +305,9 @@
 
             <ul class="search-cart__detail-list-item">
               <!-- Cart item -->
-              <li class="detail-list-item__item">
+              <li class="detail-list-item__item" *ngFor="let x of productOrderDetailList, let i = index">
                 <img
-                  src="https://www.rd.com/wp-content/uploads/2021/01/GettyImages-1175550351.jpg"
+                  src="{{x.product.imgUrlProductList[0].url}}"
                   alt="Ảnh mèo"
                   class="detail-list-item__item-img"
                 />
@@ -314,156 +315,25 @@
                 <div class="detail-list-item__item-info">
                   <div class="item-info__head">
                     <h5 class="item-info__head-name">
-                      Bộ kem đặc trị vùng mắt
+                      {{x.product.name}}
                     </h5>
 
                     <div class="item-info__head-price-wrap">
-                      <span class="item-info__head-price">2.000.000đ</span>
+                      <span class="item-info__head-price">{{x.product.price}}</span>
                       <span class="item-info__head-multiply">x</span>
-                      <span class="item-info__head-quantity">1</span>
+                      <span class="item-info__head-quantity">{{x.quantity}}</span>
                     </div>
                   </div>
 
                   <div class="item-info__body">
-                    <span class="item-info__body-desc"> Phân loại: Bạc </span>
-                    <span class="item-info__body-remove">Xóa</span>
-                  </div>
-                </div>
-              </li>
-              <li class="detail-list-item__item">
-                <img
-                  src="https://www.rd.com/wp-content/uploads/2021/01/GettyImages-1175550351.jpg"
-                  alt="Ảnh mèo"
-                  class="detail-list-item__item-img"
-                />
-
-                <div class="detail-list-item__item-info">
-                  <div class="item-info__head">
-                    <h5 class="item-info__head-name">
-                      Bộ kem đặc trị vùng mắt
-                    </h5>
-
-                    <div class="item-info__head-price-wrap">
-                      <span class="item-info__head-price">2.000.000đ</span>
-                      <span class="item-info__head-multiply">x</span>
-                      <span class="item-info__head-quantity">1</span>
-                    </div>
-                  </div>
-
-                  <div class="item-info__body">
-                    <span class="item-info__body-desc"> Phân loại: Bạc </span>
-                    <span class="item-info__body-remove">Xóa</span>
-                  </div>
-                </div>
-              </li>
-              <li class="detail-list-item__item">
-                <img
-                  src="https://www.rd.com/wp-content/uploads/2021/01/GettyImages-1175550351.jpg"
-                  alt="Ảnh mèo"
-                  class="detail-list-item__item-img"
-                />
-
-                <div class="detail-list-item__item-info">
-                  <div class="item-info__head">
-                    <h5 class="item-info__head-name">
-                      Bộ kem đặc trị vùng mắt
-                    </h5>
-
-                    <div class="item-info__head-price-wrap">
-                      <span class="item-info__head-price">2.000.000đ</span>
-                      <span class="item-info__head-multiply">x</span>
-                      <span class="item-info__head-quantity">1</span>
-                    </div>
-                  </div>
-
-                  <div class="item-info__body">
-                    <span class="item-info__body-desc"> Phân loại: Bạc </span>
-                    <span class="item-info__body-remove">Xóa</span>
-                  </div>
-                </div>
-              </li>
-              <li class="detail-list-item__item">
-                <img
-                  src="https://www.rd.com/wp-content/uploads/2021/01/GettyImages-1175550351.jpg"
-                  alt="Ảnh mèo"
-                  class="detail-list-item__item-img"
-                />
-
-                <div class="detail-list-item__item-info">
-                  <div class="item-info__head">
-                    <h5 class="item-info__head-name">
-                      Bộ kem đặc trị vùng mắt Bộ kem đặc trị vùng mắt Bộ kem đặc
-                      trị vùng mắt Bộ kem đặc trị vùng mắt Bộ kem đặc trị vùng
-                      mắt Bộ kem đặc trị vùng mắt
-                    </h5>
-
-                    <div class="item-info__head-price-wrap">
-                      <span class="item-info__head-price">2.000.000đ</span>
-                      <span class="item-info__head-multiply">x</span>
-                      <span class="item-info__head-quantity">1</span>
-                    </div>
-                  </div>
-
-                  <div class="item-info__body">
-                    <span class="item-info__body-desc"> Phân loại: Bạc </span>
-                    <span class="item-info__body-remove">Xóa</span>
-                  </div>
-                </div>
-              </li>
-              <li class="detail-list-item__item">
-                <img
-                  src="https://www.rd.com/wp-content/uploads/2021/01/GettyImages-1175550351.jpg"
-                  alt="Ảnh mèo"
-                  class="detail-list-item__item-img"
-                />
-
-                <div class="detail-list-item__item-info">
-                  <div class="item-info__head">
-                    <h5 class="item-info__head-name">
-                      Bộ kem đặc trị vùng mắt
-                    </h5>
-
-                    <div class="item-info__head-price-wrap">
-                      <span class="item-info__head-price">2.000.000đ</span>
-                      <span class="item-info__head-multiply">x</span>
-                      <span class="item-info__head-quantity">1</span>
-                    </div>
-                  </div>
-
-                  <div class="item-info__body">
-                    <span class="item-info__body-desc"> Phân loại: Bạc </span>
-                    <span class="item-info__body-remove">Xóa</span>
-                  </div>
-                </div>
-              </li>
-              <li class="detail-list-item__item">
-                <img
-                  src="https://www.rd.com/wp-content/uploads/2021/01/GettyImages-1175550351.jpg"
-                  alt="Ảnh mèo"
-                  class="detail-list-item__item-img"
-                />
-
-                <div class="detail-list-item__item-info">
-                  <div class="item-info__head">
-                    <h5 class="item-info__head-name">
-                      Bộ kem đặc trị vùng mắt
-                    </h5>
-
-                    <div class="item-info__head-price-wrap">
-                      <span class="item-info__head-price">2.000.000đ</span>
-                      <span class="item-info__head-multiply">x</span>
-                      <span class="item-info__head-quantity">1</span>
-                    </div>
-                  </div>
-
-                  <div class="item-info__body">
-                    <span class="item-info__body-desc"> Phân loại: Bạc </span>
+                    <span class="item-info__body-desc">     </span>
                     <span class="item-info__body-remove">Xóa</span>
                   </div>
                 </div>
               </li>
             </ul>
 
+            <button hidden (click)="getProductOrder()" id="reloadHeaderViewCart"></button>
             <button
               [routerLink]="['/cart',userId]"
               class="search-cart__detail-checkout btn btn--primary"

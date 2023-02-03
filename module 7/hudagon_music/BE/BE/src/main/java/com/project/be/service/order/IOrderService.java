@@ -10,4 +10,6 @@ public interface IOrderService extends IGeneralService<ProductOrder> {
 
     void saveManually(ProductOrderDto productOrderDto);
 
+    void addProductOrderDetail(String productOrderId, String productQuantity, String productId);
+
 }

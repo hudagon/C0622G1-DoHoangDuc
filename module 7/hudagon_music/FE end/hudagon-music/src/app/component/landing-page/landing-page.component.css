@@ -1177,3 +1177,69 @@
 .select-option__item--active.select-option__item ion-icon {
   display: inline-block;
 }
+
+
+.interact-adding__detail {
+  width: 100%;
+  min-height: 100px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--white-color);
+  display: none;
+  margin-top: 6px;
+  border-radius: 2px;
+  box-shadow: rgba(251, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.interact-adding__detail::before {
+  content: "";
+  width: 100%;
+  height: 20px;
+  position: absolute;
+  top: -10%;
+  left: 0;
+}
+
+.home-product-item__interact-adding {
+  cursor: default;
+  position: relative;
+}
+
+.home-product-item__interact-adding:hover .interact-adding__detail {
+  display: flex;
+  flex-direction: column;
+  cursor: default;
+}
+
+.interact-adding__detail h3 {
+  color: var(--text-color);
+  padding: 9px 9px;
+}
+
+.interact-adding__detail-quantity span {
+  color: var(--text-color);
+  position: relative;
+  top: -9px;
+  cursor: default;
+}
+
+.detail-quantity__icon {
+  color: var(--text-color);
+  display: inline-block;
+  font-size: 1.5rem;
+  border: 1px solid var(--border-color);
+  padding: 6px;
+  margin: 0 9px;
+  cursor: pointer;
+}
+
+.interact-adding__detail-button {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+
+.interact-adding__detail-button:hover {
+  opacity: 0.9;
+}
+

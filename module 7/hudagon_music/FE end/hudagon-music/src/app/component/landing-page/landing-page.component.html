@@ -123,7 +123,26 @@
                 <!-- Product item action -->
                 <div class="home-product-item__interact">
                   <button class="btn btn--size-s">Xem chi tiết</button>
-                  <button class="btn btn--size-s">Thêm vào giỏ hàng</button>
+                  <button class="btn btn--size-s home-product-item__interact-adding">Thêm vào giỏ hàng
+                    <div class="interact-adding__detail">
+                      <h3>Số lượng</h3>
+                      <td class="interact-adding__detail-quantity">
+                        <ion-icon
+                          (click)="removeProductQuantity()"
+                          class="detail-quantity__icon"
+                          name="remove-outline"
+                        ></ion-icon>
+                        <span>{{productQuantity}}</span>
+                        <ion-icon
+                          (click)="addProductQuantity()"
+                          class="detail-quantity__icon"
+                          name="add-outline"
+                        ></ion-icon>
+                      </td>
+                      <button (click)="addProductToCart(x.id)" class="btn btn-primary btn--size-s interact-adding__detail-button">Thêm</button>
+                    </div>
+                  </button>
+                  
                 </div>
 
                 <div
