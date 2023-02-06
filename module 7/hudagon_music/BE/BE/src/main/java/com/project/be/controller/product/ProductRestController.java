@@ -9,6 +9,7 @@ import com.project.be.service.product.IProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
@@ -35,10 +36,14 @@ public class ProductRestController {
     @PostMapping("/searchProduct")
     public ResponseEntity<Page<ProductHomeShow>> getProductPage(
             @RequestBody ProductSearchInfo productSearchInfo,
-            @PageableDefault(value = 6) Pageable pageable
+            @PageableDefault(value = 5) Pageable pageable
             ) {
 
+        pageable = PageRequest.of(Integer.parseInt(productSearchInfo.getPageNumber()),
+                                  Integer.parseInt(productSearchInfo.getPageSize()));
+
         Page<Product> productPage = productService.searchProduct(productSearchInfo, pageable);
+
 
         List<ProductHomeShow> productHomeShowList = new ArrayList<>();
 

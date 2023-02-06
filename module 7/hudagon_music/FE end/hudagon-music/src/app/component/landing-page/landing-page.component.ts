@@ -23,6 +23,13 @@ export class LandingPageComponent implements OnInit {
   /* Add to cart information */
   productQuantity: number = 1;
 
+  /* User information */
+  isLogged: boolean = false;
+
+  /* Pagination information */
+  totalPages: number = 0;
+  currentPage: number = 0;
+
   constructor(
     private productService: ProductService,
     private formBuilder: FormBuilder,
@@ -34,10 +41,13 @@ export class LandingPageComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    if(this.tokenService.isLogged()) {
+      this.isLogged = true;          
+    }
+
     this.getSearchForm();
     this.searchProduct();
   }
-
 
   /* Search Form */
   getSearchForm() {
@@ -45,15 +55,15 @@ export class LandingPageComponent implements OnInit {
       priceRange: ['0-999999999999999999999']
     })
   }
-  
-
   /* Search method */
   searchProduct() {
     const productSearchInfomartion = {
-      priceRange: this.rfSearch.get('priceRange').value
+      priceRange: this.rfSearch.get('priceRange').value,
     }
 
     this.productService.searchProduct(productSearchInfomartion).subscribe(data => {
+      this.totalPages = data.totalPages;
+      this.currentPage = data.pageable.pageNumber;
       this.productHomeShowList = data.content;
     })
   }
@@ -69,9 +79,41 @@ export class LandingPageComponent implements OnInit {
 
   addProductToCart(productId: number) {
     this.orderService.addProductToCart(this.productQuantity, productId).subscribe(data => {
-      this.toastr.success("Adding to cart successfully!")
+      this.toastr.success("Thêm thành công!")
         document.getElementById("reloadHeaderViewCart").click();
     })
+  }
+
+  /* Pop up toastr */
+  popUpMess(status: string, mess: string) {
+    switch (status) {
+      case '1': 
+      this.toastr.success(mess);
+      case '2':
+      this.toastr.info(mess);
+      case '3':
+      this.toastr.warning(mess);
+      case '4':
+      this.toastr.error(mess);
+    }
+  }
+
+  /* Pagination methods */
+  toPage(page: string) {
+    this.productService.pageNumber = page;
+    this.searchProduct();
+  }
+
+  previousPage() {
+    this.productService.pageNumber = JSON.stringify(+this.productService.pageNumber - 1);
+    this.searchProduct();
+  }
+
+  nextPage() {
+    this.productService.pageNumber = JSON.stringify(+this.productService.pageNumber + 1);
+    this.searchProduct();
+    console.log(this.productService.pageNumber);
+    console.log(this.totalPages);
   }
 
 }

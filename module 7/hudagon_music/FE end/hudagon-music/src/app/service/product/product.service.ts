@@ -14,7 +14,8 @@ export class ProductService {
   productSearchNameInfo: string = '';
   productBrandInfo: string = '-1';
   productCategoryInfo: string = '-1';
-  productPriceInfo: string = '0-999999999999999999999'
+  productPriceInfo: string = '0-999999999999999999999';
+  pageNumber: string = '0';
 
   constructor(private httpClient: HttpClient) {
   }
@@ -28,7 +29,9 @@ export class ProductService {
       productName: this.productSearchNameInfo,
       categoryId: this.productCategoryInfo,
       brandId: this.productBrandInfo,
-      priceRange: productSearchInfomartion.priceRange
+      priceRange: productSearchInfomartion.priceRange,
+      pageSize: '5',
+      pageNumber: this.pageNumber
     }
     return this.httpClient.post<any>(environment.APU_URL + "api/v1/product/searchProduct", searchInfo);
   }

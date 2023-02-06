@@ -169,6 +169,7 @@
           </a>
         </li>
         <li
+          (click)="openAuthenModal('register')"
           *ngIf="!checkLogin"
           id="registerLink"
           class="navbar-list__navbar-item navbar-list__navbar-item--strong navbar-list__navbar-item--separate"
@@ -176,6 +177,7 @@
           Đăng ký
         </li>
         <li
+          (click)="openAuthenModal('login')" 
           *ngIf="!checkLogin"
           id="loginLink"
           class="navbar-list__navbar-item navbar-list__navbar-item--strong"
@@ -287,7 +289,7 @@
         <div class="header__search-cart-wrap">
           <ion-icon class="search-cart__icon" name="cart-outline"></ion-icon>
 
-          <span class="search-cart__badge">3</span>
+          <span class="search-cart__badge">{{currentCartQuantity}}</span>
 
           <!-- No item: search-cart__detail--nothing -->
           <div [ngClass]="{'search-cart__detail--nothing' : productOrderDetailList.length === 0}" 
@@ -348,15 +350,15 @@
 </header>
 
 <!-- Modal authen -->
-<div id="modal" class="modal">
-  <div id="modalOverlay" class="modal__overlay"></div>
+<div id="authenModal" class="modal">
+  <div (click)="closeAuthenModal()" id="modalOverlay" class="modal__overlay"></div>
   <div class="modal__content">
     <!-- Register Form -->
     <div id="registerModal" class="auth-form register-form">
       <div class="auth-form__container">
         <div class="auth-form__header">
           <h3 class="auth-form__header-heading">Đăng Ký</h3>
-          <span id="loginLinkInside" class="auth-form__header-switch-btn">
+          <span (click)="openAuthenModal('login')" id="loginLinkInside" class="auth-form__header-switch-btn">
             Đăng nhập
           </span>
         </div>
@@ -436,7 +438,7 @@
       <div class="auth-form__container">
         <div class="auth-form__header">
           <h3 class="auth-form__header-heading">Đăng Nhập</h3>
-          <span id="registerLinkInside" class="auth-form__header-switch-btn">
+          <span (click)="openAuthenModal('register')" id="registerLinkInside" class="auth-form__header-switch-btn">
             Đăng Ký
           </span>
         </div>

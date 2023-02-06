@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { ProductOrder } from "src/app/model/order/product-order";
 import { ProductOrderDetail } from "src/app/model/order/product-order-detail";
 import { OrderService } from "src/app/service/order/order.service";
@@ -21,7 +21,8 @@ export class CartComponent implements OnInit {
 
   constructor(
     private orderService: OrderService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -45,7 +46,6 @@ export class CartComponent implements OnInit {
     });
   }
 
-
   /* Calculate methods */
   calculateMoney(producerOrderDetailId: string, operator: string) {
     var quantity = +document.getElementById('productOrderDetailQuantity' + producerOrderDetailId).innerHTML;
@@ -67,7 +67,11 @@ export class CartComponent implements OnInit {
 
     /* Changing the estimated money */
     this.estimatedMoney = this.estimatedMoney - currentTotalMoney + afterTotalMoney;
-
   }
-  
+
+  /* Payment methods */
+  payment(userId: string) {
+    this.router.navigate(['/payment',userId]);
+  }
+   
 }

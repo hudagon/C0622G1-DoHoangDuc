@@ -11,6 +11,9 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { CartComponent } from './component/cart/cart.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PaymentComponent } from './component/payment/payment.component';
+import { RouterModule } from '@angular/router';
+import { PaymentMethodComponent } from './component/payment/payment-method/payment-method.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +22,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HeaderComponent,
     FooterComponent,
     CartComponent,
+    PaymentComponent,
+    PaymentMethodComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,7 +36,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       positionClass: 'toast-bottom-left',
       preventDuplicates: true,
     }),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    RouterModule
   ],
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

@@ -2,25 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ecbf3d7-3a19-4172-a3d3-3b490864d3b1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../module 1/ss4_Git&amp;Html/bai_tap/Su_dung_Git/GitProject" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module 1/ss4_Git&amp;Html/bai_tap/Su_dung_Git/GitProject" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../module 2/src/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module 2/src/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/FuramaResort/controllers/BookingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/FuramaResort/controllers/BookingController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/FuramaResort/demo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/FuramaResort/models/things/Booking.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/FuramaResort/models/things/Booking.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/FuramaResort/services/IBookingService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/FuramaResort/services/IBookingService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/FuramaResort/services/IContractService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/FuramaResort/services/IContractService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/FuramaResort/services/impl/BookingService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/FuramaResort/services/impl/BookingService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/FuramaResort/services/impl/ContractService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/FuramaResort/services/impl/ContractService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/FuramaResort/services/impl/FacilityService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/FuramaResort/services/impl/FacilityService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/BookingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/BookingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/things/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/models/things/Booking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/IBookingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/IBookingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/IContractService.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/IContractService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/IService.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/IService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/impl/BookingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/impl/BookingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/impl/ContractService.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/impl/ContractService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/impl/FacilityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/impl/FacilityService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module 7/hudagon_music/BE/BE/src/main/java/com/project/be/controller/product/ProductRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module 7/hudagon_music/BE/BE/src/main/java/com/project/be/controller/product/ProductRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module 7/hudagon_music/BE/BE/src/main/java/com/project/be/payload/request/ProductSearchInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module 7/hudagon_music/BE/BE/src/main/java/com/project/be/payload/request/ProductSearchInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module 7/hudagon_music/FE end/hudagon-music/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module 7/hudagon_music/FE end/hudagon-music/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module 7/hudagon_music/FE end/hudagon-music/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module 7/hudagon_music/FE end/hudagon-music/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module 7/hudagon_music/FE end/hudagon-music/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module 7/hudagon_music/FE end/hudagon-music/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module 7/hudagon_music/FE end/hudagon-music/src/app/app.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module 7/hudagon_music/FE end/hudagon-music/src/app/app.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module 7/hudagon_music/FE end/hudagon-music/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module 7/hudagon_music/FE end/hudagon-music/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module 7/hudagon_music/FE end/hudagon-music/src/app/component/cart/cart.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module 7/hudagon_music/FE end/hudagon-music/src/app/component/cart/cart.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module 7/hudagon_music/FE end/hudagon-music/src/app/component/header/header.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module 7/hudagon_music/FE end/hudagon-music/src/app/component/header/header.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module 7/hudagon_music/FE end/hudagon-music/src/app/component/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module 7/hudagon_music/FE end/hudagon-music/src/app/component/header/header.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module 7/hudagon_music/FE end/hudagon-music/src/app/component/header/header.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module 7/hudagon_music/FE end/hudagon-music/src/app/component/header/header.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module 7/hudagon_music/FE end/hudagon-music/src/app/component/landing-page/landing-page.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module 7/hudagon_music/FE end/hudagon-music/src/app/component/landing-page/landing-page.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module 7/hudagon_music/FE end/hudagon-music/src/app/component/landing-page/landing-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module 7/hudagon_music/FE end/hudagon-music/src/app/component/landing-page/landing-page.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module 7/hudagon_music/FE end/hudagon-music/src/app/component/landing-page/landing-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module 7/hudagon_music/FE end/hudagon-music/src/app/component/landing-page/landing-page.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module 7/hudagon_music/FE end/hudagon-music/src/app/payload/request/product-search-info.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module 7/hudagon_music/FE end/hudagon-music/src/app/payload/request/product-search-info.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module 7/hudagon_music/FE end/hudagon-music/src/app/service/product/product.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module 7/hudagon_music/FE end/hudagon-music/src/app/service/product/product.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module 7/hudagon_music/FE end/hudagon-music/src/assets/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module 7/hudagon_music/FE end/hudagon-music/src/assets/css/base.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module 7/hudagon_music/FE end/hudagon-music/src/assets/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module 7/hudagon_music/FE end/hudagon-music/src/assets/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module 7/hudagon_music/FE end/hudagon-music/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module 7/hudagon_music/FE end/hudagon-music/src/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,13 +36,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/code/CodeGym2/C0622G1-DoHoangDuc/module 3/caseStudy/web&servlet",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -54,16 +57,11 @@
       <option name="presentableId" value="Default" />
       <updated>1661894285629</updated>
       <workItem from="1661894287174" duration="40000" />
+      <workItem from="1675637396900" duration="158000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1661894327205">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1661894327205" />
+    <option name="version" value="3" />
   </component>
 </project>

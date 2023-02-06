@@ -8,6 +8,7 @@
   --light-cream: #d6c7a7;
   --dark-cream: rgba(225, 213, 184, 0.4);
   --light-brown: #be996e;
+  --notification-background: rgb(255, 0, 38);
   
   --white-color: #fff;
   --black-color: #000;
@@ -199,6 +200,10 @@ body {
   background-color: var(--primary-color);
 }
 
+.btn.btn--primary:hover{
+  opacity: 0.84;
+}
+
 .btn.btn--disabled {
   color: #949494;
   cursor: default;
@@ -290,6 +295,10 @@ body {
   border-radius: 2px;
   justify-content: center;
   align-items: center;
+  -webkit-user-select: none; 
+  -ms-user-select: none; 
+  user-select: none; 
+  cursor: pointer;
 }
 
 .pagination-item__link--not-clickable {
@@ -308,4 +317,9 @@ body {
 
 .pagination-item__link.pagination-item__link--active:hover {
   background-color: var(--light-green);
+}
+
+/* Toastr css */
+.toast-container { 
+  font-size: 1.5rem;
 }

@@ -2,7 +2,7 @@
 <div class="app__container">
   <div class="grid">
     <div class="grid__row app_content">
-      <div *ngIf="productOrderDetailList.length === 0" class="grid__cloumn-12 empty-shopping-cart">
+      <div *ngIf="productOrderDetailList.length === 0" class="grid__column-12 empty-shopping-cart">
         <img src="/assets/img/others/empty-shopping-cart.jpg" alt="Ảnh cart trống" class="empty-shopping-cart-img">
       </div>
       <div *ngIf="productOrderDetailList.length !== 0" class="grid__column-9">
@@ -70,12 +70,12 @@
               </tr>
               <tr>
                 <td class="body-title">Thành tiền</td>
-                <td class="body-money">$92.00</td>
+                <td class="body-money">{{estimatedMoney}}</td>
               </tr>
             </tbody>
           </table>
           <div class="checkout">
-            <button class="btn btn--primary">Thanh toán</button>
+            <button (click)="payment(userId)" class="btn btn--primary">Thanh toán</button>
           </div>
         </div>
       </div>

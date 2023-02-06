@@ -123,7 +123,7 @@
                 <!-- Product item action -->
                 <div class="home-product-item__interact">
                   <button class="btn btn--size-s">Xem chi tiết</button>
-                  <button class="btn btn--size-s home-product-item__interact-adding">Thêm vào giỏ hàng
+                  <button *ngIf="isLogged" class="btn btn--size-s home-product-item__interact-adding">Thêm vào giỏ hàng
                     <div class="interact-adding__detail">
                       <h3>Số lượng</h3>
                       <td class="interact-adding__detail-quantity">
@@ -142,7 +142,8 @@
                       <button (click)="addProductToCart(x.id)" class="btn btn-primary btn--size-s interact-adding__detail-button">Thêm</button>
                     </div>
                   </button>
-                  
+                  <button (click)="popUpMess('2','Yêu cầu đăng nhập')" 
+                  *ngIf="!isLogged" class="btn btn--size-s">Thêm vào giỏ hàng</button>
                 </div>
 
                 <div
@@ -216,33 +217,25 @@
         </div>
 
         <ul class="pagination home-product__pagination">
-          <li href="" class="pagination-item">
-            <a href="" class="pagination-item__link">
+          <li class="pagination-item">
+            <a 
+            [ngClass]="currentPage == 0 ? 'pagination-item__link--not-clickable' : ''"
+            (click)="previousPage()" 
+            class="pagination-item__link">
               <ion-icon
-                class="pagination-item__link-icon"
+                class="pagination-item__link-icon "
                 name="chevron-back-outline"
               ></ion-icon>
             </a>
           </li>
-          <li href="" class="pagination-item">
+          <li class="pagination-item"  *ngFor="let x of [].constructor(totalPages), let i = index">
             <a
-              href=""
-              class="pagination-item__link pagination-item__link--active"
+              [ngClass]="currentPage == (i) ? 'pagination-item__link--active' : ''"
+              (click)="toPage(i)"
+              class="pagination-item__link"
             >
-              1
+              {{i + 1}}
             </a>
-          </li>
-          <li href="" class="pagination-item">
-            <a href="" class="pagination-item__link"> 2 </a>
-          </li>
-          <li href="" class="pagination-item">
-            <a href="" class="pagination-item__link"> 3 </a>
-          </li>
-          <li href="" class="pagination-item">
-            <a href="" class="pagination-item__link"> 4 </a>
-          </li>
-          <li href="" class="pagination-item">
-            <a href="" class="pagination-item__link"> 5 </a>
           </li>
           <li href="" class="pagination-item">
             <a
@@ -255,8 +248,11 @@
           <li href="" class="pagination-item">
             <a href="" class="pagination-item__link"> 14 </a>
           </li>
-          <li href="" class="pagination-item">
-            <a href="" class="pagination-item__link">
+          <li class="pagination-item">
+            <a 
+            [ngClass]="currentPage == (totalPages-1) ? 'pagination-item__link--not-clickable' : ''"
+            (click)="nextPage()" 
+            class="pagination-item__link">
               <ion-icon
                 class="pagination-item__link-icon"
                 name="chevron-forward-outline"

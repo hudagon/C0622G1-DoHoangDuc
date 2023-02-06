@@ -6,6 +6,8 @@ public class ProductSearchInfo {
     private String categoryId;
     private String brandId;
     private String priceRange;
+    private String pageNumber;
+    private String pageSize;
 
     public ProductSearchInfo() {
     }
@@ -48,5 +50,21 @@ public class ProductSearchInfo {
 
     public void setPriceRange(String priceRange) {
         this.priceRange = priceRange;
+    }
+
+    public String getPageNumber() {
+        return pageNumber;
+    }
+
+    public void setPageNumber(String pageNumber) {
+        this.pageNumber = pageNumber;
+    }
+
+    public String getPageSize() {
+        return pageSize;
+    }
+
+    public void setPageSize(String pageSize) {
+        this.pageSize = pageSize;
     }
 }

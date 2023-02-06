@@ -23,7 +23,7 @@ public class ProductOrder {
 
     private Long totalMoney;
 
-    @JsonBackReference
+    @JsonManagedReference
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private User user;

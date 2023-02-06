@@ -3,4 +3,6 @@ export interface ProductSearchInfo {
      categoryId?: string;
      brandId?: string;
      priceRange?: string;
+     pageNumber?: string;
+     pageSize?: string;
 }

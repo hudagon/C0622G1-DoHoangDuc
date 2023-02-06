@@ -455,16 +455,16 @@
   
   .search-cart__badge {
     position: absolute;
-    background-color: var(--white-color);
+    background-color: var(--notification-background);
     font-size: 1.4rem;
     padding: 1px 8px;
     border-radius: 10px;
     text-align: center;
     right: 3%;
     top: 6%;
-    border: 2px solid var(--primary-color);
+    border: 2px solid var(--var-white);
     background-clip: padding-box;
-    color: var(--primary-color);
+    color: var(--white-color);
   }
   
   /* Cart - Cart items */

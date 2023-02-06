@@ -27,6 +27,7 @@ export class HeaderComponent implements OnInit {
   /* User information */
   userInformation: UserInformation;
   userId: string;
+  currentCartQuantity: number = 0;
 
   /* Product order information */
   productOrderDetailList: ProductOrderDetail[] = [];
@@ -93,7 +94,34 @@ export class HeaderComponent implements OnInit {
     this.orderService.getProductOrder(this.userId).subscribe((data) => {
       this.orderService.productOrderId = data.id;
       this.productOrderDetailList = data.productOrderDetailSet;
+      this.currentCartQuantity = 0;
+
+      for (let i = 0; i < this.productOrderDetailList.length; i++) {
+        this.currentCartQuantity = this.currentCartQuantity + this.productOrderDetailList[i].quantity;
+      }
+
     });
+  }
+
+  /* Toggle authen modal */
+
+  openAuthenModal(choice: string) {
+
+    this.closeAuthenModal();
+
+    document.getElementById("authenModal").style.display = "flex";
+
+    if(choice === 'login') {
+      document.getElementById("loginModal").style.display = "block";
+    } else {
+      document.getElementById("registerModal").style.display = "block";
+    }
+  }
+
+  closeAuthenModal() {
+    document.getElementById("loginModal").style.display = "none";
+    document.getElementById("registerModal").style.display = "none";
+    document.getElementById("authenModal").style.display = "none";
   }
 
 }
