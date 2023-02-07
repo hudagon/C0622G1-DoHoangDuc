@@ -33,7 +33,7 @@ export class ProductService {
       pageSize: '5',
       pageNumber: this.pageNumber
     }
-    return this.httpClient.post<any>(environment.APU_URL + "api/v1/product/searchProduct", searchInfo);
+    return this.httpClient.post<any>(environment.API_URL + "api/v1/product/searchProduct", searchInfo);
   }
 
 }

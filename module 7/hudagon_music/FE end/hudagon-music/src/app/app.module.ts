@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { LandingPageComponent } from './component/landing-page/landing-page.component';
 import { HeaderComponent } from './component/header/header.component';
 import { FooterComponent } from './component/footer/footer.component';
-import { ErrorHandler, NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { ErrorHandler, NgModule, CUSTOM_ELEMENTS_SCHEMA, LOCALE_ID } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { CartComponent } from './component/cart/cart.component';
@@ -14,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PaymentComponent } from './component/payment/payment.component';
 import { RouterModule } from '@angular/router';
 import { PaymentMethodComponent } from './component/payment/payment-method/payment-method.component';
+import { ProductDetailComponent } from './component/product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { PaymentMethodComponent } from './component/payment/payment-method/payme
     CartComponent,
     PaymentComponent,
     PaymentMethodComponent,
+    ProductDetailComponent,
   ],
   imports: [
     BrowserModule,

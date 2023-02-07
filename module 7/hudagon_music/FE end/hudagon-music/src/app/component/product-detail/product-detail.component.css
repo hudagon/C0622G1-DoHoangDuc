@@ -1,0 +1,286 @@
+.product-detail {
+    padding: 30px 0;
+}
+
+.product-detail__main {
+    width: 100%;
+    background-color: var(--white-color);
+    border-radius: 2px;
+    padding: 21px;
+    display: flex;
+}
+
+.product-detail__main-img-list {
+    width: 36%;
+}
+
+.main-img-list__header-main {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+}
+
+.main-img-list__body {
+  margin: 6px 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.main-img-list__body-item {
+  width: 18%;
+  height: 81px;
+  object-fit: cover;
+  border-radius: 1px solid black;
+}
+
+.main-img-list__footer {
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+}
+
+.main-img-list__footer-like {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1; 
+    font-size: 3rem;   
+    height: 30px;
+}
+
+.main-img-list__footer-like span,
+.main-img-list__footer-share span {
+    font-size: 1.8rem;
+    margin: 0 6px;
+}
+
+.footer-like__facebook {
+    color: rgb(121, 121, 156);
+}
+
+.footer-like__pinterest {
+    color: rgb(215, 27, 27);
+}
+
+.footer-like__twitter {
+    color: rgb(76, 182, 223);
+}
+
+.main-img-list__footer-share {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    font-size: 3rem;  
+}
+
+.main-img-list__footer-share ion-icon {
+    color: #fa8072;
+}
+
+.product-detail__main-overview {
+    margin-left: 24px;
+    width: 64%;
+}
+
+.main-overview__header {
+    width: 100%;
+}
+
+.main-overview__header-title {
+    display: flex;
+}
+
+.header-title__liked {
+    background-color: var(--primary-color);
+    font-size: 1.5rem;
+    color: var(--white-color);
+    border-radius: 2px;
+    padding: 3px;
+    line-height: 1.5rem;
+    position: relative;
+    top: -3px;
+}
+
+.header-title__name {
+    font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 3rem;
+    flex: 1;
+}
+
+.main-overview__header-rating {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font-size: 1.8rem;
+    margin: 12px 0;
+}
+
+.header-rating__star, 
+.header-rating__time,
+.header-rating__sold {
+    width: 18%;
+    display: flex;
+    align-items: center;
+}
+
+.header-rating__star {
+    display: flex;
+    color: var(--primary-color);
+    margin-right: 9px;
+}
+
+.header-rating__star-point {
+    border-bottom: 1px solid var(--primary-color);
+}
+
+.header-rating__star-logo-group {
+    position: relative;
+    top: -3px;
+    display: flex;
+    margin-left: 6px;
+}
+
+.star-logo-group__filled {
+}
+
+.header-rating__time {
+    margin-right: 9px;
+}
+
+.header-rating__time span:first-child {
+    margin-right: 6px;
+    border-bottom: 1px solid black;
+}
+
+.header-rating__sold {
+}
+
+.header-rating__sold span:first-child {
+    margin-right: 6px;
+    border-bottom: 1px solid black;
+}
+
+.header-rating__time span:last-child,
+.header-rating__sold span:last-child,
+.header-rating__denounce {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+.header-rating__denounce {
+    margin-left: auto;
+}
+
+.main-overview__body-discount span,
+.main-overview__body-shock-deal span,
+.main-overview__body-shipment span,
+.main-overview__body-color span,
+.main-overview__body-quantity span,
+.main-overview__body-action span {
+    padding: 21px;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+.main-overview__body-discount,
+.main-overview__body-shock-deal,
+.main-overview__body-shipment,
+.main-overview__body-color,
+.main-overview__body-quantity,
+.main-overview__body-action {
+    display: flex;
+    align-items: center;
+}
+
+.main-overview__body {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-overview__body-discount {
+}
+
+.body-discount__stamp {
+    display: flex;
+}
+
+.body-discount__stamp-item {
+}
+
+.main-overview__body-shock-deal {
+}
+
+.main-overview__body-shipment {
+    display: flex;
+}
+
+.body-shipment__detail {
+    display: flex;
+}
+
+.body-shipment__detail-icon {
+}
+
+.body-shipment__detail-information {
+}
+
+.detail-information__destination {
+    display: flex;
+}
+
+.detail-information__destination-title {
+}
+
+.detail-information__destination-place {
+    display: flex;
+}
+
+.detail-information__ship-cost {
+    display: flex;
+}
+
+.detail-information__ship-cost-title {
+}
+
+.detail-information__ship-cost-money {
+}
+
+.main-overview__body-color {
+}
+
+.body-color_group {
+}
+
+.btn {
+}
+
+.main-overview__body-quantity {
+}
+
+.body-quantity__group {
+}
+
+.body-quantity__group-setup {
+}
+
+.group-setup__icon {
+}
+
+.body-quantity__group-storage {
+}
+
+.main-overview__body-action {
+}
+
+.main-overview__footer {
+}
+
+.main-overview__footer-guarantee {
+}

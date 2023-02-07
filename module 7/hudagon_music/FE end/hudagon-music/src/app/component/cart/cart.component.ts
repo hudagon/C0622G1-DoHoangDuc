@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { ProductOrder } from "src/app/model/order/product-order";
 import { ProductOrderDetail } from "src/app/model/order/product-order-detail";
+import { TotalMoney } from "src/app/payload/request/total-money";
 import { OrderService } from "src/app/service/order/order.service";
 
 @Component({
@@ -36,7 +37,9 @@ export class CartComponent implements OnInit {
   /* Product order methods */
   getProductOrder() {
     this.orderService.getProductOrder(this.userId).subscribe((data) => {
+      this.productOrder = data;
       this.productOrderDetailList = data.productOrderDetailSet;
+      this.orderService.productOrderId = data.id;
 
       for (let i = 0; i < this.productOrderDetailList.length; i++) {
         this.estimatedMoney = this.estimatedMoney + 
@@ -49,9 +52,14 @@ export class CartComponent implements OnInit {
   /* Calculate methods */
   calculateMoney(producerOrderDetailId: string, operator: string) {
     var quantity = +document.getElementById('productOrderDetailQuantity' + producerOrderDetailId).innerHTML;
-    var price = +document.getElementById('productOrderDetailPrice' + producerOrderDetailId).innerHTML;
+    var price = +document.getElementById('productOrderDetailPrice' + producerOrderDetailId).dataset.price;
     var currentTotalMoney = +document.getElementById('productOrderDetailTotalMoney' + producerOrderDetailId).innerHTML;
     var afterTotalMoney = 0;
+
+    console.log('quantity', quantity);
+    console.log('price', price);
+    console.log('currentTotalMoney', currentTotalMoney);
+    
 
     /* Changing the quantity */
     if (operator === '1') {
@@ -71,7 +79,14 @@ export class CartComponent implements OnInit {
 
   /* Payment methods */
   payment(userId: string) {
-    this.router.navigate(['/payment',userId]);
+    const totalMoney: TotalMoney = {
+      totalMoney: JSON.stringify(this.estimatedMoney),
+      orderId: JSON.stringify(this.productOrder.id)
+    }
+
+    this.orderService.updateTotalMoney(totalMoney).subscribe(() => {
+      this.router.navigate(['/payment',userId]);
+    });    
   }
    
 }

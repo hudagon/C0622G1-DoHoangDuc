@@ -3,7 +3,7 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
 
-        swapAAndBWithoutTemp();
+        demo();
 
     }
 
@@ -423,4 +423,28 @@ public class Main {
         System.out.println("a: " + a + " b: " + b);
 
     }
+
+    public static void demo() {
+
+        List<Person> personList = new ArrayList<>();
+        List<Person> personFilterList = new ArrayList<>();
+
+        personList.add(new Person(1, 12));
+        personList.add(new Person(2, 13));
+        personList.add(new Person(3, 14));
+        personList.add(new Person(4, 18));
+        personList.add(new Person(5, 3));
+        personList.add(new Person(6, 4));
+
+        for (Person x: personList) {
+            if (x.getAge() > 15) {
+                personFilterList.add(x);
+            }
+        }
+
+        for (Person x: personFilterList) {
+            System.out.println(x.toString());
+        }
+    }
+
 }

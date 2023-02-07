@@ -4,6 +4,7 @@ import com.project.be.dto.order.ProductOrderDto;
 import com.project.be.model.order.ProductOrder;
 import com.project.be.model.order.ProductOrderDetail;
 import com.project.be.model.product.Product;
+import com.project.be.payload.request.TotalMoney;
 import com.project.be.payload.response.HeaderCartView;
 import com.project.be.service.order.IOrderService;
 import com.project.be.service.product.IProductService;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.Stack;
 
 @CrossOrigin("*")
 @RestController
@@ -93,5 +95,24 @@ public class ProductOrderController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
+    @PostMapping("/updateTotalMoney")
+    public ResponseEntity<Void> updateTotalMoney(
+            @RequestBody TotalMoney totalMoney
+    ) {
+
+        orderService.updateTotalMoney(totalMoney);
+
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @PostMapping("/updatePaymentStatus")
+    public ResponseEntity<Void> updatePaymentStatus(
+            @RequestBody String productOrderId
+    ) {
+
+        orderService.updatePaymentStatus(productOrderId);
+
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 
 }

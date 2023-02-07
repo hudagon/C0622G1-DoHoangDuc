@@ -25,6 +25,7 @@ export class PaymentComponent implements OnInit {
   currentUser: User;
   fullName: string;
   phoneNumber: string;
+  totalMoney: number;
 
   constructor(
     private orderService: OrderService,
@@ -44,6 +45,9 @@ export class PaymentComponent implements OnInit {
     this.orderService.getProductOrder(this.userId).subscribe((data) => {
       this.currentUser = data.user;
       this.productOrderDetailList = data.productOrderDetailSet;
+      this.totalMoney = data.totalMoney;
+      this.orderService.convertVNDToUSD(this.totalMoney);
+
 
       for (let i = 0; i < this.productOrderDetailList.length; i++) {
         this.estimatedMoney = this.estimatedMoney + 
@@ -58,8 +62,8 @@ export class PaymentComponent implements OnInit {
   getUserInformation() {
     this.userAddress = this.currentUser.addressSet[0];
 
-    this.fullAddress = this.userAddress.addressDetail + ', ' + this.userAddress.town + ', ' + this.userAddress.district
-    + ', ' + this.userAddress.city;
+    this.fullAddress = this.userAddress.addressDetail + ', phường ' + this.userAddress.town + ', quận ' + this.userAddress.district
+    + ', thành phố ' + this.userAddress.city;
 
     this.fullName = this.currentUser.firstName + ' ' + this.currentUser.lastName;
 

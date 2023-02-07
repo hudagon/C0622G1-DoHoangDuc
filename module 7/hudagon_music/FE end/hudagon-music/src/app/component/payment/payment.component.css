@@ -227,13 +227,55 @@
 
 .payment_method__body {
   padding: 30px;
-  background-color: var(--white-color);
+  background-color: hsla(78, 52%, 47%, 0.188);
   width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
-.payment_method__body-total-money {
+.payment_method__body-router{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.payment_method__body-detail{
+  display: flex;
+  flex-direction: column;
+  color: var(--text-color);
+  justify-content: space-between;
+  line-height: 4.2rem;
+  margin-right: 21px;
+}
+
+.body-detail__total-cart-money{
   font-size: 1.8rem;
-  margin: 21px 0;
+  opacity: 0.8;
 }
 
+.body-detail__total-ship-money{
+  font-size: 1.8rem;
+  opacity: 0.8;
+}
+
+.body-detail__total-money{
+  font-size: 2.4rem;
+}
+
+.body-detail__total-money span {
+  font-size: 3rem;
+  color: var(--notification-background);
+}
+
+.payment_method__footer{
+  padding: 30px;
+  background-color: var(--white-color);
+}
+
+.payment_method__footer-msg{
+  font-size: 1.4rem;
+  color: var(--text-color);
+  opacity: 0.6;
+}
 

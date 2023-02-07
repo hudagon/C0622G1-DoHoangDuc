@@ -29,7 +29,7 @@
                       {{x.product.name}}
                     </div>
                   </td>
-                  <td id="productOrderDetailPrice{{x.id}}" class="cart-table__price">{{x.product.price}}</td>
+                  <td id="productOrderDetailPrice{{x.id}}" attr.data-price="{{x.product.price}}" class="cart-table__price">{{x.product.price | currency:'VND'}}</td>
                   <td class="cart-table__quantity">
                     <ion-icon
                       (click)="calculateMoney(x.id, '2')"
@@ -43,7 +43,8 @@
                       name="add-outline"
                     ></ion-icon>
                   </td>
-                  <td id="productOrderDetailTotalMoney{{x.id}}" class="cart-table__total">{{x.product.price * x.quantity}}</td>
+                  <td id="productOrderDetailTotalMoney{{x.id}}"
+                  class="cart-table__total">{{x.product.price * x.quantity}}</td>
               </tr>
             </tbody>
           </table>
@@ -66,11 +67,11 @@
             <tbody>
               <tr>
                 <td class="body-title">Tạm tính</td>
-                <td class="body-money">{{estimatedMoney}}</td>
+                <td class="body-money">{{estimatedMoney | currency:'VND'}}</td>
               </tr>
               <tr>
                 <td class="body-title">Thành tiền</td>
-                <td class="body-money">{{estimatedMoney}}</td>
+                <td class="body-money">{{estimatedMoney | currency:'VND'}}</td>
               </tr>
             </tbody>
           </table>

@@ -49,7 +49,26 @@ public interface IOrderRepository extends JpaRepository<ProductOrder, Integer> {
     );
 
 
+    @Modifying
+    @Query(
+            value = " update `hudagon_music`.`product_order` " +
+                    " set `total_money` = :total_money " +
+                    " where (`id` = :product_order_id ); ",
+            nativeQuery = true
+    )
+    void updateTotalMoney(
+            @Param("product_order_id") String productOrderId,
+            @Param("total_money") String totalMoney
+    );
 
-
-
+    @Modifying
+    @Query(
+            value = " update `hudagon_music`.`product_order` " +
+                    " set `payment_status` = '0' " +
+                    " where (`id` = :product_order_id ); ",
+            nativeQuery = true
+    )
+    void updatePaymentStatus(
+            @Param("product_order_id") String productOrderId
+    );
 }

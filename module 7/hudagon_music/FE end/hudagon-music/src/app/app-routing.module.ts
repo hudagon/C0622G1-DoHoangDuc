@@ -4,6 +4,7 @@ import { CartComponent } from './component/cart/cart.component';
 import { LandingPageComponent } from './component/landing-page/landing-page.component';
 import { PaymentMethodComponent } from './component/payment/payment-method/payment-method.component';
 import { PaymentComponent } from './component/payment/payment.component';
+import { ProductDetailComponent } from './component/product-detail/product-detail.component';
 
 
 const routes: Routes = [
@@ -12,7 +13,8 @@ const routes: Routes = [
   {path: 'payment/:userId', component: PaymentComponent,
   children: [
     {path: 'method', component: PaymentMethodComponent}
-  ]}
+  ]},
+  {path: 'product-detail', component: ProductDetailComponent}
 ];
 
 @NgModule({

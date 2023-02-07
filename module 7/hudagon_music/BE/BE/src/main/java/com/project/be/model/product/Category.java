@@ -1,5 +1,6 @@
 package com.project.be.model.product;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
@@ -16,7 +17,7 @@ public class Category {
 
     private Integer deleteStatus;
 
-    @JsonManagedReference
+    @JsonBackReference
     @OneToMany(mappedBy = "category")
     private Set<Product> productSet;
 

@@ -14,7 +14,7 @@ export class AuthServiceService {
   ) { }
 
   login(loginForm: LoginForm): Observable<any> {
-    return this.httpClient.post<any>(environment.APU_URL + 'api/v1/security/login', loginForm);
+    return this.httpClient.post<any>(environment.API_URL + 'api/v1/security/login', loginForm);
   }
 
 } 

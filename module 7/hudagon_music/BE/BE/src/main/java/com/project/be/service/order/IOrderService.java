@@ -2,6 +2,7 @@ package com.project.be.service.order;
 
 import com.project.be.dto.order.ProductOrderDto;
 import com.project.be.model.order.ProductOrder;
+import com.project.be.payload.request.TotalMoney;
 import com.project.be.service.IGeneralService;
 
 public interface IOrderService extends IGeneralService<ProductOrder> {
@@ -11,5 +12,9 @@ public interface IOrderService extends IGeneralService<ProductOrder> {
     void saveManually(ProductOrderDto productOrderDto);
 
     void addProductOrderDetail(String productOrderId, String productQuantity, String productId);
+
+    void updateTotalMoney(TotalMoney totalMoney);
+
+    void updatePaymentStatus(String productOrderId);
 
 }

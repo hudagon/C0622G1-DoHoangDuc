@@ -2,6 +2,7 @@ package com.project.be.service.order;
 
 import com.project.be.dto.order.ProductOrderDto;
 import com.project.be.model.order.ProductOrder;
+import com.project.be.payload.request.TotalMoney;
 import com.project.be.repository.order.IOrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -52,6 +53,18 @@ public class OrderServiceImpl implements IOrderService {
     @Override
     public void addProductOrderDetail(String productOrderId, String productQuantity, String productId) {
         orderRepository.addProductOrderDetail(productOrderId, productQuantity, productId);
+    }
+
+    @Override
+    public void updateTotalMoney(TotalMoney totalMoney) {
+        orderRepository.updateTotalMoney(
+                String.valueOf(totalMoney.getOrderId()),
+                String.valueOf(totalMoney.getTotalMoney()));
+    }
+
+    @Override
+    public void updatePaymentStatus(String productOrderId) {
+        orderRepository.updatePaymentStatus(productOrderId);
     }
 
 }

@@ -85,10 +85,21 @@
                         </button>
                     </div>
                     <div class="payment_method__body">
-                        <div class="payment_method__body-total-money">
-                            <span>Tổng tiền: 12837198273918273981273</span>
+                        <div class="payment_method__body-router">
+                            <router-outlet></router-outlet>
                         </div>
-                        <router-outlet class="payment_method__body-router"></router-outlet>
+                        <div class="payment_method__body-detail">
+                            <span class="body-detail__total-cart-money">Tổng tiền hàng: {{totalMoney}}</span>
+                            <span class="body-detail__total-ship-money">Phí vận chuyển: 0đ</span>
+                            <span class="body-detail__total-money">
+                                Tổng tiền: <span>{{totalMoney}}</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="payment_method__footer">
+                        <span class="payment_method__footer-msg">Nhấn thanh toán đồng nghĩa với việc bạn đồng ý tuân theo điều
+                            khoản của chúng tôi.
+                        </span>
                     </div>
                 </div>
             </div>
