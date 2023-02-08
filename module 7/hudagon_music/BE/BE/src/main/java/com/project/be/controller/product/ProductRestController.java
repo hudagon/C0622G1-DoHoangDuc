@@ -1,11 +1,15 @@
 package com.project.be.controller.product;
 
-import com.project.be.dto.product.ProductDto;
 import com.project.be.dto.product.ProductHomeShow;
+import com.project.be.model.product.Guitar;
 import com.project.be.model.product.ImgUrlProduct;
+import com.project.be.model.product.Piano;
 import com.project.be.payload.request.ProductSearchInfo;
 import com.project.be.model.product.Product;
+import com.project.be.dto.product.ProductDetailInfoDto;
+import com.project.be.payload.response.ProductDetailInfoResponse;
 import com.project.be.service.product.IProductService;
+import com.project.be.util.ConvertObjectToMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
@@ -16,9 +20,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @CrossOrigin("*")
 @RestController
@@ -27,11 +29,6 @@ public class ProductRestController {
 
     @Autowired
     private IProductService productService;
-
-    @GetMapping("/test")
-    public String test() {
-        return "ok";
-    }
 
     @PostMapping("/searchProduct")
     public ResponseEntity<Page<ProductHomeShow>> getProductPage(
@@ -68,6 +65,44 @@ public class ProductRestController {
                 pageable, productPage.getTotalElements());
 
         return new ResponseEntity<>(productHomeShowPage, HttpStatus.OK);
+    }
+
+    @GetMapping("/getProductById/{id}")
+    public ResponseEntity<ProductDetailInfoResponse> getProductById(
+            @PathVariable String id) {
+
+        Optional<Product> productFound = productService.findById(Integer.valueOf(id));
+        Map<String, Object> productDetailMap = null;
+        List<ProductDetailInfoDto> productDetailInfoDtoList = new ArrayList<>();
+
+        if (productFound.isPresent()) {
+
+            if (productFound.get().getGuitar() != null) {
+                Guitar guitar =  productFound.get().getGuitar();
+                productDetailMap = ConvertObjectToMap.convert(guitar);
+            }
+
+            if (productFound.get().getPiano() != null) {
+                Piano piano =  productFound.get().getPiano();
+                productDetailMap = ConvertObjectToMap.convert(piano);
+            }
+
+            assert productDetailMap != null;
+            for (String x : productDetailMap.keySet()) {
+
+                if (productDetailMap.get(x) != null &
+                        !(productDetailMap.get(x) instanceof Product) &
+                        !(productDetailMap.get(x) instanceof Integer)) {
+
+                    productDetailInfoDtoList.add(new ProductDetailInfoDto(x, (String) productDetailMap.get(x)));
+                }
+            }
+
+            return new ResponseEntity<>(new ProductDetailInfoResponse(productFound.get(), productDetailInfoDtoList),
+                    HttpStatus.OK);
+        }
+
+        return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
 
 }

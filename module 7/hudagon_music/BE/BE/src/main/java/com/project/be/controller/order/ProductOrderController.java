@@ -105,7 +105,7 @@ public class ProductOrderController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @PostMapping("/updatePaymentStatus")
+    @PatchMapping("/updatePaymentStatus")
     public ResponseEntity<Void> updatePaymentStatus(
             @RequestBody String productOrderId
     ) {

@@ -2,6 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { BehaviorSubject, Observable } from "rxjs";
 import { ProductHomeShow } from "src/app/dto/product-home-show";
+import { Product } from "src/app/model/product/product";
 import { ProductSearchInfo } from "src/app/payload/request/product-search-info";
 import { environment } from "src/environments/environment";
 
@@ -34,6 +35,10 @@ export class ProductService {
       pageNumber: this.pageNumber
     }
     return this.httpClient.post<any>(environment.API_URL + "api/v1/product/searchProduct", searchInfo);
+  }
+
+  getProductById(productId: string): Observable<Product> {
+    return this.httpClient.get<Product>(environment.API_URL + "api/v1/product/getProductById/" + productId)
   }
 
 }

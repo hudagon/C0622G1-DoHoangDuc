@@ -33,7 +33,7 @@ export class OrderService {
   }
 
   updatePaymentStatus(): Observable<void> {
-    return this.httpClient.post<void>(environment.API_URL + 'api/v1/productOrder/updatePaymentStatus', 
+    return this.httpClient.patch<void>(environment.API_URL + 'api/v1/productOrder/updatePaymentStatus', 
     JSON.stringify(this.productOrderId));
   }
 

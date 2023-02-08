@@ -1,6 +1,7 @@
 package com.project.be.model.product;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 
@@ -47,7 +48,7 @@ public class Piano {
 
     private String deleteStatus;
 
-    @JsonBackReference
+    @JsonManagedReference
     @OneToOne
     @JoinColumn(name = "product_id", referencedColumnName = "id")
     private Product product;

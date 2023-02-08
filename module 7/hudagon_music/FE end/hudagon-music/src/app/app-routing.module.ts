@@ -14,7 +14,7 @@ const routes: Routes = [
   children: [
     {path: 'method', component: PaymentMethodComponent}
   ]},
-  {path: 'product-detail', component: ProductDetailComponent}
+  {path: 'product-detail/:productId', component: ProductDetailComponent}
 ];
 
 @NgModule({

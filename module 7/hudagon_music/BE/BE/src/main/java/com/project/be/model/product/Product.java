@@ -179,4 +179,5 @@ public class Product {
     public void setProductOrderDetailSet(Set<ProductOrderDetail> productOrderDetailSet) {
         this.productOrderDetailSet = productOrderDetailSet;
     }
+
 }

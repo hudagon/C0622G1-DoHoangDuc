@@ -3,7 +3,7 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
 
-        demo();
+     demo2();
 
     }
 
@@ -425,25 +425,17 @@ public class Main {
     }
 
     public static void demo() {
+    }
 
-        List<Person> personList = new ArrayList<>();
-        List<Person> personFilterList = new ArrayList<>();
-
-        personList.add(new Person(1, 12));
-        personList.add(new Person(2, 13));
-        personList.add(new Person(3, 14));
-        personList.add(new Person(4, 18));
-        personList.add(new Person(5, 3));
-        personList.add(new Person(6, 4));
-
-        for (Person x: personList) {
-            if (x.getAge() > 15) {
-                personFilterList.add(x);
+    public static void demo2() {
+        String[] strings = {"A", "B", "C", "D", "E", "F"};
+        for (int i = 0; i < strings.length; i++) {
+            System.out.print(strings[i] + " ");
+            if (strings[i].equals("C")) {
+                continue;
             }
-        }
-
-        for (Person x: personFilterList) {
-            System.out.println(x.toString());
+            System.out.print("Work done");
+            break;
         }
     }
 

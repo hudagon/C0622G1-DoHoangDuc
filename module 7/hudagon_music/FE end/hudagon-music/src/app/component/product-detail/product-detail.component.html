@@ -1,24 +1,16 @@
 <div class="app__container">
     <div class="grid">
-        <div class="grid__row">
+        <div class="grid__row first">
             <div class="grid__column-12">
                 <div class="product-detail">
                     <div class="product-detail__main">
                         <div class="product-detail__main-img-list">
                             <div class="main-img-list__header">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/Cat_November_2010-1a.jpg" alt="Ảnh mèo" 
+                                <img src="{{productListImgShown[0]}}" alt="Ảnh mèo" 
                                 class="main-img-list__header-main">
                             </div>
                             <div class="main-img-list__body">
-                                <img src="https://images.hindustantimes.com/img/2022/08/07/1600x900/cat_1659882617172_1659882628989_1659882628989.jpg" alt="Ảnh mèo" 
-                                class="main-img-list__body-item">
-                                <img src="http://www.alleycat.org/wp-content/uploads/2019/03/FELV-cat.jpg" alt="Ảnh mèo" 
-                                class="main-img-list__body-item">
-                                <img src="https://media.wired.co.uk/photos/60c8730fa81eb7f50b44037e/3:2/w_3329,h_2219,c_limit/1521-WIRED-Cat.jpeg" alt="Ảnh mèo" 
-                                class="main-img-list__body-item">
-                                <img src="https://media-cldnry.s-nbcnews.com/image/upload/rockcms/2022-08/220805-domestic-cat-mjf-1540-382ba2.jpg" alt="Ảnh mèo" 
-                                class="main-img-list__body-item">
-                                <img src="https://www.rd.com/wp-content/uploads/2021/01/GettyImages-1175550351.jpg" alt="Ảnh mèo" 
+                                <img *ngFor="let x of productListImgShown" src="{{x}}" alt="Ảnh mèo" 
                                 class="main-img-list__body-item">
                             </div>
                             <div class="main-img-list__footer">
@@ -41,8 +33,7 @@
                                         <span class="header-title__liked">
                                             Yêu thích
                                         </span>
-                                        Áo Khoác Bomber Teddy Nam Nữ Dài Tay Phối Viền 
-                                        Sọc Form Rộng Thời Trang Zenkonu AO KHOAC NAM 046
+                                        {{currentProduct.name}}
                                     </h3>
                                 </div>
                                 <div class="main-overview__header-rating">
@@ -66,12 +57,11 @@
                                         <span>4,7k</span>
                                         <span>Đã bán</span>
                                     </div>
-                                    <span class="header-rating__denounce">Tố cáo</span>
                                 </div>
                             </div>
                             <div class="main-overview__body">
                                 <div class="main-overview__body-discount">
-                                    <span>Mã giảm giá của shop</span>
+                                    <span class="body-discount__title">Mã giảm giá của shop</span>
                                     <div class="body-discount__stamp">
                                         <div class="body-discount__stamp-item">
                                             Giảm 5k
@@ -82,13 +72,8 @@
                                     </div>
                                 </div>
 
-                                <div class="main-overview__body-shock-deal">
-                                    <span>Deal sốc</span>
-                                    <span>Mua kèm deal sốc</span>
-                                </div>
-
                                 <div class="main-overview__body-shipment">
-                                    <span>Vận chuyển</span>
+                                    <span class="body-shipment__title">Vận chuyển</span>
                                     <div class="body-shipment__detail">
                                         <div class="body-shipment__detail-icon">
                                             <ion-icon name="airplane-outline"></ion-icon>
@@ -103,14 +88,14 @@
                                             </div>
                                             <div class="detail-information__ship-cost">
                                                 <div class="detail-information__ship-cost-title">Phí vận chuyển</div>
-                                                <div class="detail-information__ship-cost-money">14.000</div>
+                                                <div class="detail-information__ship-cost-money">0</div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="main-overview__body-color">
-                                    <span>Màu</span>
+                                    <span class="body-color__title">Màu</span>
                                     <div class="body-color_group">
                                       <button class="btn">Đen</button>
                                       <button class="btn">Trắng</button>
@@ -118,26 +103,31 @@
                                     </div>
                                 </div>
 
+                                <div class="main-overview__body-price">
+                                    <span class="body-price__title">Giá</span>
+                                    <span class="body-color__content">{{currentProduct.price | currency:'VND'}}</span>
+                                </div>
+
                                 <div class="main-overview__body-quantity">
-                                    <span>Số lượng</span>
+                                    <span class="body-quantity__title">Số lượng</span>
                                     <div class="body-quantity__group">
                                         <div class="body-quantity__group-setup">
                                             <ion-icon class="group-setup__icon" name="remove-outline"></ion-icon>
-                                            <span>3</span>
+                                            <span class="group-setup__number">3</span>
                                             <ion-icon class="group-setup__icon" name="add-outline"></ion-icon>
                                         </div>
                                         <div class="body-quantity__group-storage">
-                                            <span>135 sản phẩm có sẵn</span>
+                                            <span>{{currentProduct.quantity}} sản phẩm có sẵn</span>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="main-overview__body-action">
-                                    <button class="btn">
+                                    <button class="btn body-action__button">
                                         <span>Thêm vào giỏ hàng</span>
                                         <ion-icon name="cart-outline"></ion-icon>
                                     </button>
-                                    <button class="btn">Mua ngay</button>
+                                    <button class="btn body-action__buy-now">Mua ngay</button>
                                 </div>
                             </div>
                             <div class="main-overview__footer">
@@ -145,11 +135,40 @@
                                     <ion-icon name="shield-checkmark-outline"></ion-icon>
                                     <span>Hudagon Music đảm bảo</span>
                                 </div>
-                                <span>3 ngày trả hàng / Hoàn tiền</span>
+                                <span class="main-overview__footer-detail">3 ngày trả hàng / Hoàn tiền</span>
                             </div>
                         </div>
                     </div>
-                </div>    
+                    <div class="product-detail__secondary">
+                        <div class="product-detail__secondary-description">
+                            <div class="secondary-description__header">
+                                <h3 class="secondary-description__header-heading">
+                                    MÔ TẢ SẢN PHẨM
+                                </h3>
+                            </div>
+                            <div class="secondary-description__body">
+                                <div class="secondary-description__body-content">
+                                    {{currentProduct.description}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-detail__secondary-detail">
+                            <div class="secondary-detail__header">
+                                <h3 class="secondary-detail__header-heading">
+                                    CHI TIẾT SẢN PHẨM
+                                </h3>
+                            </div>
+                            <div class="secondary-detail__body">
+                                <ul class="secondary-detail__body-list">
+                                    <li *ngFor="let x of productDetailInfoList" class="body-list__item">
+                                        <div class="body-list__item-title">{{x.title}}</div>
+                                        <div class="body-list__item-content">{{x.content}}</div>            
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -122,7 +122,7 @@
               <div class="home-product-item" href="#">
                 <!-- Product item action -->
                 <div class="home-product-item__interact">
-                  <button [routerLink]="['/product-detail']" class="btn btn--size-s">Xem chi tiết</button>
+                  <button [routerLink]="['/product-detail',x.id]" class="btn btn--size-s">Xem chi tiết</button>
                   <button *ngIf="isLogged" class="btn btn--size-s home-product-item__interact-adding">Thêm vào giỏ hàng
                     <div class="interact-adding__detail">
                       <h3>Số lượng</h3>
