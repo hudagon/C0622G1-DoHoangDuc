@@ -4,6 +4,8 @@ import com.project.be.dto.order.ProductOrderDto;
 import com.project.be.model.order.ProductOrder;
 import com.project.be.payload.request.TotalMoney;
 import com.project.be.service.IGeneralService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 public interface IOrderService extends IGeneralService<ProductOrder> {
 
@@ -16,5 +18,7 @@ public interface IOrderService extends IGeneralService<ProductOrder> {
     void updateTotalMoney(TotalMoney totalMoney);
 
     void updatePaymentStatus(String productOrderId);
+
+    Page<ProductOrder> getProductOrderHistory(String productOrderId, Pageable pageable);
 
 }

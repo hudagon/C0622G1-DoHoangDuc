@@ -1,20 +1,14 @@
 package com.project.be.controller.product;
 
 import com.project.be.dto.product.ProductHomeShow;
-import com.project.be.model.product.Guitar;
-import com.project.be.model.product.ImgUrlProduct;
-import com.project.be.model.product.Piano;
+import com.project.be.model.product.*;
 import com.project.be.payload.request.ProductSearchInfo;
-import com.project.be.model.product.Product;
 import com.project.be.dto.product.ProductDetailInfoDto;
 import com.project.be.payload.response.ProductDetailInfoResponse;
 import com.project.be.service.product.IProductService;
 import com.project.be.util.ConvertObjectToMap;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageImpl;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.*;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -33,14 +27,29 @@ public class ProductRestController {
     @PostMapping("/searchProduct")
     public ResponseEntity<Page<ProductHomeShow>> getProductPage(
             @RequestBody ProductSearchInfo productSearchInfo,
-            @PageableDefault(value = 5) Pageable pageable
+            @PageableDefault(value = 2) Pageable pageable
             ) {
 
-        pageable = PageRequest.of(Integer.parseInt(productSearchInfo.getPageNumber()),
-                                  Integer.parseInt(productSearchInfo.getPageSize()));
+        switch (productSearchInfo.getSortByPrice()) {
+            case "desc":
+                pageable = PageRequest.of(Integer.parseInt(productSearchInfo.getPageNumber()),
+                        Integer.parseInt(productSearchInfo.getPageSize()),
+                        Sort.by("price").descending()
+                );
+                break;
+            case "asc":
+                pageable = PageRequest.of(Integer.parseInt(productSearchInfo.getPageNumber()),
+                        Integer.parseInt(productSearchInfo.getPageSize()),
+                        Sort.by("price").ascending()
+                );
+                break;
+            default:
+                pageable = PageRequest.of(Integer.parseInt(productSearchInfo.getPageNumber()),
+                        Integer.parseInt(productSearchInfo.getPageSize())
+                );
+        }
 
         Page<Product> productPage = productService.searchProduct(productSearchInfo, pageable);
-
 
         List<ProductHomeShow> productHomeShowList = new ArrayList<>();
 
@@ -104,5 +113,6 @@ public class ProductRestController {
 
         return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
+
 
 }

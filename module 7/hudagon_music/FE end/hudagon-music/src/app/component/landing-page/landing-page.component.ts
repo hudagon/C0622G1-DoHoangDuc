@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { ProductHomeShow } from 'src/app/dto/product-home-show';
+import { Category } from 'src/app/model/product/category';
 import { OrderService } from 'src/app/service/order/order.service';
 import { ProductService } from 'src/app/service/product/product.service';
 import { AuthServiceService } from 'src/app/service/security/auth-service.service';
@@ -19,6 +20,8 @@ export class LandingPageComponent implements OnInit {
   /* Search payload */
   rfSearch: FormGroup;
   productHomeShowList: ProductHomeShow[];
+  categoryId: number = -1;
+  productHomeShowListLength: number;
 
   /* Add to cart information */
   productQuantity: number = 1;
@@ -29,6 +32,9 @@ export class LandingPageComponent implements OnInit {
   /* Pagination information */
   totalPages: number = 0;
   currentPage: number = 0;
+
+  /* Category information */
+  categoryList: Category[];
 
   constructor(
     private productService: ProductService,
@@ -47,6 +53,7 @@ export class LandingPageComponent implements OnInit {
 
     this.getSearchForm();
     this.searchProduct();
+    this.getAllCategory();
   }
 
   /* Search Form */
@@ -55,6 +62,7 @@ export class LandingPageComponent implements OnInit {
       priceRange: ['0-999999999999999999999']
     })
   }
+  
   /* Search method */
   searchProduct() {
     const productSearchInfomartion = {
@@ -65,7 +73,19 @@ export class LandingPageComponent implements OnInit {
       this.totalPages = data.totalPages;
       this.currentPage = data.pageable.pageNumber;
       this.productHomeShowList = data.content;
+      this.productHomeShowListLength = this.productHomeShowList.length;
     })
+  }
+
+  updateCategoryId(categoryId: number) {
+    this.productService.productCategoryInfo = String(categoryId);
+    this.searchProduct();
+    this.categoryId = categoryId;
+  }
+
+  sortByPrice(direction: string) {
+    this.productService.sortByPrice = direction;
+    this.searchProduct();
   }
 
   /* Add to cart method */
@@ -98,9 +118,16 @@ export class LandingPageComponent implements OnInit {
     }
   }
 
+  /* Get all category method */
+  getAllCategory() {
+    this.productService.getProductCategory().subscribe(data => {
+      this.categoryList = data;
+    })
+  }
+
   /* Pagination methods */
-  toPage(page: string) {
-    this.productService.pageNumber = page;
+  toPage(page: number) {
+    this.productService.pageNumber = String(page);
     this.searchProduct();
   }
 

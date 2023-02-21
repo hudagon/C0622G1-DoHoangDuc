@@ -1,6 +1,8 @@
 package com.project.be.repository.order;
 
 import com.project.be.model.order.ProductOrder;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -71,4 +73,17 @@ public interface IOrderRepository extends JpaRepository<ProductOrder, Integer> {
     void updatePaymentStatus(
             @Param("product_order_id") String productOrderId
     );
+
+    @Query(
+            value = " select * " +
+                    " from product_order " +
+                    " where payment_status = 0 and user_id = :product_order_id  ",
+            nativeQuery = true
+    )
+    Page<ProductOrder> getProductOrderHistory(
+            @Param("product_order_id") String productOrderId,
+            Pageable pageable
+    );
+
+
 }

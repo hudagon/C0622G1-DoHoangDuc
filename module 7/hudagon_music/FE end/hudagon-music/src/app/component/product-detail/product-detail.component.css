@@ -28,11 +28,17 @@
 }
 
 .main-img-list__body-item {
+  cursor: pointer;
   width: 18%;
   height: 81px;
   object-fit: cover;
   border: 1px solid var(--border-color);
   border-radius: 2px;
+}
+
+.main-img-list__body-item:hover {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-color: var(--primary-color);
 }
 
 .main-img-list__footer {
@@ -306,6 +312,7 @@
 .group-setup__icon {
   border: 1px solid var(--border-color);
   padding: 9px;
+  cursor: pointer;
 }
 
 .group-setup__number {
@@ -332,6 +339,10 @@
   color: var(--primary-color);
   background-color: #7b904957;
   border: 1px solid var(--primary-color);
+}
+
+.body-action__button:hover {
+  opacity: 0.8;
 }
 
 .body-action__button ion-icon {

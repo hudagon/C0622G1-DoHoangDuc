@@ -15,6 +15,9 @@ import { PaymentComponent } from './component/payment/payment.component';
 import { RouterModule } from '@angular/router';
 import { PaymentMethodComponent } from './component/payment/payment-method/payment-method.component';
 import { ProductDetailComponent } from './component/product-detail/product-detail.component';
+import { UserInformationComponent } from './component/user-information/user-information.component';
+import { HistoryComponent } from './component/user-information/history/history.component';
+import { UserInfoComponent } from './component/user-information/user-info/user-info.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +29,9 @@ import { ProductDetailComponent } from './component/product-detail/product-detai
     PaymentComponent,
     PaymentMethodComponent,
     ProductDetailComponent,
+    UserInformationComponent,
+    HistoryComponent,
+    UserInfoComponent,
   ],
   imports: [
     BrowserModule,

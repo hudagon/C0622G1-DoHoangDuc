@@ -200,13 +200,10 @@
 
           <ul class="navbar-item__user-menu">
             <li class="user-menu__item">
-              <a href="" class="">Tài khoản của tôi</a>
+              <a [routerLink]="['/user-info/user-info-detail']" class="">Tài khoản của tôi</a>
             </li>
             <li class="user-menu__item">
-              <a href="" class="">Địa chỉ của tôi</a>
-            </li>
-            <li class="user-menu__item">
-              <a href="" class="">Đơn mua</a>
+              <a [routerLink]="['/user-info/history']" class="">Đơn mua</a>
             </li>
             <li class="user-menu__item">
               <a (click)="logOut()" class="">Đăng xuất</a>
@@ -329,7 +326,7 @@
 
                   <div class="item-info__body">
                     <span class="item-info__body-desc">     </span>
-                    <span class="item-info__body-remove">Xóa</span>
+                    <span (click)="removeFromCart(x.id)" class="item-info__body-remove">Xóa</span>
                   </div>
                 </div>
               </li>

@@ -448,7 +448,7 @@
   .search-cart__icon {
     padding: 9px;
     z-index: 999;
-    cursor: pointer;
+    cursor: default;
     font-size: 3rem;
     color: var(--white-color);
   }
@@ -465,6 +465,7 @@
     border: 2px solid var(--var-white);
     background-clip: padding-box;
     color: var(--white-color);
+    cursor: default;
   }
   
   /* Cart - Cart items */

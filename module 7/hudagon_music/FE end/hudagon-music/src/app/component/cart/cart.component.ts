@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
+import { ToastrService } from "ngx-toastr";
 import { ProductOrder } from "src/app/model/order/product-order";
 import { ProductOrderDetail } from "src/app/model/order/product-order-detail";
 import { TotalMoney } from "src/app/payload/request/total-money";
@@ -23,7 +24,8 @@ export class CartComponent implements OnInit {
   constructor(
     private orderService: OrderService,
     private activatedRoute: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService
   ) {}
 
   ngOnInit(): void {
@@ -49,17 +51,20 @@ export class CartComponent implements OnInit {
     });
   }
 
+  removeFormCart(producerOrderDetailId: string) {
+    this.orderService.removeFormCart(producerOrderDetailId).subscribe(data => {
+      this.toastr.success('Xóa khỏi giỏ hàng thành công')
+      this.getProductOrder();
+      document.getElementById("reloadHeaderViewCart").click();
+    })
+  }
+
   /* Calculate methods */
   calculateMoney(producerOrderDetailId: string, operator: string) {
     var quantity = +document.getElementById('productOrderDetailQuantity' + producerOrderDetailId).innerHTML;
     var price = +document.getElementById('productOrderDetailPrice' + producerOrderDetailId).dataset.price;
     var currentTotalMoney = +document.getElementById('productOrderDetailTotalMoney' + producerOrderDetailId).innerHTML;
     var afterTotalMoney = 0;
-
-    console.log('quantity', quantity);
-    console.log('price', price);
-    console.log('currentTotalMoney', currentTotalMoney);
-    
 
     /* Changing the quantity */
     if (operator === '1') {

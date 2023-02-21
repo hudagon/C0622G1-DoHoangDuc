@@ -22,4 +22,16 @@ public interface IProductOrderDetailRepository extends JpaRepository<ProductOrde
             @Param("new_quantity") String newQuantity,
             @Param("product_order_id") String productOrderId);
 
+
+    @Modifying
+    @Query(
+            value = " delete from `hudagon_music`.`product_order_detail` " +
+                    " where (`id` = :product_order_detail_id ) ",
+            nativeQuery = true
+    )
+    void removeFromCart(
+            @Param("product_order_detail_id") String productOrderDetailId
+    );
+
+
 }

@@ -5,4 +5,5 @@ export interface ProductSearchInfo {
      priceRange?: string;
      pageNumber?: string;
      pageSize?: string;
+     sortByPrice?: string;
 }

@@ -10,6 +10,9 @@ import { environment } from 'src/environments/environment';
 })
 export class OrderService {
 
+  /* Pagination information */
+  pageNumber: string = '0';
+
   /* Product order information */
   productOrderId: number;
   totalMoneyUSD: number;
@@ -38,10 +41,16 @@ export class OrderService {
   }
 
   convertVNDToUSD(totalMoneyVND: number){
-    console.log('ok');
     this.totalMoneyUSD = +(totalMoneyVND / this.exchangeRate).toFixed(2);
     console.log(this.totalMoneyUSD);
-    
+  }
+
+  getProductOrderHistory(userId: string): Observable<any> {
+    return this.httpClient.get<any>(environment.API_URL + 'api/v1/productOrder/getOrderHistory/' + userId + '/' + this.pageNumber);
+  }
+
+  removeFormCart(productOrderDetailId: string): Observable<any> {
+    return this.httpClient.post<any>(environment.API_URL + 'api/v1/productOrder/removeFromCart', productOrderDetailId)
   }
   
 }

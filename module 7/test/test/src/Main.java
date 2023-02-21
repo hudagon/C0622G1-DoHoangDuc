@@ -1,9 +1,11 @@
 import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Main {
     public static void main(String[] args) {
 
-     demo2();
+        sumFirst20PrimeNumber();
 
     }
 
@@ -396,7 +398,7 @@ public class Main {
 
     public static void checkSymmetryArrays() {
 
-        String[] testStringArray = {"1", "2", "3","4", "3", "2", "9"};
+        String[] testStringArray = {"1", "2", "3", "4", "3", "2", "9"};
 
         for (int i = 0; i < testStringArray.length / 2; i++) {
             if (!testStringArray[i].equals(testStringArray[testStringArray.length - i - 1])) {
@@ -424,19 +426,41 @@ public class Main {
 
     }
 
-    public static void demo() {
+    public static void findThirdLargestNumber() {
     }
 
-    public static void demo2() {
-        String[] strings = {"A", "B", "C", "D", "E", "F"};
-        for (int i = 0; i < strings.length; i++) {
-            System.out.print(strings[i] + " ");
-            if (strings[i].equals("C")) {
+    public static void sumFirst20PrimeNumber() {
+
+        int count = 0;
+        int sum = 0;
+        int number = 0;
+        boolean flag;
+
+
+        while (count < 20) {
+
+            flag = true;
+
+            number++;
+
+            if (number <= 1) {
                 continue;
             }
-            System.out.print("Work done");
-            break;
-        }
-    }
 
+            for (int i = 2; i <= (number / 2); i++) {
+                if (number % i == 0) {
+                    flag = false;
+                    break;
+                }
+            }
+
+            if (flag) {
+                sum += number;
+                count++;
+            }
+        }
+
+        System.out.println("Tổng 20 số nguyên tố đầu tiên à: " + sum);
+
+    }
 }

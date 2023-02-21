@@ -12,6 +12,10 @@ import com.project.be.service.product_order_detail.IProductOrderDetailService;
 import com.project.be.util.GetDate;
 import jdk.nashorn.internal.runtime.options.Option;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -114,5 +118,31 @@ public class ProductOrderController {
 
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+    @GetMapping("/getOrderHistory/{userId}/{page}")
+    public ResponseEntity<?> getOrderHistory(
+            @PathVariable String userId,
+            @PathVariable String page,
+            @PageableDefault(value = 3) Pageable pageable
+    ) {
+
+        pageable = PageRequest.of(Integer.parseInt(page), 3);
+
+        Page<ProductOrder> productOrdersPage = orderService.getProductOrderHistory(userId, pageable);
+
+        return new ResponseEntity<>(productOrdersPage, HttpStatus.OK);
+    }
+
+    @PostMapping("/removeFromCart")
+    public ResponseEntity<?> removeFromCart(
+            @RequestBody String productOrderDetailId
+    ) {
+
+        productOrderDetailService.removeFromCart(productOrderDetailId);
+
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+
 
 }

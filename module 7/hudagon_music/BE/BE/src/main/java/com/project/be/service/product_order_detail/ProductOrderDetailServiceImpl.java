@@ -37,4 +37,9 @@ public class ProductOrderDetailServiceImpl implements IProductOrderDetailService
     public void updateProductOrderDetail(String newQuantity, String productOrderId) {
         productOrderDetailRepository.updateProductOrderDetail(newQuantity, productOrderId);
     }
+
+    @Override
+    public void removeFromCart(String productOrderDetailId) {
+        productOrderDetailRepository.removeFromCart(productOrderDetailId);
+    }
 }

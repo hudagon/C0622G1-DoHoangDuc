@@ -5,6 +5,8 @@ import com.project.be.model.order.ProductOrder;
 import com.project.be.payload.request.TotalMoney;
 import com.project.be.repository.order.IOrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -65,6 +67,11 @@ public class OrderServiceImpl implements IOrderService {
     @Override
     public void updatePaymentStatus(String productOrderId) {
         orderRepository.updatePaymentStatus(productOrderId);
+    }
+
+    @Override
+    public Page<ProductOrder> getProductOrderHistory(String productOrderId, Pageable pageable) {
+        return orderRepository.getProductOrderHistory(productOrderId, pageable);
     }
 
 }

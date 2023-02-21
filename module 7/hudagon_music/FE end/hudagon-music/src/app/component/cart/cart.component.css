@@ -46,6 +46,11 @@ tr {
   cursor: pointer;
 }
 
+.cart-table__product-remove:hover {
+  opacity: 0.6;
+  color: var(--primary-color);
+}
+
 
 .cart-table__product-img {
   width: 60px;

@@ -6,7 +6,6 @@ import { ImgUrlProduct } from "./img-url-product";
 import { Piano } from "./piano";
 
 export interface Product {
-    [x: string]: import("d:/code/CodeGym2/C0622G1-DoHoangDuc/module 7/hudagon_music/FE end/hudagon-music/src/app/payload/response/product-detail-info-response").ProductDetailInfoResponse;
     id?: number;
     name?: string;
     registerDay?: string;

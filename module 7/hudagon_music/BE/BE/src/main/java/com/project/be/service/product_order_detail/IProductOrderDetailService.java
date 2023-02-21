@@ -7,4 +7,6 @@ public interface IProductOrderDetailService extends IGeneralService<ProductOrder
 
     void updateProductOrderDetail(String newQuantity, String productOrderId);
 
+    void removeFromCart(String productOrderDetailId);
+
 }

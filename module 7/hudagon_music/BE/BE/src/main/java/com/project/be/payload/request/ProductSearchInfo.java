@@ -8,16 +8,20 @@ public class ProductSearchInfo {
     private String priceRange;
     private String pageNumber;
     private String pageSize;
-
+    private String sortByPrice;
     public ProductSearchInfo() {
     }
 
-    public ProductSearchInfo(String productName, String categoryId,
-                             String brandId, String priceRange) {
+    public ProductSearchInfo(String productName, String categoryId, String brandId,
+                             String priceRange, String pageNumber, String pageSize,
+                             String sortByPrice) {
         this.productName = productName;
         this.categoryId = categoryId;
         this.brandId = brandId;
         this.priceRange = priceRange;
+        this.pageNumber = pageNumber;
+        this.pageSize = pageSize;
+        this.sortByPrice = sortByPrice;
     }
 
     public String getProductName() {
@@ -67,4 +71,13 @@ public class ProductSearchInfo {
     public void setPageSize(String pageSize) {
         this.pageSize = pageSize;
     }
+
+    public String getSortByPrice() {
+        return sortByPrice;
+    }
+
+    public void setSortByPrice(String sortByPrice) {
+        this.sortByPrice = sortByPrice;
+    }
+
 }

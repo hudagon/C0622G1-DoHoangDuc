@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup } from "@angular/forms";
 import { Router } from "@angular/router";
+import { ToastrService } from "ngx-toastr";
 import { ProductHomeShow } from "src/app/dto/product-home-show";
 import { ProductOrder } from "src/app/model/order/product-order";
 import { ProductOrderDetail } from "src/app/model/order/product-order-detail";
@@ -39,7 +40,8 @@ export class HeaderComponent implements OnInit {
     private tokenService: TokenServiceService,
     private productService: ProductService,
     private router: Router,
-    private orderService: OrderService
+    private orderService: OrderService,
+    private toastr: ToastrService
   ) {}
 
   ngOnInit(): void {
@@ -122,6 +124,15 @@ export class HeaderComponent implements OnInit {
     document.getElementById("loginModal").style.display = "none";
     document.getElementById("registerModal").style.display = "none";
     document.getElementById("authenModal").style.display = "none";
+  }
+
+  /* Cart methods */
+  removeFromCart(productOrderDetailId: string) {
+    this.orderService.removeFormCart(productOrderDetailId).subscribe(data => {
+      this.toastr.success('Xóa khỏi giỏ hàng thành công')
+      this.getProductOrder();
+      document.getElementById('reloadCartId').click();
+    })
   }
 
 }

@@ -15,9 +15,10 @@
               <th>Tổng cộng</th>
             </thead>
             <tbody>
+              <button hidden (click)="getProductOrder()" id="reloadCartId"></button>
               <tr *ngFor="let x of productOrderDetailList, let i = index">
                   <td class="cart-table__product">
-                    <div class="cart-table__product-remove">
+                    <div (click)="removeFormCart(x.id)" class="cart-table__product-remove">
                       <ion-icon name="close-circle-outline"></ion-icon>
                     </div>
                     <img
