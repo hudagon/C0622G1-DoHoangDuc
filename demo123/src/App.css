@@ -1,0 +1,48 @@
+
+
+.myCss {
+  color: red;
+  font-size: 100px;
+}
+
+.mt-30 {
+  margin-top: 30px;
+}
+
+.ml-30 {
+  margin-left: 9px;
+}
+
+.mb-3 {
+  margin-bottom: 30px;
+}
+
+.maritalStatus > label {
+  margin-left: 18px;
+  margin-top: 9px;
+} 
+
+.maritalStatus label:first-child {
+  margin-left: 0;
+} 
+
+.maritalStatus > label > span {
+  position: relative;
+  left: 6px;
+  top: -1px;
+}
+
+.language > label {
+  margin-left: 18px;
+  margin-top: 9px;
+} 
+
+.language label:first-child {
+  margin-left: 0;
+} 
+
+.language > label > span {
+  position: relative;
+  left: 6px;
+  top: -1px;
+}

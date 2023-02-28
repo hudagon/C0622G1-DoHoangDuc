@@ -2,17 +2,13 @@ package ok;
 
 public class Test implements InterfaceB, InterfaceA {
 
+    static Cha obj2 = new Chau();
 
     public static void main(String[] args) {
 
-        Cha object1 = new Chau();
-
-        Chau object2 = (Chau) new Cha();
-
-        object2.display();
-       
+        int a = 3;
+        int b = 6;
+        System.out.println(a | b);
 
     }
-
-
 }

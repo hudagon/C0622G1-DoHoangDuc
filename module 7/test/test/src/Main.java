@@ -5,7 +5,19 @@ import java.util.stream.Stream;
 public class Main {
     public static void main(String[] args) {
 
-        sumFirst20PrimeNumber();
+        Map<Integer, String> stringMap = new LinkedHashMap<>();
+
+        stringMap.put(1, "hello");
+        stringMap.put(1, "world");
+        stringMap.put(2, "world");
+        stringMap.put(null, "hahaha");
+        stringMap.put(null, "uhhh");
+        stringMap.put(3, null);
+        stringMap.put(4, null);
+
+        stringMap.forEach((key, value) -> {
+            System.out.println(key + " = " +  value);
+        });
 
     }
 
@@ -429,38 +441,59 @@ public class Main {
     public static void findThirdLargestNumber() {
     }
 
-    public static void sumFirst20PrimeNumber() {
+    public static void printPrime(int n) {
 
-        int count = 0;
-        int sum = 0;
-        int number = 0;
+        int checkNumber = 0;
         boolean flag;
 
 
-        while (count < 20) {
+        while (checkNumber < n) {
 
             flag = true;
 
-            number++;
 
-            if (number <= 1) {
+            if (checkNumber <= 1) {
+                checkNumber++;
                 continue;
             }
 
-            for (int i = 2; i <= (number / 2); i++) {
-                if (number % i == 0) {
+            for (int i = 2; i <= (checkNumber / 2); i++) {
+                if (checkNumber % i == 0) {
                     flag = false;
                     break;
                 }
             }
 
             if (flag) {
-                sum += number;
-                count++;
+                System.out.println(checkNumber);
+            }
+
+            checkNumber++;
+        }
+    }
+
+    public static void reArrangeArray() {
+
+        Integer[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, -1};
+        int temp;
+
+        for (int i = 0; i < numbers.length; i++) {
+
+            if (numbers[i] % 2 != 0) {
+
+                for (int j = i; j < numbers.length; j++) {
+
+                    if (numbers[j] % 2 == 0) {
+                        temp = numbers[j];
+                        numbers[j] =  numbers[i];
+                        numbers[i] = temp;
+                    }
+                }
             }
         }
 
-        System.out.println("Tổng 20 số nguyên tố đầu tiên à: " + sum);
-
+        for (int x : numbers) {
+            System.out.println(x);
+        }
     }
 }
