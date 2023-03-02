@@ -3,21 +3,10 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CloneNotSupportedException {
 
-        Map<Integer, String> stringMap = new LinkedHashMap<>();
-
-        stringMap.put(1, "hello");
-        stringMap.put(1, "world");
-        stringMap.put(2, "world");
-        stringMap.put(null, "hahaha");
-        stringMap.put(null, "uhhh");
-        stringMap.put(3, null);
-        stringMap.put(4, null);
-
-        stringMap.forEach((key, value) -> {
-            System.out.println(key + " = " +  value);
-        });
+        Student studentA = new Student(1, "Nguyen Van A");
+        Student studentB;
 
     }
 
