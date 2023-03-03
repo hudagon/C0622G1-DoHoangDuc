@@ -1,13 +1,10 @@
 
-
 version:
 
-	+ Angular 9
-	+ Java 8  | Spring Boot 2.7.5
-	+ NodeJs v14.0
-	+ npm: 6.14.4
-
-
+   -- Angular 9
+   -- Java 8  | Spring Boot 2.7.5
+   -- NodeJs v14.0
+   -- Npm: 6.14.4
 
 Account:
 
