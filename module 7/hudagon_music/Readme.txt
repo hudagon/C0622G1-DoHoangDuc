@@ -6,7 +6,7 @@ version:
    -- NodeJs v14.0
    -- Npm: 6.14.4
 
-Account:
+account:
 
 -- role `admin` --
    -- username: ducdh --
