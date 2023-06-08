@@ -1,0 +1,52 @@
+
+
+/* Header/Blog Title */
+.header {
+    padding: 30px;
+    text-align: center;
+    background-image: url(https://cdn.wallpapersafari.com/37/60/aLKFHY.jpg);
+    background-size: cover;
+}
+
+.logo-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    height: 60px;
+    width: 60px;
+}
+
+.logo-group span {
+    font-size: 60px;
+    color: var(--white-1);
+}
+
+.header h1 {
+    font-size: 50px;
+}
+
+/* Style the top navigation bar */
+.topnav {
+    overflow: hidden;
+    background-color: var(--selective-yellow);
+}
+
+
+/* Style the topnav links */
+.topnav a {
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+    background-color: var(--spanish-gray);
+    color: black;
+}

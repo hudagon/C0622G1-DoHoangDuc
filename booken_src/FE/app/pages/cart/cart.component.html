@@ -1,0 +1,83 @@
+<div class="main-content">
+    <div class="leftcolumn">
+        <div class="card main-cart">
+
+            <div style="overflow-x:auto; ">
+                <table class="cart-table table">
+                    <thead class="cart-table__thead">
+                        <tr>
+                            <th>Sản phẩm</th>
+                            <th>Giá</th>
+                            <th>Số lượng</th>
+                            <th>Tổng cộng</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let x of bookOrderDetailSetShow, let i = index">
+                            <td class="cart-table__product">
+                                <div (click)="removeFromCart(x.id)"
+                                    class="cart-table__product-remove">
+                                    <i class="fa-solid fa-xmark"></i>
+                                </div>
+                                <img class="cart-table__product-img" 
+                                src="{{x.book.imgUrl}}"
+                                    alt="">
+                                <div class="cart-table__product-name">
+                                    {{x.book.name}}
+                                </div>
+                            </td>
+                            <td 
+                            id="bookOrderDetailPrice{{x.id}}" attr.data-price="{{x.book.price}}"
+                            class="cart-table__price">
+                                {{x.book.price}}
+                            </td>
+                            <td class="cart-table__quantity">
+                                <div class="inside">
+                                    <i 
+                                    (click)="calculateMoney(x.id, 2)"
+                                    class="cart-table__quantity-icon fa-solid fa-minus"></i>
+                                    <span id="bookOrderDetailQuantity{{x.id}}">{{x.quantity}}</span>
+                                    <i 
+                                    (click)="calculateMoney(x.id, 1)"
+                                    class="cart-table__quantity-icon fa-solid fa-plus"></i>
+                                </div>
+                            </td>
+                            <td 
+                            id="bookOrderDetailTotalMoney{{x.id}}"
+                            class="cart-table__total">{{x.book.price * x.quantity}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="rightcolumn">
+        <div class="card cart-infomartion">
+            <div style="overflow-x:auto;">
+                <table class="cart-information-table">
+                    <thead class="cart-information-table__thead">
+                        <tr>
+                            <th colspan="2">Thông tin đơn hàng</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="body-title">Tạm tính</td>
+                            <td class="body-money">{{estimatedMoney}}</td>
+                        </tr>
+                        <tr>
+                            <td class="body-title">Thành tiền</td>
+                            <td class="body-money">{{estimatedMoney}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="checkout">
+                    <button class="checkout-btn">Thanh toán</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

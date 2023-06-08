@@ -1,0 +1,190 @@
+<div class="row main-content">
+    <div class="leftcolumn">
+        <div class="card reset-filter">
+            <button (click)="resetSearchInfo()">Đặt lại</button>
+        </div>
+
+        <div class="card">
+            <h4 class="category-title">
+                <span>Thể loại</span>
+                <i class="fa-solid fa-book"></i>
+            </h4>
+            <ul class="category-list">
+                <li class="category-item">
+                    <p (click)="changeCategory(-1)">Tất cả</p>
+                </li>
+                <li *ngFor="let x of categoryList" class="category-item">
+                    <p (click)="changeCategory(x.id)">{{x.name}}</p>
+                </li>
+            </ul>
+
+        </div>
+        <div class="card">
+            <h4 class="category-title">
+                <span>Tác giả</span>
+                <i class="fa-solid fa-pen-nib"></i>
+            </h4>
+            <ul class="category-list">
+                <li class="category-item">
+                    <p (click)="changeAuthor(-1)">Tất cả</p>
+                </li>
+                <li *ngFor="let x of authorList" class="category-item">
+                    <p (click)="changeAuthor(x.id)">{{x.name}}</p>
+                </li>
+            </ul>
+        </div>
+        <div class="card">
+            <h4 class="category-title">
+                <span>Giá thành</span>
+                <i class="fa-solid fa-money-bill-wave"></i>
+            </h4>
+            <ul class="category-list">
+                <li class="category-item">
+                    <p (click)="changePrice(0)">Tất cả</p>
+                </li>
+                <li *ngFor="let x of priceRangeList" class="category-item">
+                    <p (click)="changePrice(x.id)">{{x.description}}</p>
+                </li>
+            </ul>
+        </div>
+
+
+    </div>
+    <div class="rightcolumn">
+        <div class="filter-search-group card">
+            <div class="search-group">
+                <input [(ngModel)]="name" type="text" (keyup.enter)="searchBook()" class="search-input"
+                    placeholder="Tìm sách bạn muốn...">
+                <button (click)="searchBook()" class="search-btn">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+
+            <div class="div">
+
+                <button class="res-reset">
+                    <i class="fa-solid fa-rotate-left"></i>
+                </button>
+
+                <div class="dropdown">
+                    <button class="dropbtn">
+                        <i class="fa-solid fa-filter"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="#">Ngày đăng tải</a>
+                        <a href="#">Tác giả</a>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <button class="dropbtn">
+                        <i class="fa-solid fa-sort"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="#">Tăng dần</a>
+                        <a href="#">Giảm dần</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="filter-group">
+
+                <span>Sắp xếp theo</span>
+
+                <select [(ngModel)]="sortOption" (change)="searchBook()" class="filter-choose">
+                    <option [value]="0">Ngày đăng tải</option>
+                    <option [value]="1">Giá thành</option>
+                </select>
+
+                <select [(ngModel)]="sortDirection" (change)="searchBook()" class="filter-direction">
+                    <option [value]="true">Tăng dần</option>
+                    <option [value]="false">Giảm dần</option>
+                </select>
+
+            </div>
+        </div>
+
+        <div class="card category-res">
+            <div class="dropdown cate-res">
+                <button class="dropbtn">
+                    <span>Thể loại</span>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#">Tăng dần</a>
+                    <a href="#">Giảm dần</a>
+                </div>
+            </div>
+            <div class="dropdown cate-res">
+                <button class="dropbtn">
+                    <span>Tác giả</span>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#">Tăng dần</a>
+                    <a href="#">Giảm dần</a>
+                </div>
+            </div>
+            <div class="dropdown cate-res">
+                <button class="dropbtn">
+                    <span>Giá thành</span>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#">Tăng dần</a>
+                    <a href="#">Giảm dần</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+
+            <ul class="card-list">
+                <li *ngFor="let x of bookListHomeShow" class="card-item">
+                    <img class="book-img" src="{{x.imgUrl}}" alt="">
+                    <h4 class="book-name">{{x.name}}</h4>
+                    <span class="book-price">{{x.price}}</span>
+                    <div class="book-detail">
+                        <span class="book-author">{{x.author.name}}</span>
+                        <span class="book-category">{{x.category.name}}</span>
+                    </div>
+
+                    <div class="card-on-hover">
+                        <button (click)="addToCart(x.id)" class="add-to-cart">
+                            Thêm vào giỏ hàng
+                        </button>
+                    </div>
+                </li>
+            </ul>
+
+            <ul class="pagination user-information__pagination">
+                <li class="pagination-item">
+                    <a 
+                    [ngClass]="currentPage == 0 ? 'pagination-item__link--not-clickable' : ''"
+                    (click)="previousPage()" 
+                    class="pagination-item__link">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </a>
+                </li>
+                <li 
+                *ngFor="let x of [].constructor(totalPages), let i = index"
+                class="pagination-item">
+                    <a 
+                    [ngClass]="currentPage == (i) ? 'pagination-item__link--active' : ''"
+                    (click)="toPage(i)"
+                    class="pagination-item__link">
+                        {{i + 1}}
+                    </a>
+                </li>
+                <li 
+                [ngClass]="currentPage == (totalPages-1) ? 'pagination-item__link--not-clickable' : ''"
+                (click)="nextPage()" 
+                class="pagination-item">
+                    <a class="pagination-item__link">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+
+    </div>
+</div>

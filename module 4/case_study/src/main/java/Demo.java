@@ -5,9 +5,6 @@ import java.util.Scanner;
 public class Demo {
     public static void main(String[] args) {
 
-
-
-
     }
 
     public static int calculateAge(LocalDate dob) {
